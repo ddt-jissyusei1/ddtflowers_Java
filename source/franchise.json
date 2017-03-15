@@ -1,0 +1,137 @@
+{
+    "pageTitle": {
+    	"class":"pageTitle cf",
+        "image": {
+            "src": "image/icon(leaf100).png"
+        },
+        "title": {
+            "text": "FC（フランチャイズ・ライセンス）資格取得コース"
+        },
+        "summary": {
+            "text": "大好きなお花で生活したい。本校のフランチャイズ制度はそんなあなたの夢に実現をサポートします。自宅から開業できるので初期投資はほとんど不要です。"
+        }
+    },
+    "courseGuide": {
+ 		"class": "courseGuide guideTable",
+        "summary": {
+            "text": "コース案内"
+        },
+        "courseGuideHead": {
+			"class":"guideHead",
+            "stageHead": {
+                "text": "レベル"
+            },
+            "timesHead": {
+                "text": "回数"
+            },
+            "priceHead": {
+                "text": "金額"
+            }
+        },
+        "firstStage": {
+            "stage": {
+                "text": "1stステージ"
+            },
+            "times": {
+                "text": "全16単位"
+            },
+            "price": {
+                "text": "6,000 円／回"
+            }
+        },
+        "secondStage": {
+            "stage": {
+                "text": "2ndステージ"
+            },
+            "times": {
+                "text": "全16単位"
+            },
+            "price": {
+                "text": "7,000 円／回"
+            }
+        },
+        "thirdStage": {
+            "stage": {
+                "text": "教育実習"
+            },
+            "times": {
+                "text": "全48単位"
+            },
+            "price": {
+                "text": "500円／回"
+            }
+        }
+    },
+    "footGallery": {
+        "1stArt": {
+            "href": "photo/general/web/DSC_1086.jpg",
+            "rel": "gallery",
+            "1stImage": {
+                "src": "photo/general/web120/DSC_1086.jpg"
+            }
+        },
+        "2ndArt": {
+            "href": "photo/general/web/DSC_1061.jpg",
+            "rel": "gallery",
+            "2ndImage": {
+                "src": "photo/general/web120/DSC_1061.jpg"
+            }
+        },
+        "3rdArt": {
+            "href": "photo/general/web/DSC_1038.jpg",
+            "rel": "gallery",
+            "3rdImage": {
+                "src": "photo/general/web120/DSC_1038.jpg"
+            }
+        },
+        "4thArt": {
+            "href": "photo/general/web/DSC_1025.jpg",
+            "rel": "gallery",
+            "4thImage": {
+                "src": "photo/general/web120/DSC_1025.jpg"
+            }
+        },
+        "5thArt": {
+            "href": "photo/general/web/DSC_1008.jpg",
+            "rel": "gallery",
+            "5thImage": {
+                "src": "photo/general/web120/DSC_1008.jpg"
+            }
+        },
+        "6thArt": {
+            "href": "photo/general/web/DSC_0985.jpg",
+            "rel": "gallery",
+            "6thImage": {
+                "src": "photo/general/web120/DSC_0985.jpg"
+            }
+        },
+        "7thArt": {
+            "href": "photo/general/web/DSC_0947.jpg",
+            "rel": "gallery",
+            "7thImage": {
+                "src": "photo/general/web/DSC_0947.jpg"
+            }
+        },
+        "8thArt": {
+            "href": "photo/general/web/DSC_0898.jpg",
+            "rel": "gallery",
+            "8thImage": {
+                "src": "photo/general/web120/DSC_0898.jpg"
+            }
+        },
+        "9thArt": {
+            "href": "photo/general/web/DSC_0894.jpg",
+            "rel": "gallery",
+            "9thImage": {
+                "src": "photo/general/web120/DSC_0894.jpg"
+            }
+        },
+        "10thArt": {
+            "href": "photo/general/web/DSC_0834.jpg",
+            "rel": "gallery",
+            "10thImage": {
+                "src": "photo/general/web120/DSC_0834.jpg"
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "adminHeader": {
+        "db_getQuery": "CALL getSelfUserInfo(@result, 'user_key'); SELECT @result AS 'result';",
+        "user_key": {
+            "value": "1"
+        },
+        "class":"adminHeader outsideArea",
+        "memberStatus": {
+            "memberNumber":{
+                "noArea":{
+                    "text":"No."
+                }
+            },
+            "id": {
+                "text": ""
+            },
+            "memberName": {
+                "user_name": {
+                    "text": ""
+                }
+            },
+            "topLink":{
+                "class":"topLink textCenter",
+                "href":"",
+                "text":"トップページへ"
+            }
+        }
+    },
+    "returnTopPosition":{
+    	"href":"#top",
+    	"returnTopPositionImg":{
+	    	"alt":"トップ",
+   		 	"href":"#top",
+   	 		"src":"image/icon_to_top.png"
+    	}
+    }
+}

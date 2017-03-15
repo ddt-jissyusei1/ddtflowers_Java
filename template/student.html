@@ -1,0 +1,314 @@
+<!-- 会員管理のパーツ -->
+<html>
+<body>
+<!-- テンプレート領域 -->
+<div>
+	
+	<!-- メール送信後、又はエラーページ用のパーツ -->
+	<div class="showMessage">
+		<!-- 1行目。タイトル部分として使われる事を想定しています。 -->
+		<p class="firstLine"></p>
+		<!-- 2行目。 -->
+		<p class="secondLine"></p>
+		<!-- 3行目。 -->
+		<p class="thirdLine"></p>
+		<!-- トップページへのリンク -->
+		<a class="returnToTop" href=""></a>
+	</div>
+	
+	<!-- 生徒さん登録フォーム。 -->
+	<form class="editStudent" action=""  value="" title="">
+		<!-- フォームのパーツ領域 -->
+		<dl class="formBody">
+	    	<!-- 氏名 -->
+			<dt class="name">
+	        	<!-- 項目名 -->
+	        	<span class="formContent"></span>
+	        	<!-- 必須入力の印「*」 -->
+	        	<span class="textRed"></span>
+	        	<!-- ルビ -->
+	        	<span class="formRuby"></span>
+	        </dt>
+	        <!-- 氏名を入力するテキストボックス -->
+	        <dd class="nameTextBox">
+	        	<!-- テキストボックス。 -->
+	        	<input type="" class="textBox" name="" size="" required="">
+	        </dd>
+	    	<!-- 氏名(カナ) -->
+			<dt class="nameKana">
+	        	<!-- 項目名 -->
+	        	<span class="formContent"></span>
+	        	<!-- 必須入力の印「*」 -->
+	        	<span class="textRed"></span>
+	        	<!-- ルビ -->
+	        	<span class="formRuby"></span>
+	        </dt>
+	        <!-- 氏名を入力するテキストボックス -->
+	        <dd class="nameKanaTextBox">
+	        	<!-- テキストボックス。 -->
+	        	<input type="" class="textBox" name="" size="" required="">
+	        </dd>
+	    	<!-- ユーザID -->
+			<dt class="userId">
+	        	<!-- 項目名 -->
+	        	<span class="formContent"></span>
+	        	<!-- 必須入力の印「*」 -->
+	        	<span class="textRed"></span>
+	        	<!-- ルビ -->
+	        	<span class="formRuby"></span>
+	        </dt>
+	        <!-- ユーザIDを入力するテキストボックス -->
+	        <dd class="userIdTextBox">
+	        	<!-- テキストボックス。 -->
+	        	<input type="" class="textBox" name="" size="" required="">
+	        </dd>
+	    	<!-- ニックネーム -->
+			<dt class="nickname">
+	        	<!-- 項目名 -->
+	        	<span class="formContent"></span>
+	        	<!-- 必須入力の印「*」 -->
+	        	<span class="textRed"></span>
+	        	<!-- ルビ -->
+	        	<span class="formRuby"></span>
+	        </dt>
+	        <!-- ニックネームを入力するテキストボックス -->
+	        <dd class="nicknameTextBox">
+	        	<!-- テキストボックス。 -->
+	        	<input type="" class="textBox" name="" size="" required="">
+	        </dd>
+	    	<!-- パスワード -->
+			<dt class="password">
+	        	<!-- 項目名 -->
+	        	<span class="formContent"></span>
+	        	<!-- 必須入力の印「*」 -->
+	        	<span class="textRed"></span>
+	        	<!-- ルビ -->
+	        	<span class="formRuby"></span>
+	        </dt>
+	        <!-- パスワードを入力するテキストボックス -->
+	        <dd class="passwordTextBox">
+	        	<!-- テキストボックス。 -->
+	        	<input type="" class="textBox" name="" size="" required="">
+	        </dd>
+	    	<!-- パスワード(確認) -->
+			<dt class="passwordConfirm">
+	        	<!-- 項目名 -->
+	        	<span class="formContent"></span>
+	        	<!-- 必須入力の印「*」 -->
+	        	<span class="textRed"></span>
+	        	<!-- ルビ -->
+	        	<span class="formRuby"></span>
+	        </dt>
+	        <!-- パスワード(確認)を入力するテキストボックス -->
+	        <dd class="passwordConfirmTextBox">
+	        	<!-- テキストボックス。 -->
+	        	<input type="" class="textBox" name="" size="" required="">
+	        </dd>
+	        <!-- 性別 -->
+			<dt class="sex">
+	        	<!-- 項目名 -->
+	        	<span class="formContent"></span>
+	        	<!-- 必須入力の印「*」 -->
+	        	<span class="textRed"></span>
+	        	<!-- ルビ -->
+	        	<span class="formRuby"></span>
+	        </dt>
+	        <!-- 性別を選択するラジオボタン -->
+	        <dd class="sexRadioButton">
+	        	<!-- 性別のラジオボタンとラベル。女、男の順。 -->
+	        	<input class="sexRadioButtonFemale" type="" name="" value=""><label class="sexRadioButtonFemaleLabel"></label>
+	            <input class="sexRadioButtonMale" type="" name="" value=""><label class="sexRadioButtonMaleLabel"></label>
+	        </dd>
+	        <!-- メールアドレス -->
+	        <dt class="email">
+	        	<!-- 項目名 -->
+	        	<span class="formContent"></span>
+	        	<!-- 必須入力の印「*」 -->
+	        	<span class="textRed"></span>
+	        	<!-- ルビ -->
+	        	<span class="formRuby"></span>
+	        </dt>
+	        <!-- メールアドレスを入力するテキストボックス -->
+	        <dd class="emailTextBox">
+	        	<!-- テキストボックス。 -->
+	        	<input type="" class="textBox" name="" size="" required="" onkeyDown="">
+	        </dd>
+	        <!-- 確認用メールアドレス -->
+	        <dt class="emailConfirm">
+	        	<!-- 項目名 -->
+	        	<span class="formContent"></span>
+	        	<!-- 必須入力の印「*」 -->
+	        	<span class="textRed"></span>
+	        	<!-- ルビ -->
+	        	<span class="formRuby"></span>
+	        </dt>
+	        <!-- 確認用メールアドレスを入力するテキストボックス -->
+	        <dd class="emailConfirmTextBox">
+	        	<!-- テキストボックス。 -->
+	        	<input type="" class="textBox" name="" size="" required="" onkeyDown="" oncopy="" onpaste="" oncontextmenu="" placeholder="">
+	        </dd>
+	        <!-- 電話番号 -->
+	        <dt class="tel">
+	        	<!-- 項目名 -->
+	        	<span class="formContent"></span>
+	        	<!-- 必須入力の印「*」 -->
+	        	<span class="textRed"></span>
+	        	<!-- ルビ -->
+	        	<span class="formRuby"></span>
+	        </dt>
+	        <!-- 電話番号を入力するテキストボックス -->
+	        <dd class="telTextBox">
+	        	<!-- テキストボックス。 -->
+	        	<input type="" class="textBox" name="" size="" required="" onkeyDown="">
+	        </dd>
+	        <!-- 住所 -->
+	        <dt class="address">
+	        	<!-- 項目名 -->
+	        	<span class="formContent"></span>
+	        	<!-- 必須入力の印「*」 -->
+	        	<span class="textRed"></span>
+	        	<!-- ルビ -->
+	        	<span class="formRuby"></span>
+	        </dt>
+	        <!-- 住所を入力するテキストボックス -->
+	        <dd class="addressTextBox">
+	        	<!-- テキストボックス。 -->
+	        	<input type="" class="textBox" name="" size="" required="">
+	        </dd>
+	    </dl>
+	    <!-- 送信ボタン。 -->
+	    <input type="" href="" class="submit" onclick="" value="" confirm="">
+	    <!-- 戻るボタン。 -->
+	    <button class="back" href="" onclick="" type=""></button>
+	</form>	
+
+	<!-- 生徒さん登録情報確認 -->
+	<div class="confirmRegistration">
+		<!-- タイトル -->
+		<strong class="message"></strong>
+		<!-- リスト -->
+		<ul class="noticeList">
+			<!-- リストの項目 -->
+			<li class="notice"></li>
+		</ul>
+		<!-- フォームの入力内容 -->
+		<table class="confirmRegistrationTable">
+			<!-- 氏名 -->
+			<tr class="name">
+			  <!-- 項目 -->
+			  <th class="head"></th>
+			  <!-- 内容 -->
+			  <td class="data"></td>
+			</tr>
+			<!-- カナ氏名 -->
+			<tr class="nameKana">
+			  <!-- 項目 -->
+			  <th class="head"></th>
+			  <!-- 内容 -->
+			  <td class="data"></td>
+			</tr>
+			<!-- ユーザID -->
+			<tr class="userId">
+			  <!-- 項目 -->
+			  <th class="head"></th>
+			  <!-- 内容 -->
+			  <td class="data"></td>
+			</tr>
+			<!-- ニックネーム -->
+			<tr class="nickname">
+			  <!-- 項目 -->
+			  <th class="head"></th>
+			  <!-- 内容 -->
+			  <td class="data"></td>
+			</tr>
+			<!-- パスワード -->
+			<tr class="password">
+			  <!-- 項目 -->
+			  <th class="head"></th>
+			  <!-- 内容 -->
+			  <td class="data"></td>
+			</tr>
+			<!-- 性別 -->
+			<tr class="sex">
+			  <!-- 項目 -->
+			  <th class="head"></th>
+			  <!-- 内容 -->
+			  <td class="data"></td>
+			</tr>
+			<!-- メールアドレス -->
+			<tr class="email">
+			  <!-- 項目 -->
+			  <th class="head"></th>
+			  <!-- 内容 -->
+			  <td class="data"></td>
+			</tr>
+			<!-- 電話番号 -->
+			<tr class="tel">
+			  <!-- 項目 -->
+			  <th class="head"></th>
+			  <!-- 内容 -->
+			  <td class="data"></td>
+			</tr>
+			<!-- 住所 -->
+			<tr class="address">
+			  <!-- 項目 -->
+			  <th class="head"></th>
+			  <!-- 内容 -->
+			  <td class="data"></td>
+			</tr>
+		</table>
+		<!-- 改行 -->
+		<br class="br" />
+		<!-- 送信フォーム -->
+		<form class="sendForm" action="">
+			<!-- 送信ボタン -->
+			<input type="" value="" class="sendButton" onclick="" />
+			<!-- 戻るボタン -->
+			<input type="" value="" onclick="" class="backButton" href="" />
+			<!-- 見えなくしてある入力情報。 -->
+			<input type="" name="" value="" class="sendValue1">
+			<input type="" name="" value="" class="sendValue2">
+			<input type="" name="" value="" class="sendValue3">
+			<input type="" name="" value="" class="sendValue4">
+			<input type="" name="" value="" class="sendValue5">
+			<input type="" name="" value="" class="sendValue6">
+			<input type="" name="" value="" class="sendValue7">
+			<input type="" name="" value="" class="sendValue8">
+			<input type="" name="" value="" class="sendValue9">
+		</form>
+	</div>
+
+	<!-- メールフォーム送信確認 -->
+	<!-- 引用タグ -->
+	<blockquote class="confirmSendMail">
+		<!-- タイトル -->
+		<strong class="ttl"></strong>
+		<!-- リスト -->
+		<ul class="confirmMessage">
+			<!-- リストの項目 -->
+			<li></li>
+		</ul>
+		<!-- フォームの入力内容 -->
+		<table class="form">
+			<!-- 各行 -->
+			<tr class="row">
+			  <!-- 項目 -->
+			  <th class="head"></th>
+			  <!-- 内容 -->
+			  <td class="data"></td>
+			</tr>
+		</table>
+		<!-- 改行 -->
+		<br class="br" />
+		<!-- 送信フォーム -->
+		<form class="sendForm" action="" method="">
+			<!-- 戻るボタン -->
+			<input type="" value="" onclick="" class="backButton" />
+			<!-- 送信ボタン -->
+			<input type="" value="" class="sendButton" />
+		</form>
+	</blockquote>
+
+</div>
+</body>
+</html>

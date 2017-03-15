@@ -1,0 +1,68 @@
+{
+    "1": {
+        "nameTextBox input": "西島尚子",
+        "nameKanaTextBox input": "ニシジマ　ナオコ",
+        "nicknameTextBox input": "ニッシー",
+        "passwordTextBox input": "0000000x",
+        "userIdTextBox input": "nissy194",
+        "sexRadioButton input": "女",
+        "emailTextBox input": "xxx@yyy.zzz",
+        "telTextBox input": "000-0000-0000",
+        "addressTextBox input": "東京都"
+    },
+    "2": {
+        "nameTextBox input": "三崎亮子",
+        "nameKanaTextBox input": "ミサキ　リョウコ",
+        "nicknameTextBox input": "ハセヨ",
+        "passwordTextBox input": "000000010",
+        "userIdTextBox input": "terror",
+        "sexRadioButton input": "女",
+        "emailTextBox input": "xxx@yyy.zzz",
+        "telTextBox input": "000-0000-0000",
+        "addressTextBox input": "兵庫県"
+    },
+    "3": {
+        "nameTextBox input": "佐伯玲子",
+        "nameKanaTextBox input": "サエキ　レイコ",
+        "nicknameTextBox input": "パイ",
+        "passwordTextBox input": "000a00000",
+        "userIdTextBox input": "shamroc",
+        "sexRadioButton input": "女",
+        "emailTextBox input": "xxx@yyy.zzz",
+        "telTextBox input": "000-0000-0000",
+        "addressTextBox input": "福井県"
+    },
+    "4": {
+        "nameTextBox input": "速水晶良",
+        "nameKanaTextBox input": "ハヤミ　アキラ",
+        "nicknameTextBox input": "黒薔薇",
+        "passwordTextBox input": "00001000",
+        "userIdTextBox input": "blackrose",
+        "sexRadioButton input": "女",
+        "emailTextBox input": "xxx@yyy.zzz",
+        "telTextBox input": "000-0000-0000",
+        "addressTextBox input": "神奈川県"
+    },
+    "5": {
+        "nameTextBox input": "黒川美玲",
+        "nameKanaTextBox input": "クロカワ　ミレイ",
+        "nicknameTextBox input": "ミレイユ",
+        "passwordTextBox input": "00000003",
+        "userIdTextBox input": "mistral",
+        "sexRadioButton input": "女",
+        "emailTextBox input": "xxx@yyy.zzz",
+        "telTextBox input": "000-0000-0000",
+        "addressTextBox input": "埼玉県"
+    },
+    "6": {
+        "nameTextBox input": "天城亜衣",
+        "nameKanaTextBox input": "アマギ　アイ",
+        "nicknameTextBox input": "アイカ",
+        "passwordTextBox input": "00000400",
+        "userIdTextBox input": "aida",
+        "sexRadioButton input": "女",
+        "emailTextBox input": "xxx@yyy.zzz",
+        "telTextBox input": "000-0000-0000",
+        "addressTextBox input": "茨城県"
+    }
+}

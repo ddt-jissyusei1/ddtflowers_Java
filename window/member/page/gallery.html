@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/プリザーブドフラワー</title>
+
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- ギャラリーページのCSSファイルを読み込む。 -->
+			<link href="css/gallery.css" rel="stylesheet" type="text/css">
+			<!-- fancyboxのCSSを読み込む。 -->
+			<link rel="stylesheet" type="text/css" href="js/source/jquery.fancybox.css" media="screen" />
+			<script>
+				//例外が発生したら処理する
+				try{
+					//カレントのウィンドウのDOMを取得する
+					var $currentWindow = $(CURRENT_WINDOW);
+					//カレントのウィンドウのコンテンツ領域を取得する
+					var $currentContent = $(CURRENT_WINDOW_MAIN);
+				
+					// dom要素を作るクラスをインスタンス化する
+					var create_tag = new createLittleContents();
+					create_tag.getJsonFile('source/mygallery.json');			// Myギャラリーページ用のJSONデータを取得する。
+					create_tag.getJsonFile('source/commonJson.json');		// 各ページ共通のパーツのJSONデータを取得する。
+					// ギャラリー用のjsonを読み込む
+					create_tag.getJsonFile('source/gallery.json');
+					
+					// HTMLのテンプレートデータをを取得する。
+					create_tag.getDomFile('template/common.html');			
+					create_tag.getDomFile('template/gallery.html');			
+
+					// 会員共通のパーツのJSONを取得する。
+					create_tag.getDomFile('template/memberCommon.html');
+					create_tag.getDomFile('template/memberPage.html');
+
+					//accountHeaderから会員IDを取得する。別ユーザログインしていた場合はcookieからIDを取得する
+					var memberInfo = commonFuncs.checkEmpty(commonFuncs.GetCookies().otherUserId) ?  commonFuncs.GetCookies().otherUserId: create_tag.json.accountHeader.user_key.value;
+					create_tag.json.accountHeader.user_key.value = memberInfo;	//取得したIDをaccountHeaderに反映する
+					
+					//ユーザ情報のテキストをDBから取得する
+					create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['accountHeader'], 'accountHeader');
+					create_tag.getJsonFile('source/memberCommon.json');		// 各ページ共通のパーツのJSONデータを取得する。
+					// 会員ページヘッダーを作る
+					create_tag.outputTag('accountHeader', 'memberHeader', $currentContent);
+	
+					// バナー領域を作る
+					create_tag.outputTag('userBanner', 'userBanner', $currentContent);
+	
+					create_tag.outputTag('pageTitle', 'pageTitle', $currentContent);						// タイトル領域を作る
+					//ギャラリー全体の領域のDOMを配置する
+					create_tag.outputTag('memberMyGallery', 'memberMyGallery', $currentContent);
+					//ギャラリーの左右のエリアのDOMを作る
+					create_tag.outputTag('galleryRightSide', 'gallerySideArea', '.memberMyGallery');
+					create_tag.outputTag('galleryLeftSide', 'gallerySideArea', '.memberMyGallery');
+					create_tag.outputTag('galleryArea', 'memberMyGallery', '.galleryRightSide');
+					
+					// ギャラリーページ用のギャラリーを作る。
+					// ナンバリング領域を作る
+					create_tag.outputTag('numberingOuter', 'numberingOuter', '.galleryRightSide');
+					create_tag.outputTag('calendar','calendar','.galleryLeftSide');	//カレンダーを作る
+
+					//ギャラリーのデータを取得して一覧表示する
+					create_tag.loadTableData(GALLERY_TABLE, 1, 4, 1, MYGALLERY_SHOW_NUMBER, '.galleryArea', 'create_tag.createMyGalleryImages');
+	
+					//ギャラリーの画像を拡大できるようにする。
+					create_tag.useZoomImage('myPhotoImage');
+					
+					//ギャラリー用のカレンダーを作成する
+					var gCalendar = new galleryCalendar(CURRENT_WINDOW_CALENDAR, create_tag, create_tag.json.galleryTable[TABLE_DATA_KEY]); // セレクタの指定をカレントウィンドウのカレンダー指すように指定 2016.10.14 r.shibata
+					gCalendar.create();	//カレンダーを実際に作成する
+					
+					addlogoutEvent('.logoutLink');	//ログアウトボタンのイベントを登録する。
+				//例外処理
+				} catch(e){
+					console.log(e);	//スタックトレースを出す
+				}
+				</script>
+		</div>
+	</div>
+</body>
+</html>

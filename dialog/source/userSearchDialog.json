@@ -1,0 +1,109 @@
+{
+	"searchUserList": {
+		"searchNameKana": {
+			"class": "searchNameKana searchUserArea",
+			"searchNameKanaLabel": {
+				"class": "searchLabel inlineBlock",
+				"text": "氏名(カナ)"
+			},
+			"searchNameKanaTextbox": {
+				"class": "adminUserSearch",
+				"data-col_name": "name_kana",
+				"type": "text",
+				"name": "name_kana"
+			}
+		},
+		"searchName": {
+			"class": "searchName searchUserArea",
+			"searchNameLabel": {
+				"class": "searchLabel inlineBlock",
+				"text": "氏名"
+			},
+			"searchNameTextbox": {
+				"class": "adminUserSearch",
+				"data-col_name": "user_name",
+				"type": "text",
+				"name": "user_name"
+			}
+		},
+		"searchPhoneNumber": {
+			"class": "searchPhoneNumber searchUserArea",
+			"searchPhoneLabel": {
+				"class": "searchLabel inlineBlock",
+				"text": "電話番号"
+			},
+			"searchPhoneTextbox": {
+				"class": "adminUserSearch",
+				"data-col_name": "telephone",
+				"type": "text",
+				"name": "telephone"
+			}
+		},
+		"searchMailAddress": {
+			"class": "searchMailAddress searchUserArea",
+			"searchMailAddressLabel": {
+				"class": "searchLabel inlineBlock",
+				"text": "メール"
+			},
+			"searchMailAddressTextbox": {
+				"class": "adminUserSearch",
+				"data-col_name": "mail_address",
+				"type": "text",
+				"name": "mail_address"
+			}
+		},
+		"searchUserId": {
+			"class": "searchUserId searchUserArea",
+			"searchUserIdLabel": {
+				"class": "searchLabel inlineBlock",
+				"text": "ID"
+			},
+			"searchUserIdTextbox": {
+				"class": "adminUserSearch",
+				"data-col_name": "user_key",
+				"type": "text",
+				"name": "id"
+			}
+		},
+		"searchTheme": {
+			"class": "searchTheme searchUserArea",
+			"searchThemeLabel": {
+				"class": "searchLabel inlineBlock",
+				"text": "テーマ"
+			},
+			"searchThemeTextbox": {
+				"class": "adminUserSearch",
+				"data-col_name": "lesson_key",
+				"type": "text",
+				"name": "lesson_name"
+			}
+		},
+		"searchLessonPeriodFrom": {
+			"class": "searchLessonPeriodFrom searchUserArea",
+			"searchLessonPeriodFromLabel": {
+				"class": "searchLabel inlineBlock",
+				"text": "期間(From)"
+			},
+			"searchLessonPeriodFromTextbox": {
+				"class": "adminUserSearch",
+				"data-col_name": "lesson_date_from",
+				"type": "date",
+				"name": "fromPeriod"
+			}
+		},
+		"searchLessonPeriodTo": {
+			"class": "searchLessonPeriodTo searchUserArea",
+			"searchLessonPeriodToLabel": {
+				"class": "searchLabel inlineBlock",
+				"text": "期間(To)  "
+			},
+			"searchLessonPeriodToTextbox": {
+				"class": "adminUserSearch",
+				"data-col_name": "lesson_date_to",
+				"type": "date",
+				"name": "toPeriod"
+			}
+		}
+	}
+}
+

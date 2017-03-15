@@ -1,0 +1,82 @@
+<!-- ギャラリーのパーツ -->
+<html>
+<body>
+<!-- テンプレート領域 -->
+<div>
+
+<!-- ギャラリーページのコンテンツ。 -->
+<div class="gallery"></div>
+
+<!-- ギャラリーの1枚1枚の写真。 -->
+<div class="photo">
+	<!-- 写真の画像。 -->
+	<a class="photoImage" href="" rel=""><span class="photoImageThumb" style="cursor:pointer"></span></a>
+	<!-- 投稿日 -->
+	<time class="photoDate"></time>
+	<!-- 写真のタイトル -->
+	<p class="photoTitle"></p>
+	<!-- 投稿者 -->
+	<p class="photoUserName"></p>
+</div>
+
+	<!-- Myギャラリーページのコンテンツ。 -->
+	<div class="myGallery"></div>
+	<!-- ギャラリーの両サイドを分けるDOM -->
+	<div class="gallerySideArea"></div>
+	
+	<!-- Myギャラリーの1枚1枚の写真。 -->
+	<div class="myPhoto">
+		<!-- 写真の画像。 -->
+		<a class="myPhotoLink" href="" rel=""><span class="myPhotoImage" style="cursor:pointer"></span></a>
+		<!-- 投稿日 -->
+		<time class="myPhotoDate"></time>
+		<!-- 写真のタイトル -->
+		<p class="myPhotoTitle"></p>
+		<!-- 投稿者 -->
+		<p class="myPhotoUser"></p>
+		<!-- コメント -->
+		<p class="myPhotoComment"></p>
+		<!-- 公開設定 -->
+		<p class="myPhotoPublication" value=""></p>
+		<!-- チェックボックス -->
+		<input type="" class="myPhotoCheck">
+	</div>
+	
+	<!-- Myギャラリーの編集ボタン群 -->
+	<div class="myGalleryEditButtons">
+		<!-- 不可視の画像アップローダー -->
+		<input type="file" id="" class="uploader" name="" style="cursor:pointer" />
+	</div>
+	
+	<!-- Myギャラリーのちょっとした説明 -->
+	<span class="myGalleryNotice">
+		<br class="br1" />
+		<!-- 1行目 -->
+		<span class="notice1"></span>
+		<br class="br2" />
+		<!-- 2行目 -->
+		<span class="notice2"></span>
+	</span>
+
+
+
+	<!-- Myギャラリー記事用。createTagTable用の最低限のタグ構成 -->
+	<table class="myGalleryTable">
+		<tr class="myPhoto">
+			<td></td>
+		</tr>
+	</table>
+
+	<!-- ギャラリー記事用。createTagTable用の最低限のタグ構成 -->
+	<table class="galleryTable">
+		<tr class="myPhoto">
+			<td></td>
+		</tr>
+	</table>
+
+	<!-- 会員ページマイギャラリーのタグ -->
+	<div class="memberMyGallery"></div>
+
+</div>
+</body>
+</html>

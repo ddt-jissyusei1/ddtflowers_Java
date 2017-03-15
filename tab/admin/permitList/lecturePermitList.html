@@ -1,0 +1,62 @@
+<html>
+	<body>
+		<!-- 当タブの内容を作成するためのスクリプトを記述する -->
+		<script>
+			//カレントのウィンドウのDOMを取得する
+			var $currentWindow = $(CURRENT_WINDOW);
+			//カレントのウィンドウのコンテンツ領域を取得する
+			var $currentContent = $(CURRENT_WINDOW_MAIN)
+			
+			var create_tag = new createLittleContents();	//コンテンツ作成のためcreateTagを用意する
+			$(SELECTOR_LECTUREPERMITLIST_TAB)[0].create_tag = create_tag;	//createTagをDOMと結びつける
+
+			// ユーザーページのパーツのテンプレートのJSONを取得する。
+			create_tag.getJsonFile('source/commonUser.json');
+			// 管理者ページ共通のパーツのJSONを取得する。
+			create_tag.getJsonFile('source/adminCommon.json');
+			//共通のjsonを取得する
+			create_tag.getJsonFile('source/commonJson.json');
+
+			// ユーザーページのパーツのテンプレートのDOMを取得する。
+			create_tag.getDomFile('template/commonUser.html');
+			// 管理者ページ共通のパーツのJSONを取得する。
+			create_tag.getDomFile('template/adminCommon.html');
+			// 共通パーツのDOMを取得する
+			create_tag.getDomFile('template/common.html');
+
+			//備品名のデータを取得する
+			create_tag.getJsonFile('php/GetJSONArray.php', create_tag.json['selectCommodityInf'], 'selectCommodityInf');
+			
+			//受講承認一覧の検索領域を作る
+			create_tag.outputTag('permitListSearch', 'permitListSearch', '#lecturePermitList');
+			//受講承認一覧で今月の初日から末日を検索するのをデフォルトにする
+			setPermitListFromToDate(LECTURE_PERMIT_LIST_INFO_TABLE);
+
+			//検索ボタンを追加する
+			commonFuncs.putCommonButton('#lecturePermitList .permitListSearch', 'searchButton', 'search', true, false, true, {}, false);
+			//受講承認の更新ボタンを追加する
+			commonFuncs.putCommonButton('#lecturePermitList .permitListSearch', 'lecturePermitListUpdateButton', 'update', true, false, true, {}, false);
+			
+			//受講承認一覧テーブル外枠を作る
+			create_tag.outputTag('lecturePermitListInfoTableOutsideArea', 'divArea', '#lecturePermitList');
+			// ナンバリング領域を作る
+			create_tag.outputTag('numberingOuter','numberingOuter','#lecturePermitList');
+
+			//受講承認一覧テーブルを作る
+			create_tag.loadTableData(LECTURE_PERMIT_LIST_INFO_TABLE, START_PAGE_NUM, LECTUREPERMITLIST_TABLE_NUMBERING_MAX, FIRST_DISPLAY_PAGE, LECTUREPERMITLIST_TABLE_MAX_ROWS, SELECTOR_LECTUREPERMITLIST_OUTSIDE, AFTER_RELOAD_LECTUREPERMITINFOLIST_FUNC, GET_LECTUREPERMITLIST_CREATE_TAG);
+			
+			//受講承認一覧の検索機能を実装する
+			searchPermitListInfoTable('#lecturePermitList', 'lecturePermitListInfoTable', START_PAGE_NUM, LECTUREPERMITLIST_TABLE_NUMBERING_MAX, FIRST_DISPLAY_PAGE, LECTUREPERMITLIST_TABLE_MAX_ROWS, SELECTOR_LECTUREPERMITLIST_OUTSIDE, AFTER_RELOAD_LECTUREPERMITINFOLIST_FUNC, '#lecturePermitList .permitListSearch .searchButton');
+			//受講承認の備品名セレクトボックスが変化したときに備品代が変わるイベントを登録する
+			setSellingPrice('.lecturePermitListRecord', '.lecturePermitListRecord');
+			//更新ボタンがクリックされたときにデータを更新するイベントを登録する
+			loopUpdatePermitLessonList('#lecturePermitList .lecturePermitListUpdateButton', SELECTOR_LECTUREPERMITLIST_TAB, '.lecturePermitListInfoTable tbody tr', LECTURE_PERMIT_LIST_INFO_TABLE, '#permitList');
+			
+			var $activePanel = $('.tabPanel.active', $currentContent);	//現タブパネルを取得する
+			
+			</script>
+	</body>
+	<script src="js/lecturePermitList.js" ></script>
+</html>
+
+					

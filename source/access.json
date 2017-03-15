@@ -1,0 +1,37 @@
+{
+    "pageTitle":{
+    	"class":"pageTitle cf",
+        "image"     :{
+            "src"   :   "image/icon(accessbird).png"
+        },
+        "title"     : {
+            "text"  :   "アクセス"
+        },
+        "summary"   : {
+            "text"  :   ""
+        }
+    },
+	"accessInfo":{
+        "contentsBorder":{
+            "text":"DDTFlowers(DDTフラワーズ)"
+        },
+        "contentsBorderInText":
+            [
+                "〒160-0022",
+                "東京都新宿区新宿2-12-4 アコードビル4階",
+                "TEL. 03-6413-1225",
+                "FAX. 03-6413-1226",
+                "東京メトロ 丸ノ内線 新宿三丁目駅 C-5、C-8出口より 徒歩30秒",
+                "JR山手線 新宿駅 徒歩8分",
+                "東京メトロ 丸ノ内線 新宿御苑前駅 徒歩6分"
+            ]
+    },
+	"accessMap":{
+        "baseMap":{
+            "frameborder":"0",
+            "scrolling":"no",
+            "marginheight":"0",
+            "marginwidth":"0"
+        }
+    }
+}

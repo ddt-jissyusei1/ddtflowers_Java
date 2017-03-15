@@ -1,0 +1,168 @@
+{
+    "contentManagement": {
+        "class": "contentManagement tabContainer"
+    },
+    "customizePanels": {
+        "class": "panelContainer editContent",
+        "commonJson": {
+            "class": "commonJson tabPanel",
+            "id": "commonJson",
+            "saveButton": {
+                "text": "保存",
+                "type": "button",
+                "target": "commonJson"
+            }
+        },
+        "preserved": {
+            "class": "preserved tabPanel",
+            "id": "preserved",
+            "saveButton": {
+                "text": "保存",
+                "type": "button",
+                "target": "preserved"
+            }
+        },
+        "fresh": {
+            "class": "fresh tabPanel",
+            "id": "fresh",
+            "saveButton": {
+                "text": "保存",
+                "type": "button",
+                "target": "fresh"
+            }
+        },
+        "nfd": {
+            "class": "nfd tabPanel",
+            "id": "nfd",
+            "saveButton": {
+                "text": "保存",
+                "type": "button",
+                "target": "nfd"
+            }
+        },
+        "national": {
+            "class": "national tabPanel",
+            "id": "national",
+            "saveButton": {
+                "text": "保存",
+                "type": "button",
+                "target": "national"
+            }
+        },
+        "bridal": {
+            "class": "bridal tabPanel",
+            "id": "bridal",
+            "saveButton": {
+                "text": "保存",
+                "type": "button",
+                "target": "bridal"
+            }
+        },
+        "franchise": {
+            "class": "franchise tabPanel",
+            "id": "franchise",
+            "saveButton": {
+                "text": "保存",
+                "type": "button",
+                "target": "franchise"
+            }
+        },
+        "gallery": {
+            "class": "gallery tabPanel",
+            "id": "gallery",
+            "saveButton": {
+                "text": "保存",
+                "type": "button",
+                "target": "gallery"
+            }
+        },
+        "contact": {
+            "class": "contact tabPanel",
+            "id": "contact",
+            "saveButton": {
+                "text": "保存",
+                "type": "button",
+                "target": "contact"
+            }
+        },
+        "access": {
+            "class": "access tabPanel",
+            "id": "access",
+            "saveButton": {
+                "text": "保存",
+                "type": "button",
+                "target": "access"
+            }
+        },
+        "experience": {
+            "class": "experience tabPanel",
+            "id": "experience",
+            "saveButton": {
+                "text": "保存",
+                "type": "button",
+                "target": "experience"
+            }
+        },
+        "blog": {
+            "class": "blog tabPanel",
+            "id": "blog",
+            "saveButton": {
+                "text": "保存",
+                "type": "button",
+                "target": "blog"
+            }
+        }
+    },
+    "customizeTabs": {
+        "tab": [
+        	{
+        		"href":"#commonJson",
+        		"text":"共通"
+        	},
+        	{
+        		"href":"#preserved",
+        		"text":"プリザ"
+        	},
+        	{
+        		"href":"#fresh",
+        		"text":"生花"
+        	},
+        	{
+        		"href":"#nfd",
+        		"text":"NFD"
+        	},
+        	{
+        		"href":"#national",
+        		"text":"国家資格"
+        	},
+        	{
+        		"href":"#bridal",
+        		"text":"ブライダル"
+        	},
+        	{
+        		"href":"#franchise",
+        		"text":"FC"
+        	},
+        	{
+        		"href":"#gallery",
+        		"text":"ギャラリー"
+        	},
+        	{
+        		"href":"#contact",
+        		"text":"問合わせ"
+        	},
+        	{
+        		"href":"#access",
+        		"text":"アクセス"
+        	},
+        	{
+        		"href":"#experience",
+        		"text":"体験"
+        	},
+        	{
+        		"href":"#blog",
+        		"text":"ブログ"
+        	}
+        ]
+     }
+}

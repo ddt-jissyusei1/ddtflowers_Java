@@ -1,0 +1,203 @@
+{
+    "pageTitle": {
+        "class": "pageTitle cf",
+        "image": {
+            "src": "image/icon(accessbird).png"
+        },
+        "title": {
+            "text": "マイページ"
+        },
+        "summary": {
+            "text": ""
+        }
+    },
+    "myPageReserved": {
+        "myPageReservedTitle": {
+            "text": "予約一覧"
+        },
+        "myPageReservedList": {},
+        "myPageReservedCalendar": {
+        	"name":"usually"
+        }
+    },
+    "myPageBlog": {
+        "class":"myPageBlog myPageContent",
+        "action": "window/member/page/createarticle.html",
+        "method": "get",
+        "data-role": "4"
+    },
+    "myPageBlogTitle": {
+        "class": "myPageBlogTitle myPageTitle",
+        "image": {
+            "src": "image/icon(redbranchleaf).png"
+        },
+        "title": {
+            "text": "Myブログ"
+        },
+        "summary": {
+            "text": ""
+        }
+    },
+    "BlogTitle": {
+        "class": "myPageBlogTitle myPageTitle",
+        "image": {
+            "src": "image/icon(redbranchleaf).png"
+        },
+        "title": {
+            "text": "ブログ"
+        },
+        "summary": {
+            "text": ""
+        }
+    },
+    "myPageBlogButtons": {
+        "myPageBlogButtonHidden": {
+            "class": "valueHolder myPageBlogButtonHidden",
+            "type": "hidden",
+            "value": "",
+            "name": "command"
+        }
+    },
+    "blogListHeadWrap": {
+        "class": "recordWrapper",
+        "blogListHead": {
+            "class": "blogListHead tableHead",
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "articleNum": {},
+            "dateHead": {
+                "text": "日付"
+            },
+            "authorHead": {
+                "text": "著者"
+            },
+            "titleHead": {
+                "text": "タイトル"
+            }
+        }
+    },
+    "myPageMyGallery": {
+    	"class":"myPageMyGallery myPageContent"
+    },
+    "myPageMyGalleryTitle": {
+    	"class":"myPageMyGalleryTitle myPageTitle",
+        "text": "Myギャラリー"
+    },
+    "myPageMyGalleryButtons": {
+        "myPageMyGalleryButton1": {
+            "class": "myPageButton myPageMyGalleryButton",
+            "text": "Myギャラリーへ",
+            "href": "#mygallery.html"
+        }
+    },
+    "myPageOption": {
+    	"class":"myPageOption myPageContent"
+    },
+    "myPageOptionTitle": {
+        "class": "myPageOptionTitle myPageTitle",
+        "text": "設定"
+    },
+    "myPageOptionButtons": {
+        "myPageOptionButton1": {
+            "class": "myPageOptionButtons myPageButton",
+            "text": "個人設定",
+            "href": "#myoption.html"
+        }
+    },
+    "deleteMyBlog":{
+        "db_setQuery":"CALL deleteBlogArticle('id');",
+        "id":{
+            "value":""
+        }
+    },
+    "blogArticleArea":{
+    },
+    "blogArticles":{
+    },
+    "myBlogTable":{
+    	"class" : "blogTable myBlogTable",
+        "db_getQuery" : "CALL getMyBlogArticle(@result, 'user_key'); SELECT @result AS 'result';",
+        "user_key":{
+            "value":""
+        },
+        "config": {
+            "columns": {
+                "id":{
+                    "style":"display:none",
+                    "className":"number"
+                },
+                "image1":{
+                    "className":"blogImage"
+                },
+                "image2":{
+                    "style":"display:none",
+                    "className":"blogImage"
+                },
+                "image3":{
+                    "style":"display:none",
+                    "className":"blogImage"
+                },
+                "text": {
+                    "className":"blogContent"
+                },
+                "date": {
+                    "className":"blogDate"
+                },
+                "userName": {
+                    "className":"userName"
+                },
+                "title": {
+                    "className":"blogTitle"
+                },
+                "buttons": {
+                    "className":"buttons"
+                }
+            }
+        }
+    },
+    "blogTable":{
+    	"class" : "blogTable",
+        "db_getQuery" : "CALL getBlogArticle(@result); SELECT @result AS 'result';",
+        "config": {
+            "columns": {
+                "id":{
+                    "style":"display:none",
+                    "className":"number"
+                },
+                "image1":{
+                    "className":"blogImage"
+                },
+                "image2":{
+                    "style":"display:none",
+                    "className":"blogImage"
+                },
+                "image3":{
+                    "style":"display:none",
+                    "className":"blogImage"
+                },
+                "text": {
+                    "className":"blogContent"
+                },
+                "date": {
+                    "className":"blogDate"
+                },
+                "userName": {
+                    "className":"userName"
+                },
+                "title": {
+                    "className":"blogTitle"
+                },
+                "post_date": {
+                    "className":"post_date",
+                    "display" : "none"
+                },
+                "buttons": {
+                    "className":"buttons"
+                }
+            }
+        }
+    }
+}

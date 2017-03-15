@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers</title>
+
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- 体験レッスンページのCSSファイルを読み込む。 -->
+			<link href="css/experience.css" rel="stylesheet" type="text/css">
+			<!-- 予約ダイアログのCSSファイルを読み込む。 -->
+			<link href="css/special.css" rel="stylesheet" type="text/css">
+			
+			<!-- jqueryUIの画像のcssを読み込む -->
+			<link type="text/css" href="css/jquery-ui.theme.css" rel="stylesheet">
+			<!-- slickのCSSを読み込む。 -->
+			<link type="text/css" href="css/slick.css" rel="stylesheet">
+			<script>
+				//createTagクラスのインスタンスを生成する
+				var experienceLessonCreator = new createLittleContents();
+				
+				experienceLessonCreator.getJsonFile('source/experience.json');		// ファイルのデータをjsonを用いて持ってくる
+				experienceLessonCreator.getJsonFile('source/commonJson.json');		// ファイルのデータをjsonを用いて持ってくる
+				//テンプレートのDOMを取得する
+				experienceLessonCreator.getDomFile('template/common.html');
+				experienceLessonCreator.getDomFile('template/courseguide.html');
+				experienceLessonCreator.getDomFile('template/experience.html');
+				
+				experienceLessonCreator.outputTag('headImage', 'createImage');		// 天の画像を作る
+				experienceLessonCreator.outputTag('pageTitle');						// タイトル領域を作る
+				experienceLessonCreator.outputTag('reservedFlow', 'description');	// 予約の流れを作る
+				experienceLessonCreator.outputTag('photoGallery');					// ギャラリー画像を作る
+				experienceLessonCreator.outputTag('experienceGallery');				//体験レッスン用ギャラリーを作る
+				experienceLessonCreator.outputTag('specialGuide');					//体験ガイドを作る
+				experienceLessonCreator.outputTag('calendar');						//カレンダーを作る
+				experienceLessonCreator.outputTag('commonText', 'itemList');		//共通リストテーブルを作る
+				experienceLessonCreator.outputTag('memberRule', 'itemList');		// 会員規約のリストテーブルを作る
+				experienceLessonCreator.outputTag('footImage', 'createImage');		// 地の画像を作る
+				experienceLessonCreator.outputTag('footer');						// フッターを作る
+				experienceLessonCreator.createUnmovableGallery('experienceGallery');		//slickによる動かないギャラリーを作成する。
+				
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				// fixYCoordinate('header', '.main');
+				// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header');
+				
+				//datepickerによるカレンダーのクラスを作成する。
+				// 2016.09.08 mod k.urabe カレンダーの選択可能な最大日付を定数で渡すように変更 2016.12.28 カレンダの出力セレクタをカレントウィンドウに指定
+				var eRCalendar = new reservedCalendar(CURRENT_WINDOW_CALENDAR, CALENDAR_MAX_DATE);
+				eRCalendar.create();	//カレンダーを実際に作成する
+			</script>
+		</div>
+	</div>
+</body>
+</html>

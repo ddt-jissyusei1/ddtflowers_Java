@@ -1,0 +1,274 @@
+@CHARSET "UTF-8";
+
+/* 
+ * セレクタ:.blogArticles
+ * 概要   :マイブログの記事領域
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.blogArticles {
+	font-size: 0px;		/* インラインブロックの要素を扱うため、フォントサイズを0にする */
+	width: 95%;			/* 幅をパーセンテージ指定する */
+	margin: 0px auto 0px;	/* 中央に寄せる。上下にも適正なマージン */	
+}
+
+/* 
+ * セレクタ:.myBlogTable tr
+ * 概要   :マイブログの1記事ごと
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.myBlogTable tr {
+	width: 100%;			/* 幅を親要素と同じだけ広げる */
+	margin: 0 auto 20px;	/* 中央に寄せ、下にあいだをとる */
+	background: #FFCC99;	/* ベージュの背景にする */
+	border-radius: 10px;	/* 角丸をつける */
+	padding: 10px 2%;		/* 内側の余白をつける */
+	box-sizing: border-box;	/* 大きさの計算にpadding、borderを含める */
+	display: block;			/* ブロック要素にする */
+}
+
+/* 
+ * セレクタ:.myBlogTable td 
+ * 概要   :マイブログの記事の各要素
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.myBlogTable td {
+	vertical-align: middle;	/* 高さを中心に合わせる */
+}
+
+/* 
+ * セレクタ:.blogImage
+ * 概要   :マイブログの記事の画像部分を囲むタグ
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.blogImage{
+	width: 25%;			/*  幅を記事の25%程度にする*/
+	display: block;		/* ブロック要素にする */
+	margin-right: 5px;	/* 右に余白を取る */
+	height: auto;		/* 高さを画像に合わせる */
+	float:left;			/* 左に寄せる */
+}
+
+/* 
+ * セレクタ:.blogImage
+ * 概要   :記事内の2個目以降の.blogImage
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.blogImage+.blogImage{
+	display:none;	/* 非表示にする */
+}
+
+/* 
+ * セレクタ:table.myBlogTable tr td:first-child
+ * 概要   :IDの列
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+table.myBlogTable tr td:first-child {
+	display: none;	/* 見せない */
+}
+
+/* 
+ * セレクタ:.blogImage img
+ * 概要   :記事の画像
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.blogImage img{
+	width: 100%;			/* できるだけ広げる */
+	display: inline-block;	/* インラインブロック */
+	height: auto;			/* 高さを比率に合わせる */
+	border-radius: 10px;	/* 角丸にする */
+	margin-bottom: 5px;		/* 下に余白を取る */
+}
+
+/* 
+ * セレクタ:.blogTitle
+ * 概要   :記事のタイトル
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.blogTitle{
+	display: inline-block;	/* インラインブロックで横並べにする */
+	font-size: 20px;		/* 大きめのフォント */
+	width: 58%;				/* 幅を可変にする */
+	vertical-align: middle;	/* 高さを中心に寄せる */
+}
+
+/* 
+ * セレクタ:.blogDate
+ * 概要   :記事の日付
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.blogDate{
+	display: inline-block;	/* インラインブロックで横並びにする */
+	font-size: 12px;		/* 小さめのフォント */
+	width: 90px;			/* 固定幅 */
+}
+
+/* 
+ * セレクタ:.userName
+ * 概要   :記事のユーザ名
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.userName{
+	display: inline-block;	/* インラインブロックで横並びにする */
+	font-size: 14px;		/* 小さめのフォント */
+	width: auto;			/* 文字に幅を合わせる */
+}
+
+/* 
+ * セレクタ:.blogContent
+ * 概要   :記事の本文
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ * 変更者 :T.Masuda
+ * 変更日 :2015.11.08
+ * 内容　 :改行を有効にしました
+ */
+.blogContent{
+	font-size: 20px;		/* 大きめで見やすいフォントにする */
+	text-indent: 1em;		/* インデントを付ける */
+	display:block;			/* ブロック要素で横に並べない */
+	white-space : pre-wrap;	/* 改行を有効にする */	
+	width : 73%;			/* 幅を指定する。隣にある画像との比率を考慮する */
+	float : right;			/* 右に寄せる */
+}
+
+/* 
+ * セレクタ:.blogContent:before
+ * 概要   :記事の本文の前の疑似要素
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+/*.blogContent:before{
+	display: block;
+	content:" ";
+	width: 100%;
+}
+*/
+
+/* 
+ * セレクタ:.myBlogTable
+ * 概要   :マイブログのテーブル
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.myBlogTable{
+	width: 100%;	/* 幅を出来るだけ広げる */
+}
+
+/* 
+ * セレクタ:.myBlogTable thead tr:first-child
+ * 概要   :マイブログのテーブルの見出し行
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.myBlogTable thead tr:first-child{
+	display:none;	/* 見出し行は見せない */
+}
+
+/* 
+ * セレクタ:.myPageBlog .numberingOuter
+ * 概要   :マイブログのテーブルのナンバリング領域
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.myPageBlog .numberingOuter{
+	font-size: 16px;		/* フォントサイズが0になっているので指定する */
+	margin-bottom: 20px;	/* 下にmarginを入れる */
+}
+
+/* 
+ * セレクタ:.myPageBlog .calendar
+ * 概要   :マイブログのカレンダー
+ * 作成者 :T.Masuda
+ * 作成日 :2015.12.23
+ */
+.myPageBlog .calendar{
+	margin : 0 auto 10px;	/* 中央に寄せて下と間隔を取る */
+}
+
+/* 
+ * セレクタ:.myPageBlogButtons
+ * 概要   :マイブログのボタン領域
+ * 作成者 :T.Masuda
+ * 作成日 :2015.12.23
+ */
+.myPageBlogButtons {
+	width: 90%;			/* 少し余裕のある幅にする */
+	margin: 0 auto ;	/* 中央に寄せる */
+}
+
+/* 
+ * セレクタ:.blogArticles .buttons
+ * 概要   :マイブログの編集・削除ボタン領域
+ * 作成者 :T.Masuda
+ * 作成日 :2015.12.23
+ */
+.blogArticles .buttons {
+	clear : both;	/* 回り込みしない */
+	display : block; /* ブロック要素として扱う */
+}
+
+/* 
+ * セレクタ:.blogArticles .buttons button
+ * 概要   :マイブログの編集・削除ボタン
+ * 作成者 :T.Masuda
+ * 作成日 :2015.12.23
+ */
+.blogArticles .buttons button {
+	float : right;	/* 右に寄せる */
+	margin : 10px 3px 3px;	/* 少々のmarginを取る */
+}
+
+/* 
+ * セレクタ:.blogRightContent, .blogLeftContent
+ * 概要   :ブログの左右の領域
+ * 作成者 :T.Masuda
+ * 作成日 :2015.12.26
+ */
+.blogRightContent, .blogLeftContent {
+	float : right; /* 右に寄せる */
+}
+
+/* 
+ * セレクタ:.blogRightContent
+ * 概要   :ブログの右の領域
+ * 作成者 :T.Masuda
+ * 作成日 :2015.12.26
+ */
+.blogRightContent {
+	width : 70%;	/* 左に対して広めにする */
+}
+
+/* 
+ * セレクタ:.blogLeftContent
+ * 概要   :ブログの左の領域
+ * 作成者 :T.Masuda
+ * 作成日 :2015.12.26
+ */
+.blogLeftContent {
+	width : 29%;	/* 左に対して狭めにする */
+}
+
+/* スマホレイアウト用 */
+@media screen and (max-width : 429px) {
+	/* 
+	 * セレクタ:.blogRightContent, .blogLeftContent
+	 * 概要   :ブログの左右の領域
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.12.26
+	 */
+	.blogRightContent, .blogLeftContent {
+		float : none; 	/* floatを解除する */
+		width : 100%;	/* 幅を画面一杯に広げる */
+	}
+	
+}

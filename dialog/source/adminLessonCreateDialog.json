@@ -1,0 +1,75 @@
+{
+	"themeArea": {
+		"themeLabelText": {
+			"text": "テーマ"
+		},
+		"lessonThemeSelect": {
+			"name": "lesson_key",
+			"lessonThemeSelectList1": {
+				"text": "プリザ",
+				"value": "14"
+			},
+			"lessonThemeSelectList2": {
+				"text": "生花",
+				"value": "15"
+			},
+			"lessonThemeSelectList3": {
+				"text": "NFD",
+				"value": "17"
+			},
+			"lessonThemeSelectList4": {
+				"text": "体験",
+				"value": "29"
+			},
+			"lessonThemeSelectList5": {
+				"text": "キャンペーン",
+				"value": "41"
+			},
+			"lessonThemeSelectList6": {
+				"text": "ブライダル",
+				"value": "47"
+			},
+			"lessonThemeSelectList7": {
+				"text": "初級",
+				"value": "50"
+			}
+		}
+	},
+	"timeTableArea": {
+		"timeTableLabelText": {
+			"text": "時間割"
+		},
+		"timeTableSelect": {
+			"name": "timetable_key",
+			"timeTableSelectList1": {
+				"text": "11:00-13:00",
+				"value": "1"
+			},
+			"timeTableSelectList2": {
+				"text": "14:00-16:00",
+				"value": "2"
+			},
+			"timeTableSelectList3": {
+				"text": "16:30-18:30",
+				"value": "3"
+			},
+			"timeTableSelectList4": {
+				"text": "19:00-21:00",
+				"value": "4"
+			},
+			"timeTableSelectList5": {
+				"text": "19:30-21:30",
+				"value": "11"
+			}
+		}
+	},
+	"insertTimeTableDay": {
+		"db_setQuery": "CALL p_insert_time_table_day('timetable_key' ,'lessonDate', '8', '0', @result); SELECT @result AS result;"
+	},
+	"newClassWork": {
+		"db_setQuery": "CALL p_insert_new_classwork('max_students' ,'min_students' ,'classwork_status' ,'classroom' ,'classwork_note', 'lesson_key', 'timetable_key', @result); SELECT @result AS result;"
+	},
+	"normalInsertClasswork": {
+		"db_setQuery": "CALL p_insert_normal_classwork('max_students' ,'min_students' ,'classwork_status' ,'classroom' ,'classwork_note', 'lesson_key', 'timetable_key', 'time_table_day_key', @result); SELECT @result AS result;"
+	}
+}

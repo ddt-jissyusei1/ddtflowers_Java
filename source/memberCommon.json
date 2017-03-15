@@ -1,0 +1,55 @@
+{
+    "userBanner": {
+        "bannerArea": {
+            "banner1": {
+                "class": "banner inlineBlock",
+                "href": "#window/member/page/memberTop.html",
+                "bannerImage": {
+                    "src": "image/icon(myPage).png"
+                }
+            },
+            "banner2": {
+                "class": "banner inlineBlock",
+                "href": "#window/member/page/memberProfile.html",
+                "bannerImage": {
+                    "src": "image/icon(profile).png"
+                }
+            },
+            "banner3": {
+                "class": "banner inlineBlock",
+                "href": "#window/member/page/memberSuggestionBox.html",
+                "bannerImage": {
+                    "src": "image/icon(mail).png"
+                }
+            },
+            "banner4": {
+                "class": "banner inlineBlock",
+                "href": "#window/member/page/gallery.html",
+                "bannerImage": {
+                    "src": "image/icon(gallery).png"
+                }
+            },
+            "banner5": {
+                "class": "banner inlineBlock",
+                "href": "#window/member/page/blog.html",
+                "bannerImage": {
+                    "src": "image/icon(blog).png"
+                }
+            },
+            "banner6": {
+                "class": "banner inlineBlock",
+                "href": "#window/member/page/memberMyGallery.html",
+                "bannerImage": {
+                    "src": "image/icon(myGallery).png"
+                }
+            },
+            "banner7": {
+                "class": "banner inlineBlock",
+                "href": "#window/member/page/memberMyBlog.html",
+                "bannerImage": {
+                    "src": "image/icon(myBlog).png"
+                }
+            }
+        }
+    }
+}

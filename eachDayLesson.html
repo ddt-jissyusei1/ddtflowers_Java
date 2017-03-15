@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 画面の幅を使用している端末に依存する。加えてズームを許可しない。 -->
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+<meta charset="UTF-8">
+<title>DDTFlowers</title>
+<!-- メインのCSSファイルを読み込む。 -->
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<!-- 会員ページのcssを読み込む -->
+<link href="css/memberPage.css" rel="stylesheet" type="text/css">
+<!-- カレンダーのために体験ページのCSSファイルを読み込む。 -->
+<link href="css/experience.css" rel="stylesheet" type="text/css">
+<!-- jqueryUIのcssを読み込む -->
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.min.css" media="screen" />
+<!-- jQueryの本体を読み込む。 -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- jQueryUIを読み込む。 -->
+<script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<!-- タグを作成するJSの関数群を読み込む -->
+<script type="text/javascript" src="js/createTag.js"></script>
+<!-- easytabsの本体を読み込む。 -->
+<script type="text/javascript" src="js/jquery.easytabs.js"></script>
+<!-- 入力チェック機能のjQueryプラグイン -->
+<script src="js/jquery.validate.min.js"></script>
+<!-- validate.jsの日本語対応プラグイン -->
+<script type="text/javascript" src="js/messages_ja.js"></script>
+<!-- タッチ操作のライブラリ。 -->
+<script src="js/jquery.finger.js"></script>
+<!-- 画面操作の処理を記述したJSファイルを読み込む。 -->
+<script type="text/javascript" src="js/controlPage.js"></script>
+<!-- ダイアログ作成の処理を記述したJSファイルを読み込む。 -->
+<script type="text/javascript" src="js/createDialog.js"></script>
+<!-- 小規模のの処理を記述したJSファイルを読み込む。 -->
+<script type="text/javascript" src="js/createLittleContent.js"></script>
+<!-- ユーザのアクションに対応するイベントを定義したJSファイルを読み込む。 -->
+<script type="text/javascript" src="js/controlAction.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<script>
+			//ドキュメント配備後
+			$(document).ready(function(){
+				creator = new createTag();
+				// 日ごと授業のjsonを読み込む
+				creator.getJsonFile('source/eachDayLesson.json');
+				// 日ごと授業のテンプレートを読み込む
+				creator.getDomFile('template/eachDayLesson.html');
+
+				// 会員ステータスを表示する領域を作る
+				 creator.outputTag('memberStatus');
+				// レッスンのステータスを示すテーブルを作る
+				creator.outputTag('lessonTableArea');
+				// テーブルのステータスを概要を表示する領域を作る
+				creator.outputTag('lessonStatus', 'lessonStatus', '.userBanner');
+				// アコーディオン領域を作る
+				 creator.outputTag('firstDetail', 'accordionDetail',　'.firstAccordion .row0');
+				 // アコーディオン領域を作る
+				 creator.outputTag('secondDetail', 'accordionDetail',　'.secondAccordion .row1');
+				 // アコーディオン領域を作る
+				 creator.outputTag('thirdDetail', 'accordionDetail',　'.thirdAccordion .row2');
+				 // アコーディオン領域を作る
+				 creator.outputTag('fourthDetail', 'accordionDetail',　'.fourthAccordion .row3');
+				 // アコーディオン領域を作る
+				 creator.outputTag('fifthDetail', 'accordionDetail',　'.fifthAccordion .row4');
+				 // アコーディオン領域を作る
+				 creator.outputTag('sixthDetail', 'accordionDetail',　'.sixthAccordion .row5');
+				 // アコーディオンパネルを実装する
+				 createAccordion('.detailButton');
+			});
+			</script>
+		</div>
+	</div>
+</body>
+</html>

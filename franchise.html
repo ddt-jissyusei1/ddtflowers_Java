@@ -1,0 +1,46 @@
+<!-- DDTFlowersトップページのメニューの検証です。 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<script>
+				//createTagクラスのインスタンスを生成する
+				var franchiseCreator = new createLittleContents();
+			
+				franchiseCreator.getJsonFile('source/franchise.json');	// ファイルのデータをjsonを用いて持ってくる
+				franchiseCreator.getJsonFile('source/commonJson.json');	// ファイルのデータをjsonを用いて持ってくる
+				
+				franchiseCreator.getDomFile('template/common.html');			// 共通パーツのDOMを取得する。
+				franchiseCreator.getDomFile('template/courseguide.html');	// コース紹介ページのパーツのDOMを取得する。
+				
+				franchiseCreator.outputTag('headImage', 'createImage');	// 天の画像を作る
+				franchiseCreator.outputTag('pageTitle');					// タイトル領域を作る
+				franchiseCreator.outputTag('merit', 'description');		// ご入会メリットを作る
+				franchiseCreator.outputTag('photoGallery');				// ギャラリー画像を作る
+				franchiseCreator.outputTag('footGallery');				// ギャラリー画像を作る
+				franchiseCreator.outputTag('courseGuide');				// コース案内テーブルを作る
+				franchiseCreator.outputTag('lessonSchedule');			//レッスンスケジュールテーブル
+				franchiseCreator.outputTag('commonText', 'itemList');	//共通リストテーブルを作る
+				franchiseCreator.outputTag('salesPoint', 'itemList');	// 特徴リストを作る
+				franchiseCreator.outputTag('memberRule', 'itemList');	// 会員規約のリストテーブルを作る
+				franchiseCreator.outputTag('footImage', 'createImage');	// 地の画像を作る
+				franchiseCreator.outputTag('footer');					// フッターを作る
+				franchiseCreator.createGallery('footGallery');					//slickによるカルーセルのギャラリーを作成する。
+			
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				// fixYCoordinate('header', '.main');
+				// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header')
+			
+			</script>
+		</div>
+	</div>
+</body>
+</html>

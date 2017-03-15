@@ -1,0 +1,83 @@
+{
+	"mailMagaAndAnnounceArea": {
+		"class": "mailMagaAndAnnounceArea cf",
+		"messageInfo": {
+			"class": "messageInfo fLeft",
+			"NoLabel": {
+				"text": "No.",
+				"style" : "display : none;"
+			},
+			"numberTextox": {
+				"class": "numberTextox readonly",
+				"type": "text",
+				"name": "id",
+				"style" : "display : none;"
+			},
+			"schoolNameLabel": {
+				"text": "店舗"
+			},
+			"schoolNameSelectBox": {
+				"name": "school_key",
+				"shinjukuSchool": {
+					"text": "新宿店",
+					"value": "1"
+				},
+				"yokohamaSchool": {
+					"text": "横浜店",
+					"value": "3"
+				}
+			},
+			"typeLabel": {
+				"text": "種別"
+			},
+			"typeSelectBox": {
+				"name": "magazine_type",
+				"selectInfo": {
+					"text": "情報",
+					"value": "0"
+				}
+			}
+		},
+		"sendmessageDate": {
+			"class": "sendmessageDate fLeft",
+			"sendmessageDateLabel": {
+				"text": "送信日",
+				"style" : "display : none;"
+			},
+			"sendmessageDateTextbox": {
+				"class": "sendmessageDateTextbox readonly",
+				"type": "text",
+				"name": "send_datetime",
+				"value": "",
+				"style" : "display : none;"
+			}
+		},
+		"messageTitleLabel": {
+			"class": "messageTitleLabel fLeft",
+			"text": "タイトル"
+		},
+		"messageTitleTextboxArea": {
+			"class": "messageTitleTextboxArea inlineBlock fLeft",
+			"messageTitleTextbox": {
+				"type": "text",
+				"name": "magazine_title",
+				"value": ""
+			}
+		},
+		"messageContentLabel": {
+			"text": "内容"
+		},
+		"messageContentArea": {
+			"messageTextarea": {
+				"name": "magazine_content"
+			}
+		},
+		"messageButtonArea": {
+			"class": "messageButtonArea fRight"
+		}
+	},
+	"insertMailMagazine": {
+ 		"db_setQuery": "INSERT INTO mail_magazine ( school_key,magazine_type,send_datetime,magazine_title,magazine_content,create_datetime,update_datetime) VALUES ('school_key','type',NOW(),'subject','content',NOW(),NOW());"
+ 	}	
+}
+

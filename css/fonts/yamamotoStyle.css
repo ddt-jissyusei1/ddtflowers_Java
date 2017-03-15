@@ -1,0 +1,41 @@
+/* 
+ * セレクタ:.courseGuide table
+ * 概要   :コース案内の中のテーブルの幅を65%にし、左に横並びにする
+ * 作成者 :T.Y
+ * 作成日 :2015.02.06
+ */
+.courseGuide table{
+	width: 65%;
+	float: left;
+}
+/* 
+ * セレクタ:.lessonSchedule
+ * 概要   :コース案内の中のカレンダーのスケジュール部分について、幅を35%にし、テーブルの右に来るようにする
+ * 作成者 :T.Y
+ * 作成日 :2015.02.06
+ */
+.lessonSchedule {
+	width: 35%;
+	float: right; 
+}
+/* 
+ * セレクタ:.salesPoint
+ * 概要   :特徴のリストについて幅と余白の設定をする
+ * 作成者 :T.Y
+ * 作成日 :2015.02.06
+ */
+.salesPoint {
+	width : 90%;
+	margin : 3% auto;
+}
+
+/* 
+ * セレクタ:.memberRule
+ * 概要   :会員規約のリストについて幅と余白の設定をする
+ * 作成者 :T.Y
+ * 作成日 :2015.02.06
+ */
+.memberRule {
+	width : 90%;
+	margin : 3% auto;
+}

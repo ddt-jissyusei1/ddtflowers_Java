@@ -1,0 +1,25 @@
+{
+    "myPageBlog": {
+        "class":"myPageBlog myPageContent",
+        "action": "window/member/page/createarticle.html",
+        "method": "get",
+        "data-role": "4"
+    },
+    "myBlogTitle":{
+        "class":"myBlogTitle myPageTitle",
+        "text":"ブログ"
+    },
+    "myBlogButtonArea":{
+        "createArticleButton":{
+            "type":"button",
+            "value":"記事作成",
+            "data-role":"0"
+        }
+    },
+    "deleteMyBlog":{
+        "db_setQuery":"CALL deleteBlogArticle('id');",
+        "id":{
+            "value":""
+        }
+    }
+}

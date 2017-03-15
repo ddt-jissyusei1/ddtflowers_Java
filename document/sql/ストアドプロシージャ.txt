@@ -1,0 +1,724 @@
+#ブログ記事取得
+delimiter $$
+CREATE PROCEDURE getBlogArticle(in userKey int)
+BEGIN
+CREATE TEMPORARY TABLE tmp_my_blog_article AS SELECT ub.id, ub.image_1 AS image1, ub.image_2 AS image2,ub.image_3 AS image3,ub.title,ub.post_timestamp AS date,uin.user_name AS userName,ub.content AS text FROM user_blog AS ub,user_inf AS uin WHERE ub.user_key=userKey AND ub.user_key=uin.id ORDER BY post_timestamp DESC;
+END$$
+delimiter ;
+
+CALL getBlogArticle('user_key'); SELECT * FROM tmp_my_blog_article;
+
+#IDからブログ記事取得
+delimiter $$
+CREATE PROCEDURE getBlogArticleWithId(in user_key int, articleId int)
+BEGIN
+CREATE TEMPORARY TABLE tmp_my_blog_article AS SELECT * FROM user_blog WHERE user_key = user_key AND id = articleId;
+END$$
+delimiter ;
+
+CALL getBlogArticleWithId('user_key', 'id'); SELECT * FROM tmp_my_blog_article;
+
+#ブログ記事作成
+delimiter $$
+CREATE PROCEDURE insertNewBlogArticle(in user_key int, blogTitle varchar(200), blogContent text, blogPublication tinyint, blogImage1 varchar(255), blogImage2 varchar(255), blogImage3 varchar(255))
+BEGIN
+INSERT INTO user_blog(user_key, title, content, post_timestamp, disclosure_range, image_1, image_2, image_3) VALUES (user_key, blogTitle, blogContent, NOW(), blogImage1, blogImage2, blogImage3);
+END$$
+delimiter ;
+
+CALL insertNewBlogArticle('user_key', 'blogTitle', 'blogContent', 'blogPublication', 'image_1', 'image_2', 'image_3');
+
+#ブログ記事更新
+delimiter $$
+CREATE PROCEDURE updateBlogArticle(in blogId int, blogTitle varchar(200), blogContent text, blogImage1 varchar(255), blogImage2 varchar(255), blogImage3 varchar(255), blogPublication tinyint)
+BEGIN
+UPDATE user_blog SET title = blogTitle, content = blogContent , image_1 = blogImage1, image_2 = blogImage2, image_3 = blogImage3, disclosure_range = blogPublication WHERE id = blogId;
+END$$
+delimiter ;
+
+CALL updateBlogArticle('id', 'blogTitle', 'blogContent' , 'image_1', 'image_2', 'image_3', 'blogPublication');
+
+#ブログ記事削除
+delimiter $$
+CREATE PROCEDURE deleteBlogArticle(in articleId int)
+BEGIN
+DELETE FROM user_blog WHERE id = articleId;
+END$$
+delimiter ;
+
+CALL deleteBlogArticle('id');
+
+
+#マイブログ画面記事取得
+delimiter $$
+CREATE PROCEDURE getMyBlogArticle(in userKey int)
+BEGIN
+CREATE TEMPORARY TABLE tmp_my_blog_article AS SELECT ub.id,ub.title,Date(ub.post_timestamp) AS date,uin.user_name AS userName, ub.image_1 AS image1, ub.image_2 AS image2,ub.image_3 AS image3, ub.content AS text, '' AS buttons FROM user_blog AS ub,user_inf AS uin WHERE ub.user_key='userKey' AND ub.user_key=uin.id ORDER BY post_timestamp DESC;
+END$$
+delimiter ;
+
+CALL getMyBlogArticle('user_key'); SELECT * FROM tmp_my_blog_article;
+
+#マイブログ画面記事一覧取得
+delimiter $$
+CREATE PROCEDURE getMyBlogList(in userKey int)
+BEGIN
+CREATE TEMPORARY TABLE tmp_my_blog_article_list AS SELECT ub.id,ub.title,Date(ub.post_timestamp) AS date,uin.user_name AS userName, ub.image_1 AS image1, ub.image_2 AS image2,ub.image_3 AS image3, ub.content AS text, '' AS buttons FROM user_blog AS ub,user_inf AS uin WHERE ub.user_key='userKey' AND ub.user_key=uin.id ORDER BY post_timestamp DESC;
+END$$
+delimiter ;
+
+CALL getMyBlogList('user_key'); SELECT * FROM tmp_my_blog_article_list;
+
+#ギャラリー記事取得
+delimiter $$
+CREATE PROCEDURE getGalleryContents(out result text)
+BEGIN
+SELECT ui.id, ui.photo_title AS myPhotoImage,Date(ui.update_timestamp) AS date, ui.article_title AS myPhotoTitle, uin.user_name AS myPhotoUser, ui.photo_summary AS myPhotoComment FROM user_image AS ui,user_inf AS uin WHERE ui.user_key=uin.id ORDER BY ui.update_timestamp DESC;
+END$$
+delimiter ;
+
+CALL getGalleryContents(@result); SELECT @result as 'result';
+
+#マイギャラリー記事取得1
+delimiter $$
+CREATE PROCEDURE getMyGalleryContents1()
+BEGIN
+CREATE TEMPORARY TABLE tmp_gallery AS SELECT ui.id, ui.photo_title AS myPhotoImage,Date(ui.update_timestamp) AS date, ui.article_title AS myPhotoTitle, uin.user_name AS myPhotoUser, ui.photo_summary AS myPhotoComment FROM user_image AS ui,user_inf AS uin ORDER BY ui.update_timestamp DESC LIMIT 300;
+END$$
+delimiter ;
+
+CALL getMyGalleryContents(); SELECT * FROM tmp_gallery;
+
+##マイギャラリー記事取得2
+delimiter $$
+CREATE PROCEDURE getMyGalleryContents2(in userKey int)
+BEGIN
+CREATE TEMPORARY TABLE tmp_gallery AS SELECT ui.id, ui.photo_title AS myPhotoImage,Date(ui.update_timestamp) AS date, ui.article_title AS myPhotoTitle, uin.user_name AS myPhotoUser, ui.photo_summary AS myPhotoComment FROM user_image AS ui,user_inf AS uin WHERE ui.user_key='userKey' AND ui.user_key=uin.id ORDER BY ui.update_timestamp DESC;
+END$$
+delimiter ;
+
+CALL getMyGalleryContents2('user_key'); SELECT * FROM tmp_gallery;
+
+#マイギャラリー記事作成
+delimiter $$
+CREATE PROCEDURE insertGalleryContent(in userKey int, photoTitle varchar(200))
+BEGIN
+INSERT INTO user_image(user_key, photo_title, update_timestamp) VALUES (userKey, photoTitle, NOW());
+END$$
+delimiter ;
+
+CALL insertGalleryContent('id', 'photo_title');
+
+#マイギャラリー記事更新
+delimiter $$
+CREATE PROCEDURE updateGalleryContent(in photoSummary varchar(210), articleTitle varchar(100), articleId int)
+BEGIN
+UPDATE user_image SET photo_summary = photoSummary, article_title = articleTitle WHERE id = articleId;
+END$$
+delimiter ;
+
+CALL updateGalleryContent('photo_summary', 'article_title', 'id');
+
+#マイギャラリー記事削除
+delimiter $$
+CREATE PROCEDURE deleteGalleryContent(in articleId int)
+BEGIN
+DELETE FROM user_image WHERE id IN (articleId);
+END$$
+delimiter ;
+
+CALL deleteGalleryContent('id');
+
+#パスワード変更
+delimiter $$
+CREATE PROCEDURE updateUserPassword(in newPassword varchar(255), userId int)
+BEGIN
+UPDATE user_inf SET password = newPassword,update_datetime = NOW() WHERE id = userId;
+END$$
+delimiter ;
+
+CALL updateUserPassword('password', 'userId');
+
+#プロフィール更新
+delimiter $$
+CREATE PROCEDURE updateUserProfile(in userName varchar(40), nameKana varchar(40), zipCode varchar(8), userAddress varchar(255), userSex tinyint, birthdayDate date, userTelephone1 varchar(20), userTelephone2 varchar(20), userMailAddress varchar(255), mailDeny int, userId int)
+BEGIN
+UPDATE user_inf SET user_name = userName,name_kana = nameKana, zip_code = zipCode, address = userAddress, user_sex = userSex, birthday_date = birthdayDate, telephone = userTelephone1, telephone2 = userTelephone2, mail_address = userMailAddress, mail_deny = mailDeny, update_datetime=NOW() WHERE  id = userId;
+END$$
+delimiter ;
+
+CALL updateUserProfile('user_name', 'name_kana', 'zip_code', 'address', 'user_sex', 'birthday_date', 'telephone','telephone2' ,'mail_address', 'mail_deny', 'userId');
+
+#プロフィール取得
+delimiter $$
+CREATE PROCEDURE getUserProfile(in userKey int)
+BEGIN
+CREATE TEMPORARY TABLE tmp_profile AS SELECT user_name, name_kana, user_sex, birthday_date, zip_code, address, mail_address, telephone, telephone2, mail_deny FROM user_inf WHERE id = 'userId';
+END$$
+delimiter ;
+
+CALL getUserProfile('user_key'); SELECT * FROM tmp_profile;
+
+#お知らせ取得
+delimiter $$
+CREATE PROCEDURE getUserMessage(in userKey int)
+BEGIN
+CREATE TEMPORARY TABLE tmp_message AS SELECT message_title,message_content,send_date FROM message_inf WHERE id IN ( SELECT message_key FROM message_to WHERE user_key = 'userKey' AND check_datetime IS NULL) ORDER BY send_date DESC, id DESC;
+END$$
+delimiter ;
+
+CALL getUserMessage('user_key'); SELECT * FROM tmp_message;
+
+#お知らせ登録1
+delimiter $$
+CREATE PROCEDURE insertMessageInfo(in messageTitle varchar(100), messageContent text)
+BEGIN
+INSERT INTO message_inf(send_date,message_type,message_title,message_content,create_datetime,update_datetime) VALUES(DATE(NOW()), 0, messageTitle, messageContent, NOW(), NOW());
+END$$
+delimiter ;
+
+CALL insertMessageInfo('message_title', 'message_content');
+
+#お知らせ登録2
+delimiter $$
+CREATE PROCEDURE insertMessageTo(in userKey int)
+BEGIN
+INSERT INTO message_to(message_key, user_key,create_datetime ,update_datetime) VALUES((SELECT id FROM message_inf ORDER BY create_datetime DESC LIMIT 1), 'userKey', NOW(), NOW());
+END$$
+delimiter ;
+
+CALL insertMessageTo('userKey');
+
+#管理者 授業新規作成(時間帯授業データ同時作成版)
+delimiter $$
+CREATE PROCEDURE insertNewLesson(in maxStudents int, minStudents int, classworkStatus tinyint, classRoom varchar(20), classworkNote text ,schoolKey int, lesson_key int, timetableKey int)
+BEGIN
+INSERT INTO classwork( max_students , lesson_date, min_students ,classwork_status ,classroom ,classwork_note ,teacher_key  ,school_key  ,lesson_key  ,time_table_day_key ,create_datetime ,update_datetime ) VALUES(maxStudents ,minStudents, classworkStatus, classRoom, classworkNote, (select id from user_inf where authority = 10 limit 1), schoolKey , lessonKey, (SELECT id FROM time_table_day WHERE timetable_key = timetableKey order by create_datetime DESC LIMIT 1), NOW(), NOW());
+END$$
+delimiter ;
+
+CALL insertNewLesson('max_students', 'lesson_date', 'min_students', 'classwork_status', 'classroom', 'classwork_note', 'school_key', 'lesson_key', 'timetableKey');
+
+#授業更新
+delimiter $$
+CREATE PROCEDURE updateLesson(in maxStudents int, minStudents int, classworkStatus tinyint, classRoom varchar(20), classworkNote text, classworkKey int)
+BEGIN
+UPDATE
+	classwork
+SET
+	max_students = maxStudents
+	,min_students = minStudents
+	,classwork_status = classworkStatus
+	,classroom = classRoom
+	,classwork_note = classworkNote
+	,update_datetime = NOW()
+WHERE
+	id = classworkKey;
+END$$
+delimiter ;
+
+CALL updateLesson('max_students', 'lesson_date', 'min_students', 'classwork_status', 'classroom', 'classwork_note', 'classwork_key');
+
+
+#目安箱
+#目安箱
+CREATE PROCEDURE postSuggestion(in suggestTitle varchar(100), suggestContent text, sendDatetime datetime, suggestType tinyint)
+BEGIN
+INSERT INTO 
+	suggestion_box(
+		suggest_title
+		,suggest_content
+		,send_datetime
+		,suggest_type
+	)
+	VALUES (
+		suggestTitle
+		,suggestContent
+		,sendDatetime
+		,suggestType
+	);
+END$$
+delimiter ;
+
+CALL postSuggestion('suggest_title', 'suggest_content', 'send_datetime', 'suggest_type');
+
+#日ごと予約者一覧
+#日ごと予約者一覧取得
+delimiter $$
+CREATE PROCEDURE getEachDayLessonList(in date date)
+BEGIN
+CREATE TEMPORARY TABLE 
+	tmp_eachday_lesson_list AS
+SELECT
+	time_table_day.id AS time_table_key
+	,time_table_day.lesson_date AS lesson_date
+	,start_time
+	,end_time
+	,lesson_name
+	,user_name
+	,stage_inf.stage_no
+	,lesson_sub.level_no
+    ,user_classwork.user_work_status AS user_work_status
+FROM
+	time_table_day
+INNER JOIN
+	classwork
+ON
+	time_table_day.id = classwork.time_table_day_key
+AND
+	time_table_day.lesson_date = date
+INNER JOIN
+	user_classwork
+ON
+	classwork.id = user_classwork.classwork_key
+INNER JOIN
+	user_inf
+ON
+	user_inf.id = user_classwork.user_key
+INNER JOIN 
+	lesson_inf
+ON
+	lesson_inf.id = classwork.lesson_key
+INNER JOIN
+	timetable_inf
+ON
+	timetable_inf.id = time_table_day.timetable_key
+INNER JOIN
+	stage_inf
+ON
+	stage_inf.id = user_classwork.stage_key
+INNER JOIN
+	lesson_sub
+ON
+	lesson_sub.id = user_classwork.level_key
+;	
+END$$
+delimiter ;
+
+CALL getEachDayLessonList('date'); SELECT * FROM tmp_eachday_lesson_list;
+
+
+#受講承認更新
+#受講情報の更新
+delimiter $$
+CREATE PROCEDURE doLecturePermit(in userClassworkCost int, getPoint int, classworkUsePoint int, lateTime int, payPrice int, userClassworkKey int)
+BEGIN
+UPDATE
+	user_classwork
+SET
+	user_classwork_cost = userClassworkCost
+	,use_point = getPoint
+    ,get_point = classworkUsePoint
+	,late_time = lateTime
+	,update_datetime = NOW()
+	,receipt_datetime = NOW()
+	,user_work_status = 3
+	,pay_price = payPrice
+WHERE
+	id = userClassworkKey;
+END$$
+delimiter ; 
+
+CALL doLecturePermit('user_classwork_cost', 'get_point', 'classwork_use_point', 'late_time', 'pay_price', 'user_classwork_key');
+
+
+
+#獲得ポイント更新
+delimiter $$
+CREATE PROCEDURE updateLecturePermitGetPoint(in getPoint int, userKey int)
+BEGIN
+	UPDATE
+		user_inf
+	SET
+		get_point = get_point + getPoint
+		,update_datetime = NOW()
+	WHERE
+		id = userKey
+	;
+END$$
+delimiter ;
+
+#使用ポイント更新
+delimiter $$
+CREATE PROCEDURE updateLecturePermitUsePoint(in usePoint int, userKey int)
+BEGIN
+	UPDATE
+		user_inf
+	SET
+		 get_point = get_point - usePoint
+		,use_point = use_point + usePoint
+		,update_datetime = NOW()
+	WHERE
+		id = userKey
+	;
+END$$
+delimiter ;
+
+# ポイントの更新
+delimiter $$
+CREATE PROCEDURE updateLecturePermitPoints(in getPoint int ,usePoint int , userKey int)
+BEGIN
+#備品購入情報を追加する
+INSERT INTO
+	#獲得ポイントがあれば
+	IF getPoint <> 0 THEN
+		#ユーザの獲得ポイントを更新する
+		CALL updateLecturePermitGetPoint(getPoint, userKey);
+	END IF;
+
+	#使用ポイントがあれば
+	IF commodityUsePoint <> 0 THEN
+		#ユーザの使用ポイントを更新する
+		CALL updateLecturePermitUsePoint(usePoint, userKey); 
+	END IF;
+	
+END$$
+delimiter ;
+
+# 備品代情報の更新
+delimiter $$
+CREATE PROCEDURE insertSellCommodity(in sellNumber int ,payCash int ,commodityUsePoint int ,commodityContent text, userKey int ,schoolKey int ,commodityKey int, getPoint int)
+BEGIN
+#備品購入情報を追加する
+	INSERT INTO commodity_sell(
+		sell_datetime
+		,sell_number
+		,pay_cash
+		,use_point
+		,content
+		,user_key
+		,school_key
+		,commodity_key
+		,create_datetime
+		,update_datetime
+	)
+	VALUES (
+		 NOW()
+		,sellNumber
+		,payCash
+		,commodityUsePoint
+		,commodityContent
+		,userKey
+		,schoolKey
+		,commodityKey
+		,NOW()
+		,NOW()
+	);
+
+	#ポイントを反映する
+	CALL updateLecturePermitPoints(getPoint, commodityUsePoint, userKey);	
+END$$
+delimiter ;
+
+CALL doLecturePermit('user_classwork_cost', 'get_point', 'classwork_use_point', 'late_time', 'pay_price', 'user_classwork_key'); CALL updateLecturePermitPoints('get_point' ,'use_point', 'user_key');
+CALL doLecturePermit('user_classwork_cost', 'get_point', 'classwork_use_point', 'late_time', 'pay_price', 'user_classwork_key'); CALL insertSellCommodity('sell_number' ,'pay_cash' ,'commodity_use_point' ,'content' ,'user_key' ,'school_key' ,'commodity_key', 'get_point');"
+
+
+#受講承認一覧更新
+#使用ポイントの更新
+delimiter $$
+CREATE PROCEDURE updateLecturePermitListPoint(in diffPoint int, userKey int)
+BEGIN
+UPDATE 
+	user_inf 
+SET 
+	use_point = use_point + diffPoint
+	,get_point = get_point - diffPoint
+WHERE 
+	id = userKey;	
+END$$
+delimiter ;
+
+# 受講情報の場合の更新
+delimiter $$
+CREATE PROCEDURE updateLecturePermitListClasswork(in userClassworkCost int, usePoint int, classworkId int, diffPoint int, userKey int)
+BEGIN
+#授業データの更新
+UPDATE
+	user_classwork
+SET
+	user_classwork_cost = userClassworkCost
+	, use_point = usePoint
+    ,update_datetime = NOW()
+WHERE
+	id = classworkId
+;
+CALL updateLecturePermitListPoint(diffPoint, userKey);
+END$$
+delimiter ;
+
+CALL updateLecturePermitListClasswork('user_classwork_cost', 'use_point', 'id', 'diff_point', 'user_key');
+
+# 備品代の時の更新
+delimiter $$
+CREATE PROCEDURE updateLecturePermitListCommodity(in userClassworkCost int, commodityContent text, usePoint int, commoditySellKey int, diff_point int, userKey int)
+BEGIN
+UPDATE
+	commodity_sell
+SET
+	pay_cash = userClassworkCost
+	,commodity_key=commodityContent
+	,use_point = usePoint
+    ,update_datetime = NOW()
+WHERE
+	id = commoditySellKey
+;
+CALL updateLecturePermitListPoint(diffPoint, userKey);
+END$$
+delimiter ;
+
+CALL updateLecturePermitListCommodity('user_classwork_cost', 'content', 'use_point', 'id', 'diff_point', 'user_key');
+
+
+#受講承認一覧
+#受講承認一覧のデータ取得
+delimiter $$
+CREATE PROCEDURE getLecturePermitInfoList(in fromDate date, toDate date)
+BEGIN
+CREATE TEMPORARY TABLE 
+	tmp_lecture_permit_info_list AS
+(SELECT  
+	user_classwork.id AS id 
+	,user_name 
+	,lesson_name 
+	,user_classwork.user_classwork_cost AS cost 
+	,user_classwork.use_point AS use_point 
+	,stage_inf.stage_no AS stage_no 
+	,lesson_sub.level_no AS level_no 
+	,1 AS sell_number 
+	,'' AS content 
+	,user_inf.id AS user_key 
+	,lesson_inf.school_key AS school_key 
+	, '' AS commodity_key 
+	,user_inf.get_point AS get_point 
+FROM 
+	user_classwork 
+INNER JOIN 
+	classwork 
+ON 
+	classwork.id = user_classwork.classwork_key 
+INNER JOIN 
+	time_table_day 
+ON 
+	time_table_day.id = classwork.time_table_day_key 
+AND time_table_day.lesson_date <= toDate
+AND time_table_day.lesson_date >= fromDate
+INNER JOIN 
+	user_inf 
+ON 
+	user_inf.id = user_classwork.user_key 
+INNER JOIN
+	lesson_inf 
+ON 
+	lesson_inf.id = classwork.lesson_key 
+INNER JOIN 
+	stage_inf 
+ON 
+	stage_inf.id = user_classwork.stage_key 
+INNER JOIN 
+	lesson_sub 
+ON 
+	lesson_sub.id = user_classwork.level_key 
+ORDER BY 
+	time_table_day.lesson_date DESC
+) 
+UNION ALL 
+(SELECT 
+	commodity_sell.id AS id 
+	,user_name 
+	,'' AS lesson_name 
+	,pay_cash AS cost 
+	,commodity_sell.use_point AS use_point 
+	,1 AS stage_no 
+	,1 AS level_no 
+	,sell_number 
+	,content 
+	,user_inf.id AS user_key 
+	,commodity_sell.school_key AS school_key
+	,commodity_sell.commodity_key 
+	,user_inf.get_point AS get_point 
+FROM 
+	commodity_sell 
+INNER JOIN 
+	user_inf 
+ON 
+	user_inf.id = commodity_sell.user_key 
+AND sell_datetime <= toDate
+AND sell_datetime >= fromDate
+INNER JOIN 
+	commodity_inf  
+ON 
+	commodity_inf.id = commodity_sell.commodity_key 
+ORDER BY 
+	sell_datetime DESC
+);
+END$$
+delimiter ;
+
+CALL getLecturePermitInfoList('fromDate', 'toDate'); SELECT * FROM tmp_lecture_permit_info_list;
+
+
+
+#受講承認
+#受講承認対象の一覧取得
+delimiter $$
+CREATE PROCEDURE getLecturePermit()
+BEGIN
+CREATE TEMPORARY TABLE 
+	tmp_lecture_permit AS
+SELECT 
+	'' AS columnCheckbox
+	,time_table_day.id AS time_table_key 
+	,time_table_day.lesson_date AS lesson_date 
+	,classwork.order_students AS order_students    
+	,classwork.lesson_key AS lesson_key
+	,start_time 
+	,end_time 
+	,lesson_name 
+	,user_name 
+	,user_classwork.stage_no AS stage_no 
+	,user_classwork.level_no AS level_no 
+	,user_classwork_cost 
+	,user_inf.get_point AS get_point 
+	,user_classwork.id AS user_classwork_key 
+	,user_inf.id AS user_key 
+	,timetable_inf.school_key AS school_key
+	,classwork.order_students
+FROM 
+	time_table_day 
+INNER JOIN 
+	classwork 
+ON 
+	time_table_day.id = classwork.time_table_day_key 
+AND 
+	time_table_day.lesson_date = SUBSTRING(NOW(), 1, 10) 
+INNER JOIN 
+	user_classwork 
+ON classwork.id = user_classwork.classwork_key 
+INNER 
+	JOIN user_inf 
+ON user_inf.id = user_classwork.user_key 
+INNER JOIN  
+	lesson_inf 
+ON 
+	lesson_inf.id = classwork.lesson_key 
+INNER JOIN 
+	timetable_inf 
+ON 
+	timetable_inf.id = time_table_day.timetable_key 
+AND 
+	user_classwork.user_work_status = 2
+;
+END$$
+delimiter ;
+
+CALL getLecturePermit(); SELECT * FROM tmp_lecture_permit;	
+
+#ポイントレート算出
+delimiter $$
+CREATE PROCEDURE getPointRate(in lessonKey int)
+BEGIN
+CREATE TEMPORARY TABLE 
+	tmp_point_rate AS
+SELECT
+    point_rate
+    ,students
+FROM
+    lesson_point_rate
+WHERE
+    lesson_point_rate.lesson_key = lessonKey
+;
+END$$
+delimiter ;
+
+CALL getPointRate('lesson_key'); SELECT * FROM tmp_point_rate;
+
+# 備品名リスト用クエリ
+delimiter $$
+CREATE PROCEDURE getCommodityNameList()
+BEGIN
+CREATE TEMPORARY TABLE 
+	tmp_commodity_name_list AS
+SELECT 
+	commodity_name
+	,selling_price
+	,id AS commodity_key 
+FROM 
+	commodity_inf;
+END$$
+delimiter ;
+
+CALL getCommodityNameList('lesson_key'); SELECT * FROM tmp_commodity_name_list;
+
+
+#会員一覧
+# ユーザ情報(自分)
+delimiter $$
+CREATE PROCEDURE getSelfUserInfo(in userKey int)
+BEGIN
+CREATE TEMPORARY TABLE 
+	tmp_user_info AS
+SELECT 
+	*
+FROM
+	user_inf
+WHERE
+	id = userKey
+;
+END$$
+delimiter ;
+
+CALL getSelfUserInfo('user_key'); SELECT * FROM tmp_user_info;
+
+# ユーザ情報
+delimiter $$
+CREATE PROCEDURE getUserInfoList(in sortTarget varchar(30), sortOrder tinyint)
+BEGIN
+
+IF sortOrder = 0 THEN
+	CREATE TEMPORARY TABLE 
+		tmp_user_info_list AS
+	SELECT 
+		*
+	FROM
+		user_inf
+	ORDER BY 
+		sortTarget ASC
+	;
+ELSE
+	CREATE TEMPORARY TABLE 
+		tmp_user_info_list AS
+	SELECT 
+		*
+	FROM
+		user_inf
+	ORDER BY 
+		sortTarget DESC
+	;
+END IF;
+
+END$$
+delimiter ;
+
+CALL getUserInfoList('sort_target', 'sort_order'); SELECT * FROM tmp_user_info_list;
+
+# テーマ指定用リスト作成
+delimiter $$
+CREATE PROCEDURE getListForChooseThemes()
+BEGIN
+CREATE TEMPORARY TABLE 
+	tmp_themes AS
+SELECT
+    id AS lesson_key
+    ,lesson_name
+FROM
+    lesson_inf
+WHERE
+    rec_status = 0
+AND
+    school_key = 1
+;
+END$$
+delimiter ;
+
+CALL getListForChooseThemes(); SELECT * FROM tmp_themes;

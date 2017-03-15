@@ -1,0 +1,45 @@
+{
+	"mailSendContent":{
+	    "mailToPersonArea": {
+	        "mailToPersonLabel": {
+	            "text": "宛先人"
+	        },
+	        "mailToPerson": {}
+	    },
+	    "mailToArea": {
+	        "mailToLabel": {
+	            "text": "宛先"
+	        },
+	        "mailTo": {}
+	    },
+	    "mailTitleArea": {
+	        "mailTitleLabel": {
+	            "text": "タイトル"
+	        },
+	        "mailTitleTextbox": {
+	            "type": "text",
+	            "name": "message_title"
+	        }
+	    },
+	    "mailContentArea": {
+	        "mailContentLabel": {
+	        	"class":"mailContentLabel memoLabel",
+	            "text": "本文"
+	        },
+	        "mailContentTextbox": {
+	            "name": "message_content"
+	        }
+	    },
+	    "mailButton": {
+	        "mailSendButton": {
+	            "type": "button",
+	            "value": "送信"
+	        },
+	        "mailResetBUtton": {
+	            "type": "button",
+	            "value": "リセット"
+	        }
+	    }
+    }
+}
+

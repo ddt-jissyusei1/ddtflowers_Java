@@ -1,0 +1,68 @@
+{
+	"lessonData": {},
+	"lessonDate": {
+		"text": ""
+	},
+	"studentsArea": {
+		"studentsText": {
+			"text": "人数"
+		},
+		"minStudentsTextbox": {
+			"type": "number",
+			"name": "min_students",
+			"value": "0",
+			"min": "0"
+		},
+		"periodsText": {
+			"text": "〜"
+		},
+		"maxStudentsTextbox": {
+			"type": "number",
+			"name": "max_students",
+			"value": "8"
+		}
+	},
+
+	"statusArea": {
+		"lessonStatusLabel": {
+			"text": "ステータス"
+		},
+		"lessonStatusSelect": {
+			"name": "classwork_status",
+			"lessonState1": {
+				"value": "0",
+				"text": "予約可能"
+			},
+			"lessonState2": {
+				"value": "1",
+				"text": "開催済み"
+			},
+			"lessonState3": {
+				"value": "2",
+				"text": "定員未達による中止"
+			},
+			"lessonState4": {
+				"value": "3",
+				"text": "中止"
+			}
+		}
+	},
+	"classRoomArea": {
+		"classRoomLabel": {
+			"text": "教室"
+		},
+		"classRoomTextbox": {
+			"type": "text",
+			"name": "classroom",
+			"value": "A"
+		}
+	},
+	"memoArea": {
+		"memoLabel": {
+			"text": "メモ"
+		},
+		"memoTextarea": {
+			"name": "classwork_note"
+		}
+	}
+}

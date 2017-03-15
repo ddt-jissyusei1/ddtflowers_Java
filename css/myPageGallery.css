@@ -1,0 +1,84 @@
+@CHARSET "UTF-8";
+
+/* 
+ * セレクタ:.userMyGallery
+ * 概要   :会員ページマイギャラリーの記事領域
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.userMyGallery {
+	font-size: 14px;		/* Myギャラリー内で統一したフォントサイズを使う */
+	width: 95%;				/* 幅をパーセンテージ指定する */
+	margin: 50px auto 0px;	/* 中央に寄せる。上下にも適正なマージン */	
+}
+
+/* 
+ * セレクタ:.myGalleryTable tr
+ * 概要   :マイギャラリーの1記事ごと
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.myGalleryTable tr {
+	width: 170px;				/* 固定幅 */
+	height: 280px;				/* 高さ固定 */
+	margin: 5px;				/* 全方向margin */
+	padding: 5px 10px;			/* 全方向padding */
+	box-sizing: border-box;		/* 罫線、paddingを大きさの計算に入れる */
+	border: 1px solid #CCC;		/* 罫線で囲む */
+	border-radius: 5px;			/* 角丸にする */
+	display: inline-block;		/* インラインブロックで並べる */
+	vertical-align: top;		/* 頭を上部に合わせる */
+	overflow: hidden;			/* 溢れそうなものは隠す */
+	text-overflow: ellipsis;	/* オーバーフローしたものは...表示 */
+}
+
+/* 
+ * セレクタ:.myGalleryTable thead
+ * 概要   :マイギャラリーの見出し行
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.myGalleryTable thead {
+	display: none;	/* 見出し行なので消しておく */
+}
+
+/* 
+ * セレクタ:.myGalleryTable td 
+ * 概要   :マイギャラリーの記事の各要素
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.myGalleryTable td {
+	display: block;	/* 縦に順番に並べる */
+}
+
+/* 
+ * セレクタ:.myPhotoImage
+ * 概要   :マイブログの記事の画像部分を囲むタグ
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.myPhotoImage{
+	width: 100%;;		/* 幅を目一杯広げる */
+	height: auto;		/* 高さを画像に合わせる */
+	font-size: 0px;		/* 文字を見せない */
+}
+
+/* 
+ * セレクタ:.myPhotoImage span
+ * 概要   :記事の画像
+ * 作成者 :T.Masuda
+ * 作成日 :2015.08.02
+ */
+.myPhotoImage span{
+    display: inline-block;				/* インラインブロック */
+    background-color: white;			/* 背景の色を白にする。 */
+    background-position: center center;	/* 背景の位置を中心にする。 */
+    background-repeat: no-repeat;		/* 背景の繰り返しをなくす。 */
+    margin: 0px;						/* marginを使わない。 */
+    width: 100%;						/* 固定値で幅を指定する。 */
+    height: 136px;						/* 高さも固定値 */
+    background-size: contain;			/* サムネイルを縦横比に関わらず全体表示する。 */
+    border-radius: 10px;				/* 角に丸みをつける。 */
+}
+

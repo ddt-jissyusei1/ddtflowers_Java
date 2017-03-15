@@ -1,0 +1,75 @@
+<html>
+	<body>
+		<!-- 当タブの内容を作成するためのスクリプトを記述する -->
+		<script>
+			//カレントのウィンドウのDOMを取得する
+			var $currentWindow = $(CURRENT_WINDOW);
+			//カレントのウィンドウのコンテンツ領域を取得する
+			var $currentContent = $(CURRENT_WINDOW_MAIN)
+			
+			var create_tag = new createLittleContents();	//コンテンツ作成のためcreateTagを用意する
+
+			//タブのDOMにcreateTagへの参照を保存する
+			$(DO_LECTUREPERMIT_TAB)[0].create_tag = create_tag;
+			
+			// ユーザーページのパーツのテンプレートのJSONを取得する。
+			create_tag.getJsonFile('source/commonUser.json');
+			// 管理者ページ共通のパーツのJSONを取得する。
+			create_tag.getJsonFile('source/adminCommon.json');
+			//共通のjsonを取得する
+			create_tag.getJsonFile('source/commonJson.json');
+
+			// ユーザーページのパーツのテンプレートのDOMを取得する。
+			create_tag.getDomFile('template/commonUser.html');
+			// 管理者ページ共通のパーツのJSONを取得する。
+			create_tag.getDomFile('template/adminCommon.html');
+			// 共通パーツのDOMを取得する
+			create_tag.getDomFile('template/common.html');
+
+			//全選択ボタンを追加する
+			create_tag.outputTag(SELECT_ALL_ROW, SELECT_ALL_ROW, DO_LECTUREPERMIT_TAB); // 2016.09.26 r.shibata 追加
+			//ユーザ追加のボタンを追加する
+			commonFuncs.putCommonButton('#doLecturePermit', 'addUserRecordButton fRight', 'add', true, true, true, {}, false);
+			//受講承認待ちデータの削除のボタンを追加する
+			commonFuncs.putCommonButton('#doLecturePermit', 'deletePermitRecordButton fRight', 'delete', true, true, true, {}, false);
+			//受講承認のボタンを追加する
+			commonFuncs.putCommonButton('#doLecturePermit', 'doLecturePermitButton fRight', 'permit', true, true, true, {}, false);
+			//テーブルの外側領域を作る
+			create_tag.outputTag('doLecturePermitTableInfoTableOutSideArea','tableOutsideArea', '#doLecturePermit');		// タイトル領域を作る
+			
+			//今日の日付を取得し、データ検索の対象の日時としてJSONにセットする
+			create_tag.json.doLecturePermitInfoTable.date.value = commonFuncs.getTodayDate();
+			// 受講承認テーブル用のJSON配列を取得する
+			create_tag.getJsonFile('php/GetJSONArray.php', create_tag.json['doLecturePermitInfoTable'], 'doLecturePermitInfoTable');
+			//受講承認タブのリストテーブル
+			create_tag.outputTagTable('doLecturePermitInfoTable', 'doLecturePermitInfoTable', '.doLecturePermitTableInfoTableOutSideArea');
+			//受講承認のテーブルを置換する
+			commonFuncs.dbDataTableReplaceExecute(DOT + DO_LECTURE_PERMIT_INFO_TABLE, create_tag.json[DO_LECTURE_PERMIT_INFO_TABLE][TABLE_DATA_KEY], DO_LECTURE_PERMIT_INFO_TABLE_REPLACE_FUNC);
+
+			
+			//承認ボタンクリックでデータを更新する
+			loopUpdatePermitLesson();
+			//削除ボタンを押すと選択したレコードを削除する
+			executeDeleteRecord($(SELECTOR_LECTUREPERMIT_DELETE_BUTTON), MESSAGE_DELETE_CONFIRM, LECTUREPERMIT_SELECTED_RECORD, "if($(CURRENT_DIALOG_SELECTOR)[0].instance.getPushedButtonState() == YES) {deleteRecords(SELECTOR_DO_LECTURE_PERMIT_INFO_TABLE, SEL_SELECT_USER, $(DO_LECTUREPERMIT_TAB)[0].create_tag.json.deleteLecturePermitRecordQuery, null, $(DO_LECTUREPERMIT_TAB)[0].create_tag.json.doLecturePermitInfoTable.tableData, SELECTOR_NO_COL);}");		// 2016.10.06 mod k.urabe キャンセルダイアログで「はい」押下時に実行される関数の引数にクエリを追加
+
+			var $activePanel = $('#permitTab .tabPanel.active', $currentContent);	//現タブパネルを取得する
+
+			// 受講承認テーブルの受講料列をテキストボックスにする
+			create_tag.insertTextboxToTable(DO_LECTURE_PERMIT_INFO_TABLE, 'replaceTextboxCost', 'replaceTextboxCostCell');
+			// 受講承認テーブルの使用pt列をテキストボックスにする
+			create_tag.insertTextboxToTable(DO_LECTURE_PERMIT_INFO_TABLE, 'replaceTextboxUsePoint', 'replaceTextboxUsePointCell');
+			// 受講承認テーブルのテキストボックスにDBから読込んだ値をデフォルトで入れる
+			create_tag.setTableTextboxValuefromDB($(DO_LECTUREPERMIT_TAB)[0].create_tag.json[DO_LECTURE_PERMIT_INFO_TABLE][TABLE_DATA_KEY], create_tag.setInputValueToLecturePermitListInfoTable, SELECTOR_DO_LECTURE_PERMIT_INFO_TABLE, DEFAULT_SHOW_MAX_ROW);		// 2016.10.07 mod k.urabe 当該関数の引数を追加したため
+
+			//会員一覧テーブルがクリックされた時にuserSelectクラスをがなければ追加しあるなら消去する
+			toggleClassClickElement(SELECTOR_TBODY_TR, SELECT_RECORD, SELECTOR_DO_LECTURE_PERMIT_INFO_TABLE);	// 2016.10.04 mod k.urabe 対象のセレクタをテーブル本体内のtr要素に限定
+			//全選択ボタンの設定を行う
+			commonFuncs.addSelectAllBoxEvent(DO_LECTUREPERMIT_TAB + SPACE + SELECTOR_SELECT_ALL_ROW_CHECKBOX, SELECTOR_SELECT_ALL_ROW_LABEL, SELECTOR_DO_LECTURE_PERMIT_INFO_TABLE, SELECT_RECORD); // 2016.09.26 r.shibata 変更
+			//追加ボタンを押したらユーザ一覧画面へ遷移するようにする
+			moveToUserList('doLecturePermit', '#doLecturePermit .addUserRecordButton');
+			
+			</script>
+	</body>
+</html>
+
+					

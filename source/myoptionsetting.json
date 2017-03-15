@@ -1,0 +1,20 @@
+{
+    "nickname": {
+        "value": "user"
+    },
+    "tel": {
+        "value": "000-0000-0000"
+    },
+    "address": {
+        "value": "東京都新宿区新宿7丁目1-8 猫の目ハイツ303号室"
+    },
+    "emailOld": {
+        "value": "aaa@bbb.ccc"
+    },
+    "blogTitle": {
+        "value": "ブログタイトル"
+    },
+    "blogPublication": {
+        "value": "1"
+    }
+}

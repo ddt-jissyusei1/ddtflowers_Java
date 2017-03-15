@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/記事作成</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- マイページのCSSファイルを読み込む。 -->
+			<link href="css/mypage.css" rel="stylesheet" type="text/css">
+			<script>
+				var $currentWindow = $(CURRENT_WINDOW);
+				var $currentContent = $(CURRENT_WINDOW_MAIN);
+			
+				var create_tag = new createLittleContents();
+			
+				create_tag.getJsonFile('source/createarticle.json');	
+				create_tag.getJsonFile('source/commonJson.json');		
+				create_tag.getJsonFile('source/memberCommon.json');		
+
+				var memberInfo = commonFuncs.checkEmpty(commonFuncs.GetCookies().otherUserId) ?  commonFuncs.GetCookies().otherUserId: create_tag.json.accountHeader.user_key.value;
+				create_tag.json.accountHeader.user_key.value = memberInfo;	
+				
+				create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['accountHeader'], 'accountHeader');
+
+				create_tag.setBlogUpdateQueryReplace('myBlogContent', 'accountHeader', 'updateMyBlog', articleNumber);
+				
+				create_tag.getDomFile('template/common.html');				
+				create_tag.getDomFile('template/memberCommon.html');
+				create_tag.getDomFile('template/createblogarticle.html');
+				
+				create_tag.outputTag('accountHeader', 'memberHeader', $currentContent);
+				create_tag.outputTag('userBanner', 'userBanner', $currentContent);
+			
+				create_tag.outputTag('pageTitle', 'pageTitle', $currentContent);
+				create_tag.outputTag('blogEditImageUploader', 'blogEditImageUploader', $currentContent);
+				create_tag.outputTag('blogEdit', 'blogEdit', $currentContent);
+				create_tag.outputTag('blogEditTitle', 'blogEditTitle', '.blogEdit');
+				create_tag.outputTag('blogEditImages', 'blogEditImages','.blogEdit');
+				create_tag.outputTag('blogEditImagesSection1','blogEditImagesSection','.blogEditImages');
+				create_tag.outputTag('blogEditImagesSection2','blogEditImagesSection','.blogEditImages');
+				create_tag.outputTag('blogEditImagesSection3','blogEditImagesSection','.blogEditImages');
+				create_tag.outputTag('blogEditText', 'blogEditText','.blogEdit');
+				create_tag.outputTag('blogPublication', 'blogPublication','.blogEdit');
+				create_tag.outputTag('blogEditButtons', 'blogEditButtons','.blogEdit');	
+				
+				$('.blogEditImagesSectionImage').after(
+						commonFuncs.makeCommonButton(
+								'blogEditImagesSectionAddButton', 'select', true, true, true, {"onclick":"","type":"button"}));
+				$('.blogEditImagesSectionAddButton:eq(0)').after(
+						commonFuncs.makeCommonButton(
+								'blogEditImagesSectionDeleteButton', 'delete', true, true, true
+								, {"text":"削除","type":"button","onclick":"chooseOKBeforeCallFunc('画像を削除しますか?','画像削除',create_tag.deleteSiblingSrc,this,'[name=\"image_1\"],[name=\"thumb1\"]')"})
+							);
+				$('.blogEditImagesSectionAddButton:eq(1)').after(
+						commonFuncs.makeCommonButton(
+								'blogEditImagesSectionDeleteButton', 'delete', true, true, true, 
+								{"text":"削除","type":"button","onclick":"chooseOKBeforeCallFunc('画像を削除しますか?','画像削除',create_tag.deleteSiblingSrc,this,'[name=\"image_2\"],[name=\"thumb2\"]')"})
+							);
+				$('.blogEditImagesSectionAddButton:eq(2)').after(
+						commonFuncs.makeCommonButton(
+								'blogEditImagesSectionDeleteButton', 'delete', true, true, true, 
+								{"text":"削除","type":"button","onclick":"chooseOKBeforeCallFunc('画像を削除しますか?','画像削除',create_tag.deleteSiblingSrc,this,'[name=\"image_3\"],[name=\"thumb3\"]')"})
+							);
+
+				commonFuncs.putCommonButton('.blogEditButtons', '.blogEditButtonsOKButton', 'edit', true, true, true, {"type":"submit","text":"　 OK 　","confirm":"false","value":"保存"}, false);
+				commonFuncs.putCommonButton('.blogEditButtons', '.blogEditButtonsCancelButton', 'cancel', true, true, true, {onclick : '$(CURRENT_WINDOW)[0].instance.callPage("window/member/page/memberMyBlog.html");'}, false);
+				
+				var disclosureRange = create_tag.json.myBlogContent.disclosure_range.text;
+				if(commonFuncs.checkEmpty(disclosureRange)){
+					$(".blogPublicationRadio").filter('[value="' + disclosureRange + '"]').prop('checked', 'checked');
+				}
+				
+				commonFuncs.setBlogImages(create_tag);
+				
+				$('[name=blogTitle]').val(create_tag.json.myBlogContent.title.text);
+				$('[name="blogContent"]').text(create_tag.json.myBlogContent.content.text);
+				
+				$('.blogEdit')[0].create_tag = create_tag;
+				
+				clickButtonToFile('.blogEditImagesSection', '.blogEditImagesSectionAddButton', '.blogEditImageUploader', create_tag.uploadImage, '.blogEditImagesSectionImage,.blogEditImagesSectionImagePath');
+				commonFuncs.getScriptFile("js/page/createBlog.js");
+				$(CURRENT_WINDOW + SPACE + FORM).validate(articleCreateHandler); // セレクタの指定を修正 2016.12.28 r.shibata
+				addlogoutEvent('.logoutLink');
+			</script>
+		</div>
+	</div>
+</body>
+</html>

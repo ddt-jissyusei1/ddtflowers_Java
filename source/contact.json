@@ -1,0 +1,118 @@
+{
+    "pageTitle": {
+        "class": "pageTitle cf",
+        "image": {
+            "src": "image/icon(mailbird).png"
+        },
+        "title": {
+            "text": "お問い合わせフォーム"
+        },
+        "summary": {
+            "text": ""
+        }
+    },
+    "contactForm": {
+        "action": "postmail/postmail.cgi",
+        "method": "post",
+        "formBody.cf": {
+            "name": {
+                "formContent": {
+                    "text": "氏名"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "Name"
+                }
+            },
+            "nameTextBox": {
+                "textBox1": {
+                    "type": "text",
+                    "name": "name",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "sex": {
+                "formContent": {
+                    "text": "性別"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "Sex"
+                }
+            },
+            "sexRadioButton": {
+                "sexRadioButtonFemale": {
+                    "type": "radio",
+                    "name": "sex",
+                    "value": "女",
+                    "checked": "",
+                    "required": "true"
+                },
+                "sexRadioButtonFemaleLabel": {
+                    "text": "女"
+                },
+                "sexRadioButtonMale": {
+                    "type": "radio",
+                    "name": "sex",
+                    "value": "男"
+                },
+                "sexRadioButtonMaleLabel": {
+                    "text": "男"
+                }
+            },
+            "email": {
+                "formContent": {
+                    "text": "メールアドレス"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "E-mail"
+                }
+            },
+            "emailTextBox": {
+                "textBox2": {
+                    "type": "email",
+                    "name": "email",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "content": {
+                "formContent": {
+                    "text": "問い合わせ内容"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "content"
+                }
+            },
+            "contentTextArea": {
+                "textArea1": {
+                    "name": "content",
+                    "cols": "43",
+                    "rows": "10",
+                    "required": ""
+                }
+            }
+        },
+        "submitButton": {
+            "type": "submit",
+            "text": "送信内容の確認",
+            "value": "送信確認"
+        },
+        "mailSubject": {
+            "type": "hidden",
+            "value": "1",
+            "name": "subject"
+        }
+    }
+}

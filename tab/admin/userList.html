@@ -1,0 +1,97 @@
+<html>
+	<body>
+		<!-- 当タブの内容を作成するためのスクリプトを記述する -->
+		<script>
+			//カレントのウィンドウのDOMを取得する
+			var $currentWindow = $(CURRENT_WINDOW);
+			//カレントのウィンドウのコンテンツ領域を取得する
+			var $currentContent = $(CURRENT_WINDOW_MAIN)
+			// デフォルトのボタンタイプを定義する 2016.10.07 add k.urabe
+			var buttonType = 'login';
+			
+			var create_tag = new createLittleContents();	//コンテンツ作成のためcreateTagを用意する
+			$('#userList')[0].create_tag = create_tag;	//createTagをDOMと結びつける
+
+			// ユーザーページのパーツのテンプレートのJSONを取得する。
+			create_tag.getJsonFile('source/commonUser.json');
+			// 管理者ページ共通のパーツのJSONを取得する。
+			create_tag.getJsonFile('source/adminCommon.json');
+			//共通のjsonを取得する
+			create_tag.getJsonFile('source/commonJson.json');
+
+			// ユーザーページのパーツのテンプレートのDOMを取得する。
+			create_tag.getDomFile('template/commonUser.html');
+			// 管理者ページ共通のパーツのJSONを取得する。
+			create_tag.getDomFile('template/adminCommon.html');
+			// 共通パーツのDOMを取得する
+			create_tag.getDomFile('template/common.html');
+
+			// ユーザ検索テキストボックスの領域を作る
+			create_tag.outputTag('searchUserList', 'searchUserList', '#userList');
+			// 検索ボタンを作る
+			commonFuncs.putCommonButton('#userList .searchUserList', 'searchUserButton searchIconButtons', 'search', true, false, true, {onclick : 'userListSearch("#userList");'});
+			// 絞込ダイアログを出すボタンを作る
+			commonFuncs.putCommonButton('#userList .searchUserList', 'showUserSearchListDialogButton searchIconButtons', 'filter', true, false, true);
+
+			//ユーザ一覧ページングの一番外側となる領域を作る
+			create_tag.outputTag('userListPagingArea', 'divArea', '#userList');
+			//ページングのテーブルを作るためにテーブルの外側となるdivを作る
+			create_tag.outputTag('userListTableOutside', 'divArea', '.userListPagingArea');
+			// ナンバリング領域を作る
+			create_tag.outputTag('numberingOuter','numberingOuter','.userListPagingArea');
+			
+			//別画面から直接渡ってきた場合、元の画面名を取得する
+			var beforePanel = $('#adminTab')[0].instance.beforePanel;
+			//他画面から飛んできていたら
+			if (commonFuncs.checkEmpty(beforePanel)) {
+				//受講承認画面から来ていたら
+				if(beforePanel.indexOf('doLecturePermit') != -1) {
+					//受講承認用のクエリでユーザ一覧を取得する
+					create_tag.json.userListInfoTable.db_getQuery = create_tag.json.userListInfoTable.queryForDoLecturePermit;
+				}
+			}
+		
+			//ページング機能付きでユーザ情報一覧テーブルを作る 2016.10.02 k.urabe 一連の処理を関数としてまとめたため変更
+			reloadPagingTable(create_tag, KEY_USER_INFO_LIST_TABLE, SELECTOR_USER_LIST_TABLE_OUTSIDE, SELECTOR_USER_LIST);
+			//会員一覧タブのボタン群れ
+			create_tag.outputTag('userListButtons', 'userListButtons', '#userList');
+
+			//他画面から飛んできていなければ
+			if (!commonFuncs.checkEmpty(beforePanel)) {
+				// 送信ボタンを作る
+				commonFuncs.putCommonButton('#userList .userListButtons', 'createMail', 'mail', true, true, true);
+				// お知らせボタンを作る
+				commonFuncs.putCommonButton('#userList .userListButtons', 'announceButton', 'notice', true, true, true);
+
+			//普通に読み込まれていたら
+			} else {
+				// キャンセルボタンを作る 2016.09.29 mod k.urabe　ボタンのタイプを変更
+				commonFuncs.putCommonButton(SELECTOR_USER_LIST_UNDER_BUTTONS, SELECTOR_CANCEL_USER_FRIGHT, 'back', true, true, true, {"onclick": "clickUserListButton(this);","data-buttontype": "1"});		// 2016.10.07 mod k.urabe 登録するコールバック関数を変更
+				// ボタンタイプを受付に変更する
+				buttonType = 'reception';
+			}
+
+			// 共通ボタンを作る（通常時：ログイン、遷移時：受付） 2016.10.07 add k.urabe
+			commonFuncs.putCommonButton(SELECTOR_USER_LIST_UNDER_BUTTONS, SELECTOR_SELECT_USER_FRIGHT, buttonType, true, true, true, {"onclick": "clickUserListButton(this);", "data-buttontype": "0"});
+			
+			//会員一覧テーブルがクリックされた時にuserSelectクラスをがなければ追加しあるなら消去する
+			toggleClassClickElement(SELECTOR_TBODY_TR, SELECT_RECORD, SELECTOR_USER_LIST_TABLE_OUTSIDE);		// 2016.10.04 mod k.urabe 対象のセレクタをテーブル本体内のtr要素に限定
+			
+			//検索ボタンを押すと検索ダイアログを開く
+			setPopupSearchDialog('#userList .showUserSearchListDialogButton');
+			//検索フォームフォーカス時エンターキー押下で検索を行う様にする
+			commonFuncs.enterKeyCallFunction('.adminUserSearch', '#adminTab .searchUserList', 'userListSearch("#userList");');
+			
+			// 会員データをダブルクリックした際の対象レコードを取得する　2016.10.07 mod k.urabe ダブルクリック時の処理を変更
+			doubleClickTo(SELECTOR_USER_LIST_TABLE_OUTSIDE);
+			//通常メールボタンをクリックしたときに通常メール作成のためのダイアログを開く
+			adminMessageCreate('.createMail', 'mail');
+			//お知らせボタンをクリックしたときにお知らせのためのダイアログを開く
+			adminMessageCreate('.announceButton', 'announce');
+			
+			var $activePanel = $('.tabPanel.active', $currentContent);	//現タブパネルを取得する
+			</script>
+	</body>
+</html>
+
+					

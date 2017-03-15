@@ -1,0 +1,45 @@
+<!-- DDTFlowersトップページのメニューの検証です。 -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>DDTFlowers</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- ブログのCSSを読み込む。 -->
+			<link href="css/blog.css" rel="stylesheet" type="text/css">
+			<script>
+				//createTagクラスのインスタンスを生成する
+				var create_tag = new createLittleContents();
+				
+				create_tag.getJsonFile('source/voice.json');			// 生徒さんの声のJSONを取得する。
+				create_tag.getJsonFile('source/voicestudents.json');	// 生徒さんの声の記事のJSONを取得する。
+				create_tag.getJsonFile('source/commonJson.json');		// 共通のパーツのJSONを取得する。
+				// ページのパーツのテンプレートhtmlを取得する。
+				create_tag.getDomFile('template/common.html');			
+				create_tag.getDomFile('template/blog.html');
+
+				create_tag.outputTag('headImage', 'createImage');		// 天の画像を作る
+				create_tag.outputTag('pageTitle');						// タイトル領域を作る
+				create_tag.outputTag('voices','blog');					// 生徒さんの声領域を作る
+				create_tag.outputTag('numberingOuter');				//ナンバリング領域を作る
+				//@mod 2015.03.13 T.Masuda blogコンテンツを作成する記述を追加しました。
+				create_tag.outputNumberingTag('blogArticle', 1, 4, 1, 4, '.voices');	// 生徒さんの声記事を作る。
+				create_tag.outputTag('footImage', 'createImage');		// 地の画像を作る
+				create_tag.outputTag('footer');						// フッターを作る
+
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				// fixYCoordinate('header', '.main');
+				// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header');
+				//記事の画像を拡大できるようにする。
+				create_tag.useZoomImage('blogArticleImages');
+				
+			</script>
+		</div>
+	</div>
+</body>
+</html>

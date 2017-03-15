@@ -1,0 +1,91 @@
+{
+    "searchButtonSet": {
+        "executeSearch": {
+            "text": "検索",
+            "type":"submit",
+            "value":"検索"
+        }
+    },
+    "titleSearch": {
+        "articleSearchLabel": {
+            "text": "タイトル"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "titleSearch"
+        }
+    },
+    "dateSearch": {
+        "articleSearchLabel": {
+            "text": "日付"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "dateSearch",
+            "class": "articleSearchTextBox calendar"
+        }
+    },
+    "authorSearch": {
+        "articleSearchLabel": {
+            "text": "著者"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "authorSearch"
+        }
+    },
+    "adminBlogListHeadWrap": {
+        "class": "recordWrapper",
+        "adminBlogListHead": {
+        "class":"adminBlogListHead tableHead",
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "numberHead":{},
+            "dateHead": {
+                "text": "日付"
+            },
+            "authorHead": {
+                "text": "著者"
+            },
+            "titleHead": {
+                "text": "タイトル"
+            }
+        }
+    },
+    "listEditButtons": {
+        "createNew": {
+            "type": "submit",
+            "data-role": "0",
+            "value": "作成"
+        },
+        "edit": {
+            "type": "submit",
+            "data-role": "1",
+            "value": "編集"
+        },
+        "delete": {
+        	"class":" deleteRecord delete",
+            "type": "button",
+            "text": "削除"
+        },
+		"hidden": {
+            "class": "valueHolder hidden",
+            "type": "hidden",
+            "value": "",
+            "name": "command"
+        }
+    },
+    "managementForm":{
+    	"data-role":"4",
+    	"action":"createarticleintab.html",
+    	"method":"get"
+    },
+    "contentSearch":{
+    	"data-role":"4",
+    	"method":"post",
+    	"data-target":"adminBlogListContent"
+    }
+}

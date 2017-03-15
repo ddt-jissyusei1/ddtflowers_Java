@@ -1,0 +1,37 @@
+<!-- DDTFlowersトップページのメニューの検証です。 -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>DDTFlowers</title>
+</head>
+<body>
+<div id="container">
+	<div class="main">
+		<!-- コース案内のCSSファイルを読み込む。 -->
+		<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+		<!-- アクセスページのCSSファイルを読み込む。 -->
+		<link href="css/access.css" rel="stylesheet" type="text/css">
+		<script>
+			//createTagクラスインスタンスを生成する
+			var accessCreator = new createLittleContents();
+			accessCreator.getJsonFile('source/access.json');		// ファイルのデータをjsonを用いて持ってくる
+			accessCreator.getJsonFile('source/commonJson.json');	// ファイルのデータをjsonを用いて持ってくる
+			accessCreator.getDomFile('template/common.html');		// 共通パーツをdomを取得する
+			accessCreator.getDomFile('template/access.html');		// アクセスページのパーツのdomを取得する
+			accessCreator.outputTag('headImage', 'createImage');	// 天の画像を作る
+			accessCreator.outputTag('pageTitle');					// タイトル領域を作る
+			accessCreator.outputTag('accessInfo');				// アクセス情報のコンテンツを作る。
+			accessCreator.outputTag('accessMap');					// アクセスのマップを作る。
+			accessCreator.outputTag('footImage', 'createImage');					// 地の画像を作る
+			accessCreator.outputTag('footer');					// フッターを作る
+			// トップメニューにマウスオーバーのフィルターを配置する。
+			functionFilter('.topMenu li');
+			// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+			// fixYCoordinate('header', '.main');
+			// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+			fixXCoordinateOnScroll('header')
+		</script>
+	</div>
+</div>
+</body>
+</html>

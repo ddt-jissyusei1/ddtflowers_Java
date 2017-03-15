@@ -1,0 +1,82 @@
+<html>
+	<body>
+		<!-- 当タブの内容を作成するためのスクリプトを記述する -->
+		<script>
+			//カレントのウィンドウのDOMを取得する
+			var $currentWindow = $(CURRENT_WINDOW);
+			//カレントのウィンドウのコンテンツ領域を取得する
+			var $currentContent = $(CURRENT_WINDOW_MAIN)
+			
+			var create_tag = new createLittleContents();	//コンテンツ作成のためcreateTagを用意する
+
+			//createTagをDOMにセットする
+			$('#sellCommodityPermit')[0].create_tag = create_tag;
+			
+			// ユーザーページのパーツのテンプレートのJSONを取得する。
+			create_tag.getJsonFile('source/commonUser.json');
+			// 管理者ページ共通のパーツのJSONを取得する。
+			create_tag.getJsonFile('source/adminCommon.json');
+			//共通のjsonを取得する
+			create_tag.getJsonFile('source/commonJson.json');
+
+			// ユーザーページのパーツのテンプレートのDOMを取得する。
+			create_tag.getDomFile('template/commonUser.html');
+			// 管理者ページ共通のパーツのJSONを取得する。
+			create_tag.getDomFile('template/adminCommon.html');
+			// 共通パーツのDOMを取得する
+			create_tag.getDomFile('template/common.html');
+
+			//全選択ボタンを追加する
+			create_tag.outputTag(SELECT_ALL_ROW, SELECT_ALL_ROW, SELECTOR_SELL_COMMODITY_PERMIT_TAB); // 2016.09.26 r.shibata 追加
+			//ユーザ追加のボタンを追加する
+			commonFuncs.putCommonButton('#sellCommodityPermit', 'addUserRecordButton fRight', 'add', true, true, true, {}, false);
+			//商品販売承認待ちデータの削除のボタンを追加する
+			commonFuncs.putCommonButton('#sellCommodityPermit', 'deletePermitRecordButton fRight', 'delete', true, true, true, {}, false);
+			//商品販売承認のボタンを追加する
+			commonFuncs.putCommonButton('#sellCommodityPermit', 'sellCommodityPermitButton fRight', 'permit', true, true, true, {}, false);
+			//テーブルの外側領域を作る
+			create_tag.outputTag('sellCommodityPermitInfoTableOutSideArea','tableOutsideArea', '#sellCommodityPermit');		// タイトル領域を作る
+
+			//今日の日付を取得し、データ検索の対象の日時としてJSONにセットする
+			create_tag.json.sellCommodityPermitInfoTable.date.value = commonFuncs.getTodayDate();
+			// 商品購入承認テーブル用のJSON配列を取得する
+			create_tag.getJsonFile('php/GetJSONArray.php', create_tag.json['sellCommodityPermitInfoTable'], 'sellCommodityPermitInfoTable');
+
+			//商品販売テーブルを出力する。
+			create_tag.outputTagTable('sellCommodityPermitInfoTable', 'sellCommodityPermitInfoTable', '.sellCommodityPermitInfoTableOutSideArea');
+			
+			//商品選択のセレクトボックスを作るためのデータを取得しておく
+			create_tag.getJsonFile('php/GetJSONArray.php', create_tag.json['selectCommodityInf'], 'selectCommodityInf');
+			
+			//フォーム要素配置
+			//数量、価格、使用ポイント、合計金額列をテキストボックスに置き換える
+			//商品キー列は隠しinputに置き換える
+			replaceSellCommodityPermitInputs(commonFuncs);
+			//合計金額列を編集不可にする
+			$('input[name="pay_price"]').attr('readonly', 'readonly');
+			//商品セレクトメニューを配置する
+			commonFuncs.createCommoditySelectMenu(create_tag.json.selectCommodityInf.tableData, '.sellCommodityPermitInfoTable .content');
+			//連番を振る
+			commonFuncs.insertSequenceNo('.sellCommodityPermitInfoTable', '.No');
+			
+			//イベントコールバック登録
+			//承認ボタンクリックで商品販売情報を登録する
+			permitSellCommodity();
+			//削除ボタンを押すと選択したレコードを削除する
+			executeDeleteRecord($('#sellCommodityPermit .deletePermitRecordButton'), '指定したレコードを削除しますか?', '.sellCommodityPermitInfoTable .selectRecord', "if($(CURRENT_DIALOG_SELECTOR)[0].instance.getPushedButtonState() == YES) {deleteRecords('.sellCommodityPermitInfoTable', '.selectRecord', $('#sellCommodityPermit')[0].create_tag.json.deleteSellCommodityPermitRecordQuery, null, $('#sellCommodityPermit')[0].create_tag.json.sellCommodityPermitInfoTable.tableData, '.No');}");
+			
+			commonFuncs.calcPayPrice('.sellCommodityPermitInfoTable');
+			//会員一覧テーブルがクリックされた時にuserSelectクラスをがなければ追加しあるなら消去する
+			toggleClassClickElement(SELECTOR_TBODY_TR, SELECT_RECORD, SELECTOR_SELL_COMMODITY_PERMIT_INFO_TABLE);	// 2016.10.04 mod k.urabe 対象のセレクタをテーブル本体内のtr要素に限定
+			//全選択ボタンの設定を行う
+			commonFuncs.addSelectAllBoxEvent(SELECTOR_SELL_COMMODITY_PERMIT_TAB + SPACE + SELECTOR_SELECT_ALL_ROW_CHECKBOX, SELECTOR_SELECT_ALL_ROW_LABEL, SELECTOR_SELL_COMMODITY_PERMIT_INFO_TABLE, SELECT_RECORD); // 2016.09.26 r.shibata 変更
+			//追加ボタンを押したらユーザ一覧画面へ遷移するようにする
+			moveToUserList('sellCommodityPermit', '#sellCommodityPermit .addUserRecordButton');
+			
+			//見た目変更
+			var $activePanel = $('#permitTab .tabPanel.active:last', $currentContent);	//現タブパネルを取得する
+			</script>
+	</body>
+</html>
+
+					

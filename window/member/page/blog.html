@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/マイページ</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- マイページのCSSファイルを読み込む。 -->
+			<link href="css/mypage.css" rel="stylesheet" type="text/css">
+			<!-- ブログのCSSファイルを読み込む。 -->
+			<link href="css/blog.css" rel="stylesheet" type="text/css">
+			<script>
+				try {
+					//カレントのウィンドウのDOMを取得する
+					var $currentWindow = $(CURRENT_WINDOW);
+					//カレントのウィンドウのコンテンツ領域を取得する
+					var $currentContent = $(CURRENT_WINDOW_MAIN)
+	
+					// dom要素を作るクラスをインスタンス化する
+					var create_tag = new createLittleContents();
+	
+					//accountHeaderから会員IDを取得する。別ユーザログインしていた場合はcookieからIDを取得する
+					var memberInfo = commonFuncs.checkEmpty(commonFuncs.GetCookies().otherUserId) ?  commonFuncs.GetCookies().otherUserId: create_tag.json.accountHeader.user_key.value;
+					create_tag.json.accountHeader.user_key.value = memberInfo;	//取得したIDをaccountHeaderに反映する
+	
+					// 会員共通のパーツのJSONを取得する。
+					create_tag.getDomFile('template/memberCommon.html');
+					// 会員ページのHTMLを読み込む
+					create_tag.getDomFile('template/memberPage.html');
+					create_tag.getDomFile('template/blog.html');			// ブログページ用のDOMを取得する
+					//ユーザ情報のテキストをDBから取得する
+					create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['accountHeader'], 'accountHeader');
+					create_tag.getJsonFile('source/memberCommon.json');		// 各ページ共通のパーツのJSONデータを取得する。
+					create_tag.getJsonFile('source/blog.json');			// ファイルのデータをjsonを用いて持ってくる
+	
+					//accountHeaderから会員IDを取得する。別ユーザログインしていた場合はcookieからIDを取得する
+					var memberInfo = commonFuncs.checkEmpty(commonFuncs.GetCookies().otherUserId) ?  commonFuncs.GetCookies().otherUserId: create_tag.json.accountHeader.user_key.value;
+					create_tag.json.accountHeader.user_key.value = memberInfo;	//取得したIDをaccountHeaderに反映する
+					
+					// 会員ページヘッダーを作る
+					create_tag.outputTag('accountHeader', 'memberHeader', $currentContent);
+					//ヘッダーにcreateTagへの参照を持たせる
+					$('.memberHeader')[0].create_tag = create_tag;
+					
+					// バナー領域を作る
+					create_tag.outputTag('userBanner', 'userBanner', $currentContent);
+					
+					create_tag.getJsonFile('source/commonJson.json');		// 各ページ共通のパーツのJSONデータを取得する。
+					create_tag.getJsonFile('source/mypage.json');			// 各ページ共通のパーツのJSONを取得する。
+					// ファイルのhtmlデータをdomを用いて持ってくる
+					create_tag.getDomFile('template/common.html');
+					create_tag.getDomFile('template/mypage.html');
+					create_tag.getDomFile('template/table.html');
+	
+					// ブログ管理領域を作る。
+					create_tag.outputTag('myPageBlog', 'myPageBlog', $currentContent);
+					create_tag.outputTag('BlogTitle','myPageBlogTitle','.myPageBlog');		// タイトル領域を作る
+	
+					//会員番号をブログ検索のjsonに入れて置換できるようにし、会員ごとのブログ記事を読み込むのの使う
+					create_tag.outputTag("blogArticleArea",'blogArticleArea','.myPageBlog');
+					// 右側領域を作る
+					create_tag.outputTag('blogRightContent', 'blogRightContent', ".blogArticleArea");
+					create_tag.outputTag("blogArticles",'blogArticles','.blogRightContent');			//Myページのブログ領域
+					create_tag.outputTag('numberingOuter','numberingOuter','.blogRightContent');
+	
+					// 左側領域を作る
+					create_tag.outputTag('blogLeftContent', 'blogLeftContent', ".blogArticleArea");	
+					create_tag.outputTag('calendar','calendar','.blogLeftContent');	// 左側領域にカレンダーを作る
+					//空の最新記事一覧のタグを生成する
+					create_tag.outputTag('currentArticleList','currentArticleList','.blogLeftContent');
+					
+					//ユーザのブログ領域用のJSONに会員IDをセットする。
+					create_tag.json.myBlogTable.user_key.value = create_tag.json.accountHeader.user_key.value;
+
+					//ログイン状態をチェックした上でDBにアクセスする
+					create_tag.doGuestLoginProcedure(function() {
+						//ブログ記事のデータを読み込んで表示する
+						create_tag.loadTableData('blogTable', 1, 4, 1, BLOG_SHOW_PAGES, '.blogArticles', 'create_tag.createMyBlogImages(\'.blogTable\')');
+						//記事の画像を拡大できるようにする。
+						create_tag.useZoomImage('blogImage');
+					});
+					
+					//datepickerによるカレンダーのクラスを作成する。
+					var mbCalendar = new blogCalendar(CURRENT_WINDOW_CALENDAR, create_tag, create_tag.json.blogTable[TABLE_DATA_KEY]);// セレクタの指定をカレントウィンドウのカレンダー指すように指定 2016.10.14 r.shibata
+					mbCalendar.create();	//カレンダーを実際に作成する
+
+					create_tag.createNewArticleList();	//最新記事一覧を作る
+
+					addlogoutEvent('.logoutLink');	//ログアウトボタンのイベントを登録する。
+				} catch (e) {
+					console.log(e);
+				}
+			</script>
+		</div>
+	</div>
+</body>
+</html>

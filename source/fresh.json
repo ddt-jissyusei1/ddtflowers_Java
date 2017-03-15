@@ -1,0 +1,137 @@
+{
+    "pageTitle": {
+        "class": "pageTitle cf",
+        "image": {
+            "src": "image/icon(leaf2).png"
+        },
+        "title": {
+            "text": "生花フラワーアレンジメントコース"
+        },
+        "summary": {
+            "text": "生花に触れる事により四季を感じ、そして草木の生命を敏感に感じとる感性が育まれます。また、瑞々しいフレッシュな質感、香りそして豊富な花の種類は何といっても生花の魅力です。近くのお花屋さんで手軽に花材をそろえてお友達にプレゼント！なんて事もできてポイント高いですね。"
+        }
+    },
+    "courseGuide": {
+        "class": "courseGuide guideTable",
+        "summary": {
+            "text": "コース案内"
+        },
+        "courseGuideHead": {
+            "class": "guideHead",
+            "stageHead": {
+                "text": "レベル"
+            },
+            "timesHead": {
+                "text": "回数"
+            },
+            "priceHead": {
+                "text": "金額"
+            }
+        },
+        "firstStage": {
+            "stage": {
+                "text": "1stステージ"
+            },
+            "times": {
+                "text": "全12回"
+            },
+            "price": {
+                "text": "4,200 円／回"
+            }
+        },
+        "secondStage": {
+            "stage": {
+                "text": "2ndステージ"
+            },
+            "times": {
+                "text": "全12回"
+            },
+            "price": {
+                "text": "5,000 円／回"
+            }
+        },
+        "thirdStage": {
+            "stage": {
+                "text": "3rdステージ"
+            },
+            "times": {
+                "text": "全12回"
+            },
+            "price": {
+                "text": "6,000 円／回"
+            }
+        }
+    },
+    "footGallery": {
+        "1stArt": {
+            "href": "photo/general/web/DSC_0064.jpg",
+            "rel": "gallery",
+            "1stImage": {
+                "src": "photo/general/web120/DSC_0064.jpg"
+            }
+        },
+        "2ndArt": {
+            "href": "photo/general/web/DSC_0094.jpg",
+            "rel": "gallery",
+            "2ndImage": {
+                "src": "photo/general/web120/DSC_0094.jpg"
+            }
+        },
+        "3rdArt": {
+            "href": "photo/general/web/ddt_co.jpg",
+            "rel": "gallery",
+            "3rdImage": {
+                "src": "photo/general/web120/ddt_co.jpg"
+            }
+        },
+        "4thArt": {
+            "href": "photo/general/web/DSC_0266.jpg",
+            "rel": "gallery",
+            "4thImage": {
+                "src": "photo/general/web120/DSC_0266.jpg"
+            }
+        },
+        "5thArt": {
+            "href": "photo/general/web/DSC_0894.jpg",
+            "rel": "gallery",
+            "5thImage": {
+                "src": "photo/general/web120/DSC_0894.jpg"
+            }
+        },
+        "6thArt": {
+            "href": "photo/general/web/DSC_0947.jpg",
+            "rel": "gallery",
+            "6thImage": {
+                "src": "photo/general/web120/DSC_0947.jpg"
+            }
+        },
+        "7thArt": {
+            "href": "photo/general/web/DSC_1025.jpg",
+            "rel": "gallery",
+            "7thImage": {
+                "src": "photo/general/web/DSC_1025.jpg"
+            }
+        },
+        "8thArt": {
+            "href": "photo/general/web/DSC_1038.jpg",
+            "rel": "gallery",
+            "8thImage": {
+                "src": "photo/general/web120/DSC_1038.jpg"
+            }
+        },
+        "9thArt": {
+            "href": "photo/general/web/DSC_1086.jpg",
+            "rel": "gallery",
+            "9thImage": {
+                "src": "photo/general/web120/DSC_1086.jpg"
+            }
+        },
+        "10thArt": {
+            "href": "photo/general/web/DSC_0745.jpg",
+            "rel": "gallery",
+            "10thImage": {
+                "src": "photo/general/web120/DSC_0745.jpg"
+            }
+        }
+    }
+}

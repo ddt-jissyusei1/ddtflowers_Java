@@ -1,0 +1,73 @@
+<html>
+	<body>
+		<!-- 当該タブ用クラスをインクルードする -->
+		<script src="js/page/adminLessonList.js"></script>
+		<!-- 当タブの内容を作成するためのスクリプトを記述する -->
+		<script>
+			//カレントのウィンドウのDOMを取得する
+			var $currentWindow = $(CURRENT_WINDOW);
+			//カレントのウィンドウのコンテンツ領域を取得する
+			var $currentContent = $(CURRENT_WINDOW_MAIN)
+			
+			var create_tag = new createLittleContents();	//コンテンツ作成のためcreateTagを用意する
+
+			//当該画面用関数クラスインスタンスを用意する
+			var lessonListFuncs = new adminLessonList();
+			
+			//タブのDOMにcreateTagへの参照を保存する
+			$(LESSON_LIST_TAB)[0].create_tag = create_tag;
+
+			//管理者ページ 授業一覧ダイアログのjsonデータを取得する
+			this[VAR_CREATE_TAG].getJsonFile(ADMIN_LESSON_LIST_DIALOG_JSON);
+			//管理者ページ 授業一覧ダイアログのjsonデータを取得する
+			this[VAR_CREATE_TAG].getJsonFile(COMMON_LIST_DIALOG_JSON); // 2016.09.21 r.shibata 追加 
+			//ダイアログのクラスインスタンスを取得する
+			var dialog = $(CURRENT_DIALOG)[0].dialogBuilder;
+			
+			//授業データをJSONにセットする
+			commonFuncs.setLessonDataToJSON(dialog[DIALOG_CLASS], create_tag);
+			//予約できる授業のデータ一覧をDBから取得してテーブルを作る準備をする
+			create_tag.getJsonFile(URL_GET_JSON_ARRAY_PHP, create_tag.json[LESSON_TABLE], LESSON_TABLE);
+
+			//授業データ一覧ダイアログのテンプレートを取得する
+			create_tag.getDomFile(ADMIN_LESSON_LIST_DIALOG_HTML);
+
+			//授業のデータを取得する
+			var tableData = $.extend([], true, create_tag.json[LESSON_TABLE][TABLE_DATA_KEY]);
+			//テーブル置換用の時限データを取得する
+			var replaceData = commonFuncs.getRestAndReserveData(tableData);
+
+			//授業データを走査し、列データを追加していく
+			//※costはNaNになっているので追加しない。
+			for(var i = 0; i < tableData.length; i++){
+				tableData[i].start_and_end_time = replaceData.start_and_end_time[i];
+				tableData[i].rest = replaceData.rest[i];
+				tableData[i].lessonStatus = replaceData.lessonStatus[i];
+			}
+			
+			//授業一覧テーブルの外側の領域を作る
+			create_tag.outputTag(TABLE_OUTER, TABLE_OUTER, SELECTOR_LESSON_LIST_TAB);
+			//授業のデータ一覧テーブルを作る
+			create_tag.outputTagTable(LESSON_TABLE, LESSON_TABLE, SELECTOR_ADMIN_LESSON_LIST_TABLE_AREA);
+			
+			//ダイアログの位置を修正する
+			dialog.setDialogPosition(POSITION_CENTER_TOP);
+			//授業データがない(授業名、校舎名がないことが基準)行を表示しない
+			$(DOT + LESSON_TABLE + TAG_CHILD_TR, $(SELECTOR_ADMIN_LESSON_LIST_TABLE_AREA)).has("td.lesson_name:empty, td.school_name:empty").hide();
+
+			//会員一覧テーブルがクリックされた時にuserSelectクラスをがなければ追加しあるなら消去する
+			toggleClassClickElement(SELECTOR_TBODY_TR, SELECT_RECORD, SELECTOR_LESSON_TABLE);	// 2016.10.04 mod k.urabe 対象のセレクタをテーブル本体内のtr要素に限定
+			
+			//レッスンのステータス領域を作る
+			create_tag.outputTag(EXPLAIN_FIRST, EXPLAIN_FIRST, SELECTOR_LESSON_LIST_TAB);
+			
+			//新規ボタン、編集ボタン、削除ボタンを作る。コールバックもここで登録しておく
+			commonFuncs.putCommonButton('#lessonList', 'createNewButton', 'createNew', true, true, true, {onclick : 'lessonListFuncs.callbackCreateNew();'});
+			commonFuncs.putCommonButton('#lessonList', 'editButton', 'edit', true, true, true, {onclick : 'lessonListFuncs.callbackEdit();'});
+			commonFuncs.putCommonButton('#lessonList', 'deleteButton', 'delete', true, true, true, {onclick : 'lessonListFuncs.callbackDelete();'});
+			
+			</script>
+	</body>
+</html>
+
+					

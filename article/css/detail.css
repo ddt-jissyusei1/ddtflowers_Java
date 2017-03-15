@@ -1,0 +1,34 @@
+@CHARSET "UTF-8";
+/* 
+ * セレクタ:p.mslongtail_list_link
+ * 概要   :MSLの記事詳細の一覧ページへのリンク
+ * 作成者 :T.Masuda
+ * 作成日 :2015.06.03
+ */
+p.mslongtail_list_link{
+	text-align:right;	/* 文字を右に寄せる */
+}
+/* 
+ * セレクタ:#mslongtail_list.mslongtail_wrapper h2
+ * 概要   :MSLの記事詳細の記事一覧のタイトル部分
+ * 作成者 :T.Masuda
+ * 作成日 :2015.06.03
+ */
+#mslongtail_list.mslongtail_wrapper h2{
+	font-size: 14px;			/* ページタイトル用フォントサイズにする */
+	text-align: left;			/* 中央に寄せる */
+}
+
+	/* 
+	 * セレクタ:#mslongtail_1985 > *,#mslongtail_1985 > *, #mslSocial > *
+	 * 概要   MSLのリストの各コンテンツ
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.06.04
+	 */
+	#mslongtail_1984 > *,#mslongtail_1985 > *, #mslSocial{
+		width: 90%;							/* 余白を残して中央に寄せられるサイズを指定する */
+		display: block;						/* 要素を横並べにしないようにブロック要素にする */
+		margin-left:auto;margin-right:auto;	/* 中心に寄せる */
+	} 
+
+

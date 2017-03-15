@@ -1,0 +1,81 @@
+<html>
+	<body>
+		<!-- 当タブの内容を作成するためのスクリプトを記述する -->
+		<script>
+			//カレントのウィンドウのDOMを取得する
+			var $currentWindow = $(CURRENT_WINDOW);
+			//カレントのウィンドウのコンテンツ領域を取得する
+			var $currentContent = $(CURRENT_WINDOW_MAIN)
+			
+			var create_tag = new createLittleContents();	//コンテンツ作成のためcreateTagを用意する
+			$('#mailMagaAndAnnounce')[0].create_tag = create_tag;	//createTagをDOMと結びつける
+			
+			// ユーザーページのパーツのテンプレートのJSONを取得する。
+			create_tag.getJsonFile('source/commonUser.json');
+			// 管理者ページ共通のパーツのJSONを取得する。
+			create_tag.getJsonFile('source/adminCommon.json');
+			//共通のjsonを取得する
+			create_tag.getJsonFile('source/commonJson.json');
+
+			// ユーザーページのパーツのテンプレートのDOMを取得する。
+			create_tag.getDomFile('template/commonUser.html');
+			// 管理者ページ共通のパーツのJSONを取得する。
+			create_tag.getDomFile('template/adminCommon.html');
+			// 共通パーツのDOMを取得する
+			create_tag.getDomFile('template/common.html');
+
+			// ユーザーページのパーツのテンプレートのJSONを取得する。
+			create_tag.getJsonFile('source/commonUser.json');
+			// 管理者ページ共通のパーツのJSONを取得する。
+			create_tag.getJsonFile('source/adminCommon.json');
+			//共通のjsonを取得する
+			create_tag.getJsonFile('source/commonJson.json');
+
+			//メルマガ＆アナウンスタブのコンテンツ
+			//過去のメルマガを検索するための領域を作る
+			create_tag.outputTag('mailMagaSearchArea', 'mailMagaSearchArea', '#mailMagaAndAnnounce');
+			//検索ボタンを追加する
+			commonFuncs.putCommonButton('#mailMagaAndAnnounce .mailMagaSearchArea', 'mailMagaSearchButton', 'search', true, false, true, {}, false);
+
+			//以下のボタンを格納する領域を作る
+			create_tag.outputTag('buttonArea', 'buttonArea', '.mailMagaSearchArea');
+			//新規ボタン、削除ボタンを追加する
+			commonFuncs.putCommonButton('#mailMagaAndAnnounce .buttonArea', 'mailMagaCreateButton', 'createNew', true, true, true, {}, false);
+			commonFuncs.putCommonButton('#mailMagaAndAnnounce .buttonArea', 'mailMagaDeleteButton', 'delete', true, true, true, {}, false);
+			//全選択ボタンを追加する
+			create_tag.outputTag(SELECT_ALL_ROW, SELECT_ALL_ROW, SELECTOR_MAILMAGA_TAB); // 2016.09.26 r.shibata 追加
+			
+			//メルマガページングの一番外側となる領域を作る
+			create_tag.outputTag('mailMagaPagingArea', 'divArea', '#mailMagaAndAnnounce');
+			//ページングのテーブルを作るためにテーブルの外側となるdivを作る
+			create_tag.outputTag('mailMagaTableOutside', 'divArea', '.mailMagaPagingArea');
+			// ナンバリング領域を作る
+			create_tag.outputTag('numberingOuter','numberingOuter','.mailMagaPagingArea');
+			//ページング機能付きでメルマガテーブルを作る			
+			create_tag.loadTableData('mailMagaTable', 1, 4, 1, MAILMAGA_TABLE_SHOW_NUMBER, '.mailMagaTableOutside', 'afterReloadMailMagaTable', "$('#mailMagaAndAnnounce')[0].");
+			
+			//メルマガ一覧テーブルがクリックされた時にuserSelectクラスをがなければ追加しあるなら消去する
+			toggleClassClickElement(SELECTOR_TBODY_TR, SELECT_RECORD, SELECTOR_MAIL_MAGA_TABLE_OUTSIDE);	// 2016.10.04 mod k.urabe 対象のセレクタをテーブル本体内のtr要素に限定
+			
+			//メルマガ検索機能を実装する
+			mailMagaSearch();
+			//新規ボタンを押してメルマガ編集ダイアログを出すようにする
+			setPopupMailMagaDialog('.mailMagaCreateButton');
+			//メルマガテーブルをクリックしたときにその内容をテキストボックスに反映させる
+			//setMailMagaSendContent();
+			//削除ボタンを押すと選択したレコードを削除する
+			executeDeleteRecord($('#mailMagaAndAnnounce .mailMagaDeleteButton'), '指定したレコードを削除しますか?', '.mailMagaTable .selectRecord', "if($(CURRENT_DIALOG_SELECTOR)[0].instance.getPushedButtonState() == YES) {deleteRecords('.mailMagaTable', '.selectRecord', $('#mailMagaAndAnnounce')[0].create_tag.json.deleteMailMagazine, deleteAfterReloadMailMagaTable);}");
+			
+			//削除ボタンがクリックされたとき、テキストボックスの中身も空白にする
+			resetMailMageSendContent();
+			//メルマガ検索領域の内容テキストボックスでエンターキーを押すと検索のイベントを開始する
+			commonFuncs.enterKeyButtonClick('.mailMagaContentSearchTextbox', '.mailMagaSearchButton');			
+			//全選択ボタンの設定を行う
+			commonFuncs.addSelectAllBoxEvent(SELECTOR_SELECT_ALL_ROW_CHECKBOX, SELECTOR_SELECT_ALL_ROW_LABEL, DOT + KEY_MAIL_MAGA_TABLE, SELECT_RECORD); // 2016.09.13 r.shibata 追加 2016.09.26 r.shibata 変更
+			
+			var $activePanel = $('.tabPanel.active', $currentContent);	//現タブパネルを取得する
+			</script>
+	</body>
+</html>
+
+					

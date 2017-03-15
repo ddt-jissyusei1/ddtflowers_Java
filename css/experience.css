@@ -1,0 +1,230 @@
+@CHARSET "UTF-8";
+
+/* 体験レッスン */
+
+
+/* 
+ * セレクタ:.specialGuide
+ * 概要   :体験レッスン案内テーブルについてそれぞれの項目のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.09
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.21
+ * 内容  :余分なネガティブマージンを削除。
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.26
+ * 内容　 :コース案内と同様のレイアウトへの修正をしました。
+ */
+.specialGuide {
+    width: 50%;             /* 幅を50%にする */
+    margin: 0px 0px 30px;   /* 上下に40pxの余白を空ける */
+    float: left;            /* 左側に回り込む */
+}
+
+/* 
+ * セレクタ:.specialGuide th
+ * 概要   :体験レッスン案内テーブルレコードについてそれぞれの項目のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.09
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.26
+ * 内容　 :コース案内と同様のレイアウトへの修正をしました。
+ */
+.specialGuide th {
+    background: #F0F3F5;    /* 背景色を薄い青にする。 */
+}
+
+/* 
+ * セレクタ:.specialGuide td
+ * 概要   :体験レッスン案内テーブルレコードについてそれぞれの項目のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.09
+ */
+.specialGuide td {
+    width: 64%;         /* 幅を64%にする */
+}
+
+
+/* 
+ * セレクタ:.experienceGallery
+ * 概要   :jQueryプラグイン「Slick」によるカルーセルとなる要素。体験レッスンページ用
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.21
+ */
+.experienceGallery{
+    width: 800px;       /* 幅800px。左右にある矢印ボタンの取る幅を加味した幅に設定する。 */
+    height: 120px;      /* 高さを120pxに指定する。 */
+    margin: 0 auto;     /* 中央に寄せる。 */
+    clear: both;        /* 回り込みを無効にする */
+    margin-bottom: 60px!important;  /* 下にmarginを挿入する。slickのcssの値を上書きするためにimportantをつける。 */
+}
+
+/* 
+ * セレクタ:.experienceGallery > div
+ * 概要   :experienceGalleryの画像リスト部分
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.27
+ */
+.experienceGallery > div {
+    border: 1px solid rgb(206,220,58);  /* 黄緑色の罫線で囲む。 */
+}
+/* 
+ * セレクタ:.experienceGallery img
+ * 概要   :カルーセルで表示する画像のサイズを200pxの正方形にする。
+ * 作成者 :T.Masuda 
+ * 作成日 :2015.02.21
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.26
+ * 内容　 :フォトギャラリーと同様の画像要素サイズに変更しました。
+ */
+.experienceGallery img{
+    height: auto;       /* 高さを固定値にして揃える。 */
+    width: 200px;       /* 幅を自動調整する。 */
+    margin: 0 auto;     /* 中央に寄せる。 */
+}
+
+/* 
+ * セレクタ:.experienceGallery img
+ * 概要   :作品ギャラリーの作品名。
+ * 作成者 :T.Masuda 
+ * 作成日 :2015.02.27
+ */
+.experienceGallery p {
+    text-align: center; /* 中央に寄せる。 */
+    padding: 5px 0;     /* 上下に余裕を持たせる。 */
+    color: #000;        /* 白抜き文字 */
+}
+
+
+/* スマホ・タブレットレイアウト */
+@media(max-width:680px){
+
+    /* 
+     * セレクタ:.specialGuide
+     * 概要   :スマホ用体験レッスン案内テーブルのスタイル
+     * 作成者 :T.Yamamoto
+     * 作成日 :2015.02.16
+     * 変更者 :T.Masuda
+     * 変更日 :2015.02.24
+     * 内容  :width、margin、floatを設定しました。
+     * 変更日 :2015.02.26
+     * 内容  :widthを修正しました。
+     */
+     .specialGuide {
+       width: 90%;              /* marginを考慮した可変幅を設定する。 */
+       margin: 0 auto 10px;     /* 中央に寄せる。下のmarginもセットする。 */
+       float: none;             /* floatを解除する。 */
+     }
+
+    /* 
+     * セレクタ:.specialGuide th, .specialGuide td
+     * 概要   :スマホ用体験レッスン案内テーブル中身のスタイル
+     * 作成者 :T.Yamamoto
+     * 作成日 :2015.02.16
+     * 追加者 :T.Yamamoto
+     * 追加日 :2015.03.05
+     * 内容   :widthをの削除
+     */
+     .specialGuide th, .specialGuide td{
+        padding: 7px;      /* 要素の幅を7px広げる */
+     }
+
+    /* 
+     * セレクタ:.calendar
+     * 概要   :スマホ用カレンダーのスタイル
+     * 作成者 :T.Yamamoto
+     * 作成日 :2015.02.16
+     * 変更者 :T.Masuda
+     * 変更日 :2015.02.23
+     * 内容  :無駄なスタイルを削除しました。
+     */
+     .calendar {
+        width: 100%;            /* 横幅を一杯広げる。 */
+        margin: 0 auto 10px;    /* 上のmarginをなくす。下には追加する。 */
+     }
+
+    /* 
+     * セレクタ:.calendar > div
+     * 概要   :スマホ用カレンダー本体のスタイル
+     * 作成者 :T.Masuda
+     * 作成日 :2015.02.23
+     */
+     .calendar > div{
+         display: block;    /* ブロック要素として表示する。 */
+         margin: 0 auto;    /* 中央に寄せる。 */
+         width: 90%;        /* 幅を90%に設定する。 */
+     }
+
+    /* 
+     * セレクタ:.experienceGallery
+     * 概要   :jQueryプラグイン「Slick」によるカルーセルとなる要素。体験レッスンページ用
+     * 作成者 :T.Masuda
+     * 作成日 :2015.02.21
+     * 追加者 :T.Yamamoto
+     * 追加日 :2015.03.09
+     * 内容   :widthを90%にする
+     */
+    .experienceGallery{
+        width: 90%;             /* 幅をページ幅に合わせて伸縮する */
+        height: auto;           /* 高さを自動調整する。 */
+        margin: 0 auto 10px;    /* 中央に寄せる。下とも間を空ける。 */
+        clear: both;            /* 回り込みを無効にする */
+        margin-bottom: 30px!important;
+    }
+
+    /* 
+     * セレクタ:.experienceGallery img
+     * 概要   :カルーセルで表示する画像の設定。
+     * 作成者 :T.Masuda 
+     * 作成日 :2015.02.21
+     * 変更者 :T.Masuda 
+     * 変更日 :2015.02.26
+     * 内容　 :画像のサイズのスタイルを変更しました。
+     */
+    .experienceGallery img{
+        height: auto;   /* 高さを自動にする */
+        width:  100%;   /* 幅を自動調整にする */
+        margin: 0 auto; /* 画像を中央に寄せる。 */
+    }
+
+    /* 
+     * セレクタ:.experienceConstructs
+     * 概要   :体験レッスンページの作品一覧。
+     * 作成者 :T.Masuda 
+     * 作成日 :2015.02.27
+     */
+    .experienceConstructs {
+        width: 90%;     /* 幅90% */
+        margin: 0 auto; /* 中央寄せ */
+    }
+
+    /* 
+     * セレクタ:.experienceGallery > div > div
+     * 概要   :作品一覧の画像配置領域。
+     * 作成者 :T.Masuda 
+     * 作成日 :2015.02.27
+     */
+    .experienceGallery > div > div{
+        width:100%!important;   /* 画像の領域の幅を一定にする。 */
+    }
+
+    /* 
+     * セレクタ:.experienceGallery > div > div> div
+     * 概要   :作品一覧の画像1つの領域。
+     * 作成者 :T.Masuda 
+     * 作成日 :2015.02.27
+     */
+    .experienceGallery > div > div > div{
+        width:50%!important;    /* 2個ずつ並べて表示する。 */
+    }
+
+    /* 
+     * セレクタ:#container .CourseGuideTable
+     * 概要   :体験レッスンのコース案内テーブル
+     * 作成者 :T.Yamamoto
+     * 作成日 :2015.05.27
+     */
+    #container .CourseGuideTable {
+        width: 100%;        /* 幅を100%にする */
+    }
+}

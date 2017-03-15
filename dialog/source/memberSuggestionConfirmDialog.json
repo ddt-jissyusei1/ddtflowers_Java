@@ -1,0 +1,20 @@
+{
+    "insertSuggestionBox":{
+        "db_setQuery":"INSERT INTO suggestion_box( user_key ,school_key ,suggest_type ,suggest_title ,suggest_content ,send_datetime,create_datetime,update_user,update_datetime) VALUES ('user_key','school_key','suggest_type','suggest_title','suggest_content',NOW(),NOW(),'user_key',NOW());",
+        "user_key":{
+            "value":""
+        },
+        "school_key":{
+            "value":""
+        },
+        "suggest_type":{
+            "value":""
+        },
+        "suggest_title":{
+            "value":""
+        },
+        "suggest_content":{
+            "value":""
+        }
+    }
+}

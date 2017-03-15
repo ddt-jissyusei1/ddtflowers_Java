@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<!--
+	ファイル名:adminPage.html
+	概要　　　:管理者ページ
+	作成日　　:2015.0612
+	作成者　　:T.Masuda
+	パス　　　:/adminPage.html
+-->
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<pageAuth style="display: none">0x50</pageAuth>
+			<script>
+				//ログインチェック用try-catch
+				try{
+					//ページの権限をクッキーへ設定する 2016.10.09 r.shibata 追加
+					commonFuncs.setPageAuthToCookie();
+					//カレントのウィンドウのDOMを取得する
+					var $currentWindow = $(CURRENT_WINDOW);
+					//カレントのウィンドウのコンテンツ領域を取得する
+					var $currentContent = $(CURRENT_WINDOW_MAIN)
+					
+					var create_tag = new createLittleContents();	//管理者ページ用のcreateTagクラスインスタンスを生成する
+					
+					//ユーザ情報をDBから取得する
+					create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['accountHeader'], 'accountHeader');
+					
+					//権限をチェックする。管理者でなければトップページに戻る
+					if (commonFuncs.checkBeforeEnterAdminPage(create_tag.json.accountHeader.authority.text, $currentWindow[0])) {
+					
+						// ユーザーページのパーツのテンプレートのJSONを取得する。
+						create_tag.getJsonFile('source/commonUser.json');
+						// 管理者ページ共通のパーツのJSONを取得する。
+						create_tag.getJsonFile('source/adminCommon.json');
+						//共通のjsonを取得する
+						create_tag.getJsonFile('source/commonJson.json');
+		
+						// ユーザーページのパーツのテンプレートのDOMを取得する。
+						create_tag.getDomFile('template/commonUser.html');
+						// 管理者ページ共通のパーツのJSONを取得する。
+						create_tag.getDomFile('template/adminCommon.html');
+						// 共通パーツのDOMを取得する
+						create_tag.getDomFile('template/common.html');
+						
+						//パーツのHTMLを順次作成し、画面に追加していく
+						//ヘッダー
+						create_tag.outputTag('accountHeader', 'adminHeader', $currentContent);
+		
+						//管理者タブ作成のため、タブ作成クラスインスタンスを生成する
+						var adminTab = new tabEx('tab/adminTab.html');
+						adminTab.run($currentContent);	//作成したタブを画面に追加する
+						//タブの履歴を有効にする
+						adminTab.setHashChangeSyncTab('#adminTab');
+						
+						//画面の先頭にスクロールを戻すボタン
+						create_tag.outputTag('returnTopPosition', 'returnTopPosition', $currentContent);
+						
+						addlogoutEvent('.logoutLink');	//ログアウトボタンのイベントを登録する。
+					}
+				}catch(e){
+					console.log(e);
+				}
+			</script>
+		</div>
+	</div>
+</body>
+</html>

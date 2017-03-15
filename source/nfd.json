@@ -1,0 +1,138 @@
+{
+	"pageTitle":{
+    	"class":"pageTitle cf",
+		"image"		:{
+			"src"	:	"image/icon(clover).png"
+		},
+		"title"		: {
+			"text"	:	"NFD資格取得コース"
+		},
+		"summary"	: {
+			"text"	:	"日本フラワーデザイナー協会が認定する民間の資格としては最もポピュラーな資格です。生花をターゲットにしており、カリキュラムに沿って初級者から上級者、講師資格まで取得可能です。"
+		}
+	},
+
+	"courseGuide":{
+		"class": "courseGuide guideTable",
+		"summary" :{
+			"text": "コース案内"
+		},
+        "courseGuideHead": {
+			"class":"guideHead",
+            "stageHead": {
+                "text": "レベル"
+            },
+            "timesHead": {
+                "text": "回数"
+            },
+            "priceHead": {
+                "text": "金額"
+            }
+        },
+		"firstStage":{
+			"stage":{
+				"text"	:	"NFD1級"
+			},
+			"times":{
+				"text"	:	"全40単位"
+			},
+			"price":{
+				"text"	:	"3,000 円／回"
+			}
+		},
+		"secondStage":{
+			"stage":{
+				"text"	:	"NFD2級"
+			},
+			"times":{
+				"text"	:	"全40単位"
+			},
+			"price":{
+				"text"	:	"3,000 円／回"
+			}
+		},
+		"thirdStage":{
+			"stage":{
+				"text"	:	"NFD3級"
+			},
+			"times":{
+				"text"	:	"全40単位"
+			},
+			"price":{
+				"text"	:	"3,000 円／回"
+			}
+		}
+	},
+    "footGallery": {
+        "1stArt": {
+            "href": "photo/general/web/DSC_1086.jpg",
+            "rel": "gallery",
+            "1stImage": {
+                "src": "photo/general/web120/DSC_1086.jpg"
+            }
+        },
+        "2ndArt": {
+            "href": "photo/general/web/DSC_1061.jpg",
+            "rel": "gallery",
+            "2ndImage": {
+                "src": "photo/general/web120/DSC_1061.jpg"
+            }
+        },
+        "3rdArt": {
+            "href": "photo/general/web/DSC_1038.jpg",
+            "rel": "gallery",
+            "3rdImage": {
+                "src": "photo/general/web120/DSC_1038.jpg"
+            }
+        },
+        "4thArt": {
+            "href": "photo/general/web/DSC_1025.jpg",
+            "rel": "gallery",
+            "4thImage": {
+                "src": "photo/general/web120/DSC_1025.jpg"
+            }
+        },
+        "5thArt": {
+            "href": "photo/general/web/DSC_1008.jpg",
+            "rel": "gallery",
+            "5thImage": {
+                "src": "photo/general/web120/DSC_1008.jpg"
+            }
+        },
+        "6thArt": {
+            "href": "photo/general/web/DSC_0985.jpg",
+            "rel": "gallery",
+            "6thImage": {
+                "src": "photo/general/web120/DSC_0985.jpg"
+            }
+        },
+        "7thArt": {
+            "href": "photo/general/web/DSC_0947.jpg",
+            "rel": "gallery",
+            "7thImage": {
+                "src": "photo/general/web/DSC_0947.jpg"
+            }
+        },
+        "8thArt": {
+            "href": "photo/general/web/DSC_0898.jpg",
+            "rel": "gallery",
+            "8thImage": {
+                "src": "photo/general/web120/DSC_0898.jpg"
+            }
+        },
+        "9thArt": {
+            "href": "photo/general/web/DSC_0894.jpg",
+            "rel": "gallery",
+            "9thImage": {
+                "src": "photo/general/web120/DSC_0894.jpg"
+            }
+        },
+        "10thArt": {
+            "href": "photo/general/web/DSC_0834.jpg",
+            "rel": "gallery",
+            "10thImage": {
+                "src": "photo/general/web120/DSC_0834.jpg"
+            }
+        }
+    }
+}

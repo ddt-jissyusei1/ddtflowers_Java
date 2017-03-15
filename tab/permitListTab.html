@@ -1,0 +1,21 @@
+<div class="tabContainer permitListTab" id="permitListTab">
+  <!-- タブを囲む領域 -->
+  <ul class="tabs">
+    <!-- 個々のタブ領域 -->
+    <li class="tab">
+      <!-- タブのクリックする領域 -->
+      <a class="tabLink" href="tab/admin/permitList/lecturePermitList.html" data-target="#lecturePermitList">受講</a>
+    </li>
+    <li class="tab">
+      <!-- タブのクリックする領域 -->
+      <a class="tabLink" href="tab/admin/permitList/sellCommodityPermitList.html" data-target="#sellCommodityPermitList">商品</a>
+    </li>
+  </ul>
+  <!-- タブのコンテンツを囲む領域 -->
+  <div class="tabContentArea panelContainer">
+	  <div class="lecturePermitList tabPanel" id="lecturePermitList"></div>
+	  <div class="sellCommodityPermitList tabPanel" id="sellCommodityPermitList"></div>
+  </div>
+  <!-- validationクラスのJSファイルを読み込む -->
+  <script src="js/validator.js"></script>
+</div>

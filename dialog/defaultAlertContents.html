@@ -1,0 +1,17 @@
+<div class="defaultAlertContents">
+
+	<!-- このタグで表示するテキストをsetAlertContentsの第一引数で置換する -->
+	<p>alertMessageArea</p>
+	<!-- ボタンを表示する -->
+	<!-- 2016/09/07 mod k.urabe 閉じるボタンの名称をキャンセルボタンに統一 -->
+	<input class="dialogCloseButton" type="button" value="キャンセル">
+	<script>
+		//ボタンのデザインを整える
+		$(DOT + DIALOG_CLOSE_BUTTON).button();
+		//閉じるボタンがクリックされたらダイアログを閉じる
+		$(DOT + DIALOG_CLOSE_BUTTON).click(function() {
+			//jqueryダイアログのクローズメソッドを使用して表示しているダイアログを閉じる
+			$(DOT + DEFAULT_ALERT_CONTENTS).parent().dialog(CLOSE);
+		});
+	</script>
+</div>

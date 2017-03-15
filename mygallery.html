@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/プリザーブドフラワー</title>
+
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- ギャラリーページのCSSファイルを読み込む。 -->
+			<link href="css/gallery.css" rel="stylesheet" type="text/css">
+			<!-- jqueryUIのcssを読み込む -->
+			<link type="text/css" href="css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+			<!-- fancyboxのCSSを読み込む。 -->
+			<link rel="stylesheet" type="text/css" href="js/source/jquery.fancybox.css" media="screen" />
+			<script>
+				// dom要素を作るクラスをインスタンス化する
+				var creator = new createLittleContents();
+				creator.getJsonFile('source/mygallery.json');			// Myギャラリーページ用のJSONデータを取得する。
+				creator.getJsonFile('source/mygallerycontent.json');	// Myギャラリー生成用のJSONデータを取得する。
+				creator.getJsonFile('source/commonJson.json');		// 各ページ共通のパーツのJSONデータを取得する。
+				// HTMLのテンプレートデータをを取得する。
+				creator.getDomFile('template/common.html');			
+				creator.getDomFile('template/gallery.html');			
+				
+				creator.outputTag('headImage', 'createImage');		// 天の画像を作る
+				creator.outputTag('pageTitle');						// タイトル領域を作る
+				creator.outputTag('myGalleryEditButtons');			// ギャラリー編集用のボタンを作る。
+				//ギャラリーのちょっとした説明を付け足す。
+				creator.outputTag('myGalleryNotice','myGalleryNotice','.myGalleryEditButtons');	
+				creator.outputTag('myGallery');						// ギャラリーページ用のギャラリーを作る。
+				// ナンバリング領域を作る
+				creator.outputTag('numberingOuter');
+				//ギャラリーの内容を追加する。
+				creator.outputNumberingTag('myPhoto', 1, 4, 1, 8, '.myGallery');	// ブログの記事を作る。
+				creator.outputTag('footImage', 'createImage');		// 地の画像を作る
+				creator.outputTag('footer');						// フッターを作る
+			
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				// fixYCoordinate('header', '.main');
+				// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header')
+				//ギャラリーの画像を拡大できるようにする。
+				creator.useZoomImage('myPhoto');
+				//jQuery UIのリッチなボタンを配置する。
+				$('.myGalleryEditButtons button').button();
+				//新規ボタンをクリックしたらアップロードするボタンを押すイベントを登録する。
+				creator.bindClickTarget('.myGalleryEditButtons .createButton', '.myGalleryEditButtons .uploader');
+				//画像アップローダーの値が変わったときのイベントを定義する。
+				creator.setMyGalleryChangeEvent('.myGalleryEditButtons .uploader');				
+				</script>
+		</div>
+	</div>
+</body>
+</html>

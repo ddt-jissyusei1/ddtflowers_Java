@@ -1,0 +1,77 @@
+{
+    "1": {
+        "class": "reservedData",
+        "reservedDate": {
+            "text": "2015/04/10"
+        },
+        "reservedCourse": {
+            "text": "プリザーブドフラワー"
+        },
+        "reservedPeriod": {
+            "text": "1限目"
+        },
+        "reservedRemark": {
+            "text": ""
+        }
+    },
+    "2": {
+        "class": "reservedData",
+        "reservedDate": {
+            "text": "2015/04/10"
+        },
+        "reservedCourse": {
+            "text": "プリザーブドフラワー"
+        },
+        "reservedPeriod": {
+            "text": "1限目"
+        },
+        "reservedRemark": {
+            "text": ""
+        }
+    },
+    "3": {
+        "class": "reservedData",
+        "reservedDate": {
+            "text": "2015/04/17"
+        },
+        "reservedCourse": {
+            "text": "プリザーブドフラワー"
+        },
+        "reservedPeriod": {
+            "text": "1限目"
+        },
+        "reservedRemark": {
+            "text": ""
+        }
+    },
+    "4": {
+        "class": "reservedData",
+        "reservedDate": {
+            "text": "2015/04/17"
+        },
+        "reservedCourse": {
+            "text": "プリザーブドフラワー"
+        },
+        "reservedPeriod": {
+            "text": "1限目"
+        },
+        "reservedRemark": {
+            "text": ""
+        }
+    },
+    "5": {
+        "class": "reservedData",
+        "reservedDate": {
+            "text": "2015/04/17"
+        },
+        "reservedCourse": {
+            "text": "プリザーブドフラワー"
+        },
+        "reservedPeriod": {
+            "text": "1限目"
+        },
+        "reservedRemark": {
+            "text": ""
+        }
+    }
+}

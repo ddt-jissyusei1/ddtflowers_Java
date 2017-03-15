@@ -1,0 +1,22 @@
+<div class="dialog">
+	<!-- JSコードを記述する -->
+	<script>
+		//当該ダイアログのDOMを取得する
+		var thisDialog = $(DOT + DIALOG + SELECTOR_LAST);
+		$.ajax({
+			url:DIALOG_JS_DIR + TEST_DIALOG+'grandchild' + JS_IDENTIFIER,
+			dataTYpe:"script",
+			async:false,
+			success:function(sc){
+				console.log("got script");
+			},
+			error:function(a,b,c){
+				
+			}
+		})
+		//当該ダイアログ用関数クラスインスタンスを生成する
+		var dialogBuilder = new testdialoggrandchild(thisDialog);
+		//ダイアログのDOMに関数クラスインスタンスの参照を持たせる
+		thisDialog[0].dialogBuilder = dialogBuilder;
+	</script>
+</div>

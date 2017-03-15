@@ -1,0 +1,169 @@
+{
+    "lessonConfirmContent": {
+        "db_getQuery":"",
+        "lessonConfirm": {
+            "lessonInfo": {
+                "timeSchedule": {
+                    "text": ""
+                },
+                "store": {
+                    "text": ""
+                },
+                "course": {
+                    "text": ""
+                },
+                "price": {
+                    "text": ""
+                },
+                "priceUnit": {
+                    "text": "円"
+                }
+            }
+        },
+        "lessonAccordion":{
+            "text":"キャンセル料・加算ポイントについて"
+        },
+        "attention": {
+            "cancelRateLabel": {
+                "class":"cancelRateLabel contentsBorder",
+                "cancelRateLabelText": {
+                    "text": "キャンセル料率(授業当日より)"
+                }
+            },
+            "cancelRateValue": {
+                "db_getQuery":"SELECT * FROM lesson_cancel_rate WHERE lesson_key = 'lesson_key'",
+                "lesson_key":{
+                    "value":""
+                },
+                "cancel__0":{
+                    "cancel_days":{
+                        "text":""
+                    },
+                    "cancelText":{
+                        "class":"cancelText unitSpace",
+                        "text":"日前:"
+                    },
+                    "cancel_rate":{
+                        "text":""
+                    },
+                    "cancelUnit":{
+                        "class":"cancelUnit unitSpace",
+                        "text":"%"
+                    }
+                },
+                "cancel__1":{
+                    "cancel_days":{
+                        "text":""
+                    },
+                    "cancelText":{
+                        "class":"cancelText unitSpace",
+                        "text":"日前:"
+                    },
+                    "cancel_rate":{
+                        "text":""
+                    },
+                    "cancelUnit":{
+                        "class":"cancelUnit unitSpace",
+                        "text":"%"
+                    }
+                },
+                "cancel__2":{
+                    "cancel_days":{
+                        "text":""
+                    },
+                    "cancelText":{
+                        "class":"cancelText unitSpace",
+                        "text":"日前:"
+                    },
+                    "cancel_rate":{
+                        "text":""
+                    },
+                    "cancelUnit":{
+                        "class":"cancelUnit unitSpace",
+                        "text":"%"
+                    }
+                }
+            },
+            "addPointLabel": {
+                "class":"addPointLabel contentsBorder",
+                "addPointLabelText": {
+                    "text": "加算ポイント(受講者人数)"
+                }
+            },
+            "addPointValue":{
+                "db_getQuery":"SELECT * FROM lesson_point_rate WHERE lesson_key = 'lesson_key'",
+                "lesson_key":{
+                    "value":""
+                },
+                "addPoint__0": {
+                    "students": {
+                        "text": ""
+                    },
+                    "studentsUnit": {
+                        "class":"studentsUnit unitSpace",
+                        "text": "人:"
+                    },
+                    "point_rate":{
+                        "text":""
+                    },
+                    "pointUnit": {
+                        "class":"pointUnit unitSpace",
+                        "text": "%"
+                    }
+                },
+                "addPoint__1": {
+                    "students": {
+                        "text": ""
+                    },
+                    "studentsUnit": {
+                        "class":"studentsUnit unitSpace",
+                        "text": "人:"
+                    },
+                    "point_rate":{
+                        "text":""
+                    },
+                    "pointUnit": {
+                        "class":"pointUnit unitSpace",
+                        "text": "%"
+                    }
+                },
+                "addPoint__2": {
+                    "students": {
+                        "text": ""
+                    },
+                    "studentsUnit": {
+                        "class":"studentsUnit unitSpace",
+                        "text": "人:"
+                    },
+                    "point_rate":{
+                        "text":""
+                    },
+                    "pointUnit": {
+                        "class":"pointUnit unitSpace",
+                        "text": "%"
+                    }
+                },
+                "addPoint__3": {
+                    "students": {
+                        "text": ""
+                    },
+                    "studentsUnit": {
+                        "class":"studentsUnit unitSpace",
+                        "text": "人:"
+                    },
+                    "point_rate":{
+                        "text":""
+                    },
+                    "pointUnit": {
+                        "class":"pointUnit unitSpace",
+                        "text": "%"
+                    }
+                }
+            }
+        },
+        "confirmText": {
+            "class":"confirmText textCenter",
+            "html": "上記の授業をキャンセルしますか?"
+        }
+    }
+}

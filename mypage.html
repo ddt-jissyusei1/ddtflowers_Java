@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/マイページ</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- マイページのCSSファイルを読み込む。 -->
+			<link href="css/mypage.css" rel="stylesheet" type="text/css">
+			<!-- 予約希望ダイアログのCSSファイルを読み込む。 -->
+			<link href="css/special.css" rel="stylesheet" type="text/css">
+			<script>
+				creator.getJsonFile('source/mypage.json');			// マイページのJSONを取得する。
+				creator.getJsonFile('source/commonJson.json');		// 各ページ共通のパーツのJSONを取得する。
+				creator.getJsonFile('source/mypagecontent.json');	// マイページの動的なコンテンツのJSONを取得する。
+				// ファイルのhtmlデータをdomを用いて持ってくる
+				creator.getDomFile('template/common.html');
+				creator.getDomFile('template/mypage.html');
+				creator.getDomFile('template/table.html');
+			
+				creator.outputTag('headImage', 'createImage');		// 天の画像を作る
+				creator.outputTag('pageTitle');						// タイトル領域を作る
+				
+				creator.outputTag('myPageReserved');				//予約情報の項目を作る。
+				//予約情報を書き込む。
+				outputKeyNumberObject(creator.json, 'reservedData', '.myPageReservedList');
+				
+				deleteNumberKey(creator.json);	//予約情報のJSONを消す。
+				creator.getJsonFile('source/mypagebloglist.json');	// マイページのブログ一覧のJSONを取得する。
+				// ブログ管理領域を作る。
+				creator.outputTag('myPageBlog');
+				creator.outputTag('myPageBlogTitle','myPageBlogTitle','.myPageBlog');		// タイトル領域を作る
+
+				//表形式のブログリストの外枠を作る。
+				creator.outputTag('managementList', 'managementList', '.myPageBlog');
+				//表の見出しを作る。
+				creator.outputTag('blogListHeadWrap', 'blogListHeadWrap', '.managementList .table');
+				//DOM配置の都合上付いてしまった親のtableタグを消す。
+				unwrapTable('.blogListHead');
+				//表の内容を作る。
+		 		outputKeyNumberObject(creator.json, 'blogListContentWrap', '.managementList .table');
+				//ボタンを作る
+				creator.outputTag('myPageBlogButtons','myPageBlogButtons','.myPageBlog');
+
+				// Myギャラリーの管理領域を作る。
+				creator.outputTag('myPageMyGallery');
+				creator.outputTag('myPageMyGalleryTitle','myPageMyGalleryTitle','.myPageMyGallery');	// タイトルを作る
+				creator.outputTag('myPageMyGalleryButtons','myPageMyGalleryButtons','.myPageMyGallery');// ボタンを作る
+				
+				// 設定関連の管理領域を作る。
+				creator.outputTag('myPageOption');
+				creator.outputTag('myPageOptionTitle','myPageOptionTitle','.myPageOption');		// タイトルを作る
+				creator.outputTag('myPageOptionButtons','myPageOptionButtons','.myPageOption');	// ボタンを作る
+				
+				creator.outputTag('footImage', 'createImage');		// 地の画像を作る
+				creator.outputTag('footer');						// フッターを作る
+				
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				// fixYCoordinate('header', '.main');
+				// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header')
+				//datepickerによるカレンダーのクラスを作成する。
+				var mPRCalendar = new reservedCalendar('.calendar', 90);
+				mPRCalendar.create();	//カレンダーを実際に作成する
+				
+				sendButtonRole($('form'));	//押されたsubmitボタンを検出する関数。
+				//submitイベントを登録する。
+				$('form').validate(articleSubmitHandler);
+				deleteRowData('form');	//行の削除イベントを登録する。
+			</script>
+		</div>
+	</div>
+</body>
+</html>

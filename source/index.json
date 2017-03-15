@@ -1,0 +1,215 @@
+{
+    "flowerBackground": {
+        "class": "flowerBackground",
+        "flowerImage": {
+            "src": "image/top(800).png"
+        }
+    },
+    "topicShowBlog":{
+    	"class":"topicShow topicShowBlog",
+    	"topicShow1line":{
+    		"text":"New!"
+    	},
+    	"topicShow2line":{
+    		"text":"Blog"
+    	}
+    },
+    "topicShowCampaign":{
+    	"class":"topicShow topicShowCampaign",
+    	"topicShow1line":{
+    		"text":"New!"
+    	},
+    	"topicShow2line":{
+    		"text":"Campaign"
+    	}
+    },
+    "topicShowGallery":{
+    	"class":"topicShow topicShowGallery",
+    	"topicShow1line":{
+    		"text":"New!"
+    	},
+    	"topicShow2line":{
+    		"text":"Gallery"
+    	}
+    },
+    "getTopicBlog" : {
+        "db_getQuery" : "CALL p_get_new_blog(@result); SELECT @result AS result;"
+    },
+    "topicBlog": {
+        "class": "topic topicBlog",
+        "topicTitle": {
+            "text": "Blog"
+        },
+        "topicTitleDeco": {
+            "text": "New"
+        },
+        "topicBorder": {},
+        "topicContent1": {
+            "href": "#blog.html",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('')"
+            },
+            "topicContentDate": {
+                "text": "2015/10/13"
+            },
+            "topicContentUserName": {
+                "text": "DDTFlowers"
+            },
+            "topicContentTitle": {
+                "text": "生花"
+            }
+        },
+        "topicContent2": {
+            "href": "#blog.html",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('')"
+            },
+            "topicContentDate": {
+                "text": "2015/10/12"
+            },
+            "topicContentUserName": {
+                "text": "DDTFlowers"
+            },
+            "topicContentTitle": {
+                "text": "プリザ"
+            }
+        },
+        "topicContent3": {
+            "href": "#blog.html",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('')"
+            },
+            "topicContentDate": {
+                "text": ""
+            },
+            "topicContentUserName": {
+                "text": ""
+            },
+            "topicContentTitle": {
+                "text": ""
+            }
+        }
+    },
+    "topicCampaign": {
+        "class": "topic topicCampaign",
+        "topicTitle": {
+            "text": "Campaign"
+        },
+        "topicTitleDeco": {
+            "text": "New"
+        },
+        "topicBorder": {},
+        "topicContent1": {
+            "href": "#experience.html",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('photo/general/web120/DSC_0682.jpg')"
+            },
+            "topicContentDate": {
+                "text": "15/05/27"
+            },
+            "topicContentUserName": {
+                "text": "DDTFlowers"
+            },
+            "topicContentTitle": {
+                "text": "プリザ1"
+            }
+        },
+        "topicContent2": {
+            "href": "#experience.html",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('photo/general/web120/ex_puriza2.jpg')"
+            },
+            "topicContentDate": {
+                "text": "15/05/27"
+            },
+            "topicContentUserName": {
+                "text": "DDTFlowers"
+            },
+            "topicContentTitle": {
+                "text": "プリザ2"
+            }
+        },
+        "topicContent3": {
+            "href": "#experience.html",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('photo/general/web120/ex_fresh1_w179.jpg')"
+            },
+            "topicContentDate": {
+                "text": "15/05/27"
+            },
+            "topicContentUserName": {
+                "text": "DDTFlowers"
+            },
+            "topicContentTitle": {
+                "text": "生花1"
+            }
+        }
+    },
+    "getTopicGallery" : {
+        "db_getQuery" : "CALL p_get_new_gallery_photo(@result); SELECT @result AS result;"
+    },
+    "topicGallery": {
+        "class": "topic topicGallery",
+        "topicTitle": {
+            "text": "Gallery"
+        },
+        "topicTitleDeco": {
+            "text": "New"
+        },
+        "topicBorder": {},
+        "topicContent1": {
+            "href": "#gallery.html",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('')"
+            },
+            "topicContentDate": {
+                "text": ""
+            },
+            "topicContentUserName": {
+                "text": ""
+            },
+            "topicContentTitle": {
+                "text": ""
+            }
+        },
+        "topicContent2": {
+            "href": "#gallery.html",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('')"
+            },
+            "topicContentDate": {
+                "text": ""
+            },
+            "topicContentUserName": {
+                "text": "DDTFlowers"
+            },
+            "topicContentTitle": {
+                "text": ""
+            }
+        },
+        "topicContent3": {
+            "href": "#gallery.html",
+            "class": "topicContent",
+            "topicContentImage": {
+                "style": "background-image:url('')"
+            },
+            "topicContentDate": {
+                "text": ""
+            },
+            "topicContentUserName": {
+                "text": ""
+            },
+            "topicContentTitle": {
+                "text": ""
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/プリザーブドフラワー</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<script>
+				//createTagクラスのインスタンスを生成する
+				var preservedPageCreator = new createLittleContents();
+				
+				preservedPageCreator.getJsonFile('source/preserved.json');			// ファイルのデータをjsonを用いて持ってくる
+				preservedPageCreator.getJsonFile('source/commonJson.json');			// ファイルのデータをjsonを用いて持ってくる
+
+				preservedPageCreator.getDomFile('template/common.html');			// 共通パーツのDOMを取得する。
+				preservedPageCreator.getDomFile('template/courseguide.html');	// コース紹介ページのパーツのDOMを取得する。
+				preservedPageCreator.outputTag('headImage', 'createImage');			// 天の画像を作る
+
+				preservedPageCreator.outputTag('pageTitle');							// タイトル領域を作る
+				preservedPageCreator.outputTag('merit', 'description');				//メリットのリストを作る
+				preservedPageCreator.outputTag('photoGallery');						// ギャラリーのタイトルを作る
+				preservedPageCreator.outputTag('footGallery');						// ギャラリー画像を作る
+				preservedPageCreator.outputTag('courseGuide');						// コース案内テーブルを作る
+				preservedPageCreator.outputTag('lessonSchedule');					//レッスンスケジュールテーブル
+				preservedPageCreator.outputTag('commonText', 'itemList');			//共通リストテーブルを作る
+				preservedPageCreator.outputTag('memberRule', 'itemList');			// 会員規約のリストテーブルを作る
+				preservedPageCreator.outputTag('footImage', 'createImage');			// 地の画像を作る
+				preservedPageCreator.outputTag('footer');							// フッターを作る
+				
+				preservedPageCreator.createGallery('footGallery');							//slickによるカルーセルのギャラリーを作成する。
+				// トップメニューにマウスオーバーのフィルターを配置する。
+				functionFilter('.topMenu li');
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				// fixYCoordinate('header', '.main');
+				// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header')
+			</script>
+		</div>
+	</div>
+</body>
+</html>

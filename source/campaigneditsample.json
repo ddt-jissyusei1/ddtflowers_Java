@@ -1,0 +1,42 @@
+{
+    "1": {
+        "campaignTitleTextBox": "新年度キャンペーン",
+        "campaignTypeTextBox": "プリザ",
+        "campaignContentTextArea": "2015年度最初のキャンペーンです。",
+        "campaignPriceTextBox": "3000",
+        "campaignCopyTextBox": "新年度キャンペーン",
+        "campaignStartDateTextBox": "2015/03/28",
+        "campaignEndDateTextBox": "2015/04/03",
+        "campaignMaxEntryTextBox": "16"
+    },
+    "2": {
+        "campaignTitleTextBox": "パン作り講座",
+        "campaignTypeTextBox": "プリザ、生花",
+        "campaignContentTextArea": "パンもお花も作ります。",
+        "campaignPriceTextBox": "4000",
+        "campaignCopyTextBox": "パン作り講座",
+        "campaignStartDateTextBox": "2015/03/18",
+        "campaignEndDateTextBox": "2015/03/18",
+        "campaignMaxEntryTextBox": "16"
+    },
+    "3": {
+        "campaignTitleTextBox": "お値引きキャンペーン",
+        "campaignTypeTextBox": "プリザ",
+        "campaignContentTextArea": "少人数限定のお得なキャンペーンです。",
+        "campaignPriceTextBox": "1800",
+        "campaignCopyTextBox": "驚きの価格!",
+        "campaignStartDateTextBox": "2015/03/01",
+        "campaignEndDateTextBox": "2015/03/07",
+        "campaignMaxEntryTextBox": "8"
+    },
+    "4": {
+        "campaignTitleTextBox": "バレンタイン前キャンペーン",
+        "campaignTypeTextBox": "プリザ",
+        "campaignContentTextArea": "2015年度最初のキャンペーンです。",
+        "campaignPriceTextBox": "2500",
+        "campaignCopyTextBox": "バレンタイン前キャンペーン",
+        "campaignStartDateTextBox": "2015/02/01",
+        "campaignEndDateTextBox": "2015/02/13",
+        "campaignMaxEntryTextBox": "32"
+    }
+}

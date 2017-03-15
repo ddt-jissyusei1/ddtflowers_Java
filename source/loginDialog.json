@@ -1,0 +1,43 @@
+{
+    "loginDialog":{
+        "userNameLabel":{
+            "text": "ユーザ名"
+        },
+        "userName":{
+            "type": "text",
+            "name": "userName"
+        },
+        "passwordLabel":{
+            "text":"パスワード"
+        },
+        "password":{
+            "type": "password",
+            "name": "password"
+        },
+        "toEntryBefore":{
+        	"text":"会員登録がお済みでない方は"
+        },
+        "toEntryPage":{
+        	"text":"こちら",
+        	"href":"#entry.html"
+        },
+        "toEntryAfter":{
+        	"text":"へ"
+        }
+    },
+    "login":{
+        "db_getQuery":"SELECT id, login_id, authority FROM user_inf WHERE login_id='userName' AND password='password';",
+        "userName":{
+            "value":""
+        },
+        "password":{
+            "value":""
+        },
+        "id":{
+            "text":""
+        },
+        "authority":{
+        	"text":""
+        }
+    }
+}

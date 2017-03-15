@@ -1,0 +1,44 @@
+{
+    "1": {
+        "blogEditTitleText": "今日は寒いですね",
+        "blogEditTextarea": "風邪に気をつけましょう。",
+        "blogPublicationRadio": "0",
+        "blogEditImagesSectionImage:eq(0)": "photo/general/web/DSC_0099.jpg",
+        "blogblogEditImagesSectionImagePath:eq(0)": "photo/general/web/DSC_0099.jpg"
+    },
+    "2": {
+        "blogEditTitleText": "春眠暁を覚えず",
+        "blogEditTextarea": "ぽかぽかいい天気で眠くなりますね。",
+        "blogPublicationRadio": "0",
+        "blogEditImagesSectionImage:eq(0)": "photo/general/web/DSC_0099.jpg",
+        "blogblogEditImagesSectionImagePath:eq(0)": "photo/general/web/DSC_0099.jpg"
+    },
+    "3": {
+        "blogEditTitleText": "次回の試験について",
+        "blogEditTextarea": "テスト用記事です。",
+        "blogPublicationRadio": "0",
+        "blogEditImagesSectionImage:eq(0)": "photo/general/web/DSC_0099.jpg",
+        "blogblogEditImagesSectionImagePath:eq(0)": "photo/general/web/DSC_0099.jpg"
+    },
+    "4": {
+        "blogEditTitleText": "メルマガ配信しました",
+        "blogEditTextarea": "テスト用記事です。",
+        "blogPublicationRadio": "0",
+        "blogEditImagesSectionImage:eq(0)": "photo/general/web/DSC_0099.jpg",
+        "blogblogEditImagesSectionImagePath:eq(0)": "photo/general/web/DSC_0099.jpg"
+    },
+    "5": {
+        "blogEditTitleText": "春のキャンペーン",
+        "blogEditTextarea": "テスト用記事です。",
+        "blogPublicationRadio": "0",
+        "blogEditImagesSectionImage:eq(0)": "photo/general/web/DSC_0099.jpg",
+        "blogblogEditImagesSectionImagePath:eq(0)": "photo/general/web/DSC_0099.jpg"
+    },
+    "6": {
+        "blogEditTitleText": "限定アレンジを用意しました",
+        "blogEditTextarea": "テスト用記事です。",
+        "blogPublicationRadio": "0",
+        "blogEditImagesSectionImage:eq(0)": "photo/general/web/DSC_0099.jpg",
+        "blogblogEditImagesSectionImagePath:eq(0)": "photo/general/web/DSC_0099.jpg"
+    }
+}

@@ -1,0 +1,18 @@
+<div class="mailMagazineSendConfirmDialog">
+	<script>
+		//ダイアログのクラスインスタンスを生成する
+		var dialogClass = $('.mailMagazineSendConfirmDialog')[0].instance;
+		//ダイアログのインプット用データオブジェクトを取得する
+		var argData = dialogClass.getArgumentDataObject();
+		//確認ダイアログを作成する。送信タイプ別にメッセージ、コールバック関数を設定する
+		dialogClass.setConfirmContents(argData.message, dialogClass.sendMailmagazine);
+	</script>
+</div>
+
+
+
+
+
+
+
+

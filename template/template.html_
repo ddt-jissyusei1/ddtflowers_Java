@@ -1,0 +1,2044 @@
+﻿<html>
+<body>
+<div>
+		<!-- ガイド領域。 -->
+		<div class="guides">
+			<!-- フラワーアレンジメントスクール -->
+			<div class="guideFASchool">
+				<!-- リンクのタグ -->
+				<a href="" class="toppageLink">
+					<!-- お花アイコン -->
+					<img src="" class="flowerIcon">
+					<!-- 「フラワーアレンジメントスクール」のテキスト。 -->
+					<p class="sideText"></p>
+				</a>
+			</div>
+			<div class="guideTel">
+				<img src="" class="telIcon">
+				<p class="p1"></p>
+				<p class="p2"></p>
+				<p class="p3"></p>
+			</div>
+			<div class="guideMail">
+				<a href="" class="contactLink">
+					<img src="" class="mailIcon">
+				</a>
+			</div>
+			<div class="guideAccess">
+				<a href="" class="accessLink">
+					<img src="" class="accessIcon">
+				</a>
+			</div>
+			<div class="guideTrial">
+				<a href="" class="experienceLink"><img src="" class="experienceIcon"></a>
+			</div>
+			<div class="guideBlog">
+				<a href="" class="guideBlogLink">
+					<img src="" class="guideBlogIcon">
+				</a>
+			</div>
+			<div class="guideSns">
+				<a href="" target="" class="facebookLink">
+					<img class="facebook" src="">
+				</a>
+				<a href="" target="" class="twitterLink">
+					<img class="twitter" src="">
+				</a>
+			</div>
+			<div class="guideLogin">
+				<img class="login" src="">
+			</div>
+		</div>
+		
+		<ul class="topMenu">
+				<li class="preservedButton">
+					<a href="" title="" class="preservedLink">
+						<p class="preservedText"></p>
+					</a>
+				</li>
+				<li class="freshButton">
+					<a href="" title="" class="freshLink">
+						<p class="freshText"></p>
+					</a>
+				</li>
+				<li class="nfdButton">
+					<a href="" title="" class="nfdLink">
+						<p class="nfdText"></p>
+					</a>
+				</li>
+				<li class="nationalButton">
+					<a href="" title="" class="nationalLink">
+						<p class="nationalText"></p>
+					</a>
+				</li>
+				<li class="bridalButton">
+					<a href="" title="" class="bridalLink">
+						<p class="bridalText"></p>
+					</a>
+				</li>
+				<li class="franchiseButton">
+					<a href="" title="" class="franchiseLink">
+						<p class="franchiseText"></p>
+					</a>
+				</li>
+				<li class="galleryButton">
+					<a href="" title="" class="galleryLink">
+						<p class="galleryText"></p>
+					</a>
+				</li>
+				<li class="voiceButton">
+					<a href="voice.html" title="" class="voiceLink">
+						<p class="voiceText"></p>
+					</a>
+				</li>
+		</ul>
+
+
+
+<!-- マイページの予約情報一覧 -->
+<div class="reservedData">
+	<div class="reservedDate"></div>
+	<div class="reservedCourse"></div>
+	<div class="reservedPeriod"></div>
+	<div class="reservedRemark"></div>
+</div>
+
+<!-- ブログの左列 -->
+<div class="blogLeftContent"></div>
+<!-- ブログの右列 -->
+<div class="blogRightContent"></div>
+
+<ul class="numbering">
+	<!-- 前と後のボタンと5個の数字ボタン -->
+	<li class="pre" onclick=""></li>
+	<li class="1" onclick=""></li>
+	<li class="2" onclick=""></li>
+	<li class="3" onclick=""></li>
+	<li class="4" onclick=""></li>
+	<li class="5" onclick=""></li>
+	<li class="next" onclick=""></li>
+</ul>
+
+
+<!-- ブログのタグ。 -->
+	<div class="blog">
+	</div>
+
+<!-- ナンバリングのタグ -->
+	<div class="numberingOuter">
+	</div>
+
+<!-- テキスト入力ダイアログ -->
+<div class="textEditPopup">
+	<div class="textEditPopupBody" id="">
+		<h4 class="textEditNotice"></h4>
+		<textarea class="textEdit"></textarea>
+	</div>
+</div>
+
+<!-- タブコンテンツ -->
+	<div class="tabContainer">
+	</div>
+
+
+<!-- タブのボタン群。カスタマイズタブ -->
+<ul class="customizeTabs">
+	<li class="tab">
+		<a href=""></a>
+	</li>
+</ul>
+
+<!-- タブのボタン群。管理者画面 -->
+<ul class="adminTabs">
+	<li class="optionButton">
+		<a href="" class="optionLink" data-target=""></a>
+	</li>
+	<li class="customizeButton">
+		<a href="" class="customizeLink" data-target=""></a>
+	</li>
+	<li class="adminBlogButton">
+		<a href="" class="adminBlogLink" data-target=""></a>
+	</li>
+	<li class="campaignButton">
+		<a href="" class="campaignLink" data-target=""></a>
+	</li>
+	<li class="studentButton">
+		<a href="" class="studentLink" data-target=""></a>
+	</li>
+	<li class="reservedLessonButton">
+		<a href="" class="reservedLessonLink" data-target=""></a>
+	</li>
+</ul>
+
+
+<!-- カスタマイズタブのタブパネル群 -->
+<div class="customizePanels">
+	<div class="commonJson" id="">
+		<button class="saveButton" type="" target=""></button>
+	</div>
+	<div class="preserved" id="">
+		<button class="saveButton" type="" target=""></button>
+	</div>
+	<div class="fresh" id="">
+		<button class="saveButton" type="" target=""></button>
+	</div>
+	<div class="nfd" id="">
+		<button class="saveButton" type="" target=""></button>
+	</div>
+	<div class="national" id="">
+		<button class="saveButton" type="" target=""></button>
+	</div>
+	<div class="bridal" id="">
+		<button class="saveButton" type="" target=""></button>
+	</div>
+	<div class="franchise" id="">
+		<button class="saveButton" type="" target=""></button>
+	</div>
+	<div class="gallery" id="">
+		<button class="saveButton" type="" target=""></button>
+	</div>
+	<div class="contact" id="">
+		<button class="saveButton" type="" target=""></button>
+	</div>
+	<div class="access" id="">
+		<button class="saveButton" type="" target=""></button>
+	</div>
+	<div class="experience" id="">
+		<button class="saveButton" type="" target=""></button>
+	</div>
+	<div class="blog" id="">
+		<button class="saveButton" type="" target=""></button>
+	</div>
+</div>
+
+<!-- 管理者画面のタブパネル群 -->
+<div class="adminPanels">
+	<div class="options" id=""></div>
+	<div class="customize" id=""></div>
+	<div class="adminBlogManagement" id=""></div>
+	<div class="campaignManagement" id=""></div>
+	<div class="studentManagement" id=""></div>
+	<div class="reservedLessonManagement" id=""></div>
+</div>
+
+<!-- カレンダー -->
+<div class="calendar" name=""></div>
+
+<!-- 画像を作るdiv -->
+<div class="createImage">
+	<!-- 画像を挿入する -->
+	<img src="" class="flowerImage">
+</div>
+
+<!-- タイトル。 -->
+<div class="pageTitle">
+	<!-- アイコンと、タイトルテキスト領域 -->
+	<div class="titleArea">
+		<!-- タイトルの画像。 -->
+		<img class="image" src="">
+		<!-- タイトルの文 -->
+		<span class="title"></span>
+	</div>
+	<!-- ページの概要 -->
+	<h2 class="summary"></h2>
+</div>
+
+<!-- コース案内テーブル -->
+<div class="courseGuide">
+<table class="courseTable">
+	<!-- テーブルの概要 -->
+	<caption class="summary"></caption>
+	<!-- 見出しの行 -->
+	<tr class="courseGuideHead">
+		<!-- 見出し3項目 -->
+		<th class="stageHead"></th>
+		<th class="timesHead"></th>
+		<th class="priceHead"></th>
+	</tr>
+	<!-- 1行目 -->
+	<tr class="firstStage">
+		<!-- 行の見出し -->
+		<th class="stage"></th>
+		<!-- 2つ目のカラムの内容 -->
+		<td class="times"></td>
+		<!-- 3つ目のカラムの内容 -->
+		<td class="price"></td>
+	</tr>
+	<!-- 2行目 -->
+	<tr class="secondStage">
+		<!-- 行の見出し -->
+		<th class="stage"></th>
+		<!-- 2つ目のカラムの内容 -->
+		<td class="times"></td>
+		<!-- 3つ目のカラムの内容 -->
+		<td class="price"></td>
+	</tr>
+	<!-- 3行目 -->
+	<tr class="thirdStage">
+		<!-- 行の見出し -->
+		<th class="stage"></th>
+		<!-- 2つ目のカラムの内容 -->
+		<td class="times"></td>
+		<!-- 3つ目のカラムの内容 -->
+		<td class="price"></td>
+	</tr>
+</table>
+<!-- 注釈 -->
+<p class="annotation"></p>
+</div>
+
+<!-- レッスンスケジュールテーブル -->
+<table class="lessonSchedule">
+	<!-- テーブルの概要 -->
+	<caption class="summary"></caption>
+	<!-- 1行目 -->
+	<tr class="week">
+		<!-- テーブルの見出しを幅2カラム分で作る -->
+		<th colspan="2" class="createLabelTextBox"></th>
+	</tr>
+	<!-- 2行目 -->
+	<tr class="firstPeriod">
+		<!-- 行の見出し -->
+		<th class="period"></th>
+		<!-- 2カラム目の内容 -->
+		<td class="hour"></td>
+	</tr>
+	<!-- 3行目 -->
+	<tr class="secondPeriod">
+		<!-- 行の見出し -->
+		<th class="period"></th>
+		<!-- 2カラム目の内容 -->
+		<td class="hour"></td>
+	</tr>
+	<!-- 4行目 -->
+	<tr class="thirdPeriod">
+		<!-- 行の見出し -->
+		<th class="period"></th>
+		<!-- 2カラム目の内容 -->
+		<td class="hour"></td>
+	</tr>
+	<!-- 5行目 -->
+	<tr class="fourthPeriod">
+		<!-- 行の見出し -->
+		<th class="period"></th>
+		<!-- 2カラム目の内容 -->
+		<td class="hour"></td>
+	</tr>
+	<!-- 6行目 -->
+	<tr class="fourthHalfPeriod">
+		<!-- 行の見出し -->
+		<th class="period"></th>
+		<!-- 2カラム目の内容 -->
+		<td class="hour"></td>
+	</tr>
+</table>
+
+<!-- 体験レッスン案内テーブル -->
+<table class="specialGuide">
+	<!-- テーブルの概要 -->
+	<caption class="summary"></caption>
+	<!-- 1行目 -->
+	<!-- 2行目 -->
+	<tr class="doKnow">
+		<!-- 行の見出し -->
+		<th class="item"></th>
+		<!-- 2カラム目の内容 -->
+		<td class="content"></td>
+	</tr>
+	<!-- 3行目 -->
+	<tr class="cost">
+		<!-- 行の見出し -->
+		<th class="item"></th>
+		<!-- 2カラム目の内容 -->
+		<td class="content"></td>
+	</tr>
+	<!-- 4行目 -->
+	<tr class="times">
+		<!-- 行の見出し -->
+		<th class="item"></th>
+		<!-- 2カラム目の内容 -->
+		<td class="content"></td>
+	</tr>
+	<!-- 5行目 -->
+	<tr class="hour">
+		<!-- 行の見出し -->
+		<th class="item"></th>
+		<!-- 2カラム目の内容 -->
+		<td class="content"></td>
+	</tr>
+	<!-- 6行目 -->
+	<tr class="target">
+		<!-- 行の見出し -->
+		<th class="item"></th>
+		<!-- 2カラム目の内容 -->
+		<td class="content"></td>
+	</tr>
+	<!-- 7行目 -->
+	<tr class="bring">
+		<!-- 行の見出し -->
+		<th class="item"></th>
+		<!-- 2カラム目の内容 -->
+		<td class="content"></td>
+	</tr>
+</table>
+
+<!-- フォトギャラリー。 -->
+<div class="photoGallery">
+	<!-- ギャラリーのタイトル。 -->
+	<div class="contentsTitle">
+		<!-- ギャラリー左の画像。 -->
+		<img class="contentsImgLeftL" src="">
+		<!-- ギャラリー中心のタイトル文字。 -->
+		<span class="contentsTitleText"></span>
+		<!-- ギャラリー右の画像。 -->
+		<img class="contentsImgRight" src="">
+		<!-- ギャラリー右の花画像。 -->
+		<img class="contentsImgRightR" src="">
+	</div>
+</div>
+
+	<!-- カルーセルのギャラリー。 -->
+	<div class="footGallery">
+		<!-- ギャラリーの画像。divタグ、aタグにimgタグを格納する構成。任意の数を用意する。現在は試験的に10個。 -->
+			<a class="1stArt" href="" rel="">
+				<img class="1stImage" src="" >
+			</a>
+			<a class="2ndArt" href="" rel="">
+				<img class="2ndImage" src="" >
+			</a>
+			<a class="3rdArt" href="" rel="">
+				<img class="3rdImage" src="" >
+			</a>
+			<a class="4thArt" href="" rel="">
+				<img class="4thImage" src="" >
+			</a>
+			<a class="5thArt" href="" rel="">
+				<img class="5thImage" src="" >
+			</a>
+			<a class="6thArt" href="" rel="">
+				<img class="6thImage" src="" >
+			</a>
+			<a class="7thArt" href="" rel="">
+				<img class="7thImage" src="" >
+			</a>
+			<a class="8thArt" href="" rel="">
+				<img class="8thImage" src="" >
+			</a>
+			<a class="9thArt" href="" rel="">
+				<img class="9thImage" src="" >
+			</a>
+			<a class="10thArt" href="" rel="">
+				<img class="10thImage" src="" >
+			</a>
+	</div>
+
+	<!-- カルーセルのギャラリー。 -->
+	<div class="footGallery2" id="">
+		<!-- ギャラリーの画像。divタグ、aタグにimgタグを格納する構成。任意の数を用意する。現在は試験的に10個。 -->
+				<img class="1stImage" src="" >
+				<img class="2ndImage" src="" >
+				<img class="3rdImage" src="" >
+				<img class="4thImage" src="" >
+				<img class="5thImage" src="" >
+				<img class="6thImage" src="" >
+				<img class="7thImage" src="" >
+				<img class="8thImage" src="" >
+				<img class="9thImage" src="" >
+				<img class="10thImage" src="" >
+	</div>
+
+    <div class="experienceGallery">
+        <!-- ギャラリーの画像。divタグ、aタグにimgタグを格納する構成。任意の数を用意する。現在は試験的に10個。 -->
+        <div class="experience1stDiv">
+            <a class="experience1stArt" href="" rel="">
+                <img class="experience1stImage" src="">
+                <p class="construct1stName"></p>
+            </a>
+        </div>
+        <div class="experience2ndDiv">
+            <a class="experience2ndArt" href="" rel="">
+                <img class="experience2ndImage" src="">
+                <p class="construct2ndName"></p>
+            </a>
+        </div>
+        <div class="experience3rdDiv">
+            <a class="experience3rdArt" href="" rel="">
+                <img class="experience3rdImage" src="">
+                <p class="construct3rdName"></p>
+            </a>
+        </div>
+        <div class="experience4thDiv">
+            <a class="experience4thArt" href="" rel="">
+                <img class="experience4thImage" src="">
+                <p class="construct4thName"></p>
+            </a>
+        </div>
+	</div>
+
+<!-- お問い合わせフォーム。 -->
+<form class="contactForm" action="" method="" >
+	<!-- 問い合わせフォームのパーツ領域 -->
+	<dl class="formBody cf">
+    	<!-- 氏名 -->
+		<dt class="name">
+        	<!-- 項目名 -->
+        	<span class="formContent"></span>
+        	<!-- 必須入力の印「*」 -->
+        	<span class="textRed"></span>
+        	<!-- ルビ -->
+        	<span class="formRuby"></span>
+        </dt>
+        <!-- 氏名を入力するテキストボックス -->
+        <dd class="nameTextBox">
+        	<!-- テキストボックス。 -->
+        	<input type="" class="textBox1" name="" size="" required="">
+        </dd>
+        <!-- 性別 -->
+		<dt class="sex">
+        	<!-- 項目名 -->
+        	<span class="formContent"></span>
+        	<!-- 必須入力の印「*」 -->
+        	<span class="textRed"></span>
+        	<!-- ルビ -->
+        	<span class="formRuby"></span>
+        </dt>
+        <!-- 性別を選択するラジオボタン -->
+        <dd class="sexRadioButton">
+        	<!-- 性別のラジオボタンとラベル。女、男の順。 -->
+        	<input class="sexRadioButtonFemale" type="" name="" value=""  required="" checked=""><label class="sexRadioButtonFemaleLabel"></label>
+            <input class="sexRadioButtonMale" type="" name="" value="" ><label class="sexRadioButtonMaleLabel"></label>
+        </dd>
+        <!-- メールアドレス -->
+        <dt class="email">
+        	<!-- 項目名 -->
+        	<span class="formContent"></span>
+        	<!-- 必須入力の印「*」 -->
+        	<span class="textRed"></span>
+        	<!-- ルビ -->
+        	<span class="formRuby"></span>
+        </dt>
+        <!-- メールアドレスを入力するテキストボックス -->
+        <dd class="emailTextBox">
+        	<!-- テキストボックス。 -->
+        	<input type="" class="textBox2" name="" size="" required="" onkeyDown="">
+        </dd>
+        <!-- 問い合わせ内容 -->
+		<dt class="content">
+        	<!-- 項目名 -->
+        	<span class="formContent"></span>
+        	<!-- 必須入力の印「*」 -->
+        	<span class="textRed"></span>
+        	<!-- ルビ -->
+        	<span class="formRuby"></span>
+        </dt>
+        <!-- 問い合わせ内容欄 -->
+        <dd class="contentTextArea">
+        	<!-- テキストエリア -->
+        	<textarea class="textArea1" name="" cols="" rows="" required=""></textarea>
+        </dd>
+    </dl>
+    <!-- 送信ボタン。 -->
+    <button type="" class="submitButton" value=""></button>
+	<!-- 件名 -->
+	<input class="mailSubject" type="" name="" value="">
+</form>	
+
+<!-- アクセス情報一覧 -->
+<dl class="accessInfo">
+	<!-- アクセス情報のタイトルを表す -->
+	<dt class="contentsBorder"></dt>
+	<!-- アクセスの中身 -->
+	<dd class="contentsBorderInText"></dd>
+</dl>
+
+<!-- スクールのGoogleMap -->
+<div class="accessMap">
+	<!-- GoogleMapのインラインフレーム。 -->
+	<iframe class="baseMap" height="" width="" frameborder="" scrolling="" marginheight="" marginwidth=""             src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=ja&amp;geocode=&amp;q=%E3%82%A2%E3%82%B3%E3%83%BC%E3%83%89%E3%83%93%E3%83%AB&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=44.928295,79.013672&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%97%A5%E6%9C%AC,+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E6%96%B0%E5%AE%BF%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%92%E2%88%92%EF%BC%94+%E3%82%A2%E3%82%B3%E3%83%BC%E3%83%89%E3%83%93%E3%83%AB&amp;ll=35.690581,139.699500&amp;spn=0.01131,0.01929&amp;t=m&amp;&amp;output=embed&amp;z=15"
+>
+	</iframe>		
+</div>
+
+<!-- ログインダイアログ -->
+<div class="loginDialog">
+	<!-- ユーザ名ラベル -->
+	<label class="userNameLabel"></label>
+	<!-- ユーザ名テキストボックス -->
+	<input class="userName" type="" name="">
+	<!-- パスワードラベル -->
+	<label class="passwordLabel"></label>
+	<!-- パスワードテキストボックス -->
+	<input class="password" type="" name="">
+	<small class="toEntryBefore"></small>
+	<a class="toEntryPage" href=""></a>
+	<small class="toEntryAfter"></small>
+</div>
+
+<!-- フッター -->
+<footer class="footer"><span class="copyright"></span></footer>
+
+
+<!-- ブライダルページアイテムテーブル -->
+<div class="bridalItemTable">
+<table class="courseTable">
+	<!-- テーブルの概要 -->
+	<caption class="summary"></caption>
+	<!-- 1行目、テーブルの見出し -->
+	<tr class="guideHead">
+		<th class="tableHead"></th>
+	</tr>
+	<!-- 2行目、ブーケ -->
+	<tr class="bouquet">
+		<td class="lessonType"></td>
+		<td class="price"></td>
+	</tr>
+	<!-- 3行目、ブーケ2 -->
+	<tr class="bouquet2">
+		<td class="lessonType"></td>
+		<td class="price"></td>
+	</tr>
+	<!-- 4行目、ブートニア -->
+	<tr class="boutonniere">
+		<td class="lessonType"></td>
+		<td class="price" colspan="" style=""></td>
+	</tr>
+	<!-- 5行目、ヘアパーツ -->
+	<tr class="hairParts">
+		<td class="lessonType"></td>
+		<td class="price"></td>
+	</tr>
+	<!-- 6行目、リストレット -->
+	<tr class="wristlet">
+		<td class="lessonType"></td>
+		<td class="price"></td>
+	</tr>
+	<!-- 7行目、フラワーシャワー -->
+	<tr class="flowerShower">
+		<td class="lessonType"></td>
+		<td class="price"></td>
+	</tr>
+	<!-- 8行目、メインテーブル -->
+	<tr class="mainTable">
+		<td class="lessonType"></td>
+		<td class="price"></td>
+	</tr>
+	<!-- 9行目、ゲストテーブル -->
+	<tr class="guestTable">
+		<td class="lessonType"></td>
+		<td class="price"></td>
+	</tr>
+	<!-- 10行目、ヘアード（花冠） -->
+	<tr class="haired">
+		<td class="lessonType"></td>
+		<td class="price"></td>
+	</tr>
+	<!-- 11行目、御両親贈呈用アレンン -->
+	<tr class="arrange">
+		<td class="lessonType"></td>
+		<td class="price"></td>
+	</tr>
+	<!-- 12行目、ウェルカムボード -->
+	<tr class="welcomeBoard">
+		<td class="lessonType"></td>
+		<td class="price"></td>
+	</tr>
+	<!-- 13行目、リングピロー -->
+	<tr class="ringPillow">
+		<td class="lessonType"></td>
+		<td class="price"></td>
+	</tr>
+</table>
+<p class="annotation"></p>
+</div>
+<!-- ブライダルページアイテムテーブル終わり -->
+
+<!-- 共通、会員規約、特徴の箇条書きリスト -->
+<ul class="itemList">
+	<li class="listTitle"></li>
+	<li class="listContent"></li>
+</ul>
+<!-- 共通、会員規約、特徴の箇条書きリスト終わり -->
+
+<!-- ご入会メリット、ご予約の流れ、国家資格とは -->
+<dl class="description">
+	<!-- コンテンツのタイトルの背景(緑の帯部分) -->
+	<div class="contentsTitleBack">
+		<!-- タイトル領域 -->
+		<div class="contentsTitle">
+			<!-- タイトル左の画像。 -->
+			<img class="contentsImgLeft" src="">
+			<!-- タイトルテキスト。 -->
+			<span class="contentsTitleText"></span>
+			<!-- タイトル右の画像。 -->
+			<img class="contentsImgRight" src="">
+		</div>
+	</div>
+	<!-- 体験レッスンへリンクする画像。 -->
+	<a class="meritToExperience" href="">
+		<img class="meritImgToExperience" src="">
+	</a>
+	<!-- 1行目緑のボーダーと灰色背景の部分 -->
+	<dt class="contentsBorder1"></dt>
+	<!-- ボーダー内テキスト部分 -->
+	<dd class="contentsBorderInText1"></dd>
+	<!-- 2行目緑のボーダーと灰色背景の部分 -->
+	<dt class="contentsBorder2"></dt>
+	<!-- ボーダー内テキスト部分 -->
+	<dd class="contentsBorderInText2"></dd>
+	<!-- 3行目緑のボーダーと灰色背景の部分部分 -->
+	<dt class="contentsBorder3"></dt>
+	<!-- ボーダー内テキスト部分 -->
+	<dd class="contentsBorderInText3"></dd>
+	<!-- 4行目緑のボーダーと灰色背景の部分部分 -->
+	<dt class="contentsBorder4"></dt>
+	<!-- ボーダー内テキスト部分 -->
+	<dd class="contentsBorderInText4"></dd>
+	<!-- 5行目緑のボーダーと灰色背景の部分部分 -->
+	<dt class="contentsBorder5"></dt>
+	<!-- ボーダー内テキスト部分 -->
+	<dd class="contentsBorderInText5"></dd>
+	<!-- 6行目緑のボーダーと灰色背景の部分部分 -->
+	<dt class="contentsBorder6"></dt>
+	<!-- ボーダー内テキスト部分 -->
+	<dd class="contentsBorderInText6"></dd>
+</dl>
+<!-- ご入会メリット、ご予約の流れ、国家資格とは終わり -->
+
+<!-- blogArticle -->
+<div class="blogArticle">
+	<!-- ブログ記事のタイトル領域 -->
+	<div class="blogArticleTitle">
+		<!-- タイトル -->
+		<h2 class="blogArticleTitleText"></h2>
+		<!-- 日付 -->
+		<time class="blogArticleDate"></time>
+		<!-- ユーザーネーム -->
+		<small class="blogArticleUserName"></small>
+	</div>
+	<!-- ブログ記事画像領域 -->
+	<div class="blogArticleImages">
+		<img class="blogArticleImage1" src="">
+		<img class="blogArticleImage2" src="">
+		<img class="blogArticleImage3" src="">
+	</div>
+	<!-- 本文 -->
+	<p class="blogArticleText"></p>
+</div>
+<!-- blogArticle終わり -->
+
+<!-- ブログ左側の最新記事一覧 -->
+<ul class="currentArticleList">
+	<!-- タイトル -->
+	<h4 class="currentArticleListTitle"></h4>
+	<!-- リスト内の1行 -->
+	<li class="currentArticleListContent1">
+		<!-- リンク -->
+		<a class="currentArticleListContentLink" href="">
+			<!-- 日付 -->
+			<time class="currentArticleListContentDate"></time>
+			<!-- ユーザネーム -->
+			<small class="currentArticleListContentUser"></small>
+			<!-- タイトル -->
+			<p class="currentArticleListContentTitle"></p>
+		</a>
+	</li>
+	<li class="currentArticleListContent2">
+		<!-- リンク -->
+		<a class="currentArticleListContentLink" href="">
+			<!-- 日付 -->
+			<time class="currentArticleListContentDate"></time>
+			<!-- ユーザネーム -->
+			<small class="currentArticleListContentUser"></small>
+			<!-- タイトル -->
+			<p class="currentArticleListContentTitle"></p>
+		</a>
+	</li>
+	<li class="currentArticleListContent3">
+		<!-- リンク -->
+		<a class="currentArticleListContentLink" href="">
+			<!-- 日付 -->
+			<time class="currentArticleListContentDate"></time>
+			<!-- ユーザネーム -->
+			<small class="currentArticleListContentUser"></small>
+			<!-- タイトル -->
+			<p class="currentArticleListContentTitle"></p>
+		</a>
+	</li>
+	<li class="currentArticleListContent4">
+		<!-- リンク -->
+		<a class="currentArticleListContentLink" href="">
+			<!-- 日付 -->
+			<time class="currentArticleListContentDate"></time>
+			<!-- ユーザネーム -->
+			<small class="currentArticleListContentUser"></small>
+			<!-- タイトル -->
+			<p class="currentArticleListContentTitle"></p>
+		</a>
+	</li>
+	<li class="currentArticleListContent5">
+		<!-- リンク -->
+		<a class="currentArticleListContentLink" href="">
+			<!-- 日付 -->
+			<time class="currentArticleListContentDate"></time>
+			<!-- ユーザネーム -->
+			<small class="currentArticleListContentUser"></small>
+			<!-- タイトル -->
+			<p class="currentArticleListContentTitle"></p>
+		</a>
+	</li>
+</ul>
+<!-- ブログ、リスト終わり -->
+
+
+<!-- ブログリスト -->
+<ul class="blogArticleList">
+	<!-- ブログリストテキスト -->
+	<h4 class="blogArticleListTitle"></h4>
+	<!-- リスト内の1行 -->
+	<li class="blogArticleListContent">
+		<!-- 日付 -->
+		<time class="blogArticleListContentDate"></time>
+		<!-- ユーザネーム -->
+		<small class="blogArticleListContentTitle"></small>
+	</li>
+</ul>
+<!-- ブログリスト終わり -->
+
+<!-- トップページトピック -->
+	<!-- トップページで最新の記事見出しを表示する小ウィンドウ。 -->
+	<div class="topic">
+		<!-- トピックのタイトル部分。 -->
+		<div class="topicTitle"></div>
+		<!-- トピックのタイトル部分の「New」の文字。 -->
+		<div class="topicTitleDeco"></div>
+		<!-- コンテンツとの間に線を引く -->
+		<hr class="topicBorder" />
+		<!-- トピックの最新記事見出しの一覧を表示する領域。 -->
+		<a class="topicContent1" href="">
+			<!-- トピックの最新記事の画像 -->
+			<span class="topicContentImage" style="cursor:pointer;"></span>
+			<!-- トピックの最新記事の日付 -->
+			<time class="topicContentDate"></time>
+			<!-- トピックの最新記事のユーザ名 -->
+			<p class="topicContentUserName"></p>
+			<!-- トピックの最新記事のタイトル -->
+			<p class="topicContentTitle"></p>
+		</a>
+		<a class="topicContent2" href="">
+			<!-- トピックの最新記事の画像 -->
+			<span class="topicContentImage" style="cursor:pointer;"></span>
+			<!-- トピックの最新記事の日付 -->
+			<time class="topicContentDate"></time>
+			<!-- トピックの最新記事のユーザ名 -->
+			<p class="topicContentUserName"></p>
+			<!-- トピックの最新記事のタイトル -->
+			<p class="topicContentTitle"></p>
+		</a>
+		<a class="topicContent3" href="">
+			<!-- トピックの最新記事の画像 -->
+			<span class="topicContentImage" style="cursor:pointer;"></span>
+			<!-- トピックの最新記事の日付 -->
+			<time class="topicContentDate"></time>
+			<!-- トピックの最新記事のユーザ名 -->
+			<p class="topicContentUserName"></p>
+			<!-- トピックの最新記事のタイトル -->
+			<p class="topicContentTitle"></p>
+		</a>
+	</div>
+	
+	<!-- 各お知らせを表示するボタン -->
+	<div class="topicShow">
+		<p class="topicShow1line"></p>
+		<p class="topicShow2line"></p>
+	</div>
+<!-- トップページトピック 終わり-->
+
+
+
+<!-- マイページの予約一覧の領域 -->
+<div class="myPageReserved">
+	<!-- マイページの予約一覧の領域のタイトル -->
+	<div class="myPageReservedTitle"></div>
+	<!-- 予約一覧。 -->
+	<div class="myPageReservedList"></div>
+	<!-- カレンダー。 -->
+	<div class="myPageReservedCalendar" name=""></div>
+</div>	
+<!-- マイページの予約一覧の領域　終わり -->
+
+<!-- マイページのブログの領域 -->
+<form class="myPageBlog" action="" method="" data-role="">
+</form>
+
+<!-- マイページのブログの領域のタイトル -->
+<div class="myPageBlogTitle"></div>
+
+<!-- ブログ関連のボタン。 -->
+<div class="myPageBlogButtons">
+	<input type="" class="myPageBlogButton1" value="" data-role="">
+	<input type="" class="myPageBlogButton2" value="" data-role="">
+	<input type="" class="myPageBlogButton3" value="">
+	<input type="" class="myPageBlogButtonHidden" value="" name="">
+</div>
+
+<!-- マイページのMyギャラリーの領域 -->
+<div class="myPageMyGallery">
+</div>
+
+<!-- マイページのMyギャラリー領域のタイトル -->
+<div class="myPageMyGalleryTitle"></div>
+
+<!-- Myギャラリー関連のボタン。 -->
+<div class="myPageMyGalleryButtons">
+	<a type="" class="myPageMyGalleryButton1" href="" ></a>
+</div>
+
+<!-- マイページの設定の領域 -->
+<div class="myPageOption">
+</div>
+
+<!-- マイページの設定領域のタイトル -->
+<div class="myPageOptionTitle"></div>
+
+<!-- 設定関連のボタン。 -->
+<div class="myPageOptionButtons">
+	<a type="" class="myPageOptionButton1" href="" ></a>
+</div>
+
+<!-- ブログ一覧の見出し -->
+<table class="blogListHeadWrap">
+<tr class="blogListHead">
+	<th class="checkWrap"><input class="check" type=""></th>
+	<!-- 見出し4項目 -->
+	<th class="numberHead"></th>
+	<th class="dateHead"></th>
+	<th class="authorHead"></th>
+	<th class="titleHead"></th>
+	</tr>
+</table>
+
+<!-- ブログ一覧のデータ行 -->
+<table class="blogListContentWrap">
+<tr class="blogListContent">
+	<td class="checkWrap"><input class="check" type=""></td>
+	<td class="number"></td>
+	<td class="date"></td>
+	<td class="author"></td>
+	<td class="title"></td>
+</tr>
+</table>
+
+
+
+<!-- マイページのブログの領域 おわり -->
+
+
+
+<!-- ブログ編集ページ 編集コンテンツ全体の領域 -->
+<form class="blogEdit" name="" method="" action="" value="" title="">
+</form>
+
+<!-- 画像アップロードのボタン。隠す。 -->
+<input type="file" style="cursor:pointer" class="blogEditImageUploader">
+
+<!-- ブログ編集ページ タイトル編集の領域とテキストボックス。 -->
+<div class="blogEditTitle">
+	<input type="" class="blogEditTitleText" name="" required="">
+</div>
+<!-- ブログの画像編集領域。 -->
+<div class="blogEditImages">
+</div>
+<!-- 画像1つに対する編集領域 -->
+<section class="blogEditImagesSection">
+	<!-- 画像サムネイル -->
+	<img class="blogEditImagesSectionImage" src="">
+	<!-- 画像の追加ボタン。 -->
+	<button type="" class="blogEditImagesSectionAddButton" onclick=""></button>
+	<!-- 画像パスを保持する要素。隠す。 -->
+	<input type="" value="" class="blogblogEditImagesSectionImagePath" name="">
+	<!-- 画像の削除ボタン。 -->
+	<button type="" class="blogEditImagesSectionDeleteButton" onclick=""></button>
+</section>
+
+<!-- ブログの本文編集領域。 -->
+<div class="blogEditText">
+	<!-- 本文を編集するためのテキストエリア -->
+	<textarea class="blogEditTextarea" name="blogText"  required="" />
+</div>
+
+<!-- ブログの公開設定 -->
+<div class="blogPublication">
+	<!-- 公開設定のラジオボタンとラベル3セット -->
+	<input type="" class="blogPublicationRadio1" name="" checked="">
+	<label class="blogPublicationLabel1"></label>
+	<input type="" class="blogPublicationRadio2" name="">
+	<label class="blogPublicationLabel2"></label>
+	<input type="" class="blogPublicationRadio3" name="">
+	<label class="blogPublicationLabel3"></label>
+</div>
+
+<!-- ブログ記事作成の確定・キャンセルボタンの領域 -->
+<div class="blogEditButtons">
+	<!-- ブログ記事作成をキャンセルするボタン -->
+	<button type="" href="" class="blogEditButtonsCancelButton" onclick=""></button>
+	<!-- ブログ記事作成を確定するボタン。 -->
+	<input href="" class="blogEditButtonsOKButton" onclick="" type="" confirm="" value="">
+</div>
+
+<!-- ギャラリーページのコンテンツ。 -->
+<div class="gallery"></div>
+
+<!-- ギャラリーの1枚1枚の写真。 -->
+<div class="photo">
+	<!-- 写真の画像。 -->
+	<a class="photoImage" href="" rel=""><span class="photoImageThumb" style="cursor:pointer"></span></a>
+	<!-- 投稿日 -->
+	<time class="photoDate"></time>
+	<!-- 写真のタイトル -->
+	<p class="photoTitle"></p>
+	<!-- 投稿者 -->
+	<p class="photoUserName"></p>
+</div>
+
+<!-- オプションタブの変更確定ボタン -->
+<div class="optionsConfirmChange">
+	<button class="optionsConfirmChangeButton" type=""></button>
+</div>
+<!-- オプションタブのメールアドレス設定 -->
+<div class="optionsMyMail">
+	<!-- オプションタブのラベル -->
+	<span class="optionsLabel"></span>
+	<!-- 管理者ユーザのメールアドレス設定テキストボックス -->
+	<input class="optionsMyEmailForm" type="" name="" value="" onkeyDown="" style="text-decoration:none;">
+</div>
+
+<!-- 管理者ブログのタイトル設定 -->
+<div class="optionsAdminBlogTitle">
+	<!-- オプションタブのラベル -->
+	<span class="optionsLabel"></span>
+	<!-- 管理者ブログのタイトル設定テキストボックス -->
+	<input class="optionsAdminBlogTitleForm" type="" name="" value="" onkeyDown="" style="" autocomplete="">
+</div>
+
+<!-- オプションタブ 深夜のメール送信許可ラジオボタン -->
+<div class="optionsAllowMidnightMail">
+	<!-- オプションタブのラベル -->
+	<span class="optionsLabel"></span>
+	<!-- 深夜のメール送信許可ラジオボタン。許可しないラジオボタン。 -->
+	<input class="optionsAllowMidnightMailRadioForbidden" type="" name="" value="">
+	<!-- 横並びのラベル -->
+	<span class="optionsLabelInline1"></span>
+	<!-- 深夜のメール送信許可ラジオボタン。許可するラジオボタン。 -->
+	<input class="optionsAllowMidnightMailRadioAllow" type="" name="" value="">
+	<!-- 横並びのラベル -->
+	<span class="optionsLabelInline2"></span>
+</div>
+
+<!-- 受信するメールの種類を選択するラジオボタン -->
+<div class="optionsRecieveMailType">
+	<!-- オプションタブのラベル -->
+	<span class="optionsLabel"></span>
+	<!-- チェックボックスその1。 -->
+	<input class="optionsRecieveMailTypeCheck1" type="" name="" value="">
+	<!-- 横並びのラベル -->
+	<span class="optionsLabelInline1"></span>
+	<!-- チェックボックスその2。 -->
+	<input class="optionsRecieveMailTypeCheck2" type="" name="" value="">
+	<!-- 横並びのラベル -->
+	<span class="optionsLabelInline2"></span>
+	<!-- チェックボックスその3。 -->
+	<input class="optionsRecieveMailTypeCheck3" type="" name="" value="">
+	<!-- 横並びのラベル -->
+	<span class="optionsLabelInline3"></span>
+</div>
+
+<!-- 検索パーツの外枠 -->
+<form class="contentSearch" action="" method="" data-target="" data-role=""></form>
+
+<!-- 検索領域タイトル -->
+<h3 class="searchTitle"></h3>
+<!-- 検索ボタンと検索フォーム追加、削除ボタンのセット -->
+<div class="searchButtonSet">
+	<input type="" class="executeSearch" value="">
+</div>
+
+<!-- 検索パーツ1組 -->
+<span class="articleSearch">
+	<!-- ラベル -->
+	<span class="articleSearchLabel"></span>
+	<!-- テキストボックス -->
+	<input type="" class="articleSearchTextBox" name="">
+</span>
+
+
+<form class="managementForm" action="" method="" data-role=""></form>
+<!-- 管理するコンテンツの一覧 -->
+<div class="managementList">
+	<!-- テーブル -->
+	<table class="table">
+		<!-- 見出し行。createTagで後から必要な分の見出しのタグを流し込む。 -->
+		<thead></thead>
+		<!-- データ部分の行をoutputKeyNumberObjectで流し込む。 -->
+		<tbody></tbody>
+	</table>
+</div>
+
+<!-- 管理者ブログ一覧の見出し -->
+<table class="adminBlogListHeadWrap">
+<tr class="adminBlogListHead">
+	<th class="checkWrap"><input class="check" type=""></th>
+	<!-- 見出し4項目 -->
+	<th class="numberHead"></th>
+	<th class="dateHead"></th>
+	<th class="authorHead"></th>
+	<th class="titleHead"></th>
+	</tr>
+</table>
+<!-- 管理者ブログ一覧のデータ行 -->
+<table class="adminBlogListContentWrap">
+<tr class="adminBlogListContent">
+	<td class="checkWrap"><input class="check" type=""></td>
+	<td class="number"></td>
+	<td class="date"></td>
+	<td class="author"></td>
+	<td class="title"></td>
+</tr>
+</table>
+
+<!-- キャンペーン一覧の見出し -->
+<table class="campaignListHeadWrap">
+<tr class="campaignListHead">
+	<th class="checkWrap"><input class="check" type=""></th>
+	<!-- 見出し4項目 -->
+	<th class="numberHead"></th>
+	<th class="titleHead"></th>
+	<th class="typeHead"></th>
+	<th class="priceHead"></th>
+	<th class="maxEntryHead"></th>
+	<th class="startDateHead"></th>
+	<th class="endDateHead"></th>
+</tr>
+</table>
+<!-- キャンペーン一覧のデータ行 -->
+<table class="campaignListContentWrap">
+<tr class="campaignListContent">
+	<td class="checkWrap"><input class="check" type=""></td>
+	<td class="number"></td>
+	<td class="title"></td>
+	<td class="type"></td>
+	<td class="price"></td>
+	<td class="maxEntry"></td>
+	<td class="startDate"></td>
+	<td class="endDate"></td>
+</tr>
+
+</table>
+<!-- 生徒さん一覧の見出し -->
+<table class="studentListHeadWrap">
+<tr class="studentListHead">
+	<th class="checkWrap"><input class="check" type=""></th>
+	<!-- 見出し4項目 -->
+	<th class="memberIdHead"></th>
+	<th class="nameHead"></th>
+	<th class="emailHead"></th>
+	<th class="telHead"></th>
+</tr>
+</table>
+
+<!-- 生徒さん一覧のデータ行 -->
+<table class="studentListContentWrap">
+<tr class="studentListContent">
+	<td class="checkWrap"><input class="check" type=""></td>
+	<td class="memberId"></td>
+	<td class="name"></td>
+	<td class="email"></td>
+	<td class="tel"></td>
+</tr>
+</table>
+<!-- 編集ボタン群 -->
+<div class="listEditButtons">
+	<!-- 新規作成ボタン。 -->
+	<input class="createNew" type="" value=""  data-role="">
+	<!-- 編集ボタン。 -->
+	<input class="edit" type="" value=""  data-role="">
+	<!-- 削除ボタン。 -->
+	<button class="delete" type=""></button>
+	<!-- 隠しフォーム。 -->
+	<input class="hidden" type="" value="" name="">
+</div>
+
+<!-- キャンペーン作成画面のパーツをまとめる領域。 -->
+<form class="editCampaign" name="" action="" method="" value="" title=""></form>
+<!-- キャンペーン作成画面のパーツ。キャンペーン名編集 -->
+<div class="campaignTitle">
+	<!-- ラベル -->
+	<span class="campaignLabel"></span>
+	<!-- キャンペーン名のテキストボックス。 -->
+	<input class="campaignTitleTextBox" type="" value="" name="" required="">
+</div>
+<!-- キャンペーン種別 -->
+<div class="campaignType">
+	<!-- キャンペーン種別のラベル -->
+	<span class="campaignLabel"></span>
+	<!-- キャンペーン種別のテキストボックス。 -->
+	<input type="" class="campaignTypeTextBox" name="" value="" required="">
+</div>
+<!-- キャンペーンの内容 -->
+<div class="campaignContent">
+	<!-- キャンペーンの内容のラベル -->
+	<span class="campaignLabel"></span>
+	<!-- キャンペーンの内容のテキストボックス。 -->
+	<textarea class="campaignContentTextArea" name="" value="" rows="" required=""></textarea>
+</div>
+<!-- キャンペーン金額 -->
+<div class="campaignPrice">
+	<!-- キャンペーン金額のラベル -->
+	<span class="campaignLabel"></span>
+	<!-- キャンペーン金額のテキストボックス。 -->
+	<input type="" class="campaignPriceTextBox" name="" value="" step="" required="">
+	<!-- 「円」ラベル -->
+	<span class="campaignLabelInline"></span>
+</div>
+<!-- キャンペーンの期間 -->
+<div class="campaignDates">
+	<div class="campaignStartDate">
+		<!-- 開始日のラベル -->
+		<span class="campaignLabelInline1"></span>
+		<!-- 開始日のテキストボックス。 -->
+		<input type="" class="campaignStartDateTextBox" name="" value="" required="">
+	</div>
+	<div class="campaignEndDate">
+		<!-- 終了日のラベル -->
+		<span class="campaignLabelInline2"></span>
+		<!-- 終了日のテキストボックス。 -->
+		<input type="" class="campaignEndDateTextBox" name="" value="" required="">
+	</div>
+</div>
+<!-- キャンペーンの上限人数設定 -->
+<div class="campaignMaxEntry">
+	<!-- ラベル -->
+	<span class="campaignLabel"></span>
+	<!-- キャンペーン上限人数設定のテキストボックス。 -->
+	<input type="" class="campaignMaxEntryTextBox" name="" value="" required="">
+	<!-- 「人」ラベル -->
+	<span class="campaignLabelInline"></span>
+</div>
+<!-- キャンペーンの編集確定ボタン、戻るボタン -->
+<div class="confirmEditCampaign">
+	<input type="" onclick="" class="confirmEditCampaignButton" confirm="" value="">
+	<button href="" class="cancelEditCampaignButton"></button>
+</div>
+
+<!-- メール送信後、又はエラーページ用のパーツ -->
+<div class="showMessage">
+	<!-- 1行目。タイトル部分として使われる事を想定しています。 -->
+	<p class="firstLine"></p>
+	<!-- 2行目。 -->
+	<p class="secondLine"></p>
+	<!-- 3行目。 -->
+	<p class="thirdLine"></p>
+	<!-- トップページへのリンク -->
+	<a class="returnToTop" href=""></a>
+</div>
+
+<!-- 生徒さん登録フォーム。 -->
+<form class="editStudent" action=""  value="" title="">
+	<!-- フォームのパーツ領域 -->
+	<dl class="formBody">
+    	<!-- 氏名 -->
+		<dt class="name">
+        	<!-- 項目名 -->
+        	<span class="formContent"></span>
+        	<!-- 必須入力の印「*」 -->
+        	<span class="textRed"></span>
+        	<!-- ルビ -->
+        	<span class="formRuby"></span>
+        </dt>
+        <!-- 氏名を入力するテキストボックス -->
+        <dd class="nameTextBox">
+        	<!-- テキストボックス。 -->
+        	<input type="" class="textBox" name="" size="" required="">
+        </dd>
+    	<!-- 氏名(カナ) -->
+		<dt class="nameKana">
+        	<!-- 項目名 -->
+        	<span class="formContent"></span>
+        	<!-- 必須入力の印「*」 -->
+        	<span class="textRed"></span>
+        	<!-- ルビ -->
+        	<span class="formRuby"></span>
+        </dt>
+        <!-- 氏名を入力するテキストボックス -->
+        <dd class="nameKanaTextBox">
+        	<!-- テキストボックス。 -->
+        	<input type="" class="textBox" name="" size="" required="">
+        </dd>
+    	<!-- ユーザID -->
+		<dt class="userId">
+        	<!-- 項目名 -->
+        	<span class="formContent"></span>
+        	<!-- 必須入力の印「*」 -->
+        	<span class="textRed"></span>
+        	<!-- ルビ -->
+        	<span class="formRuby"></span>
+        </dt>
+        <!-- ユーザIDを入力するテキストボックス -->
+        <dd class="userIdTextBox">
+        	<!-- テキストボックス。 -->
+        	<input type="" class="textBox" name="" size="" required="">
+        </dd>
+    	<!-- ニックネーム -->
+		<dt class="nickname">
+        	<!-- 項目名 -->
+        	<span class="formContent"></span>
+        	<!-- 必須入力の印「*」 -->
+        	<span class="textRed"></span>
+        	<!-- ルビ -->
+        	<span class="formRuby"></span>
+        </dt>
+        <!-- ニックネームを入力するテキストボックス -->
+        <dd class="nicknameTextBox">
+        	<!-- テキストボックス。 -->
+        	<input type="" class="textBox" name="" size="" required="">
+        </dd>
+    	<!-- パスワード -->
+		<dt class="password">
+        	<!-- 項目名 -->
+        	<span class="formContent"></span>
+        	<!-- 必須入力の印「*」 -->
+        	<span class="textRed"></span>
+        	<!-- ルビ -->
+        	<span class="formRuby"></span>
+        </dt>
+        <!-- パスワードを入力するテキストボックス -->
+        <dd class="passwordTextBox">
+        	<!-- テキストボックス。 -->
+        	<input type="" class="textBox" name="" size="" required="">
+        </dd>
+    	<!-- パスワード(確認) -->
+		<dt class="passwordConfirm">
+        	<!-- 項目名 -->
+        	<span class="formContent"></span>
+        	<!-- 必須入力の印「*」 -->
+        	<span class="textRed"></span>
+        	<!-- ルビ -->
+        	<span class="formRuby"></span>
+        </dt>
+        <!-- パスワード(確認)を入力するテキストボックス -->
+        <dd class="passwordConfirmTextBox">
+        	<!-- テキストボックス。 -->
+        	<input type="" class="textBox" name="" size="" required="">
+        </dd>
+        <!-- 性別 -->
+		<dt class="sex">
+        	<!-- 項目名 -->
+        	<span class="formContent"></span>
+        	<!-- 必須入力の印「*」 -->
+        	<span class="textRed"></span>
+        	<!-- ルビ -->
+        	<span class="formRuby"></span>
+        </dt>
+        <!-- 性別を選択するラジオボタン -->
+        <dd class="sexRadioButton">
+        	<!-- 性別のラジオボタンとラベル。女、男の順。 -->
+        	<input class="sexRadioButtonFemale" type="" name="" value=""><label class="sexRadioButtonFemaleLabel"></label>
+            <input class="sexRadioButtonMale" type="" name="" value=""><label class="sexRadioButtonMaleLabel"></label>
+        </dd>
+        <!-- メールアドレス -->
+        <dt class="email">
+        	<!-- 項目名 -->
+        	<span class="formContent"></span>
+        	<!-- 必須入力の印「*」 -->
+        	<span class="textRed"></span>
+        	<!-- ルビ -->
+        	<span class="formRuby"></span>
+        </dt>
+        <!-- メールアドレスを入力するテキストボックス -->
+        <dd class="emailTextBox">
+        	<!-- テキストボックス。 -->
+        	<input type="" class="textBox" name="" size="" required="" onkeyDown="">
+        </dd>
+        <!-- 確認用メールアドレス -->
+        <dt class="emailConfirm">
+        	<!-- 項目名 -->
+        	<span class="formContent"></span>
+        	<!-- 必須入力の印「*」 -->
+        	<span class="textRed"></span>
+        	<!-- ルビ -->
+        	<span class="formRuby"></span>
+        </dt>
+        <!-- 確認用メールアドレスを入力するテキストボックス -->
+        <dd class="emailConfirmTextBox">
+        	<!-- テキストボックス。 -->
+        	<input type="" class="textBox" name="" size="" required="" onkeyDown="" oncopy="" onpaste="" oncontextmenu="" placeholder="">
+        </dd>
+        <!-- 電話番号 -->
+        <dt class="tel">
+        	<!-- 項目名 -->
+        	<span class="formContent"></span>
+        	<!-- 必須入力の印「*」 -->
+        	<span class="textRed"></span>
+        	<!-- ルビ -->
+        	<span class="formRuby"></span>
+        </dt>
+        <!-- 電話番号を入力するテキストボックス -->
+        <dd class="telTextBox">
+        	<!-- テキストボックス。 -->
+        	<input type="" class="textBox" name="" size="" required="" onkeyDown="">
+        </dd>
+        <!-- 住所 -->
+        <dt class="address">
+        	<!-- 項目名 -->
+        	<span class="formContent"></span>
+        	<!-- 必須入力の印「*」 -->
+        	<span class="textRed"></span>
+        	<!-- ルビ -->
+        	<span class="formRuby"></span>
+        </dt>
+        <!-- 住所を入力するテキストボックス -->
+        <dd class="addressTextBox">
+        	<!-- テキストボックス。 -->
+        	<input type="" class="textBox" name="" size="" required="">
+        </dd>
+    </dl>
+    <!-- 送信ボタン。 -->
+    <input type="" href="" class="submit" onclick="" value="" confirm="">
+    <!-- 戻るボタン。 -->
+    <button class="back" href="" onclick="" type=""></button>
+</form>	
+
+<!-- 生徒さん登録情報確認 -->
+<div class="confirmRegistration">
+	<!-- タイトル -->
+	<strong class="message"></strong>
+	<!-- リスト -->
+	<ul class="noticeList">
+		<!-- リストの項目 -->
+		<li class="notice"></li>
+	</ul>
+	<!-- フォームの入力内容 -->
+	<table class="confirmRegistrationTable">
+		<!-- 氏名 -->
+		<tr class="name">
+		  <!-- 項目 -->
+		  <th class="head"></th>
+		  <!-- 内容 -->
+		  <td class="data"></td>
+		</tr>
+		<!-- カナ氏名 -->
+		<tr class="nameKana">
+		  <!-- 項目 -->
+		  <th class="head"></th>
+		  <!-- 内容 -->
+		  <td class="data"></td>
+		</tr>
+		<!-- ユーザID -->
+		<tr class="userId">
+		  <!-- 項目 -->
+		  <th class="head"></th>
+		  <!-- 内容 -->
+		  <td class="data"></td>
+		</tr>
+		<!-- ニックネーム -->
+		<tr class="nickname">
+		  <!-- 項目 -->
+		  <th class="head"></th>
+		  <!-- 内容 -->
+		  <td class="data"></td>
+		</tr>
+		<!-- パスワード -->
+		<tr class="password">
+		  <!-- 項目 -->
+		  <th class="head"></th>
+		  <!-- 内容 -->
+		  <td class="data"></td>
+		</tr>
+		<!-- 性別 -->
+		<tr class="sex">
+		  <!-- 項目 -->
+		  <th class="head"></th>
+		  <!-- 内容 -->
+		  <td class="data"></td>
+		</tr>
+		<!-- メールアドレス -->
+		<tr class="email">
+		  <!-- 項目 -->
+		  <th class="head"></th>
+		  <!-- 内容 -->
+		  <td class="data"></td>
+		</tr>
+		<!-- 電話番号 -->
+		<tr class="tel">
+		  <!-- 項目 -->
+		  <th class="head"></th>
+		  <!-- 内容 -->
+		  <td class="data"></td>
+		</tr>
+		<!-- 住所 -->
+		<tr class="address">
+		  <!-- 項目 -->
+		  <th class="head"></th>
+		  <!-- 内容 -->
+		  <td class="data"></td>
+		</tr>
+	</table>
+	<!-- 改行 -->
+	<br class="br" />
+	<!-- 送信フォーム -->
+	<form class="sendForm" action="">
+		<!-- 送信ボタン -->
+		<input type="" value="" class="sendButton" onclick="" />
+		<!-- 戻るボタン -->
+		<input type="" value="" onclick="" class="backButton" href="" />
+		<!-- 見えなくしてある入力情報。 -->
+		<input type="" name="" value="" class="sendValue1">
+		<input type="" name="" value="" class="sendValue2">
+		<input type="" name="" value="" class="sendValue3">
+		<input type="" name="" value="" class="sendValue4">
+		<input type="" name="" value="" class="sendValue5">
+		<input type="" name="" value="" class="sendValue6">
+		<input type="" name="" value="" class="sendValue7">
+		<input type="" name="" value="" class="sendValue8">
+		<input type="" name="" value="" class="sendValue9">
+	</form>
+</div>
+
+<!-- Myギャラリーページのコンテンツ。 -->
+<div class="myGallery"></div>
+
+<!-- Myギャラリーの1枚1枚の写真。 -->
+<div class="myPhoto">
+	<!-- 写真の画像。 -->
+	<a class="myPhotoLink" href="" rel=""><span class="myPhotoImage" style="cursor:pointer"></span></a>
+	<!-- 投稿日 -->
+	<time class="myPhotoDate"></time>
+	<!-- 写真のタイトル -->
+	<p class="myPhotoTitle"></p>
+	<!-- 投稿者 -->
+	<p class="myPhotoUser"></p>
+	<!-- コメント -->
+	<p class="myPhotoComment"></p>
+	<!-- 公開設定 -->
+	<p class="myPhotoPublication" value=""></p>
+	<!-- チェックボックス -->
+	<input type="" class="myPhotoCheck">
+</div>
+
+<!-- Myギャラリーの編集ボタン群 -->
+<div class="myGalleryEditButtons">
+	<!-- 新規ボタン -->
+	<button class="createButton" onclick=""></button>
+	<!-- 削除ボタン -->
+	<button class="deleteButton"></button>
+	<!-- 不可視の画像アップローダー -->
+	<input type="file" id="" class="uploader" name="" style="cursor:pointer" />
+	<!-- 戻るボタン -->
+	<button class="back"></button>
+</div>
+
+<!-- Myギャラリーのちょっとした説明 -->
+<span class="myGalleryNotice">
+	<br class="br1" />
+	<!-- 1行目 -->
+	<span class="notice1"></span>
+	<br class="br2" />
+	<!-- 2行目 -->
+	<span class="notice2"></span>
+</span>
+<!-- 個人設定ページ。 -->
+<div class="myOption"></div>
+
+<!-- 変更確定ボタン -->
+<div class="myOptionButtons">
+	<button class="myOptionBackButton" type="" ></button>
+	<button class="myOptionConfirmChangeButton" type="" ></button>
+</div>
+<!-- テキストボックス。 -->
+<div class="myOptionText">
+	<!-- ラベル -->
+	<span class="myOptionLabel"></span>
+	<!-- 設定テキストボックス -->
+	<input class="myOptionTextbox" type="" name="" value="" onkeyDown="" style="" autocomplete="">
+</div>
+
+<!-- 確認欄付きのテキストボックス。 -->
+<div class="myOptionTextConfirm">
+	<!-- ラベル -->
+	<span class="myOptionLabelOld"></span>
+	<!-- 古い設定値の設定テキストボックス -->
+	<input class="myOptionTextboxOld" type="" name="" value="" onkeyDown="" style="" placeholder="">
+	<!-- ラベル -->
+	<span class="myOptionLabelNew"></span>
+	<!-- 新しい設定テキストボックス -->
+	<input class="myOptionTextboxNew" type="" name="" value=""  onkeyDown="" style="" placeholder="">
+	<!-- ラベル -->
+	<span class="myOptionLabelConfirm"></span>
+	<!-- 新しい設定の確認テキストボックス -->
+	<input class="myOptionTextboxConfirm" type="" name="" value="" onkeyDown="" style="" style="" oncopy="" onpaste="" oncontextmenu="" onkeyDown="" placeholder="">
+</div>
+
+<!-- ラジオボタン -->
+<div class="myOptionRadio">
+	<!-- ラベル -->
+	<span class="myOptionLabel"></span>
+	<!-- ラジオボタンその1 -->
+	<input class="myOptionRadio1" type="" name="" value="">
+	<!-- 横並びのラベル -->
+	<span class="myOptionLabelInline1"></span>
+	<!-- ラジオボタンその2。 -->
+	<input class="myOptionRadio2" type="" name="" value="">
+	<!-- 横並びのラベル -->
+	<span class="myOptionLabelInline2"></span>
+	<!-- ラジオボタンその3。 -->
+	<input class="myOptionRadio3" type="" name="" value="" style="">
+	<!-- 横並びのラベル -->
+	<span class="myOptionLabelInline3" style=""></span>
+</div>
+
+<!-- チェックボックス -->
+<div class="myOptionCheckbox">
+	<!-- ラベル -->
+	<span class="myOptionLabel"></span>
+	<!-- チェックボックスその1。 -->
+	<input class="myOptionCheck1" type="" name="" value="">
+	<!-- 横並びのラベル -->
+	<span class="myOptionLabelInline1"></span>
+	<!-- チェックボックスその2。 -->
+	<input class="myOptionCheck2" type="" name="" value="">
+	<!-- 横並びのラベル -->
+	<span class="myOptionLabelInline2"></span>
+	<!-- チェックボックスその3。 -->
+	<input class="myOptionCheck3" type="" name="" value="" style="">
+	<!-- 横並びのラベル -->
+	<span class="myOptionLabelInline3" style=""></span>
+	<!-- チェックボックスその4。 -->
+	<input class="myOptionCheck4" type="" name="" value="" style="">
+	<!-- 横並びのラベル -->
+	<span class="myOptionLabelInline3" style=""></span>
+	<!-- チェックボックスその5。 -->
+	<input class="myOptionCheck5" type="" name="" value="" style="">
+	<!-- 横並びのラベル -->
+	<span class="myOptionLabelInline5" style=""></span>
+</div>
+
+<!-- 関数実行の確認ダイアログ -->
+<div class="funcConfirmDialog"></div>
+
+
+	<!-- 日時のinputタグ。 -->
+	<input type="" class="reservedDate" name="">
+
+	<!-- 注意書き -->
+	<p class="reservedSummary"></p>
+
+	<!-- 作品選択 -->
+	<table class="radioButtonSpecialConstruct">
+		<!-- 作品1行目 -->
+		<tr class="constructFirstRow" width="">
+			<!-- 作品 -->
+	 		<th class="dialogContentHead"></th>
+	 		<!-- プリザ1 -->
+			<td class="preserved1">
+				<!-- ボタンを包むラベル -->
+				<label class="buttonTopLabel">
+		 			<!-- ボタン -->
+					<input class="buttonTop" type="" name="" value="">
+					<!-- ラベルテキスト -->
+					<span class="buttonTopText"></span>
+				</label>
+			</td>
+			<!-- プリザ2 -->
+			<td class="preserved2">
+				<!-- ボタンを包むラベル -->
+				<label class="buttonTopLabel">
+		 			<!-- ボタン -->
+					<input class="buttonTop" type="" name="" value="">
+					<!-- ラベルテキスト -->
+					<span class="buttonTopText"></span>
+				</label>
+			</td>
+		</tr>
+		<!-- 作品2行目 -->
+		<tr class="constructSecondRow">
+			<!-- 空白行 -->
+			<td class="blank"></td>
+			<!-- 生花1 -->
+			<td class="fresh1">
+				<!-- ボタンを包むラベル -->
+				<label class="buttonTopLabel">
+		 			<!-- ボタン -->
+					<input class="buttonTop" type="" name="" value="">
+					<!-- ラベルテキスト -->
+					<span class="buttonTopText"></span>
+				</label>
+			</td>
+			<!-- 生花2 -->
+			<td class="fresh2">
+				<!-- ボタンを包むラベル -->
+				<label class="buttonTopLabel">
+		 			<!-- ボタン -->
+					<input class="buttonTop" type="" name="" value="">
+					<!-- ラベルテキスト -->
+					<span class="buttonTopText"></span>
+				</label>
+			</td>
+		</tr>
+	</table>
+
+	<!-- 作品選択 -->
+	<table class="radioButtonUsuallyCourse">
+		<!-- 作品1行目 -->
+		<tr class="constructFirstRow" width="">
+			<!-- 作品 -->
+	 		<th class="dialogContentHead"></th>
+	 		<!-- プリザ -->
+			<td class="preserved">
+				<!-- ボタンを包むラベル -->
+				<label class="buttonTopLabel">
+		 			<!-- ボタン -->
+					<input class="buttonTop" type="" name="" value="">
+					<!-- ラベルテキスト -->
+					<span class="buttonTopText"></span>
+				</label>
+			</td>
+			<!-- 生花 -->
+			<td class="fresh">
+				<!-- ボタンを包むラベル -->
+				<label class="buttonTopLabel">
+		 			<!-- ボタン -->
+					<input class="buttonTop" type="" name="" value="">
+					<!-- ラベルテキスト -->
+					<span class="buttonTopText"></span>
+				</label>
+			</td>
+		</tr>
+		<!-- 作品2行目 -->
+		<tr class="constructSecondRow">
+			<!-- 空白行 -->
+			<td class="blank"></td>
+			<!-- NFD -->
+			<td class="nfd">
+				<!-- ボタンを包むラベル -->
+				<label class="buttonTopLabel">
+		 			<!-- ボタン -->
+					<input class="buttonTop" type="" name="" value="">
+					<!-- ラベルテキスト -->
+					<span class="buttonTopText"></span>
+				</label>
+			</td>
+		</tr>
+	</table>
+	
+	<!-- 会員情報。氏名、氏名(カナ)、メールアドレス、電話番号。hiddenのフィールドに入れる。 -->
+	<div class="memberInformation">
+		<input class="personName" type="" name="">
+		<input class="personNameKana" type="" name="">
+		<input class="personEmail" type="" name="">
+		<input class="personTel" type="" name="">
+	</div>
+
+	<!-- 希望時限 -->
+	<table class="radioButtonSpecialSchedule">
+		<!-- 時限1行目 -->
+		<tr class="scheduleFirstRow">
+			<!-- 時限と表示する -->
+			<th class="dialogContentHead"></th>
+			<!-- 11:00~ -->
+			<td class="scheduleWrap">
+				<!-- ボタンを包むラベル -->
+				<label class="buttonTopLabel">
+		 			<!-- ボタン -->
+					<input class="buttonTop" type="" name="" value="">
+					<!-- ラベルテキスト -->
+					<span class="buttonTopText"></span>
+				</label>
+			</td>
+		</tr>
+		<!-- 時限2行目 -->
+		<tr class="scheduleSecondRow">
+			<th class="blank"></th>
+			<!-- 14:00～ -->
+			<td class="scheduleWrap">
+				<!-- ボタンを包むラベル -->
+				<label class="buttonTopLabel">
+		 			<!-- ボタン -->
+					<input class="buttonTop" type="" name="" value="">
+					<!-- ラベルテキスト -->
+					<span class="buttonTopText"></span>
+				</label>
+			</td>
+		</tr>
+		<!-- 時限3行目 -->
+		<tr class="scheduleThirdRow">
+			<th class="blank"></th>
+			<!-- 16:30～ -->
+			<td class="scheduleWrap">
+				<!-- ボタンを包むラベル -->
+				<label class="buttonTopLabel">
+		 			<!-- ボタン -->
+					<input class="buttonTop" type="" name="" value="">
+					<!-- ラベルテキスト -->
+					<span class="buttonTopText"></span>
+				</label>
+			</td>
+		</tr>
+		<!-- 時限4行目 -->
+		<tr class="scheduleFourthRow">
+			<th class="blank"></th>
+			<!-- 19:00～ -->
+			<td class="scheduleWrap">
+				<!-- ボタンを包むラベル -->
+				<label class="buttonTopLabel">
+		 			<!-- ボタン -->
+					<input class="buttonTop" type="" name="" value="">
+					<!-- ラベルテキスト -->
+					<span class="buttonTopText"></span>
+				</label>
+			</td>		
+		</tr>
+		<!-- 時限5行目 -->
+		<tr class="scheduleFourthHalfRow">
+			<th class="blank"></th>
+			<!-- 19:30～ -->
+			<td class="scheduleWrap">
+				<!-- ボタンを包むラベル -->
+				<label class="buttonTopLabel">
+		 			<!-- ボタン -->
+					<input class="buttonTop" type="" name="" value="">
+					<!-- ラベルテキスト -->
+					<span class="buttonTopText"></span>
+				</label>
+			</td>		
+		</tr>
+	</table>
+
+	<!-- 予備情報リスト -->
+	<ul class="subInfo">
+		<!-- 1行目、予備情報テキスト -->
+		<li class="dialogContentHead"></li>
+		<!-- 2行目、可能曜日領域 -->
+		<li class="canDayAll">
+			<!-- 可能曜日テキスト -->
+			<span class="subHeadText"></span>
+			<!-- ラベル領域 -->
+			<label class="allDayButton">
+				<!-- 全て可チェックボックス -->
+				<input class="allDayCheckbox" type="">
+				<!-- チェックボックスの横に来るテキスト -->
+				<span class="allCheckboxLabel"></span>
+			</label>
+		</li>
+		<!-- 3行目、曜日ごとの領域 -->
+		<li class="weekOfDay">
+			<!-- 月曜チェックボックス -->
+			<label class="MondayCheck">
+		 		<!-- ボタン -->
+				<input class="buttonBottom" type="" name="" value="">
+				<!-- ラベルテキスト -->
+				<span class="buttonBottomText"></span>
+			</label>
+			<!-- 火曜チェックボックス -->
+			<label class="TuesdayCheck">
+		 		<!-- ボタン -->
+				<input class="buttonBottom" type="" name="" value="">
+				<!-- ラベルテキスト -->
+				<span class="buttonBottomText"></span>
+			</label>
+			<!-- 水曜チェックボックス -->
+			<label class="WednesdayCheck">
+		 		<!-- ボタン -->
+				<input class="buttonBottom" type="" name="" value="">
+				<!-- ラベルテキスト -->
+				<span class="buttonBottomText"></span>
+			</label>
+			<!-- 木曜チェックボックス -->
+			<label class="ThirsdayCheck">
+		 		<!-- ボタン -->
+				<input class="buttonBottom" type="" name="" value="">
+				<!-- ラベルテキスト -->
+				<span class="buttonBottomText"></span>
+			</label>
+			<!-- 金曜チェックボックス -->
+			<label class="FridayCheck">
+		 		<!-- ボタン -->
+				<input class="buttonBottom" type="" name="" value="">
+				<!-- ラベルテキスト -->
+				<span class="buttonBottomText"></span>
+			</label>
+			<!-- 土曜チェックボックス -->
+			<label class="SaturdayCheck">
+		 		<!-- ボタン -->
+				<input class="buttonBottom" type="" name="" value="">
+				<!-- ラベルテキスト -->
+				<span class="buttonBottomText"></span>
+			</label>
+			<!-- 日曜チェックボックス -->
+			<label class="SundayCheck">
+		 		<!-- ボタン -->
+				<input class="buttonBottom" type="" name="" value="">
+				<!-- ラベルテキスト -->
+				<span class="buttonBottomText"></span>
+			</label>
+		</li>
+		<!-- 4行目、可能週領域 -->
+		<li class="canWeekAll">
+			<!-- 可能曜日テキスト -->
+			<span class="subHeadText"></span>
+			<!-- ラベル領域 -->
+			<label class="allWeekButton">
+				<!-- 全て可チェックボックス -->
+				<input class="allWeekCheckbox" type="">
+				<!-- チェックボックスの横に来るテキスト -->
+				<span class="allCheckboxLabel"></span>
+			</label>
+		</li>
+		<!-- 5行目週の選択 -->
+		<li class="monthOfWeek">
+			<!-- 1週チェックボックス -->
+			<label class="firstWeekCheck">
+		 		<!-- ボタン -->
+				<input class="buttonBottom" type="" name="" value="">
+				<!-- ラベルテキスト -->
+				<span class="buttonBottomText"></span>
+			</label>
+			<!-- 2週曜チェックボックス -->
+			<label class="secondWeekCheck">
+		 		<!-- ボタン -->
+				<input class="buttonBottom" type="" name="" value="">
+				<!-- ラベルテキスト -->
+				<span class="buttonBottomText"></span>
+			</label>
+			<!-- 3週チェックボックス -->
+			<label class="thirdWeekCheck">
+		 		<!-- ボタン -->
+				<input class="buttonBottom" type="" name="" value="">
+				<!-- ラベルテキスト -->
+				<span class="buttonBottomText"></span>
+			</label>
+			<!-- 4週チェックボックス -->
+			<label class="fourthWeekCheck">
+		 		<!-- ボタン -->
+				<input class="buttonBottom" type="" name="" value="">
+				<!-- ラベルテキスト -->
+				<span class="buttonBottomText"></span>
+			</label>
+		</li>
+	</ul>
+
+	<!-- 4コンテンツ目個人情報 -->
+	<ul class="personInformation">
+		<!-- 1行目、個人情報テキスト -->
+		<li class="dialogContentHead"></li>
+		<!-- 2行目、氏名領域 -->
+		<li class="personName">
+			<!-- ラベル -->
+			<label class="textboxLabel">
+				<!-- ラベルテキスト -->
+				<span class="personLabel"></span>
+				<!-- テキストボックス -->
+				<input type="text" class="personTextbox" name="" autocomplete="" size="" required align="" style="">
+			</label>
+		</li>
+		<!-- 2行目、氏名領域 -->
+		<li class="personNameKana">
+			<!-- ラベル -->
+			<label class="textboxLabel">
+				<!-- ラベルテキスト -->
+				<span class="personLabel"></span>
+				<!-- テキストボックス -->
+				<input type="" class="personTextbox" name="" autocomplete="" size="" required align="" style="">
+			</label>
+		</li>
+		<!-- 3行目、電話番号領域 -->
+		<li class="personPhoneNumber">
+			<!-- ラベル -->
+			<label class="textboxLabel">
+				<!-- ラベルテキスト -->
+				<span class="personLabel"></span>
+				<!-- テキストボックス -->
+				<input type="" class="personTextbox" name="" autocomplete="" size="" required style="" onkeyDown="">
+			</label>
+		</li>
+		<!-- 4行目、メールアドレス領域 -->
+		<li class="personEmail">
+			<!-- ラベル -->
+			<label class="textboxLabel">
+				<!-- ラベルテキスト -->
+				<span class="personLabel"></span>
+				<!-- テキストボックス -->
+				<input type="" class="personTextbox" name="" autocomplete="" size="" required style="" onkeyDown="">
+			</label>
+		</li>
+		<!-- 4行目、メールアドレス再入力領域 -->
+		<li class="personEmailCheck">
+			<!-- ラベル -->
+			<label class="textboxLabel">
+				<!-- ラベルテキスト -->
+				<span class="personLabel"></span>
+				<!-- テキストボックス -->
+				<input type="" class="personTextbox" name="" autocomplete="" size="" required style="" oncopy="" onpaste="" oncontextmenu="" onkeyDown="" placeholder="">
+			</label>
+		</li>
+		<!-- 10行目、人数領域 -->
+		<li class="personCount">
+			<!-- ラベル -->
+			<label class="textboxLabel">
+				<!-- ラベルテキスト -->
+				<span class="personLabel"></span>
+				<!-- テキストボックス -->
+				<input type="" class="personTextbox" name="" size="" autocomplete="" required style="" onkeyDown="" min="">
+			</label>
+		</li>
+	</ul>
+
+	<!-- 件名 -->
+	<input class="mailSubject" type="" name="" value="">
+
+
+<!-- 特別レッスン予約希望ダイアログ -->
+<form class="specialReservedDialog" action="" title="">
+</form>
+
+<!-- 送信確認ダイアログ -->
+<div class="specialReservedConfirmDialog" >
+</div>
+
+
+<!-- メールフォーム送信確認 -->
+<!-- 引用タグ -->
+<blockquote class="confirmSendMail">
+	<!-- タイトル -->
+	<strong class="ttl"></strong>
+	<!-- リスト -->
+	<ul class="confirmMessage">
+		<!-- リストの項目 -->
+		<li></li>
+	</ul>
+	<!-- フォームの入力内容 -->
+	<table class="form">
+		<!-- 各行 -->
+		<tr class="row">
+		  <!-- 項目 -->
+		  <th class="head"></th>
+		  <!-- 内容 -->
+		  <td class="data"></td>
+		</tr>
+	</table>
+	<!-- 改行 -->
+	<br class="br" />
+	<!-- 送信フォーム -->
+	<form class="sendForm" action="" method="">
+		<!-- 戻るボタン -->
+		<input type="" value="" onclick="" class="backButton" />
+		<!-- 送信ボタン -->
+		<input type="" value="" class="sendButton" />
+	</form>
+</blockquote>
+
+<!-- オプションタブのフォームのタグ。 -->
+<form class="optionForm" action="" method=""></form>
+
+</div>
+
+</body>
+</html>

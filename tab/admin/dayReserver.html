@@ -1,0 +1,68 @@
+<html>
+	<body>
+		<!-- 当タブの内容を作成するためのスクリプトを記述する -->
+		<script>
+			//カレントのウィンドウのDOMを取得する
+			var $currentWindow = $(CURRENT_WINDOW);
+			//カレントのウィンドウのコンテンツ領域を取得する
+			var $currentContent = $(CURRENT_WINDOW_MAIN)
+			
+			var create_tag = new createLittleContents();	//コンテンツ作成のためcreateTagを用意する
+			//タブパネルのDOMにcreateTagへの参照を保存する
+			$('#dayReserver')[0].create_tag = create_tag;
+			
+			// ユーザーページのパーツのテンプレートのJSONを取得する。
+			create_tag.getJsonFile('source/commonUser.json');
+			// 管理者ページ共通のパーツのJSONを取得する。
+			create_tag.getJsonFile('source/adminCommon.json');
+			//共通のjsonを取得する
+			create_tag.getJsonFile('source/commonJson.json');
+
+			// ユーザーページのパーツのテンプレートのDOMを取得する。
+			create_tag.getDomFile('template/commonUser.html');
+			// 管理者ページ共通のパーツのJSONを取得する。
+			create_tag.getDomFile('template/adminCommon.html');
+			// 共通パーツのDOMを取得する
+			create_tag.getDomFile('template/common.html');
+
+			//日ごと予約者一覧タブのコンテンツ
+			//選択された日付を表示する領域
+			create_tag.outputTag('dateBelt', 'dateBelt', '#dayReserver');
+			//日付選択パーツのセット
+			create_tag.outputTag('dateSelect', 'dateSelect', '#dayReserver');
+			//日付送りの矢印ボタンを作る
+			commonFuncs.putCommonButton('#dayReserver .dateBelt', 'oneDayBefore', 'arrow_left_single', true, false, true, {}, true);
+			commonFuncs.putCommonButton('#dayReserver .dateBelt', 'twoDayBefore', 'arrow_left_double', true, false, true, {}, true);
+			commonFuncs.putCommonButton('#dayReserver .dateBelt', 'oneDayAfter', 'arrow_right_single', true, false, true, {}, false);
+			commonFuncs.putCommonButton('#dayReserver .dateBelt', 'twoDayAfter', 'arrow_right_double', true, false, true, {}, false);
+			//日付検索ボタンを作る
+			commonFuncs.putCommonButton('#dayReserver .dateSelect', 'searchButton', 'search', true, false, true, {}, false);
+			
+			//日ごと授業テーブルの外枠領域を作る
+			create_tag.outputTag('eachDayReservedInfoTableOutsideArea', 'divArea', '#dayReserver');
+			//今日の日時の予約者をまず表示するため、今日の日付を取得してJSONにセットする
+			create_tag.json['eachDayReservedInfoTable'].lesson_date.value = commonFuncs.getTodayDate();
+			// 日ごと予約者一覧テーブル用のJSON配列を取得する
+			create_tag.getJsonFile('php/GetJSONArray.php', create_tag.json['eachDayReservedInfoTable'], 'eachDayReservedInfoTable');
+			//日ごと予約者一覧テーブルを作成する
+			create_tag.tableReload(EACH_DAY_RESERVED_INFO_TABLE);
+			if(create_tag.json.eachDayReservedInfoTable[TABLE_DATA_KEY].length > 0) {
+				//管理者日ごと予約者一覧テーブルを置換する
+				commonFuncs.dbDataTableValueReplace(EACH_DAY_RESERVED_INFO_TABLE, EACH_DAY_RESERVED_INFO_TABLE_REPLACE_FUNC, true, create_tag, 10);
+			}
+			
+			//日付ページングを実装する
+			nowDatePaging('dateBelt', create_tag);
+			//会員データをクリックして会員画面にログインできるようにする
+			loginMemberPageFromAdminPage('.eachDayReservedInfoTableOutsideArea', SELECTOR_TBODY_TR, '.user_key');
+
+			var $activePanel = $('.tabPanel.active', $currentContent);	//現タブパネルを取得する
+			//検索ボックスのenterキーによる決定を有効にする
+			commonFuncs.enterKeyButtonClick('#dayReserver .dateInput', '#dayReserver .searchButton');
+			//検索日付テキストボックスに初期値をセットする
+			$('.dateInput').val($('.theDay').text());
+			</script>
+	</body>
+</html>
+
+					

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- jqueryUIのcssを読み込む -->
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.min.css" media="screen" />
+
+<!-- 定数クラスを読み込む -->
+<script type="text/javascript" src="js/constants.js"></script>
+<!-- jQueryの本体を読み込む。 -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- jQueryUIを読み込む。 -->
+<script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<!-- 共通関数クラスを読み込む -->
+<script type="text/javascript" src="js/common.js"></script>
+<!-- ウィンドウ、ダイアログの基底クラス -->
+<script type="text/javascript" src="js/baseWindow.js"></script>
+<!-- 汎用ウィンドウクラス -->
+<script type="text/javascript" src="js/windowEx.js"></script>
+<!-- ダイアログ作成用クラス dialogExクラスのJSファイル -->
+<script type="text/javascript" src="js/dialogEx.js"></script>
+
+<!-- JavaScriptのコードの記述を開始する -->
+<script>
+	
+	//ドキュメントの配置が終了した後の処理
+	$(document).ready(function(){
+		commonFuncs = new common();		//共通関数クラスインスタンスを生成する
+		commonFuncs.hideLoadingScreen();			//ローディング画面を消す
+		
+		//ダイアログ表示ボタンのクリック時コールバック関数を定義する
+		$('#testDialogButton').on('click', function(){
+			//テスト用ダイアログのインスタンスを生成する
+			var newWindow = new windowEx('window/test/page/test1.html');
+			//テストダイアログを開く
+			newWindow.run();
+		});
+	});
+</script>
+</head>
+
+<body>
+	<button id="testDialogButton">hit me</button>
+</body>
+</html>

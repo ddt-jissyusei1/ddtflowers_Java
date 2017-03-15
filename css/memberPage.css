@@ -1,0 +1,1418 @@
+/*@CHARSET "UTF-8";*/
+
+a {
+	display: block;		/* ブロック要素にしてクリックしやすくする */
+	cursor: pointer;	/* マウスオーバー時にカーソルを指にする */
+}
+
+a:hover {
+	opacity: 0.6;		 /*透過度を80%にする */
+}
+
+a:active {
+	color: #999;		/* クリックしたときに文字の色を薄くする */ 
+}
+
+td {
+	vertical-align: middle;/* 縦について中央位置にする */
+}
+
+label,
+.attention span,
+.tab,
+.inlineBlock {
+	display: inline-block;
+}
+
+/* 
+ * セレクタ :.ui-dialog input, .ui-dialog textarea
+ * 概要   :ui-dialog内テキストボックス、テキストエリア
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.28
+ */
+.ui-dialog input, .ui-dialog textarea {
+	/* フォントを指定する */
+	font-family: "メイリオ", "Hiragino Kaku Gothic ProN", sans-serif;
+	/* フォントサイズを指定する */
+	font-size: 13px;	
+}
+
+.lessonTable,
+.timetableListTable,
+.reservedLessonTable,
+.finishedLessonTable,
+.adminLessonDetailTable,
+.tab,
+.textCenter {
+	text-align: center;
+}
+
+/* 
+ * セレクタ :.memberMenu li
+ * 概要   :ヘッダのメニューそれぞれの項目の領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.04
+ */
+.topLogoArea,
+.memberHeader
+.nameTitleArea,
+.ptArea,
+.banner:nth-of-type(1) {
+	margin-left: 3px;
+}
+
+.ptArea {
+	margin-right: 1em;
+}
+
+#container .lessonCalendar,
+.topLogoArea,
+.memberHeader p:nth-of-type(1),
+.explainContent:nth-of-type(1),
+.fLeft {
+	float: left;
+}
+
+/* 
+ * セレクタ :.selectTheme
+ * 概要   :テーマ選択のセレクトメニューの領域
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.30
+ * 変更者 :k.urabe
+ * 変更日 :2016.09.13
+ * 内容 :テーマのリストボックスが横に入るように領域の横幅を拡張
+ * 変更者 :r.shibata
+ * 変更日 :2016.09.21
+ * 内容 :長い文字列に対応するため横幅を割合に変更
+ */
+.selectTheme {
+	height : auto;			/* 内容に合わせた高さにする */
+	display : inline-block;	/* 横に別の要素を並べることがあるのでinline-blockにする */
+	width: 85%;				/* 中の要素がabsoluteで判定がなくなってしまうことがあるため、固定幅にする */
+	margin-bottom: 5px;		/* 下と間隔を取る */
+}
+
+/* 
+ * セレクタ :#finishedLesson .selectTheme
+ * 概要   :受講済み一覧テーブルのテーマ選択のセレクトメニューの領域
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.30
+ */
+#finishedLesson .selectTheme {
+	float : left;			/* 左に寄せる */
+}
+
+#tab-container,
+.selectThemeButton,
+.memberHeader p:nth-of-type(2),
+.fRight {
+	float: right;
+}
+
+/* 
+ * セレクタ :.tabs,
+ 		 .tabContentArea
+ * 概要   :タブの内側の領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.13
+ */
+ .tabs,
+ .tabContentArea,
+ .advertiseLink,
+ .message_title,
+ .message_content {
+ 	padding: 4px; 			/* 4px要素の幅を広げる */
+ }
+
+/* ヘッダー領域 */
+/* 
+ * セレクタ :.memberHeader
+ * 概要   :ページのヘッダー領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.13
+ */
+.memberHeader {
+	padding-top: 8px;		/* 要素の幅を上向きに8px広げる */
+}
+
+/* 
+ * セレクタ :.memberNumber, .memberName, .memberPoint
+ * 概要   :会員情報
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.08
+ */
+.memberNumber,
+.memberName,
+.memberPoint {
+	vertical-align: top;		/* 縦について並列並びにする */
+}
+
+/* 
+ * セレクタ :.memberName, .memberPoint
+ * 概要   :会員情報
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.13
+ */
+.memberName, .memberPoint {
+	padding-left: 1em;			/* 左から1文字分余白を空ける */
+}
+
+/* ヘッダー領域終わり */
+
+/* バナー領域 */
+/* 
+ * セレクタ :.userBanner
+ * 概要   :バナー外側領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.04
+ */
+.userBanner {
+	border-bottom: 3px solid #ddd;	/* 下に太さ3pxの灰色の実線を引く */
+	margin-bottom: 5px;				/* 下に5pxの余白をとる */
+}
+
+/* 
+ * セレクタ :.bannerArea
+ * 概要   :バナー内側領域領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.09
+ */
+.bannerArea {
+	clear: both;			/* 回り込みをなくす */
+}
+/* バナー領域終わり */
+
+/* ページタイトルテキスト領域 */
+/* 
+ * セレクタ :.pageHeader
+ * 概要   :ページタイトルテキスト(hタグにつけるスタイル)
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.04
+ */
+.pageHeader {
+	margin-top: 20px;		/* 上から20pxの余白を空ける */
+	margin-left: .5em;		/* 半文字分左からスペースを空ける */
+	text-align: left;		/* 左側に回り込みする */
+}
+/* ページタイトルテキスト領域終わり */
+
+/* 告知領域 */
+/* 
+ * セレクタ :.advertise
+ * 概要   :告知領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.04
+ */
+.advertise {
+	border: 1px solid #ddd; /* 灰色の線で囲む */
+	margin: 7px 0;			/* 上下に7pxの余白をあける */
+	display: none;			/* 最初は非表示にしておく */
+}
+/* 告知領域終わり */
+
+/* カレンダー領域 */
+/* 
+ * セレクタ :#container .lessonCalendar > div
+ * 概要   :カレンダーの直下の子供領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.08
+ */
+#container .lessonCalendar > div {
+	width: 100%;		/* 幅を100%にする */ 
+}
+/* カレンダー領域終わり */
+
+/* 
+ * セレクタ :#container .lessonCalendar, #tab-container
+ * 概要   :カレンダーとタブ領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.08
+ */
+#container .lessonCalendar, #tab-container {
+	margin-top: 5px;		/* 上から5pxの余白をとる */
+}
+
+/* タブ領域 */
+/* 
+ * セレクタ :#tab-container
+ * 概要   :タブ全体領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.04
+ */
+#tab-container {
+	width: 49%;					/* 幅を49%にする */
+	border: 1px solid #dfdfdf;	/* グレーの線で囲む */
+}
+
+/* 
+ * セレクタ :.tab
+ * 概要   :クリックするタブ領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.04
+ * 変更者 :T.Masuda
+ * 変更日 :2015.10.04
+ * 内容　 :幅を変更しました
+ */
+.tab {
+	width: 49%;					/* 幅を49%にする */
+	background-color: #ce6;	/* 背景を黄緑色にする */
+}
+
+/* 
+ * セレクタ :.tab.active
+ * 概要   :選択中のタブ領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.04
+ */
+.tab.active {
+	background-color: #cedc3a;	/* 背景を薄い黄緑にする */
+}
+
+/* 
+ * セレクタ :.tab.active .tabLink
+ * 概要   :選択中のタブクリック領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07.09
+ */
+.tab.active .tabLink {
+	color: #333;			/* 文字色を黒色にする */
+	font-weight: bold;		/* 太字にする */
+}
+/* タブ領域終わり */
+
+/* セレクトボックス領域 */
+/* 
+ * セレクタ :.selectThemebox
+ * 概要  :絞り込みセレクトボックス
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.04
+ * 変更者 :T.Masuda
+ * 変更日 :2016.04.30
+ * 内容  :高さを変更しました
+ */
+.selectThemebox {
+	height: 30px;				/* 高さを動的に変える */
+	width: 80px;		/* タッチしやすさを考えて最低限の幅を確保する */
+}
+/* 
+ * セレクタ :.selectThemebox
+ * 概要  :絞り込みセレクトボックス 1つだけ選択できる版
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.30
+ */
+.singleSelect {
+}
+
+/* 
+ * セレクタ :.multipleSelect
+ * 概要  :絞り込みセレクトボックス 複数選択対応版
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.30
+ */
+.multipleSelect {
+	overflow-y: hidden;		/* chromeの場合multipleにするとスクロールバーが付くので消す */
+}
+
+/* 
+ * セレクタ :.selectThemebox.multipleSelect option
+ * 概要  :テーマセレクトメニューの項目
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.30
+ */
+.selectThemebox.multipleSelect option {
+    font-size: 14px;	/* ラベルに合わせたフォントサイズにする */
+    height: 14px;		/* 高さをフォントサイズ基準にする */
+    padding: 5px 0;		/* paddingでテキストボックスと同じサイズに調整する */
+    text-indent: 0.3em;	/* インデントをつける */
+} 
+/* セレクトボックス領域終わり */
+
+/* DBから読込んだテーブル領域 */
+
+ /* セレクタ :.displayNone
+ * 概要   :表示しない要素
+ * 作成者 :T.Masuda
+ * 作成日 :2015.09.12
+ */
+.displayNone {
+	display: none;			/* 表示しない */
+}
+
+.searchInputArea input[type="date"], .searchInputArea span {
+    display: inline-block;
+}
+
+/* 
+ * セレクタ :.lessonTable
+ * 概要   :授業についてのテーブル領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.08
+ */
+.lessonTable,
+.timetableListTable,
+.reservedLessonTable,
+.finishedLessonTable,
+.infoTable,
+.eachDayReservedInfoTable,
+.doLecturePermitInfoTable,
+.sellCommodityPermitInfoTable,
+.lecturePermitListInfoTable,
+.sellCommodityPermitListInfoTable,
+.userListInfoTable,
+.mailMagaTable,
+.myBlogListTable,
+.adminLessonDetailTable {
+	border: 1px solid #999;		/* 少しグレー目の線で囲む */
+	font-size: 12px;			/* フォントサイズを14pxにする */
+	width: 99.5%;				/* 幅を100%にする */
+	box-sizing: border-box;		/* 大きさの計算を罫線込みにする */
+	margin: 0 auto;
+}
+
+/* 
+ * セレクタ :.lessonTable
+ * 概要   :DBから読込んだテーブルの行にマウスオーバーした時のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.30
+ */
+.lessonTable tr:hover,
+.timetableListTable tr:hover,
+.reservedLessonTable tr:hover,
+.finishedLessonTable tr:hover,
+.infoTable tr:hover,
+.eachDayReservedInfoTable tr:hover,
+.doLecturePermitInfoTable tr:hover,
+.sellCommodityPermitInfoTable tr:hover,
+.lecturePermitListInfoTable tr:hover,
+.sellCommodityPermitListInfoTable tr:hover,
+.userListInfoTable tr:hover,
+.mailMagaTable tr:hover,
+.myBlogListTable tr:hover,
+.adminLessonDetailTable tr:hover {
+	background: #E0F5E6;	/* 行の背景を水色っぽくする */
+}
+
+/* 
+ * セレクタ :.lessonTable
+ * 概要   :DBから読込んだテーブルの行の領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.30
+ */
+.lessonTable thead tr:nth-of-type(1),
+.timetableListTable thead tr:nth-of-type(1),
+.reservedLessonTable thead tr:nth-of-type(1),
+.finishedLessonTable thead tr:nth-of-type(1),
+.infoTable thead tr:nth-of-type(1),
+.eachDayReservedInfoTable thead tr:nth-of-type(1),
+.doLecturePermitInfoTable thead tr:nth-of-type(1),
+.sellCommodityPermitInfoTable thead tr:nth-of-type(1),
+.lecturePermitListInfoTable thead tr:nth-of-type(1),
+.sellCommodityPermitListInfoTable thead tr:nth-of-type(1),
+.userListInfoTable thead tr:nth-of-type(1),
+.mailMagaTable thead tr:nth-of-type(1),
+.myBlogListTable thead tr:nth-of-type(1),
+.adminLessonDetailTable thead tr:nth-of-type(1) {
+	background: #F0F3F5;	/* 行の背景を水色っぽくする */
+}
+
+/* 
+ * セレクタ :.lessonTable th, .lessonTable td
+ * 概要   :授業についてのテーブルのカラム領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.08
+ */
+.lessonTable td,
+.timetableListTable td,
+.reservedLessonTable td,
+.finishedLessonTable td,
+.infoTable td,
+.eachDayReservedInfoTable td,
+.doLecturePermitInfoTable td,
+.sellCommodityPermitInfoTable td,
+.lecturePermitListInfoTable td,
+.sellCommodityPermitListInfoTable td,
+.userListInfoTable td,
+.mailMagaTable td,
+.myBlogListTable td,
+.adminLessonDetailTable td {
+	border: 1px solid #ccc;		/* 少しグレー目の線で囲む */
+	padding: 2px;				/* 要素の幅を2px広げる */
+}
+
+/* 
+ * セレクタ :.lessonTable td:nth-of-type(1)
+ * 概要   :授業一覧テーブルの最初の列領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.17
+ */
+.lessonTable td:nth-of-type(1),
+.adminLessonDetailTable td:nth-of-type(1) {
+	width: 50px;			/* 幅を50pxに固定する */
+}
+
+/* 
+ * セレクタ :.doLecturePermitInfoTable tr td:nth-of-type(3)
+ * 概要   :受講承認一覧テーブルの日付列領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07.15
+ */
+.doLecturePermitInfoTable tr td:nth-of-type(3) {
+	width: 76px;			/* 幅を日付と時間で2列になるような幅にする */
+}
+
+/* 
+ * セレクタ :.reservedLessonTable td:nth-of-type(1),
+		.finishedLessonTable td:nth-of-type(1)
+ * 概要   :予約中と受講済みのテーブルのカラム領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.17
+ */
+.reservedLessonTable td:nth-of-type(1),
+.finishedLessonTable td:nth-of-type(1) {
+	width: 77px;				/* 幅を77pxで固定する */
+}
+
+/* 
+ * セレクタ :.finishedLesson .fromArea, .finishedLesson .toArea
+ * 概要   :受講済みテーブルの日付入力欄領域
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.10
+ */
+.finishedLesson .fromArea, .finishedLesson .toArea {
+    margin: 0px 0 5px;	/* 上下のみmarginを取る */
+    width : auto;		/* 子要素の幅に合わせる */
+}
+
+/* 
+ * セレクタ :.replaceTextboxTypeNumber
+ * 概要   :テーブルの数字を入力するテキストボックス
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07.11
+ */
+.replaceTextboxTypeNumber {
+	width: 70px;		/*7桁の数字が入るぐらいの幅にする*/
+}
+
+/* 
+ * セレクタ :.replaceTextbox
+ * 概要   :テーブルの中にあるテキストボックス領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07.11
+ */
+.replaceTextbox {
+	width: 95%;		/*幅を95%にする*/
+}
+
+/* 
+ * セレクタ :.mailMagaTable td
+ * 概要   :メルマガテーブルの列に対してのスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07.22
+ */
+.mailMagaTable td {
+	white-space: pre-wrap;	/* 改行文字などのエスケープシーケンス文字を認識する */
+}
+
+/* DBから読込んだテーブル領域終わり */
+
+/* サブヘッダー領域 */
+.subHeader {
+	font-size: 15px;		/* フォントサイズを15pxにする */
+	margin-bottom: 10px;	/* 底に10px余白をとる */
+}
+/* サブヘッダー領域終わり */
+
+/* 
+ * セレクタ :.accordion
+ * 概要   :アコーディオン領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.09
+ */
+.accordion {
+	display: none;			/* 非表示にする */
+}
+
+/* 
+ * セレクタ :.advertise, .tab-container
+ * 概要   :告知領域とタブ領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.11
+ */
+.advertise, .tab-container {
+	border-radius: 3px;		/* 角を3px丸くする */
+}
+
+/* パスワード変更領域 */
+/* 
+ * セレクタ :.passLabel
+ * 概要   :パスワードラベル領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.11
+ */
+.passLabel {
+	width: 20%;					/* 幅を20%にする */
+}
+
+/* 
+ * セレクタ :.passTextbox
+ * 概要   :パスワードテキストボックス領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.11
+ */
+.passTextbox {
+	width: 60%;					/* 幅を60%にする */
+}
+
+/* 
+ * セレクタ :.postPass label
+ * 概要   :パスワードラベル領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.11
+ */
+.postPass label {
+	display: block;		/* ブロック要素として扱う */
+	margin-left: 1em;	/* 1文字分余白を空ける */
+	padding: 10px 0;	/* 上下に10px要素の幅を広げる */
+}
+
+/* パスワード変更領域終わり */
+
+/* 会員情報領域 */
+/* 
+ * セレクタ :.keepMoney
+ * 概要   :お預かり金額領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.17
+ */
+.keepMoney {
+	margin-left: 1em;		/* 左から1文字余白を空ける */
+}
+
+/* 
+ * セレクタ :.memberInfo
+ * 概要   :会員情報を全体領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.10
+ */
+.memberInfo {
+	width: 90%;			/* 幅を90%にする */
+	margin: 0 auto 5px;		/* 中央揃えにする。下端に余白を付ける */
+}
+
+/* 
+ * セレクタ :.memberInfo div
+ * 概要   :会員情報をそれぞれの情報についての領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.10
+ */
+.memberInfo div {
+  margin-top: 10px;		/* 上から10px余白をとる */
+}
+/* 会員情報領域終わり */
+
+/* 更新ボタン領域 */
+
+/* 更新ボタン領域終わり */
+
+/* 予約確認ダイアログ領域 */
+/* 
+ * セレクタ : .lessonTable, .lessonConfirm,.lessonInfo,.attention,.confirmText,.memberInfomation 
+ * 概要   :予約一覧ダイアログ、予約確認ダイアログの幅
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.26
+ */
+.lessonTable,
+.lessonConfirm,
+.lessonInfo,
+.attention,
+.confirmText,
+.memberInfomation,
+.explain1,
+.adminLessonDetailStatus {
+	width: 430px;		/* ダイアログの幅を430pxにする */
+}
+
+/* 
+ * セレクタ :.lessonInfo span
+ * 概要   :予約情報の内側の領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.11
+ */
+.lessonInfo span {
+	padding-right: .5em;	/*右に半文字分の余白をとる*/
+}
+
+/* 
+ * セレクタ :.lessonConfirmContent,,.keepMoney,.hasPoint
+ * 概要   :予約情報の内側の領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.11
+ */
+.lessonConfirmContent,
+.keepMoney,
+.hasPoint {
+	font-size: 16px;		/* フォントサイズを16pxにする */
+}
+
+/* 
+ * セレクタ :.priceUnit
+ * 概要   :確認ダイアログの「円」の領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.30
+ */
+.priceUnit {
+	margin-left: -12px;		/* 12px幅を縮める */
+}
+
+/* 
+ * セレクタ :.addPointValue,.cancelRateValue,.lessonConfirm 
+ * 概要   :予約確認ダイアログの追加ポイントとキャンセルレートと授業内容確認領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.26
+ */
+.addPointValue,
+.cancelRateValue,
+.lessonConfirm {
+	text-align: center;		/* 中央寄せにする */
+}
+
+/* 
+ * セレクタ :.attention
+ * 概要   :キャンセル率の注意領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07.09
+ */
+.attention {
+	display: none;		/* 最初は表示しない */
+	font-size: 12px;	/* フォントサイズを13pxにす */
+}
+
+/* 
+ * セレクタ :.ui-dialog .lessonAccordion
+ * 概要   :確認ダイアログのキャンセル料率と加算ポイント
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07.09
+ */
+.ui-dialog .lessonAccordion {
+	font-size: 12px;	/* フォントサイズを13pxにする */
+	color: #6470EF;		/* 色を青色にする */
+	text-align: right;	/* 右寄せにする */
+	margin-right: 1em;	/* 右から1文字空ける */
+}
+
+/* 
+ * セレクタ :.attention .contentsBorder
+ * 概要   :キャンセル率のラベルと追加ポイントのラベル領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.26
+ */
+.attention .contentsBorder {
+	border-left: none;		/* 左の線をなくす */
+	margin-top: 5px;		/* 上から5pxの余白をとる */
+}
+
+/* 
+ * セレクタ :.attention .contentsBorder
+ * 概要   :キャンセル率のラベルと追加ポイントのラベル領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.26
+ */
+.attention .contentsBorder {
+	border-left: none;		/* 左の線をなくす */
+	margin-top: 5px;		/* 上から5pxの余白をとる */
+}
+
+/* 
+ * セレクタ :.unitSpace
+ * 概要   :spanタグで区切られているところの幅を調整する
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.26
+ */
+.unitSpace {
+	margin-left: -5px;		/* 左から5px余白を詰める */
+}
+
+/* 
+ * セレクタ :.cancelUnit,.pointUnit
+ * 概要   :それぞれのパーセンテージやポイントを区切るために単位にセレクタを当てる
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.26
+ */
+.cancelUnit,
+.pointUnit {
+	margin-right: 1em;		/* 右に半文字の余白を付ける */
+}
+
+/* 
+ * セレクタ :.confirmText
+ * 概要   :予約を行う、またはキャンセルを行う確認のテキスト領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.26
+ */
+.confirmText {
+	font-weight: bold;		/* 太字にする */
+	margin-top:5px;			/* 上から5pxの余白をとる */
+}
+
+/* 
+ * セレクタ :.tabLink
+ * 概要   :タブの切り替えを行うボタンの領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.26
+ */
+.tabLink {
+	padding: 6px 0;				/* 上下に6px要素の幅を広げる */
+	color: #666;				/* 文字色を黒にする */
+}
+/* 予約確認ダイアログ領域終わり */
+
+/* 予約中と受講済み授業のテーマと注釈領域 */
+/* 
+ * セレクタ :.themeText, .anotion
+ * 概要   :予約中と受講済み授業のテーマと注釈領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07.02
+ */
+.themeText, .anotion {
+	vertical-align : middle; /* 高さを中心に合わせる */
+	float: left;             /* 左寄せにする */
+}
+
+/* 
+ * セレクタ :#alreadyReserved,#finishedLesson
+ * 概要   :予約中と受講済み授業の領域
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.28
+ */
+#alreadyReserved,#finishedLesson {
+    padding: 0 5px;	/* 左右に最低限の間隔を取る */
+}
+
+/* 
+ * セレクタ :#alreadyReserved .filterButton
+ * 概要   :予約済み一覧内絞り込みボタン。絞り込みボタンは場合によって様々な場所にセットされるため、個別にカスタマイズする
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.30
+ */
+#alreadyReserved .filterButton {
+	margin-left: 5px;		/* 左にmarginをセットする */
+	float: right;			/* 右寄せにする */
+}
+
+.searchInputArea .toLabel {
+	margin-right : 2px;	/* 右と間隔を取る */
+}
+
+/* 
+ * セレクタ :.finishedLesson .filterButton
+ * 概要   :受講済みテーブルの絞込ボタン
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.17
+ */
+.finishedLesson .filterButton {
+	margin-left : 5px;	/* 左端との間に間隔を取る */
+	float : left;		/* 左に寄せる */
+}
+
+ /* 予約中と受講済み授業のテーマと注釈領域終わり */
+
+/* 
+ * セレクタ :.ui-dialog .reserveListDialog
+			,.ui-dialog .memberReservedConfirmDialog
+			,.ui-dialog .cancelLessonDialog
+ * 概要   :ダイアログ領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.13
+ */
+.ui-dialog .reserveListDialog
+,.ui-dialog .memberReservedConfirmDialog
+,.ui-dialog .cancelLessonDialog {
+ 	padding: .2em;			/* 要素の幅を0.2文字分広げる */
+ }
+
+/* パスワードリンク領域 */
+/* 
+ * セレクタ :.passLinkArea
+ * 概要   :パスワード変更リンク領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.17
+ */
+.passLinkArea {
+}
+/* パスワードリンク領域終わり */
+
+/* プロフィール入力情報入力領域 */
+/* 
+ * セレクタ :#container .memberInfo dl
+ * 概要   :プロフィール全体領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07．02
+ */
+#container .memberInfo dl {
+	margin: 5px auto;		/* 5pxを上下に余白をとり中央揃えにする */
+}
+
+/* 
+ * セレクタ :.textboxArea
+ * 概要   :テキストボックス領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07．02
+ */
+.textboxArea {
+	width: 95%;				/* 幅を95%にする */
+}
+
+/* 
+ * セレクタ :.textArea
+ * 概要   :テキストエリア領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07．02
+ */
+.textArea {
+	width: 94%;				/* 幅を94%にする */
+}
+
+/* 
+ * セレクタ :.textboxArea, .textArea
+ * 概要   :テキストボックスとテキストエリア領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07．02
+ */
+.textboxArea, .textArea {
+	border: 1px solid #d8d8d8;	/* 灰色の線で要素を囲む */
+}
+
+/* 
+ * セレクタ :.subHeader
+ * 概要   :ラベルが二文字分の領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.10
+ */
+.label2Area {
+	width: 11%;				/* 幅を11%にする */
+}
+
+/* 
+ * セレクタ :.textbox2Area
+ * 概要   :ラベルが2文字分に対応するテキストボックス領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.10
+ */
+.textbox2Area {
+	width: 84%;				/* 幅を85%にする */
+}
+
+/* 
+ * セレクタ :.label4Area, .sex
+ * 概要   :ラベルが4文字分の領域と性別の領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.10
+ */
+.label4Area, .sex {
+	width: 20%;				/* 幅を20%にする */
+}
+
+/* 
+ * セレクタ :.textbox4Area
+ * 概要   :ラベルが4文字分に対応するテキストボックス領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.10
+ */
+.textbox4Area {
+	width: 75%;				/* 幅を76%にする */
+}
+
+/* 
+ * セレクタ :.birthdayLabel
+ * 概要   :生年月日のラベル領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.10
+ */
+.birthdayLabel {
+	margin-left: 10px;		/* 左から8pxの空白をとる */
+}
+
+/* 
+ * セレクタ :.birthday
+ * 概要   :生年月日テキストボックス領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.10
+ */
+.birthday_date {
+	width: 39%;				/* 幅を40%にする */
+}
+
+/* 
+ * セレクタ :	.addressLabel,
+			.mailaddressLabel
+ * 概要   :住所のラベルとメールアドレスのラベル領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.10
+ */
+.addressLabel,
+.mailaddressLabel {
+	display: block;			/* ブロック要素にする */
+}
+
+/* 
+ * セレクタ :	.address,
+			.mailaddress
+ * 概要   :住所のテキストボックスとメールアドレスのテキストボックス領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.10
+ */
+.address,
+.mail_address {
+	width: 95%;				/* 幅を98%にする */
+}
+/* プロフィール入力情報入力領域終わり */
+
+/* 授業状態注釈領域 */
+/* 
+ * セレクタ :.explainContent:nth-of-type(1)
+ * 概要   :残席領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.09
+ */
+.explainContent:nth-of-type(1) {
+	display: block;			/* ブロック要素として扱う */
+	height: 27px;			/* 高さを27pxにする */
+	line-height: 27px;		/* 行間を27pxにする */
+	width: 10%;				/* 幅を20%にする */
+}
+
+/* 
+ * セレクタ :.explainContent
+ * 概要   :残席の記号説明領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.09
+ */
+.explainContent {
+	font-size: 12px;
+	padding-right: 1em;		/*　要素の幅を1文字分広げる　*/
+}
+/* 授業状態注釈領域の終わり */
+
+/* テーブルページング領域 */
+/* 
+ * セレクタ :.paging
+ * 概要   :ページングクリック領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07.07
+ */
+.paging {
+	padding: 5px;			/* 要素の幅を5px広げる */
+	cursor: pointer;		/* マウスオーバー時にカーソルを指にする */
+}
+
+/* 
+ * セレクタ :.nowPage
+ * 概要   :ページング現在のページ領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07.07
+ */
+.nowPage {
+	color: red;				/* 文字色を赤色にする */
+}
+/* テーブルページング領域終わり */
+
+/* メルマガ受信設定は未完成なので文字色をグレーにする */
+/*.mailMaga ,.mailMagaSetting span {
+	color: #aaa;
+}*/
+
+/* 目安箱領域 */
+
+/* 管理者　授業詳細領域 */
+/* 
+ * セレクタ:.mailButtonArea
+ * 概要   :ボタン領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.06.30
+ */
+.mailButtonArea {
+	width: auto;			/* 幅を内容に合わせる */
+	display : inline-block;	/* インラインブロックにして横並べに対応する */
+	float: right;			/* 右に寄せる */
+	margin-bottom: 5px;		/* 画面下と間隔をとる */
+}
+
+/* 
+ * セレクタ :.textareaLabel
+ * 概要   :目安箱お問い合わせ内容領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07.010
+ */
+.textareaLabel {
+	width: 99%;			/* 幅を99%にする */
+	margin: 10px 0 5px;	/* 上下妥当な間隔を取る */
+}
+
+/* 
+ * セレクタ :.suggestion
+ * 概要   :目安箱お問い合わせ内容のテキストエリア領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07.10
+ */
+.suggestion {
+	width: 100%;		/* 幅を100%にする */
+	height: 300px;		/* 高さ300pxにする */
+}
+
+/* 
+ * セレクタ :.schoolNameSelectArea
+ * 概要   :目安箱店舗名セレクト領域の外側
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07.22
+ */
+.schoolNameSelectArea {
+	margin-right: 3em;	/* 右に3文字分余白を空ける */
+}
+
+/* 
+ * セレクタ :.labelTextboxArea
+ * 概要   :目安箱タイトル入力領域の外側
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07.22
+ */
+.labelTextboxArea {
+	margin-top: 5px;	/* 上から5px余白を空ける*/
+	width: 100%;		/* 幅を100%にする */
+}
+
+/* 
+ * セレクタ :.labelTextbox
+ * 概要   :目安箱タイトル入力領域
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.07.22
+ */
+.labelTextbox {
+	width: 70%;			/* 幅を70％にする */
+}
+
+
+
+/* 目安箱領域 */
+
+
+/* スマホ・タブレットレイアウト */
+@media(max-width:680px){
+
+	/* 
+	 * セレクタ :
+				#tab-container,
+				.passArea,
+				.topLinkArea,
+				.memberInfo
+	 * 概要   :幅を97%にし、上下5pxの余白をとって中央揃えにする
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.08
+	 */
+	.advertise,
+	#container .lessonCalendar > div,
+	#tab-container,
+	.passArea,
+	.topLinkArea,
+	.memberInfo,
+	.outsideArea,
+	#container .userInf {
+		width: 97%;			/* 幅を90%にする */
+		margin: 5px auto; 	/* 上下に5px余白をとり、左右は中央揃えにする */
+	}
+
+	/* 
+	 * セレクタ :.outsideArea
+	 * 概要   :管理者タブの最外部分
+	 * 作成者 :T.Masuda
+	 * 作成日 :2016.05.01
+	 */
+	.outsideArea {
+		margin : 0 auto;	/* 上下marginはいらないので削除する */
+	}
+
+	/* 
+	 * セレクタ :#container .lessonCalendar, #tab-container
+	 * 概要   :カレンダーとタブ領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.08
+	 */
+	#container .lessonCalendar, #tab-container {
+		float:none;					/* 回り込みをなくす */ 
+	}
+
+	/* 
+	 * セレクタ :#container .lessonCalendar
+	 * 概要   :カレンダー領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.08
+	 */
+	#container .lessonCalendar {
+		width: 100%;					/* 幅を100%にする */ 
+	}
+
+	/* 
+	 * セレクタ :.priceUnit
+	 * 概要   :確認ダイアログの「円」の領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.30
+	 */
+	.priceUnit {
+		margin-left: -8px;		/* 8px幅を縮める */
+	}
+
+	/* 
+	 * セレクタ :.lessonTable td,
+	 .reservedLessonTable td,
+	 .finishedLessonTable td,
+	 .memberHeader p
+	 * 概要   :確認ダイアログの「円」の領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.30
+	 */
+	 .lessonTable td,
+	 .reservedLessonTable td,
+	 .finishedLessonTable td,
+	 .memberHeader p {
+	 	font-size: 12px;		/* フォントサイズを12pxにする */
+	 }
+
+	 /*
+	 * セレクタ :.explainContent:nth-of-type(1)
+	 * 概要   :残席領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.30
+	 */
+	.explainContent:nth-of-type(1) {
+		height: 50px;			/* 高さを50pxにする */
+		line-height: 50px;		/* 行間を50pxにする */
+		width: 21%;				/* 幅を21%にする */
+	}
+
+	/* 
+	 * セレクタ :.memberHeader p
+	 * 概要   :ダイアログ領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.13
+	 */
+	 .memberHeader p {
+	 	padding: 5px 0;			/* 上下に5px要素の幅を広げる */
+	 }
+
+	/* 予約ダイアログ、予約確認ダイアログ領域 */
+	/* 
+	 * セレクタ :.lessonConfirm,.lessonInfo,.attention,.confirmText,.memberInfomation 
+	 * 概要   :予約一覧ダイアログ、予約確認ダイアログの幅
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.26
+	 */
+	.lessonTable,
+	.lessonConfirm,
+	.lessonInfo,
+	.attention,
+	.confirmText,
+	.memberInfomation,
+	.explain1,
+	.adminLessonDetailStatus {
+		width: 280px;		/* ダイアログの幅を430pxにする */
+	}
+
+	/* 
+	 * セレクタ :.memberReservedConfirmDialog,.keepMoney,.hasPoint
+	 * 概要   :予約情報の内側の領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.11
+	 */
+	.memberReservedConfirmDialog,
+	.cancelLessonDialog,
+	.keepMoney,
+	.hasPoint {
+		font-size: 14px;		/* フォントサイズを13pxにする */
+	}
+
+	/* 
+	 * セレクタ :.cancelUnit, .pointUnit
+	 * 概要   :予約情報の内側の領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.11
+	 */
+	.cancelUnit, .pointUnit {
+		margin-right: 0.5em;
+	}
+	/* 予約ダイアログ、予約確認ダイアログ領域終わり */
+
+	/* 
+	 * セレクタ :.paging
+	 * 概要   :ページング領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.07.07
+	 */
+	 .paging {
+	 	font-size: 16px;		/* フォントサイズを16pxにする */
+	 }
+	 
+	/* 
+	 * セレクタ :.notApplySmartphoneFontsize
+	 * 概要   :スマホサイズの文字サイズを適用しないようにする
+	 * 作成者 :T.Masuda
+	 * 作成日 :2016.04.30
+	 */
+	.notApplySmartphoneFontsize {
+		font-size : 16px;	/* フォントをスマホ用サイズにしない */
+	}
+	 
+}
+
+/* スマホ用微調整 */
+@media(max-width:415px){
+
+	/*
+	 * セレクタ:input[type="date"]
+	 * 概要   :日付テキストボックス
+	 * 作成者 :T.Masuda
+	 * 作成日 :2016.04.30
+	 */
+	input[type="date"] {
+	    width: 115px;	/* 最低限の幅を取る */
+	}
+	
+	
+	/* 
+	 * セレクタ :.passArea, .topLinkArea
+	 * 概要   :パスワード領域とトップページリンク領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.09
+	 */
+	.passArea, .topLinkArea {
+		font-size: 14px;		/* フォントサイズを14pxにする */
+	}
+
+	/* 
+	 * セレクタ .passLabel
+	 * 概要   :パスワードラべル領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.09
+	 */
+	.passLabel {
+		display: inline;		/* インライン要素にする */
+	}
+
+	/* 
+	 * セレクタ .passTextbox
+	 * 概要   :パスワードテキストボックス領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.09
+	 */
+	.passTextbox {
+		width: 90%;			/* 幅を90%にする */
+	}
+
+	/* 
+	 * セレクタ :#finishedLesson .searchInputArea
+	 * 概要   :受講済み一覧内 検索(絞込)要素領域
+	 * 作成者 :T.Masuda
+	 * 作成日 :2016.04.30
+	 */
+	#finishedLesson .searchInputArea {
+	    width: auto;	/* 子要素の幅を踏襲する */
+	}	
+
+
+	/* 
+	 * セレクタ :.searchButton
+	 * 概要   :検索ボタン
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.07.11
+	 */
+	.searchButton {
+	}
+
+	/* 
+	 * セレクタ :.finishedLesson .filterButton
+	 * 概要   :受講済みテーブルの絞込ボタン
+	 * 作成者 :T.Masuda
+	 * 作成日 :2016.04.17
+	 */
+	.finishedLesson .filterButton {
+		margin-left : 2px;	/* 間隔を狭めて段が下がらない様にする */
+	}
+
+	/* 
+	 * セレクタ :.searchInputArea .toLabel
+	 * 概要   :〜のラベル
+	 * 作成者 :T.Masuda
+	 * 作成日 :2016.04.30
+	 */
+	.searchInputArea .toLabel {
+		font-size:10px;			/* 一行に並べるためには間隔が足りないので小さくする */
+		margin-top:7px;			/* 上marginを入れて中心に寄せる */
+	}
+
+	/* 
+	 * セレクタ :.accordionDetail li
+	 * 概要   :アコーディオンそれぞれの行の領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.10
+	 */
+	.accordionDetail li {
+		padding-top: 5px;		/* 上から5pxの余白を空ける */
+	}
+
+	/* 
+	 * セレクタ :	.lessonRateUnit,
+				.stageNumber,
+				.levelNumber,
+				.addPoint1ValueUnit,
+				.addPoint4ValueUnit
+	 * 概要   :アコーディオン内の単位の領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.10
+	 */
+	.lessonRateUnit,
+	.stageNumber,
+	.levelNumber,
+	.addPoint1ValueUnit,
+	.addPoint4ValueUnit {
+		padding-right: 2em;		/* 2文字分右に余白をとる */
+	}
+
+	/* 
+	 * セレクタ :.cancelDayValueUnit, .cancel1DayValueUnit
+	 * 概要   :キャンセル料内の単位領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.10
+	 */
+	.cancelDayValueUnit, .cancel1DayValueUnit {
+		padding-right: 1em;		/* 右に余白を1文字分とる */
+		margin-left: -5px;		/* 左に5px幅を詰める */
+	}
+
+	/* 
+	 * セレクタ :.rateDetail1,
+			.rateDetail2,
+			.cancelRateText,
+			.addPointText1,
+			.addPointText1
+	 * 概要   :アコーディオン詳細部分領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.10
+	 */
+	.memberInfo,
+	.rateDetail1,
+	.rateDetail2,
+	.cancelRateText,
+	.addPointText1,
+	.addPointText1 {
+		font-size: 13px;		/* フォントサイズを13pxにする */
+	},
+
+	/* 
+	 * セレクタ :.banner:nth-of-type(6)
+	 * 概要   :バナーの6個目の領域
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.06.30
+	 */
+	#container .banner:nth-of-type(6) {
+		margin-left: 3px;
+	}
+}
+

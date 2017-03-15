@@ -1,0 +1,9 @@
+{
+    "insertMessageInf":{
+    	"db_setQuery":"CALL insertMessageInfo('message_title', 'message_content');"
+    },
+    "insertMessageTo":{
+    	"db_setQuery":"CALL insertMessageTo('user_key');"
+    }
+}
+

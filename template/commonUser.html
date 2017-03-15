@@ -1,0 +1,74 @@
+<!-- ログインを要するページ(管理者、ユーザ)用の共通パーツ -->
+<!--
+	ファイル名:commonUser.html
+	概要　　　:ログインを要するページ(管理者、ユーザ)用の共通パーツテンプレートファイル
+	作成日　　:2015.0612
+	作成者　　:T.Masuda
+	パス　　　:/template/commonUser.html
+-->
+<html>
+<body>
+<!-- テンプレート領域 -->
+<div>
+	<!-- 管理者サイトヘッダー領域 -->
+	<div class="adminHeader">
+		<!-- 会員番号と会員名、所持ポイントを表示する領域 -->
+		<div class="memberStatus">
+			<!-- トップページロゴ領域 -->
+			<span class="topLogoArea">
+				<!-- トップページリンク領域 -->
+				<a class="topLink" href="">
+					<!-- トップページ画像領域 -->
+					<img class="topLogoImage" src="">
+				</a>
+			</span>
+			<span class="memberNumber">
+				<span class="noArea"></span>
+				<span class="numberArea"></span>
+			</span>
+			<!-- 会員名 -->
+			<span class="memberName">
+				<!-- 名前表示領域 -->
+				<span class="user_name"></span>
+				<!-- 敬称「様」表示領域 -->
+				<span class="nameTitleArea"></span>
+			</span>
+			<!-- 所持ポイント -->
+			<span class="memberPoint">
+				<!-- ポイント数字表示領域 -->
+				<span class="get_point"></span>
+				<!-- pt表示領域 -->
+				<span class="ptArea"></span>
+			</span>
+			<!-- ログアウト領域 -->
+			<span class="logoutArea">
+				<!-- ログアウトリンクエリア -->
+				<a class="logoutLink" href="">
+					<img class="logoutImage" src="">
+				</a>
+			</span>
+		</div>
+	</div>
+
+	
+	<!-- 画面上部へスクロールするボタン -->
+	<a href class="returnTopPosition" >
+		<img src alt class="returnTopPositionImg" />
+	</a>
+	
+	<!-- 汎用的なボタン -->
+	<input class="normalButton" type="" value="">
+	
+	<!-- ダイアログ用タグ -->
+	<div class="dialogDiv"></div>
+	
+	<!-- 授業状況のテーブル。template/memberPage.htmlにも同クラスのテーブルタグがあるので取扱に注意する。 -->
+	<table class="lessonTable">
+		<tr>
+			<td></td>
+		</tr>
+	</table>
+	
+</div>
+</body>
+</html>

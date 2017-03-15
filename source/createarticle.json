@@ -1,0 +1,144 @@
+{
+	"pageTitle": {
+		"class": "pageTitle cf",
+		"image": {
+			"src": "image/icon(accessbird).png"
+		},
+		"title": {
+			"text": "記事作成"
+		},
+		"summary": {
+			"text": ""
+		}
+	},
+	"blogEditImageUploader": {
+		"class": "uploader blogEditImageUploader",
+		"type": "file"
+	},
+	"blogEdit": {
+	    "class" : "blogEdit cf",
+		"name": "blogEdit",
+		"method": "post",
+		"action": ",memberMyBlog.html",
+		"title": "ブログ記事編集",
+		"value": "ブログ記事の編集を確定します。"
+	},
+	"blogEditTitle": {
+		"blogEditTitleText": {
+			"type": "text",
+			"name": "blogTitle"
+		}
+	},
+	"blogEditImages": {},
+	"blogEditImagesSection1": {
+		"class": "blogEditImagesSection cf",
+		"blogEditImagesSectionImage": {
+			"name": "thumb1"
+		},
+		"blogEditImagesSectionImagePath": {
+			"name": "image_1",
+			"type": "hidden",
+			"value": ""
+		}
+	},
+	"blogEditImagesSection2": {
+		"class": "blogEditImagesSection cf",
+		"blogEditImagesSectionImage": {
+			"name": "thumb2"
+		},
+		"blogEditImagesSectionImagePath": {
+			"name": "image_2",
+			"type": "hidden",
+			"value": ""
+		}
+	},
+	"blogEditImagesSection3": {
+		"class": "blogEditImagesSection cf",
+		"blogEditImagesSectionImage": {
+			"name": "thumb3"
+		},
+		"blogEditImagesSectionImagePath": {
+			"name": "image_3",
+			"type": "hidden",
+			"value": ""
+		}
+	},
+	"blogEditText": {
+		"class": "blogEditText cf",
+		"blogEditTextarea": {}
+	},
+	"blogPublication": {
+		"blogPublicationRadio1": {
+			"class": "blogPublicationRadio",
+			"type": "radio",
+			"value": "0",
+			"name": "blogPublication",
+			"checked": ""
+		},
+		"blogPublicationLabel1": {
+			"class": "blogPublicationLabel",
+			"text": "全体に公開"
+		},
+		"blogPublicationRadio2": {
+			"class": "blogPublicationRadio",
+			"type": "radio",
+			"value": "1",
+			"name": "blogPublication"
+		},
+		"blogPublicationLabel2": {
+			"class": "blogPublicationLabel",
+			"text": "友達にのみ公開"
+		},
+		"blogPublicationRadio3": {
+			"class": "blogPublicationRadio",
+			"type": "radio",
+			"value": "2",
+			"name": "blogPublication"
+
+		},
+		"blogPublicationLabel3": {
+			"class": "blogPublicationLabel",
+			"text": "非公開"
+		}
+	},
+	"blogEditButtons": {
+		"class": "blogEditButtons cf"
+	},
+	"insertMyBlog": {
+		"db_setQuery": "CALL insertNewBlogArticle('user_key', 'blogTitle', 'blogContent', 'blogPublication', 'image_1', 'image_2', 'image_3')"
+	},
+	"updateMyBlog": {
+		"db_setQuery": "CALL updateBlogArticle('id', 'blogTitle', 'blogContent' , 'image_1', 'image_2', 'image_3', 'blogPublication');",
+		"id": {
+			"value": ""
+		}
+	},
+	"myBlogContent": {
+		"db_getQuery": "CALL getBlogArticleWithId(@result, 'user_key', 'id'); SELECT @result AS 'result';",
+		"user_key": {
+			"value": ""
+		},
+		"id": {
+			"value": ""
+		},
+		"title": {
+			"text": ""
+		},
+		"content": {
+			"text": ""
+		},
+		"updateFlag": "",
+		"disclosure_range": {
+			"text": ""
+		},
+		"image_1": {
+			"text": ""
+		},
+		"image_2": {
+			"text": ""
+		},
+		"image_3": {
+			"text": ""
+		}
+	}
+}

@@ -1,0 +1,15 @@
+<div class="dialog" role="confirmDialog">
+	<!-- メッセージ領域-->
+	<p>messageArea</p>
+	<script>
+	//当該ダイアログのDOMを取得する
+	var thisDialog = $(CURRENT_DIALOG);
+	//このダイアログのクラスを定義したJSファイルを読み込む
+	commonFuncs.getScriptFile("dialog/js/confirmDialog.js");
+	//当該ダイアログ用関数クラスインスタンスを生成する
+	var dialogBuilder = new confirmDialog(thisDialog[0]);
+	//ダイアログのDOMに関数クラスインスタンスの参照を持たせる
+	thisDialog[0].dialogBuilder = dialogBuilder;
+
+	</script>
+</div>

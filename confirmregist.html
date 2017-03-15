@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+		<!-- 管理者画面のCSSファイルを読み込む。 -->
+		<link href="css/admin.css" rel="stylesheet" type="text/css" />
+		<script>
+			var $target = $('.main');	//タグの書き込み先を変数に格納する。
+			creator.getJsonFile('source/commonJson.json');			// ファイルのデータをjsonを用いて持ってくる
+			creator.getJsonFile('source/studentmanagement.json');	// 生徒さん情報管理のJSONを取得する。
+			//管理者タブ内でなければ
+			if($('.contentManagement').length <= 0){
+				creator.outputTag('headImage', 'createImage', $target);	// 天の画像を作る
+			//管理者タブ内であれば
+			} else {
+				$target = $('.tabPanel.active:last');	//書き込み先をタブにする
+			}
+			//フォームデータがあれば
+			if('formData' in creator.formData){
+				// 送信された生徒さんの登録情報を受け取るコンテンツを作る。
+				creator.outputTag('confirmRegistration', 'confirmRegistration', $target);
+				//テーブルにフォームのデータを流し込む。
+				injectionTableData('.confirmRegistrationTable', creator.formData['formData']);
+			} else {
+				//前のページに戻って入力をやり直す様に促す。
+				creator.json['errorConfirm']['secondLine']['text'] = 'エラーが発生しました。';	
+				creator.outputTag('errorConfirm', 'showMessage', $target);	// エラー発生のメッセージを出す。
+			}
+			
+			if($('.contentManagement').length <= 0){
+				creator.outputTag('footImage', 'createImage');		// 地の画像を作る
+				creator.outputTag('footer');						// フッターを作る
+			}
+			
+			$('.main input:button,.main input:submit').button();									//ボタンをリッチにする。
+			// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+			// fixYCoordinate('header', '.main');
+			//フォームに入力チェックをかける。
+			$('form').validate(showAlert);
+			</script>
+		</div>
+	</div>
+</body>
+</html>

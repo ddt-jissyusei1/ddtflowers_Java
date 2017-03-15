@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- 会員プロフィールページ用のjavascriptを読み込む -->
+			<script src="js/page/memberProfile.js">
+			</script>
+			<script>
+				try{
+					//カレントのウィンドウのDOMを取得する
+					var $currentWindow = $(CURRENT_WINDOW);
+					//カレントのウィンドウのコンテンツ領域を取得する
+					var $currentContent = $(CURRENT_WINDOW_MAIN)
+					
+					// dom要素を作るクラスをインスタンス化する
+					var create_tag = new createLittleContents();
+					// パスワード変更画面のjsonを読み込む
+					create_tag.getJsonFile('source/memberProfile.json');
+					// 共通のパーツのJSONを取得する。
+					create_tag.getJsonFile('source/memberCommon.json');
+					// パーツのテンプレートのDOMを取得する。
+					create_tag.getDomFile('template/common.html');
+					// パーツのテンプレートのDOMを取得する。
+					create_tag.getDomFile('template/memberCommon.html');
+					// 会員ページのjsonを読み込む
+					create_tag.getDomFile('template/memberProfile.html');
+					
+					//accountHeaderから会員IDを取得する。別ユーザログインしていた場合はcookieからIDを取得する
+					var memberInfo = commonFuncs.checkEmpty(commonFuncs.GetCookies().otherUserId) ?  commonFuncs.GetCookies().otherUserId: create_tag.json.accountHeader.user_key.value;
+					create_tag.json.accountHeader.user_key.value = memberInfo;	//取得したIDをaccountHeaderに反映する
+					
+					//ユーザ情報のテキストをDBから取得する
+					create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['accountHeader'], 'accountHeader');
+					// 会員ページヘッダーを作る
+					create_tag.outputTag('accountHeader', 'memberHeader', $currentContent);
+					// バナー領域を作る
+					create_tag.outputTag('userBanner', 'userBanner', $currentContent);
+					// サブヘッダーを作る
+					create_tag.outputTag('subHeader', 'subHeader', $currentContent);
+					//会員番号をjsonに入れる
+					create_tag.json.getUserInf.userId.value = create_tag.json.accountHeader.user_key.value;
+					//会員の情報をDBから読み込む
+					create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['getUserInf'], 'getUserInf');
+					// 会員情報を表示する領域を作る
+					create_tag.outputTag('memberInfo', 'memberInfo', $currentContent);
+					// 「氏名」概要領域を作る
+					create_tag.outputTag('nameSummary', 'inputLabel', '.userInf');
+					// 「氏名」テキストボックス領域を作る
+					create_tag.outputTag('nameTextbox', 'inputArea', '.userInf');
+	
+					// 「カナ」概要領域を作る
+					create_tag.outputTag('nameKanaSummary', 'inputLabel', '.userInf');
+					// 「カナ」テキストボックス領域を作る
+					create_tag.outputTag('nameKana', 'inputArea', '.userInf');
+	
+					// 「性別」概要領域を作る
+					create_tag.outputTag('userSexSummary', 'inputLabel', '.userInf');
+					// 「性別」セレクトボックス領域を作る
+					create_tag.outputTag('userSex', 'selectboxArea', '.userInf');
+	
+					// 「生年月日」概要領域を作る
+					create_tag.outputTag('birthDayDateSummary', 'inputLabel', '.userInf');
+					// 「生年月日」セレクトボックス領域を作る
+					create_tag.outputTag('birthDayDate', 'inputArea', '.userInf');
+	
+					// 「郵便番号」概要領域を作る
+					create_tag.outputTag('zipCodeSummary', 'inputLabel', '.userInf');
+					// 「郵便番号」テキストボックス領域を作る
+					create_tag.outputTag('zipCode', 'inputArea', '.userInf');
+	
+					// 「住所」概要領域を作る
+					create_tag.outputTag('addressSummary', 'inputLabel', '.userInf');
+					// 「住所」テキストボックス領域を作る
+					create_tag.outputTag('addressArea', 'inputTextArea', '.userInf');
+	
+					// 「メールアドレス」概要領域を作る
+					create_tag.outputTag('mailAddressSummary', 'inputLabel', '.userInf');
+					// 「メールアドレス」テキストボックス領域を作る
+					create_tag.outputTag('mailAddress', 'inputArea', '.userInf');
+	
+					// 「電話番号」概要領域を作る
+					create_tag.outputTag('telephoneSummary', 'inputLabel', '.userInf');
+					// 「電話番号」テキストボックス領域を作る
+					create_tag.outputTag('telephoneTextbox', 'inputArea', '.userInf');
+	
+					// 「緊急番号」概要領域を作る
+					create_tag.outputTag('telephone2Summary', 'inputLabel', '.userInf');
+					// 「緊急番号」テキストボックス領域を作る
+					create_tag.outputTag('telephone2Textbox', 'inputArea', '.userInf');
+	
+					// 「メルマガ受信設定」概要領域を作る
+					create_tag.outputTag('mailMagaSettingSummary', 'inputLabel', '.userInf');
+					//「メルマガ受信設定」の項目を作成する
+					create_tag.outputTag('mailMagaSetting', 'mailMagaSetting', '.userInf');
+	
+					// パスワード変更(パスワード変更画面へ行く)ボタンを作る
+					commonFuncs.putCommonButton('.memberInfo', 'passLinkArea fRight', 'password_change', true, true, true, {onclick : '$(CURRENT_WINDOW)[0].instance.callPage("window/member/page/memberPassword.html");'}, false);
+					// 更新ボタンを作る 2016.09.09 r.shibata フォームの入力規則及び更新処理が行われていなかった点を修正（typeにsubmitを指定した)
+					commonFuncs.putCommonButton('.memberInfo', 'updateButton fRight', 'update', true, true, true, {TYPE:SUBMIT}, false);
+										
+					// 生年月日のテキストボックスにフォーカスするとカレンダーを表示する
+					//clickCalendar('birthday_date');
+					//テキストボックスなどのvalue属性にDBから読込んだ値を入れる
+					commonFuncs.setValueDBdata(create_tag.json['getUserInf']['memberInfoValue'], '.userInf', EMPTY_STRING);
+
+					//入力値をチェックする 2016.12.28 r.shibata セレクタ指定がformのみの物を、カレントウィンドウのformを指定するように修正
+					$(CURRENT_WINDOW + SPACE + FORM).validate(profileValidation);
+					
+					addlogoutEvent('.logoutLink');	//ログアウトボタンのイベントを登録する。
+				} catch(e) {
+					console.log(e)
+				}
+			</script>
+		</div>
+	</div>
+</body>
+</html>

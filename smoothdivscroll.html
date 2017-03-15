@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- jQueryUIのCSSを使う。 -->
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.min.css" media="screen" />
+<!-- Smooth DIV ScrollのCSSを使う。 -->
+<link rel="stylesheet" type="text/css" href="css/smoothDivScroll.css" media="screen" />
+
+<!-- 独自のCSSを指定する。 -->
+<style>
+/* 大枠 */
+#mixedContent {
+	width:100%;			/* 幅 */
+	height: 330px;		/* 高さ */
+	position: relative;	/* 位置タイプの指定 */
+}
+
+/* コンテンツの枠 */
+#mixedContent .contentBox {
+	position: relative;		/* 相対位置を指定する */
+	float: left;			/* 左に寄せる */
+	display: block;			/* ブロック要素として扱う */
+	height: 308px;			/* 高さ */
+	width: 200px;			/* 幅 */
+	border: solid 1px #ccc;	/* 枠線 */
+	padding: 10px;			/* 余白 */
+	margin: 0px 5px;		/* margin */
+}
+
+/* 画像 */
+#mixedContent .contentBox img {
+	margin-bottom: 10px;	/* 下に余白を入れる */
+}
+
+/* 文字 */
+#mixedContent .contentBox p {
+	font-size: 10px;		/* 文字サイズを指定する。 */
+}
+
+</style>
+
+<!-- jQueryの本体を読み込む。 -->
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<!-- jQuery UIの本体を読み込む。 -->
+<script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<!-- マウスホイールの動きに対応するプラグインを読み込む。 -->
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+<!-- ドラッグ用のjQueryプラグインを読み込む。 -->
+<script type="text/javascript" src="js/jquery.kinetic.min.js"></script>
+<!-- Smooth DIV Scrollの本体を読み込む。 -->
+<script type="text/javascript" src="js/jquery.smoothdivscroll-1.3-min.js"></script>
+<!-- JavaScriptのコードを記述する。 -->
+<script type="text/javascript">
+	//ページ読み込み後の処理を記述する。
+	$(document).ready(function () {
+		//SmoothDivScrollの関数をコールしてギャラリーを作る。
+		$("#mixedContent").smoothDivScroll({
+			//カーソル合わせでスクロールする領域を表示する。
+			hotSpotScrolling: true,
+			//タッチでのスクロールを有効にする。
+			touchScrolling: true,
+			manualContinuousScrolling: true,
+			//マウスホイールによるスクロールを無効にする。
+			mousewheelScrolling: false,
+			visibleHotSpotBackgrounds:"always"
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- ギャラリーの本体部分。 -->
+	<div id="mixedContent">
+		<!-- ギャラリーの画像群。 -->
+		<img src="photo/general/web120/DSC_1086.jpg" alt="Demo image" id="field" />
+		<img src="photo/general/web120/DSC_1061.jpg" alt="Demo image" id="gnome" />
+		<img src="photo/general/web120/DSC_1038.jpg" alt="Demo image" id="pencils" />
+		<img src="photo/general/web120/DSC_1025.jpg" alt="Demo image" id="golf" />
+		<img src="photo/general/web120/DSC_0985.jpg" alt="Demo image" id="river" />
+		<img src="photo/general/web120/DSC_0947.jpg" alt="Demo image" id="train" />
+		<img src="photo/general/web120/DSC_0898.jpg" alt="Demo image" id="leaf" />
+		<img src="photo/general/web120/DSC_0894.jpg" alt="Demo image" id="dog" />
+		<!-- img src="images/demo/field.jpg" alt="Demo image" id="field" />
+		<img src="images/demo/gnome.jpg" alt="Demo image" id="gnome" />
+		<img src="images/demo/pencils.jpg" alt="Demo image" id="pencils" />
+		<img src="images/demo/golf.jpg" alt="Demo image" id="golf" />
+		<img src="images/demo/river.jpg" alt="Demo image" id="river" />
+		<img src="images/demo/train.jpg" alt="Demo image" id="train" />
+		<img src="images/demo/leaf.jpg" alt="Demo image" id="leaf" />
+		<img src="images/demo/dog.jpg" alt="Demo image" id="dog" / -->
+	</div>
+</body>
+</html>

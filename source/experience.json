@@ -1,0 +1,201 @@
+{
+    "pageTitle": {
+        "class": "pageTitle cf",
+        "image": {
+            "src": "image/icon(butterfly).png"
+        },
+        "title": {
+            "text": "体験レッスン"
+        },
+        "summary": {
+            "text": "興味はあるけど作れるかどうか、続くかどうか不安…。まずは体験レッスンを受けてみて下さい！体験レッスンは本コースに則した内容で楽しくてかわいい作品を作ることが出来ます。"
+        }
+    },
+    "reservedFlow": {
+        "contentsTitleBack": {
+            "contentsTitle": {
+                "contentsImgLeft": {
+                    "src": "image/icon(smilebird).png"
+                },
+                "contentsTitleText": {
+                    "text": "ご予約までの流れ"
+                },
+                "contentsImgRight": {
+                    "src": "image/icon(clearfacebird).png"
+                }
+            }
+        },
+        "meritToExperience": {
+            "class": "noneDisplay"
+        },
+        "contentsBorder1": {
+            "text": "STEP1"
+        },
+        "contentsBorderInText1": [
+            "あらかじめ、体験レッスン用作品群から作りたい作品を選んでおきます。",
+            "カレンダーから体験レッスンを受けたい日にちをクリックします。",
+            "＊予約ダイアログが表示されます。"
+        ],
+        "contentsBorder2": {
+            "text": "STEP2"
+        },
+        "contentsBorderInText2": {
+            "text": "プリザ、生花の作品写真群から作りたい作品を選んでください。"
+        },
+        "contentsBorder3": {
+            "text": "STEP3"
+        },
+        "contentsBorderInText3": {
+            "text": "希望する時限を選んでください。＊複数指定を推奨します。"
+        },
+        "contentsBorder4": {
+            "text": "STEP4"
+        },
+        "contentsBorderInText4": {
+            "text": "予備情報として比較的受けやすい曜日と週を選んでください。"
+        },
+        "contentsBorder5": {
+            "text": "STEP5"
+        },
+        "contentsBorderInText5": [
+            "予約可能か否かにつきまして追ってメールにより返信致します。",
+            "また、予約不可の場合は予備情報を参考にこちらから予約日時を提案させて頂きます。"
+        ],
+        "contentsBorder6": {
+            "class": "noneDisplay"
+        },
+        "contentsBorderInText6": {
+            "class": "noneDisplay"
+        }
+    },
+    "specialGuide":{
+        "specialGuideTable": {
+            "class": "CourseGuideTable guideTable",
+            "summary": {
+                "text": "体験レッスン案内"
+            },
+            "doKnow": {
+                "item": {
+                    "text": "体験種別"
+                },
+                "content": {
+                    "text": "プリザーブドフラワー,生花"
+                }
+            },
+            "cost": {
+                "item": {
+                    "text": "費用"
+                },
+                "content": {
+                    "text": "2,800円"
+                }
+            },
+            "times": {
+                "item": {
+                    "text": "回数"
+                },
+                "content": {
+                    "text": "1回"
+                }
+            },
+            "hour": {
+                "item": {
+                    "text": "1回あたりの時間"
+                },
+                "content": {
+                    "text": "90分"
+                }
+            },
+            "target": {
+                "item": {
+                    "text": "対象者"
+                },
+                "content": {
+                    "text": "初めての方 癒されたい方 趣味を見つけたい方 どなたでも大歓迎"
+                }
+            },
+            "bring": {
+                "item": {
+                    "text": "持ち物・その他"
+                },
+                "content": {
+                    "text": "お持ち帰り用の袋をご持参下さい"
+                }
+            }
+        },
+        "annotation":{
+            "text":"＊生花体験レッスンのお花は入荷状況により変更になります"
+        }
+    },
+    "experienceGallery": {
+        "experience1stDiv": {
+            "experience1stArt": {
+                "href": "photo/general/web/DSC_0682.jpg",
+                "rel": "gallery",
+                "experience1stImage": {
+                    "src": "photo/general/web120/DSC_0682.jpg"
+                },
+                "construct1stName": {
+                    "text": "プリザ1"
+                }
+            }
+        },
+        "experience2ndDiv": {
+            "experience2ndArt": {
+                "href": "photo/general/web/ex_puriza2.JPG",
+                "rel": "gallery",
+                "experience2ndImage": {
+                    "src": "photo/general/web120/ex_puriza2.jpg"
+                },
+                "construct2ndName": {
+                    "text": "プリザ2"
+                }
+            }
+        },
+        "experience3rdDiv": {
+            "experience3rdArt": {
+                "href": "photo/general/web/ex_fresh1.JPG",
+                "rel": "gallery",
+                "experience3rdImage": {
+                    "src": "photo/general/web120/ex_fresh1_w179.jpg"
+                },
+                "construct3rdName": {
+                    "text": "生花1"
+                }
+            }
+        },
+        "experience4thDiv": {
+            "experience4thArt": {
+                "href": "photo/general/web/ex_fresh2.JPG",
+                "rel": "gallery",
+                "experience4thImage": {
+                    "src": "photo/general/web120/ex_fresh2_w179.jpg"
+                },
+                "construct4thName": {
+                    "text": "生花2"
+                }
+            }
+        }
+    },
+    "photoGallery": {
+        "class": "description contentsTitleBack",
+        
+        "contentsTitle": {
+            "contentsImgLeftL": {
+                "src": "image/icon(bluesmallbird).png"
+            },
+            "contentsTitleText": {
+                "text": "体験作品一覧"
+            },
+            "contentsImgRight": {
+                "src": "image/icon(redbird).png"
+            },
+            "contentsImgRightR": {
+                "src": "image/icon(redsunflower).png"
+            }
+        }
+    },
+    "calendar": {
+    	"name":"experience"
+    }
+}

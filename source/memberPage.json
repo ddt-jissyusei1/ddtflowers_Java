@@ -1,0 +1,706 @@
+{
+    "advertise": {
+        "db_getQuery": "CALL getUserMessage(@result, 'user_key'); SELECT @result AS 'result';",
+        "user_key": {
+            "value": ""
+        },
+        "message_title": {
+            "text": ""
+        },
+        "message_content": {
+            "text": ""
+        }
+    },
+    "lessonCalendar": {
+        "class":"lessonCalendar calendar",
+        "name": "lessonCalendar"
+    },
+    "lessonTab": {
+        "class": "tab-container",
+        "id": "tab-container",
+        "tabs": {
+            "tab":{
+                "class":"tab inlineBlock textCenter"
+            },
+            "tab": [
+                {
+                    "href": "#alreadyReserved",
+                    "text": "予約中の授業"
+                },
+                {
+                    "href": "#finishedLesson",
+                    "text": "受講済の授業"
+                }
+            ]
+        }
+    },
+    "alreadyReserved": {
+        "class": "alreadyReserved tabPanel",
+        "id": "alreadyReserved"
+    },
+    "finishedLesson": {
+        "class": "finishedLesson tabPanel",
+        "id": "finishedLesson"
+    },
+    "memberCanReserveLesson":{
+        "db_getQuery":"SELECT lesson_name,id AS lesson_key FROM lesson_inf WHERE id in( SELECT lesson_key FROM user_lesson WHERE user_key = 'user_key' AND rec_status = 0) AND rec_status = 0",
+        "user_key":{
+            "value":""
+        },
+        "config": {
+            "columns": {
+                "lesson_name": {},
+                "id": {}
+            }
+        }
+    },
+    "selectTheme": {
+        "themeText": {
+            "class":"themeText inline notApplySmartphoneFontsize",
+            "text": "テーマ"
+        },
+        "selectThemebox": {
+        	"class" : "selectThemebox multipleSelect"
+            ,"themeValue": [
+            ]
+        }
+    },
+    "reservedLessonTableOutsideArea":{
+        "class":"reservedLessonTableOutsideArea"
+    },
+    "reservedLessonTable": {
+    	"class" : "reservedLessonTable commonTable",
+        "db_getQuery": "SELECT '' AS lessonDateTime, lesson_name, school_name,  '' AS sumCost, '' AS lessonPoint, start_time ,end_time ,user_classwork_cost ,MAX(point_rate) AS point_rate ,user_classwork_cost_aj ,get_point ,flower_cost ,flower_cost_aj ,extension_cost ,lesson_date ,today ,lesson_key ,id ,biggest_students ,students ,order_students ,user_work_status ,classwork_key, stop_order_date FROM ( SELECT  user_classwork_cost ,user_classwork_cost_aj ,user_classwork.get_point AS get_point ,flower_cost ,flower_cost_aj ,user_classwork.extension_cost AS extension_cost ,lesson_name ,school_name ,start_time ,end_time ,time_table_day.lesson_date AS lesson_date ,lesson_point_rate.point_rate AS point_rate ,students ,order_students ,SUBSTRING(NOW(), 1,10) AS today ,user_classwork.stage_no AS stage_no ,user_classwork.level_no AS level_no ,classwork.lesson_key AS lesson_key ,user_classwork.id as id ,biggest_students ,user_work_status,classwork.id AS classwork_key, stop_order_date FROM user_classwork INNER JOIN classwork ON classwork.id = user_classwork.classwork_key AND user_classwork.user_key = 'user_key' INNER JOIN  lesson_inf ON lesson_inf.id = classwork.lesson_key INNER JOIN school_inf ON school_inf.id = lesson_inf.school_key INNER JOIN time_table_day ON time_table_day.id = classwork.time_table_day_key INNER JOIN timetable_inf ON timetable_inf.id = time_table_day.timetable_key LEFT JOIN ( SELECT MAX(students) AS biggest_students ,lesson_key FROM lesson_point_rate GROUP BY lesson_key ) AS lsp ON lsp.lesson_key = lesson_inf.id AND  order_students > biggest_students INNER JOIN lesson_point_rate ON lesson_point_rate.lesson_key = lesson_inf.id ) AS student_class_rec WHERE user_work_status=1 AND lesson_date >= 'lesson_date' GROUP BY id ORDER BY lesson_date ASC;",
+        "user_key": {
+            "value": ""
+        },
+        "lesson_date":{
+            "value":""
+        },
+        "lesson_name":{
+            "value":""
+        },
+        "replace_query":"SELECT '' AS lessonDateTime, lesson_name, school_name,  '' AS sumCost, '' AS lessonPoint, start_time ,end_time ,user_classwork_cost ,MAX(point_rate) AS point_rate ,user_classwork_cost_aj ,get_point ,flower_cost ,flower_cost_aj ,extension_cost ,lesson_date ,today ,lesson_key ,id ,biggest_students ,students ,order_students ,user_work_status,classwork_key, stop_order_date FROM ( SELECT  user_classwork_cost ,user_classwork_cost_aj ,user_classwork.get_point AS get_point ,flower_cost ,flower_cost_aj ,user_classwork.extension_cost AS extension_cost ,lesson_name ,school_name ,start_time ,end_time ,time_table_day.lesson_date AS lesson_date ,lesson_point_rate.point_rate AS point_rate ,students ,order_students ,SUBSTRING(NOW(), 1,10) AS today ,user_classwork.stage_no AS stage_no ,user_classwork.level_no AS level_no ,classwork.lesson_key AS lesson_key ,user_classwork.id as id ,biggest_students ,user_work_status,classwork.id AS classwork_key, stop_order_date FROM user_classwork INNER JOIN classwork ON classwork.id = user_classwork.classwork_key AND user_classwork.user_key = 'user_key' INNER JOIN  lesson_inf ON lesson_inf.id = classwork.lesson_key INNER JOIN school_inf ON school_inf.id = lesson_inf.school_key INNER JOIN time_table_day ON time_table_day.id = classwork.time_table_day_key INNER JOIN timetable_inf ON timetable_inf.id = time_table_day.timetable_key LEFT JOIN ( SELECT MAX(students) AS biggest_students ,lesson_key FROM lesson_point_rate GROUP BY lesson_key ) AS lsp ON lsp.lesson_key = lesson_inf.id AND  order_students > biggest_students INNER JOIN lesson_point_rate ON lesson_point_rate.lesson_key = lesson_inf.id ) AS student_class_rec WHERE user_work_status=1 AND lesson_date >= 'lesson_date' AND  lesson_name IN ('lesson_name') GROUP BY id ORDER BY lesson_date ASC;",
+        "allSearch_query":"SELECT '' AS lessonDateTime, lesson_name, school_name,  '' AS sumCost, '' AS lessonPoint, start_time ,end_time ,user_classwork_cost ,MAX(point_rate) AS point_rate ,user_classwork_cost_aj ,get_point ,flower_cost ,flower_cost_aj ,extension_cost ,lesson_date ,today ,lesson_key ,id ,biggest_students ,students ,order_students ,user_work_status ,classwork_key, stop_order_date FROM ( SELECT  user_classwork_cost ,user_classwork_cost_aj ,user_classwork.get_point AS get_point ,flower_cost ,flower_cost_aj ,user_classwork.extension_cost AS extension_cost ,lesson_name ,school_name ,start_time ,end_time ,time_table_day.lesson_date AS lesson_date ,lesson_point_rate.point_rate AS point_rate ,students ,order_students ,SUBSTRING(NOW(), 1,10) AS today ,user_classwork.stage_no AS stage_no ,user_classwork.level_no AS level_no ,classwork.lesson_key AS lesson_key ,user_classwork.id as id ,biggest_students ,user_work_status,classwork.id AS classwork_key, stop_order_date FROM user_classwork INNER JOIN classwork ON classwork.id = user_classwork.classwork_key AND user_classwork.user_key = 'user_key' INNER JOIN  lesson_inf ON lesson_inf.id = classwork.lesson_key INNER JOIN school_inf ON school_inf.id = lesson_inf.school_key INNER JOIN time_table_day ON time_table_day.id = classwork.time_table_day_key INNER JOIN timetable_inf ON timetable_inf.id = time_table_day.timetable_key LEFT JOIN ( SELECT MAX(students) AS biggest_students ,lesson_key FROM lesson_point_rate GROUP BY lesson_key ) AS lsp ON lsp.lesson_key = lesson_inf.id AND  order_students > biggest_students INNER JOIN lesson_point_rate ON lesson_point_rate.lesson_key = lesson_inf.id) AS student_class_rec WHERE user_work_status=1 AND lesson_date >= 'lesson_date' GROUP BY id ORDER BY lesson_date ASC;",
+        "config": {
+            "columns": {
+                "lessonDateTime":{
+                    "columnName": "開催日時"
+                },
+                "lesson_name": {
+                    "columnName": "テーマ"
+                },
+                "school_name": {
+                    "columnName": "店舗"
+                },
+                "sumCost":{
+                    "columnName": "料金(円)"
+                },
+                "lessonPoint":{
+                    "columnName": "取得予定ポイント(pt)"
+                },
+                "start_time": {
+                    "style":"display:none"
+                },
+                "end_time": {
+                    "style":"display:none"
+                },
+
+                "user_classwork_cost": {
+                    "style":"display:none"
+                },
+                "point_rate": {
+                    "style":"display:none"
+                },
+                "user_classwork_cost_aj": {
+                    "style": "display:none;"
+                },
+                "get_point": {
+                    "style": "display:none;"
+                },
+                "flower_cost": {
+                    "style": "display:none;"
+                },
+                "flower_cost_aj": {
+                    "style": "display:none;"
+                },
+                "extension_cost": {
+                    "style": "display:none;"
+                },
+                "lesson_date": {
+                    "style": "display:none;"
+                },
+                "today": {
+                    "style": "display:none;"
+                },
+                "lesson_key": {
+                    "style": "display:none;"
+                },
+                "id": {
+                    "style": "display:none;"
+                },
+                "biggest_students": {
+                    "style": "display:none;"
+                },
+                "students": {
+                    "style": "display:none;"
+                },
+                "order_students": {
+                    "style": "display:none;"
+                },
+                "user_work_status": {
+                    "style": "display:none;"
+                },
+                "classwork_key":{
+                    "style": "display:none;"
+                },
+                "stop_order_date":{
+                    "style": "display:none;"
+                }
+            }
+        },"noRecordMessage": "予約中の授業が見つかりませんでした。"
+    },
+    "lessonListCountQuery":{
+        "db_getQuery": "SELECT COUNT(*) as recordCounts, start_time ,end_time ,lesson_name ,school_name ,user_classwork_cost ,MAX(point_rate) AS point_rate ,user_classwork_cost_aj ,get_point ,flower_cost ,flower_cost_aj ,extension_cost ,lesson_date ,today ,lesson_key ,id ,biggest_students ,students ,order_students ,user_work_status FROM ( SELECT  user_classwork_cost ,user_classwork_cost_aj ,user_classwork.get_point AS get_point ,flower_cost ,flower_cost_aj ,user_classwork.extension_cost AS extension_cost ,lesson_name ,school_name ,start_time ,end_time ,time_table_day.lesson_date AS lesson_date ,lesson_point_rate.point_rate AS point_rate ,students ,order_students ,SUBSTRING(NOW(), 1,10) AS today ,user_classwork.stage_no AS stage_no ,user_classwork.level_no AS level_no ,classwork.lesson_key AS lesson_key ,user_classwork.id as id ,biggest_students ,user_work_status FROM  user_classwork INNER JOIN classwork ON classwork.id = user_classwork.classwork_key AND user_classwork.user_key = 'user_key' INNER JOIN  lesson_inf ON lesson_inf.id = classwork.lesson_key INNER JOIN school_inf ON school_inf.id = lesson_inf.school_key INNER JOIN time_table_day ON time_table_day.id = classwork.time_table_day_key INNER JOIN timetable_inf ON timetable_inf.id = time_table_day.timetable_key LEFT JOIN ( SELECT MAX(students) AS biggest_students ,lesson_key FROM lesson_point_rate GROUP BY lesson_key ) AS lsp ON lsp.lesson_key = lesson_inf.id AND  order_students > biggest_students INNER JOIN lesson_point_rate ON lesson_point_rate.lesson_key = lesson_inf.id AND( students <= order_students OR biggest_students IS NOT NULL )) AS student_class_rec WHERE lesson_date <= NOW() GROUP BY id ORDER BY lesson_date DESC;",
+        "user_key": {
+            "value": ""
+        },
+        "recordCounts":{
+            "text":""
+        }
+    },
+    "finishedLessonPagingArea":{
+        "class":"finishedLessonPagingArea"
+    },
+    "finishedLessonTableOutside":{
+        "class":"finishedLessonTableOutside"
+    },
+    "finishedLessonTable": {
+    	"class" : "finishedLessonTable commonTable",
+        "db_getQuery": "SELECT '' AS lessonDateTime, lesson_name, school_name, '' AS sumCost, '' AS lessonPoint, start_time ,end_time, user_classwork_cost ,MAX(point_rate) AS point_rate ,user_classwork_cost_aj ,get_point ,flower_cost ,flower_cost_aj ,extension_cost ,lesson_date ,today ,lesson_key ,id ,biggest_students ,students ,order_students ,user_work_status FROM ( SELECT  user_classwork_cost ,user_classwork_cost_aj ,user_classwork.get_point AS get_point ,flower_cost ,flower_cost_aj ,user_classwork.extension_cost AS extension_cost ,lesson_name ,school_name ,start_time ,end_time ,time_table_day.lesson_date AS lesson_date ,lesson_point_rate.point_rate AS point_rate ,students ,order_students ,SUBSTRING(NOW(), 1,10) AS today ,user_classwork.stage_no AS stage_no ,user_classwork.level_no AS level_no ,classwork.lesson_key AS lesson_key ,user_classwork.id as id ,biggest_students ,user_work_status FROM  user_classwork INNER JOIN classwork ON classwork.id = user_classwork.classwork_key AND user_classwork.user_key = 'user_key' INNER JOIN  lesson_inf ON lesson_inf.id = classwork.lesson_key INNER JOIN school_inf ON school_inf.id = lesson_inf.school_key INNER JOIN time_table_day ON time_table_day.id = classwork.time_table_day_key INNER JOIN timetable_inf ON timetable_inf.id = time_table_day.timetable_key LEFT JOIN ( SELECT MAX(students) AS biggest_students ,lesson_key FROM lesson_point_rate GROUP BY lesson_key ) AS lsp ON lsp.lesson_key = lesson_inf.id AND  order_students > biggest_students INNER JOIN lesson_point_rate ON lesson_point_rate.lesson_key = lesson_inf.id AND( students <= order_students OR biggest_students IS NOT NULL )) AS student_class_rec WHERE lesson_date >= 'fromDate' AND lesson_date <= 'toDate' AND user_work_status = 3 GROUP BY id ORDER BY lesson_date DESC",
+        "user_key": {
+            "value": ""
+        },
+        "lesson_name":{
+            "value":""
+        },
+        "fromDate" : {
+            "value": ""
+        },
+        "toDate" : {
+            "value": ""
+        },
+        "replace_query":"SELECT '' AS lessonDateTime, lesson_name, school_name, '' AS sumCost, '' AS lessonPoint, start_time ,end_time, user_classwork_cost ,MAX(point_rate) AS point_rate ,user_classwork_cost_aj ,get_point ,flower_cost ,flower_cost_aj ,extension_cost ,lesson_date ,today ,lesson_key ,id ,biggest_students ,students ,order_students ,user_work_status FROM ( SELECT  user_classwork_cost ,user_classwork_cost_aj ,user_classwork.get_point AS get_point ,flower_cost ,flower_cost_aj ,user_classwork.extension_cost AS extension_cost ,lesson_name ,school_name ,start_time ,end_time ,time_table_day.lesson_date AS lesson_date ,lesson_point_rate.point_rate AS point_rate ,students ,order_students ,SUBSTRING(NOW(), 1,10) AS today ,user_classwork.stage_no AS stage_no ,user_classwork.level_no AS level_no ,classwork.lesson_key AS lesson_key ,user_classwork.id as id ,biggest_students ,user_work_status FROM  user_classwork INNER JOIN classwork ON classwork.id = user_classwork.classwork_key AND user_classwork.user_key = 'user_key' INNER JOIN  lesson_inf ON lesson_inf.id = classwork.lesson_key INNER JOIN school_inf ON school_inf.id = lesson_inf.school_key INNER JOIN time_table_day ON time_table_day.id = classwork.time_table_day_key INNER JOIN timetable_inf ON timetable_inf.id = time_table_day.timetable_key LEFT JOIN ( SELECT MAX(students) AS biggest_students ,lesson_key FROM lesson_point_rate GROUP BY lesson_key ) AS lsp ON lsp.lesson_key = lesson_inf.id AND  order_students > biggest_students INNER JOIN lesson_point_rate ON lesson_point_rate.lesson_key = lesson_inf.id AND( students <= order_students OR biggest_students IS NOT NULL )) AS student_class_rec WHERE lesson_date >= 'fromDate' AND lesson_date <= 'toDate' AND user_work_status = 3  AND lesson_name IN ('lesson_name') GROUP BY id ORDER BY lesson_date DESC",
+        "allSearch_query":"SELECT '' AS lessonDateTime, lesson_name, school_name, '' AS sumCost, '' AS lessonPoint, start_time ,end_time, user_classwork_cost ,MAX(point_rate) AS point_rate ,user_classwork_cost_aj ,get_point ,flower_cost ,flower_cost_aj ,extension_cost ,lesson_date ,today ,lesson_key ,id ,biggest_students ,students ,order_students ,user_work_status FROM ( SELECT  user_classwork_cost ,user_classwork_cost_aj ,user_classwork.get_point AS get_point ,flower_cost ,flower_cost_aj ,user_classwork.extension_cost AS extension_cost ,lesson_name ,school_name ,start_time ,end_time ,time_table_day.lesson_date AS lesson_date ,lesson_point_rate.point_rate AS point_rate ,students ,order_students ,SUBSTRING(NOW(), 1,10) AS today ,user_classwork.stage_no AS stage_no ,user_classwork.level_no AS level_no ,classwork.lesson_key AS lesson_key ,user_classwork.id as id ,biggest_students ,user_work_status FROM  user_classwork INNER JOIN classwork ON classwork.id = user_classwork.classwork_key AND user_classwork.user_key = 'user_key' INNER JOIN  lesson_inf ON lesson_inf.id = classwork.lesson_key INNER JOIN school_inf ON school_inf.id = lesson_inf.school_key INNER JOIN time_table_day ON time_table_day.id = classwork.time_table_day_key INNER JOIN timetable_inf ON timetable_inf.id = time_table_day.timetable_key LEFT JOIN ( SELECT MAX(students) AS biggest_students ,lesson_key FROM lesson_point_rate GROUP BY lesson_key ) AS lsp ON lsp.lesson_key = lesson_inf.id AND  order_students > biggest_students INNER JOIN lesson_point_rate ON lesson_point_rate.lesson_key = lesson_inf.id AND( students <= order_students OR biggest_students IS NOT NULL )) AS student_class_rec WHERE lesson_date >= 'fromDate' AND lesson_date <= 'toDate' AND user_work_status = 3  GROUP BY id ORDER BY lesson_date DESC",
+        "config": {
+            "columns": {
+                "lessonDateTime":{
+                    "columnName": "開催日時"
+                },
+                "lesson_name": {
+                    "columnName": "テーマ"
+                },
+                "school_name": {
+                    "columnName": "店舗"
+                },
+                "sumCost":{
+                    "columnName": "料金(円)"
+                },
+                "lessonPoint":{
+                    "columnName": "取得ポイント(pt)"
+                },
+                "start_time": {
+                    "style":"display:none"
+                },
+                "end_time": {
+                    "style":"display:none"
+                },
+
+                "user_classwork_cost": {
+                    "style":"display:none"
+                },
+                "point_rate": {
+                    "style":"display:none"
+                },
+                "user_classwork_cost_aj": {
+                    "style": "display:none;"
+                },
+                "get_point": {
+                    "style": "display:none;"
+                },
+                "flower_cost": {
+                    "style": "display:none;"
+                },
+                "flower_cost_aj": {
+                    "style": "display:none;"
+                },
+                "extension_cost": {
+                    "style": "display:none;"
+                },
+                "lesson_date": {
+                    "style": "display:none;"
+                },
+                "today": {
+                    "style": "display:none;"
+                },
+                "lesson_key": {
+                    "style": "display:none;"
+                },
+                "id": {
+                    "style": "display:none;"
+                },
+                "biggest_students": {
+                    "style": "display:none;"
+                },
+                "students": {
+                    "style": "display:none;"
+                },
+                "order_students": {
+                    "style": "display:none;"
+                },
+                "user_work_status": {
+                    "style": "display:none;"
+                },
+                "classwork_key":{
+                    "style": "display:none;"
+                },
+                "stop_order_date":{
+                    "style": "display:none;"
+                }
+            }
+        },
+        "noRecordMessage" : "期間内に受講済みの授業が見つかりませんでした。"
+    },
+    "memberReservedConfirmDialog": {},
+    "memberReservedConfirmContent": {
+    	"db_getQuery":"",
+        "lessonConfirm": {
+            "lessonInfo": {
+                "timeSchedule": {
+                    "text": ""
+                },
+                "store": {
+                    "text": ""
+                },
+                "course": {
+                    "text": ""
+                },
+                "price": {
+                    "text": ""
+                },
+                "priceUnit": {
+                    "text": "円"
+                }
+            }
+        },
+        "lessonAccordion":{
+            "text":"キャンセル料・加算ポイントについて"
+        },
+        "attention": {
+            "cancelRateLabel": {
+                "class":"cancelRateLabel contentsBorder",
+                "cancelRateLabelText": {
+                    "text": "キャンセル料率(授業当日より)"
+                }
+            },
+            "cancelRateValue": {
+                "db_getQuery":"SELECT * FROM lesson_cancel_rate WHERE lesson_key = 'lesson_key'",
+                "lesson_key":{
+                    "value":""
+                },
+                "cancel__0":{
+                    "cancel_days":{
+                        "text":""
+                    },
+                    "cancelText":{
+                        "class":"cancelText unitSpace",
+                        "text":"日前:"
+                    },
+                    "cancel_rate":{
+                        "text":""
+                    },
+                    "cancelUnit":{
+                        "class":"cancelUnit unitSpace",
+                        "text":"%"
+                    }
+                },
+                "cancel__1":{
+                    "cancel_days":{
+                        "text":""
+                    },
+                    "cancelText":{
+                        "class":"cancelText unitSpace",
+                        "text":"日前:"
+                    },
+                    "cancel_rate":{
+                        "text":""
+                    },
+                    "cancelUnit":{
+                        "class":"cancelUnit unitSpace",
+                        "text":"%"
+                    }
+                },
+                "cancel__2":{
+                    "cancel_days":{
+                        "text":""
+                    },
+                    "cancelText":{
+                        "class":"cancelText unitSpace",
+                        "text":"日前:"
+                    },
+                    "cancel_rate":{
+                        "text":""
+                    },
+                    "cancelUnit":{
+                        "class":"cancelUnit unitSpace",
+                        "text":"%"
+                    }
+                }
+            },
+            "addPointLabel": {
+                "class":"addPointLabel contentsBorder",
+                "addPointLabelText": {
+                    "text": "加算ポイント(受講者人数)"
+                }
+            },
+            "addPointValue":{
+                "db_getQuery":"SELECT * FROM lesson_point_rate WHERE lesson_key = 'lesson_key'",
+                "lesson_key":{
+                    "value":""
+                },
+                "addPoint__0": {
+                    "students": {
+                        "text": ""
+                    },
+                    "studentsUnit": {
+                        "class":"studentsUnit unitSpace",
+                        "text": "人:"
+                    },
+                    "point_rate":{
+                        "text":""
+                    },
+                    "pointUnit": {
+                        "class":"pointUnit unitSpace",
+                        "text": "%"
+                    }
+                },
+                "addPoint__1": {
+                    "students": {
+                        "text": ""
+                    },
+                    "studentsUnit": {
+                        "class":"studentsUnit unitSpace",
+                        "text": "人:"
+                    },
+                    "point_rate":{
+                        "text":""
+                    },
+                    "pointUnit": {
+                        "class":"pointUnit unitSpace",
+                        "text": "%"
+                    }
+                },
+                "addPoint__2": {
+                    "students": {
+                        "text": ""
+                    },
+                    "studentsUnit": {
+                        "class":"studentsUnit unitSpace",
+                        "text": "人:"
+                    },
+                    "point_rate":{
+                        "text":""
+                    },
+                    "pointUnit": {
+                        "class":"pointUnit unitSpace",
+                        "text": "%"
+                    }
+                },
+                "addPoint__3": {
+                    "students": {
+                        "text": ""
+                    },
+                    "studentsUnit": {
+                        "class":"studentsUnit unitSpace",
+                        "text": "人:"
+                    },
+                    "point_rate":{
+                        "text":""
+                    },
+                    "pointUnit": {
+                        "class":"pointUnit unitSpace",
+                        "text": "%"
+                    }
+                }
+            }
+        },
+        "confirmText": {
+            "class":"confirmText textCenter",
+            "html": "上記の授業を予約しますか?"
+        },
+        "canselYesButton":{
+            "text":"はい"
+        },
+        "canselNoButton":{
+            "text":"いいえ"
+        },
+        "reserveYesButton":{
+            "text":"はい",
+            "value":"1"
+        },
+        "reserveNoButton":{
+            "text":"いいえ",
+            "value":"0"
+        }
+    },
+    "sendReservedData":{
+    	"db_setQuery":"CALL book_classwork('default_user_classwork_cost','default_flower_cost','userId','classwork_key','stage_key','stage_no_present','level_key','level_no_present', -1);"
+    },
+    "updateReservedData":{
+        "db_setQuery":"CALL book_classwork('default_user_classwork_cost','default_flower_cost','userId','classwork_key','stage_key','stage_no_present','level_key','level_no_present', 'id');"
+	},
+	"cancelLessonDialog":{},
+    "cancelLessonContent":{
+        "lessonConfirm": {
+            "lessonInfo": {
+                "timeSchedule": {
+                    "text": ""
+                },
+                "store": {
+                    "text": ""
+                },
+                "course": {
+                    "text": ""
+                },
+                "price": {
+                    "text": ""
+                },
+                "priceUnit": {
+                    "text": "円"
+                }
+            }
+        },
+        "lessonAccordion":{
+            "text":"キャンセル料・加算ポイントについて"
+        },
+        "attention": {
+            "cancelRateLabel": {
+                "class":"cancelRateLabel contentsBorder",
+                "cancelRateLabelText": {
+                    "text": "キャンセル料率(授業当日より)"
+                }
+            },
+            "cancelRateValue": {
+                "db_getQuery":"SELECT * FROM lesson_cancel_rate WHERE lesson_key = 'lesson_key'",
+                "lesson_key":{
+                    "value":""
+                },
+                "cancel__0":{
+                    "cancel_days":{
+                        "text":""
+                    },
+                    "cancelText":{
+                        "class":"cancelText unitSpace",
+                        "text":"日前:"
+                    },
+                    "cancel_rate":{
+                        "text":""
+                    },
+                    "cancelUnit":{
+                        "class":"cancelUnit unitSpace",
+                        "text":"%"
+                    }
+                },
+                "cancel__1":{
+                    "cancel_days":{
+                        "text":""
+                    },
+                    "cancelText":{
+                        "class":"cancelText unitSpace",
+                        "text":"日前:"
+                    },
+                    "cancel_rate":{
+                        "text":""
+                    },
+                    "cancelUnit":{
+                        "class":"cancelUnit unitSpace",
+                        "text":"%"
+                    }
+                },
+                "cancel__2":{
+                    "cancel_days":{
+                        "text":""
+                    },
+                    "cancelText":{
+                        "class":"cancelText unitSpace",
+                        "text":"日前:"
+                    },
+                    "cancel_rate":{
+                        "text":""
+                    },
+                    "cancelUnit":{
+                        "class":"cancelUnit unitSpace",
+                        "text":"%"
+                    }
+                }
+            },
+            "addPointLabel": {
+                "class":"addPointLabel contentsBorder",
+                "addPointLabelText": {
+                    "text": "加算ポイント(受講者人数)"
+                }
+            },
+            "addPointValue":{
+                "db_getQuery":"SELECT * FROM lesson_point_rate WHERE lesson_key = 'lesson_key'",
+                "lesson_key":{
+                    "value":""
+                },
+                "addPoint__0": {
+                    "students": {
+                        "text": ""
+                    },
+                    "studentsUnit": {
+                        "class":"studentsUnit unitSpace",
+                        "text": "人:"
+                    },
+                    "point_rate":{
+                        "text":""
+                    },
+                    "pointUnit": {
+                        "class":"pointUnit unitSpace",
+                        "text": "%"
+                    }
+                },
+                "addPoint__1": {
+                    "students": {
+                        "text": ""
+                    },
+                    "studentsUnit": {
+                        "class":"studentsUnit unitSpace",
+                        "text": "人:"
+                    },
+                    "point_rate":{
+                        "text":""
+                    },
+                    "pointUnit": {
+                        "class":"pointUnit unitSpace",
+                        "text": "%"
+                    }
+                },
+                "addPoint__2": {
+                    "students": {
+                        "text": ""
+                    },
+                    "studentsUnit": {
+                        "class":"studentsUnit unitSpace",
+                        "text": "人:"
+                    },
+                    "point_rate":{
+                        "text":""
+                    },
+                    "pointUnit": {
+                        "class":"pointUnit unitSpace",
+                        "text": "%"
+                    }
+                },
+                "addPoint__3": {
+                    "students": {
+                        "text": ""
+                    },
+                    "studentsUnit": {
+                        "class":"studentsUnit unitSpace",
+                        "text": "人:"
+                    },
+                    "point_rate":{
+                        "text":""
+                    },
+                    "pointUnit": {
+                        "class":"pointUnit unitSpace",
+                        "text": "%"
+                    }
+                }
+            }
+        },
+        "confirmText": {
+            "class":"confirmText textCenter",
+            "text": "上記の授業をキャンセルしますか?"
+        },
+        "cancelYesButton":{
+            "text":"はい",
+            "value":"1"
+        },
+        "cancelNoButton":{
+            "text":"いいえ",
+            "value":"0"
+        }
+    },
+    "cancelReservedData":{
+        "db_setQuery":"CALL cancel_classwork('id', 'classwork_key', 'cancel_charge', 'cancel_user');"
+    },
+	"lessonListSearch": {
+		"class": "lessonListSearch cf inlineBlock floatLeft",
+		"searchInputArea": {
+			"class" : "searchInputArea cf block",
+			"fromArea": {
+				"fromLabel": {
+					"class": "fromLabel inlineBlock",
+					"text": ""
+				},
+				"finishedLessonFromDate": {
+					"type": "date",
+					"name": "fromSearach"
+				}
+			},
+			"toArea": {
+				"toLabel": {
+					"class": "toLabel inlineBlock",
+					"text": "〜"
+				},
+				"finishedLessonToDate": {
+					"type": "date",
+					"name": "toSearach"
+				}
+			}
+		}
+	},
+	"filterButton": {
+		"class" : "filterButton normalButton",
+		"type": "image",
+		"src": "image/icon_filter.png",
+		"name": "search",
+		"value": "絞込"
+	},
+	"searchClassworkExist" : {
+		"db_getQuery" : "SELECT distinct lesson_date FROM `time_table_day` WHERE lesson_date >= 'fromDate' and lesson_date <= 'toDate';",
+		"fromDate" : {
+			"value" : ""
+		},
+		"toDate" : {
+			"value" : ""
+		}
+	},
+	"checkClassworkStatus" : {
+	    "db_getQuery" : "CALL check_userworkstatus('user_key', 'fromDate', 'toDate', @result); SELECT @result AS result;",
+		"fromDate" : {
+			"value" : ""
+		},
+		"toDate" : {
+			"value" : ""
+		},
+		"user_key": {
+			"value": ""
+		}
+	},
+    "getPointRate": {
+        "db_getQuery": "CALL getPointRate(@result,'lesson_key'); SELECT @result AS 'result';",
+        "lesson_key": {
+            "value": ""
+        },
+        "config": {
+            "columns": {
+                "point_rate": {},
+                "students": {}
+            }
+        }
+    }
+}

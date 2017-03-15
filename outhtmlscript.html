@@ -1,0 +1,26 @@
+<div class="dialog">
+あああああああああああああああああ
+<script>
+/* if(window.confirm('本当にいいんですね？')){
+	$('.dialog').dialog('close');
+}
+ */// 「OK」時の処理終了
+
+// 「キャンセル」時の処理開始
+/* else{
+
+} */
+	function testClose(){
+		console.log(this.instance.getPushedButtonState());
+		this.instance.setPushedButtonState(this.instance.getPushedButtonState());
+		console.log(this.instance.getPushedButtonState());
+		
+		console.log(this.instance.getConfigObject());
+		console.log(this.instance.getConfigDataObject());
+	}
+
+	var dialogSelf = $('.dialog')[0].instance;	//ダイアログクラスのインスタンスを取得する
+	console.log(dialogSelf);
+	dialogSelf.setConfirmContents('テスト', testClose)	//確認コンテンツを表示する
+</script>
+</div>

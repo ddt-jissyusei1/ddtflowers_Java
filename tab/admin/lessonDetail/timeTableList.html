@@ -1,0 +1,60 @@
+<html>
+	<body>
+		<!-- 当該タブ用クラスをインクルードする -->
+		<script src="js/page/timetableList.js"></script>
+		<!-- 当タブの内容を作成するためのスクリプトを記述する -->
+		<script>
+			//カレントのウィンドウのDOMを取得する
+			var $currentWindow = $(CURRENT_WINDOW);
+			//カレントのウィンドウのコンテンツ領域を取得する
+			var $currentContent = $(CURRENT_WINDOW_MAIN)
+			
+			var create_tag = new createLittleContents();	//コンテンツ作成のためcreateTagを用意する
+
+			//タブのDOMにcreateTagへの参照を保存する
+			$(TIME_TABLE_LIST_TAB)[0].create_tag = create_tag;
+			
+			//当該画面用関数クラスインスタンスを用意する
+			var timetableListFuncs = new timetableList();
+			console.log(timetableListFuncs);
+			//タブのDOMにcreateTagへの参照を保存する
+			$(LESSON_LIST_TAB)[0].create_tag = create_tag;
+
+			//管理者ページ 授業一覧ダイアログのjsonデータを取得する
+			this[VAR_CREATE_TAG].getJsonFile(ADMIN_LESSON_LIST_DIALOG_JSON);
+			
+			//授業日時をJSONにセットする
+			this[VAR_CREATE_TAG].json[KEY_TIME_TABLE_LIST_TABLE].lessonDate.value = $(CURRENT_DIALOG)[0].instance.getArgumentDataObject().lessonDate.replace(/\//g, '-');
+			//授業時間帯のデータ一覧をDBから取得してテーブルを作る準備をする
+			this[VAR_CREATE_TAG].getJsonFile(URL_GET_JSON_ARRAY_PHP, this[VAR_CREATE_TAG].json[KEY_TIME_TABLE_LIST_TABLE], KEY_TIME_TABLE_LIST_TABLE);
+
+			//授業データ一覧ダイアログのテンプレートを取得する
+			this[VAR_CREATE_TAG].getDomFile(ADMIN_LESSON_LIST_DIALOG_HTML);
+
+			//授業一覧テーブルの外側の領域を作る
+			// 2016.09.15 mod k.urabe 既存の定数を使用するように変更
+			this[VAR_CREATE_TAG].outputTag(KEY_TIME_TABLE_LIST_OUTER, KEY_TIME_TABLE_LIST_OUTER, TIME_TABLE_LIST_TAB);
+			//授業一覧テーブルの内側の領域を作る
+			this[VAR_CREATE_TAG].outputTag(KEY_TIME_TABLE_LIST_INNER, KEY_TIME_TABLE_LIST_INNER, SELECTOR_SET_TIME_TABLE_LIST_INNER);	// 2016.09.18 add k.urabe 時間帯テーブルを囲む内側の領域を追加
+			//授業のデータ一覧テーブルを作る
+			this[VAR_CREATE_TAG].outputTagTable(KEY_TIME_TABLE_LIST_TABLE, LESSON_TABLE, $(SELECTOR_SET_TIME_TABLE_LIST));				// 2016.09.18 mod k.urabe 時間帯テーブルの追加先を、新たに追加した内側の領域に変更
+			
+			//テーブル内の置換を行い、編集項目項目をテキストボックスに置き換える
+			timetableListFuncs.replaceTable();
+			
+			//会員一覧テーブルがクリックされた時にuserSelectクラスをがなければ追加しあるなら消去する
+			// 2016.09.12 mod k.urabe 人数系カラムをクリックする度に選択・非選択となることを防ぐためにセレクタを変更
+			toggleClassClickElement(SELECTOR_TBODY_TR_TIME_TABLE, SELECT_RECORD, SELECTOR_TIME_TABLE_LIST_TABLE);
+			
+			//更新ボタンを作る。コールバックもここで登録しておく
+			// 2016.09.15 mod k.urabe 作成するボタンのタイプをsubmitに変更。またボタンの追加先をform内に変更。
+			commonFuncs.putCommonButton(SELECTOR_TIME_TABLE_LIST_OUTER + SELECTOR_LAST, 'updateButton', 'update', true, true, true, {TYPE:SUBMIT});
+
+			// 2016.09.15 add k.urabe 時間帯一覧のformに対して入力値チェックを登録する処理を追加。
+			$(FORM).validate(timeTableListValidation);
+			
+			</script>
+	</body>
+</html>
+
+					

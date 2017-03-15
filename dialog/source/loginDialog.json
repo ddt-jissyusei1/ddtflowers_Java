@@ -1,0 +1,35 @@
+{
+    "inputArea":{
+        "label1":{
+            "text": "ユーザ名"
+        },
+        "textbox1":{
+        	"class":"userName",
+            "type": "text",
+            "name": "userName"
+        },
+        "label2":{
+            "text":"パスワード"
+        },
+        "textbox2":{
+        	"class":"password",
+            "type": "password",
+            "name": "password"
+        }
+    },
+    "login":{
+        "db_getQuery":"SELECT id, login_id, authority FROM user_inf WHERE login_id='userName' AND password='password';",
+        "userName":{
+            "value":""
+        },
+        "password":{
+            "value":""
+        },
+        "id":{
+            "text":""
+        },
+        "authority":{
+        	"text":""
+        }
+    }
+}

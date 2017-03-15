@@ -1,0 +1,48 @@
+<!-- DDTFlowersトップページのメニューの検証です。 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+<meta charset="UTF-8">
+<title>DDTFlowers</title>
+</head>
+
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<script>
+				//createTagクラスのインスタンスを生成する
+				bridalCreator = new createLittleContents();
+			
+				bridalCreator.getJsonFile('source/bridal.json');			// ファイルのデータをjsonを用いて持ってくる
+				bridalCreator.getJsonFile('source/commonJson.json');		// ファイルのデータをjsonを用いて持ってくる
+				bridalCreator.getDomFile('template/common.html');			// 共通パーツのDOMを取得する。
+				bridalCreator.getDomFile('template/courseguide.html');	// コース紹介ページのパーツのDOMを取得する。
+				bridalCreator.outputTag('headImage', 'createImage');		// 天の画像を作る
+				bridalCreator.outputTag('pageTitle');						// タイトル領域を作る
+				bridalCreator.outputTag('handmadeMerit', 'description');	// 手作りによるメリットを作る
+				bridalCreator.outputTag('handmadeFlow', 'description');	// 作成までの流れを作る
+				bridalCreator.outputTag('photoGallery');					// ギャラリー画像を作る
+				bridalCreator.outputTag('footGallery');					// ギャラリー画像を作る
+				bridalCreator.createGallery('footGallery');						//slickによるカルーセルのギャラリーを作成する。
+				bridalCreator.outputTag('bridalItemTable');				// ブライダルページのアイテム一覧を作る
+				bridalCreator.outputTag('lessonSchedule');				//レッスンスケジュールテーブル
+				bridalCreator.outputTag('commonText', 'itemList');		//共通リストテーブルを作る
+				bridalCreator.outputTag('memberRule', 'itemList');		// 会員規約のリストテーブルを作る
+				bridalCreator.outputTag('footImage', 'createImage');		// 地の画像を作る
+				bridalCreator.outputTag('footer');						// フッターを作る
+				
+				//トップメニューにマウスオーバーのフィルターを配置する。
+				functionFilter('.topMenu li');
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				// fixYCoordinate('header', '.main');
+				// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header')
+			</script>	
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<html>
+<body>
+<script>
+	var create_tag = new createLittleContents();	//createTagを用意する
+	//accountHeaderから会員IDを取得する。別ユーザログインしていた場合はcookieからIDを取得する
+	var memberInfo = commonFuncs.checkEmpty(commonFuncs.GetCookies().otherUserId) ?  commonFuncs.GetCookies().otherUserId: create_tag.json.accountHeader.user_key.value;
+	create_tag.json.accountHeader.user_key.value = memberInfo;	//取得したIDをaccountHeaderに反映する
+	//このタブのcreateTagを再利用できるようにするため、タブのDOMに参照を保存する
+	$('#alreadyReserved')[0].create_tag = create_tag;	
+	
+	create_tag.getJsonFile('source/memberPage.json');
+	// 会員共通のパーツのJSONを取得する。
+	create_tag.getJsonFile('source/memberCommon.json');
+	// 全共通のパーツのJSONを取得する。
+	create_tag.getJsonFile('source/commonJson.json');
+	//パーツのテンプレートのDOMを取得する。
+	create_tag.getDomFile('template/common.html');
+	// 会員共通のパーツのJSONを取得する。
+	create_tag.getDomFile('template/memberCommon.html');
+	// 会員ページのjsonを読み込む
+	create_tag.getDomFile('template/memberPage.html');
+	
+	//予約中授業のデータを取得するために会員番号をクエリの置換値にセットする
+	create_tag.json.reservedLessonTable.user_key.value = memberInfo;
+	
+	//今日以降の日付の予約授業データを取得するため、今日の日付をJSONにセットする
+	create_tag.json.reservedLessonTable.lesson_date.value = commonFuncs.getTodayDate();
+	
+	//予約中授業テーブル用のJSON配列を取得する
+	create_tag.getJsonFile('php/GetJSONArray.php', create_tag.json['reservedLessonTable'], 'reservedLessonTable');
+	
+	//会員が予約できる授業を取得するために会員番号をクエリの置換する場所に入れる
+	create_tag.json.memberCanReserveLesson.user_key.value = memberInfo;
+	
+	//予約できる授業のテーマにをDBから取り出す
+	create_tag.getJsonFile('php/GetJSONArray.php', create_tag.json['memberCanReserveLesson'], 'memberCanReserveLesson');
+	
+	//予約中授業のテーマをセレクトボックスにDBから取り出した値を入れるために連想配列にDBから取り出したテーマの値を入れる
+	create_tag.setSelectboxText(create_tag.json.memberCanReserveLesson[TABLE_DATA_KEY], create_tag.json.selectTheme.selectThemebox.themeValue, 'lesson_name');
+	
+	// 予約済み授業のタブ内コンテンツを作る
+	create_tag.outputTag('alreadyReserved', 'tabInContent', $('.tabContentArea', $currentContent));
+	
+	// 受講済み授業のタブ内コンテンツを作る
+	create_tag.outputTag('finishedLesson', 'tabInContent', $('.tabContentArea', $currentContent));
+	
+	//予約済み授業の絞り込み領域を作る
+	create_tag.outputTag('selectTheme', 'selectTheme', '#alreadyReserved');
+	//絞り込みボタンを作る
+	commonFuncs.putCommonButton('#alreadyReserved', 'filterButton', 'filter', true, false, true, {}, false);
+	
+	//セレクトボックスのvalueを画面に表示されている値にする
+	create_tag.setSelectboxValueWithName('.selectThemebox');
+	//予約中授業の外枠領域を作る
+	create_tag.outputTag('reservedLessonTableOutsideArea', 'divArea', '#alreadyReserved');
+	// 予約中授業のテーブルを作る
+	create_tag.outputTagTable('reservedLessonTable','reservedLessonTable','.reservedLessonTableOutsideArea');
+	create_tag.tableReload('reservedLessonTable');
+	//予約中の授業データがあった時の予約中授業を表示するのに必要な処理をする
+/* 	if(create_tag.json['reservedLessonTable'][TABLE_DATA_KEY][0]) {
+		// 予約中授業のテーブルを作る
+		create_tag.outputTagTable('reservedLessonTable','reservedLessonTable','.reservedLessonTableOutsideArea');
+		// 予約中テーブルのテーブルの値を置換する
+		commonFuncs.dbDataTableValueReplace(RESERVED_LESSON_TABLE, RESERVED_LESSON_TABLE_REPLACE_FUNC, false, create_tag, 10);
+	}
+ */	
+	//予約確認ダイアログ、予約キャンセルののダイアログで加算ポイントと
+	//予約中授業テーブルのクリック範囲レコードにクラス属性を付ける
+	//commonFuncs.setTableRecordClass('reservedLessonTable', 'targetCancelReservedLesson'); 
+	//テーブルからキャンセルダイアログを開くクラスをインクルードする
+	commonFuncs.getScriptFile('js/reservedLessonTable.js');
+	//予約済み授業一覧テーブルのインスタンスを作り、テーブルの操作処理を使えるようにする
+	var reservedLessonTableFuncs = new reservedLessonTable();
+	//キャンセルダイアログを予約中授業テーブルから開く処理
+	reservedLessonTableFuncs.cancelDialogOpenFromReservedTable(memberInfo, $('#alreadyReserved')[0].create_tag);
+	//予約中授業テーブル絞り込みボタン機能を実装する
+	create_tag.reloadTableTriggerEvent('#alreadyReserved .filterButton', CLICK, 'reservedLessonTable');
+
+	// 端末がスマートフォンでなければ
+	if(!create_tag.isTouchDevice(uaName)){
+		//テーマ選択画面のテーマ表示をボタンに変更する
+		create_tag.changeTypeToButton(SELECTOR_SELECT_THEME,SELECTOR_THEME_TEXT)
+		//テーマ選択画面のセレクトボックスを非表示にする
+		create_tag.setCssDisplayNone(SELECTOR_SELECT_THEMEBOX)
+		//テーマ選択セレクトメニューのクリックでの全表示をオンにする
+		create_tag.setTogglePosition(SELECTOR_ALREADY_RESERVED, SELECTOR_SELECT_THEMEBOX, VALUE_ABSOLUTE, STR_AUTO);
+		//テーマのテキストの設定を変更する
+		create_tag.setThemeClickEvent(SELECTOR_SELECT_THEME, SELECTOR_SELECT_THEMEBOX, SELECTOR_THEME_TEXT);
+	}
+	//テーマ選択セレクトメニューの値が変更された時、テーマテキストの値を変更する
+	create_tag.setThemeTextFromSelectBox(SELECTOR_ALREADY_RESERVED, SELECTOR_SELECT_THEMEBOX, SELECTOR_THEME_SELECT_TEXT);
+	
+</script>
+</body>
+</html>

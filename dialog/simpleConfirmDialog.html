@@ -1,0 +1,16 @@
+<div class ="simpleConfirm">
+<span id="message"></span>
+<br>
+<button id="yesButton"></button>
+<button id="noButton"></button>
+<script>
+
+	var args = $(".simpleConfirm")[0].instance.argumentObj;
+	$("#message").html(args["message"]);
+	$("#yesButton").text(args["yesCaption"]);
+	$("#yesButton").click(args["yesFunc"]);
+	$("#noButton").text(args["noCaption"]);
+	$("#noButton").click(args["noFunc"]);
+	$('button').button();
+</script>
+</div>

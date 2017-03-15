@@ -1,0 +1,1780 @@
+@CHARSET "UTF-8";
+
+/* 通常のレイアウト。 */
+
+
+
+/* リセットCSS。追記分はコメントあり。 */
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich-clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    vertical-align:baseline;
+    background:transparent;
+	/* iPhone Safariの文字サイズが自動調整される仕様への対策 */
+	-webkit-text-size-adjust: 100%;
+	}
+
+body {
+    line-height:1.4;        /* 1行の間を1.4行分にする */
+	font-family: 'Osaka', 'メイリオ', 'ＭＳ Ｐゴシック';		/* font-familyを指定 */
+	color: #555;			/* ベースのフォントカラー */
+    background: white;  	/* 背景色を白にする。 */
+}
+
+h2,
+body {
+	font-size: 16px;	/* ベースのフォントサイズ */  /* 2015.03.10 サイズを16pxに変更 */
+	position:	relative;	/* 直下の子となるwindowの位置の基準とする */
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul, li {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    /* リンクの下線を消す */
+    text-decoration: none;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+/* ここまでリセットCSS */
+
+/* clearfix */
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+/* ここまでclearfix */
+
+/* 各タグの基本設定 */
+
+/*
+ * セレクタ:*
+ * 概要   :全要素共通の設定
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.01
+ */
+* {
+	outline: none;	/* フォーカス時にアウトラインを出さない */
+}
+
+/*
+ * セレクタ:span,label,h1,h2,h3,h4,h5
+ * 概要   :見出しタグとラベルのタグ
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.18
+ */
+span,label,h1,h2,h3,h4,h5,th{
+    font-weight: normal;   	 /* 個別に指定しなければフォントを太字にしない。 */
+	vertical-align: middle;	/* 高さを中心に合わせる */
+}
+
+/*
+ * セレクタ:input,textarea,select
+ * 概要   :inputタグ、テキストエリア、selectタグ
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.01
+ */
+input,textarea,select {
+    box-sizing : border-box;	/* 一律でサイズに指定に罫線を含むように設定する */
+}
+
+/*
+ * セレクタ:input[type="text"]
+ *        ,input[type="date"]
+ *        ,input[type="number"]
+ *        ,input[type="password"]
+ *        ,input[type="search"]
+ *        ,input[type="tel"]
+ *        ,input[type="email"]
+ *        ,input[type="url"]
+ *        ,input[type="range"]
+ *        ,input[type="color"]
+ * 概要   :テキストボックス
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.03
+ */
+input[type="text"]
+,input[type="date"]
+,input[type="number"]
+,input[type="password"]
+,input[type="search"]
+,input[type="tel"]
+,input[type="email"]
+,input[type="url"]
+,input[type="range"]
+,input[type="color"] {
+	height : 30px;	/* デフォルトの高さを指定する。ボタンのサイズと合わせておくことが望ましい */
+}
+
+/*
+ * セレクタ:input[type="date"]
+ * 概要   :日付テキストボックス
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.30
+ */
+input[type="date"] {
+    width: 125px;	/* 最低限の幅を取る */
+}
+
+/*
+ * セレクタ:input[type="number"]
+ * 概要   :数値テキストボックス
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.05
+ */
+input[type="number"] {
+	text-align : right;	/* 数値は右寄せにする */
+}
+
+/* 
+ * セレクタ:.fixedTable
+ * 概要   :テーブルで固定幅を利用するためのCSSを追加するクラス
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.05
+ */
+.fixedTable {
+	table-layout : fixed;	/* 固定幅を利用できるようにする */
+}
+
+/* 
+ * セレクタ:.inline
+ * 概要   :このクラスを持つ要素をインラインにする
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.30
+ */
+.inline {
+	display: inline;	/* インライン要素にする */
+}
+
+/* 
+ * セレクタ:.block
+ * 概要   :このクラスを持つ要素をブロックにする
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.30
+ */
+.block {
+	display : block;	/* ブロック要素にする */
+}
+
+/* 
+ * セレクタ:.floatLeft
+ * 概要   :このクラスを持つ要素を左に寄せる
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.30
+ */
+.floatLeft {
+	float : left;	/* 左に寄せる */
+}
+
+/* 
+ * セレクタ:.scrollXAuto
+ * 概要   :内容が横にオーバーフローしたらスクロールするようにするクラス
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.01
+ */
+.scrollXAuto {
+	overflow-x : auto;	/* 横にオーバーフローしたらスクロールさせる */
+}
+
+/* 
+ * セレクタ:.window
+ * 概要   :個々のウィンドウ
+ * 作成者 :T.Masuda
+ * 作成日 :2015.09.21
+ */
+.window {
+	position: absolute;	/* 絶対位置を指定する */
+	top:0px;			/* 画面上上から0pxの位置に固定する */
+	display:none; 		/* 初期状態では非表示にしておき、全部のロードが終わったときに表示する */
+}
+
+
+/* 
+ * セレクタ:.ui-button.ui-widget.ui-corner-all
+ * 概要   :jquery uiのボタン
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.03
+ */
+.ui-button.ui-widget.ui-corner-all {
+    font-size: 14px;	/* デフォルトのサイズが大きいので小さく + デフォルト値設定 */
+}
+
+/* 
+ * セレクタ:.commonButton
+ * 概要   :ボタン作成関数で作ったボタン
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.01
+ */
+.commonButton {
+    background: #EEE;		/* 背景色を薄いグレーにする */
+    border: 1px solid #AAA;	/* グレーの線で囲む */
+    border-radius: 5px;		/* 角丸にする */
+    box-sizing: border-box;	/* 罫線を幅計算に含める */
+    height : 30px;			/* デフォルトの高さを指定する。必要に応じて別セレクタで指定する */
+    margin : 0 2.5px;		/* デフォルトのマージンを指定する。必要に応じて別セレクタで指定する */
+}
+
+/* 
+ * セレクタ:.commonButton:hover
+ * 概要   :ボタン作成関数で作ったボタンがマウスオーバーされたとき
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.01
+ */
+.commonButton:hover {
+    background: #EFEEFE;		/* 薄いグレーをもっとうすくする */
+}
+
+/* 
+ * セレクタ:.commonButton:active
+ * 概要   :ボタン作成関数で作ったボタンが押された時
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.01
+ */
+.commonButton:active {
+    background: #FFE;		/* 更に薄いグレーにする */
+    position: relative;		/* 座標指定をするため相対位置を使う */
+    top : 2px;				/* 少し下にずらして押した感を出す */
+}
+
+/*
+ * セレクタ:.commonButton > img
+ * 概要   :ボタン作成関数で作ったボタンの画像部分
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.01
+ */
+.commonButton > img {
+    height: 84%;				/* ボタンの高さを大きさの基準にする */
+    vertical-align : sub;		/* アイコン、テキストの高さを中心に揃える */
+}
+
+/* 
+ * セレクタ:.commonButton > img.iconRight
+ * 概要   :ボタン作成関数で作ったボタンの画像部分。画像が右よりのとき
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.01
+ */
+.commonButton > img.iconRight {
+	margin-left : 0.1em;	/* 左に間を空ける */
+}
+
+/* 
+ * セレクタ:.commonButton > img.iconLeft
+ * 概要   :ボタン作成関数で作ったボタンの画像部分。画像が左よりのとき
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.01
+ */
+.commonButton > img.iconLeft {
+	margin-right : 0.1em;	/* 右に間を空ける */
+}
+
+/* 
+ * セレクタ:.messageDialog
+ * 概要   :メッセージダイアログ。jQuery UIのCSSが適用されるので独自に設定し直す
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.05
+ */
+.messageDialog {
+    white-space: pre-wrap;	/* 改行を有効にする */
+    font-size: 16px;		/* jQuery UIでデフォルトの書式が設定されているので設定し直す */
+}
+
+/* 
+ * セレクタ:.ui-datepicker-title span,.ui-datepicker-calendar thead span
+ * 概要   :datepickerのタイトルと週見出し行のセル。上記のスタイル指定の影響を打ち消す。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.21
+ */
+.ui-datepicker-title span,.ui-datepicker-calendar thead span{
+    font-weight: bold!important;   	 /* フォントを太字に戻す。 */
+	vertical-align: baseline!important;	/* 高さを下にあわせる。 */
+}
+
+/* 
+ * セレクタ:.dateNotLesson a
+ * 概要   :カレンダー内の授業がない日付
+ * 作成者 :k.urabe
+ * 作成日 :2016.09.20
+ */
+.dateNotLesson a{
+	background : silver!important;	/* 薄い灰色にする */
+}
+
+/* 
+ * セレクタ:.dateHasClass a
+ * 概要   :カレンダー内の授業のある日付
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.19
+ */
+.dateHasClass a{
+	background : lawngreen!important;	/* 明るい緑にする */
+}
+
+/* 
+ * セレクタ:.dateHasLesson a
+ * 概要   :カレンダー内の予約した授業のある日付
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.03
+ */
+.dateHasLesson a{
+	background : LightCyan!important;	/* 薄い水色にする */
+}
+
+/* 
+ * セレクタ:.dateCancelLesson a
+ * 概要   :カレンダー内のキャンセルした授業のある日付
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.03
+ */
+.dateCancelLesson a{
+	background : Yellow!important;	/* 黄色くする */
+}
+
+/* 
+ * セレクタ:.dateStopLesson a
+ * 概要   :カレンダー内の中止した授業のある日付
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.03
+ */
+.dateStopLesson a{
+	background : OrangeRed!important;	/* 紅くする */
+}
+
+/* 
+ * セレクタ:button,input[type="submit"],input[type="button"],input[type="reset"]
+ * 概要   :ボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.16
+ */
+button,input[type="submit"],input[type="button"],input[type="reset"]{
+	cursor:pointer;	/* カーソルを合わせたら指差しポインターを表示する。 */
+	outline:none;	/* クリック後の枠線をなくす。 */
+	font-size: 15px;/* 統一したボタンのフォントサイズを設定する。 */
+	/* iPhone Safariの文字サイズが自動調整される仕様への対策 */
+	-webkit-text-size-adjust: 100%;
+	-webkit-appearance: none;
+}
+
+/* 
+ * セレクタ:.ui-button-text-only .ui-button-text
+ * 概要   :jQueryUIのbuttonタグのボタンのテキスト部分。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.16
+ */
+button.ui-button-text-only span.ui-button-text {
+	padding: 0.4em 1.0em;	/* paddingを調整し、ボタンのサイズを変える	 */
+	font-weight: normal;	/* フォントの太さを通常にする。 */
+	font-size: 15px;		/* 統一したフォントサイズにする。 */
+}
+
+/* 
+ * セレクタ:.noArticle
+ * 概要   :ブログ、ギャラリーの記事がなかったときの表示
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.06
+ */
+.noArticle {
+    margin: 0 10px;			/* 通常の記事同様、ぴったりくっつかないようにする */
+    padding: 5px;			/* 内容の文字もぴったりくっつかないようにする */
+    border: solid 1px #CCC;	/* 枠で囲んだメッセージにする */
+    font-size : 16px;		/* ブログ記事はフォントサイズの指定があるので影響を受けない様にここでも設定する */
+}
+
+/* 
+ * セレクタ:.tableScrollXParent
+ * 概要   :内容を横スクロールさせるテーブルの親要素に付けるクラス
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.06
+ */
+.tableScrollXParent {
+    overflow-x: auto;		/* 中身が溢れたらスクロールする */
+    width: 99.5%;			/* テーブルに依らない幅を持たせる */
+    border: 1px solid #AAA;	/* 独自に罫線を持たせる */
+    margin: 0 auto;			/* 中央に寄せる */
+}
+
+/* 
+ * セレクタ:.tableScrollXParent table.scrollXAuto
+ * 概要   :内容を横スクロールさせるテーブル
+ * 作成者 :T.Masuda
+ * 作成日 :2016.05.06
+ */
+.tableScrollXParent table.scrollXAuto {
+	/* 左右罫線を消す */
+    border-left: none;	
+    border-right: none;
+    width : 100%;	/* 外枠一杯に幅を広げる */
+}
+
+/* 
+ * セレクタ:#container
+ * 概要   :画面の幅に合わせて伸縮する、最上階層のdivタグ
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.02
+ */
+#container{
+    width: 100%;            /* 横幅を画面一杯に広げる */
+    background: inherit;    /* bodyの背景色を継承する。 */
+}
+
+/* ヘッダー領域。 */
+
+/* 
+ * セレクタ:.header
+ * 概要   :ヘッダー領域のタグ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ * 内容　 :min-widthを設定しました。
+ */
+.header{
+    width: 100%;            		/* 幅をcontainer一杯に広げる。 */
+    margin: 0px auto 3px;   		/* 横位置を中心に寄せる。画面上端との間に間隔を空ける。 */
+    background: inherit;    		/* containerの背景色を継承する。 */
+    box-shadow: 0px 0.5px 10px 0px rgba(0,0,0,0.4); /* トップメニュー下に陰影をつける。 */
+    min-width: 800px;				/* 最低幅をmainの幅と合わせる。 */
+    position: fixed;    			/* ヘッダーを固定する。 */
+    z-index: 5;         			/* 重なり順を指定する。 */
+    top     :   0;      			/* 上から0の座標に配置する。 */
+}
+
+/* ガイド領域 */
+/* 
+ * セレクタ:.guides
+ * 概要   :様々な案内情報を掲載するヘッダー内の領域。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+.guides{
+    width       :   800px;      /* 幅をメインコンテンツと合わせる。 */
+    height      :   50px;       /* この領域の高さを設定する。 */
+    margin      : 0 auto;       /* 中央に揃える。 */
+    padding     :   10px 0;     /* 上下15pxのpaddingを指定する。左右には最低限のpaddingを指定する。 */
+    font-size   :   0px;        /* 子要素のインラインブロック指定による自動挿入の空白を消す。 */
+}
+
+/* 
+ * セレクタ:.guides a:hover
+ * 概要   :ガイドのリンクにマウスカーソルを重ねたときの動作。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ */
+.guides a:hover{
+	opacity: 0.5;	/* 透過率を下げる。 */
+}
+
+/* 
+ * セレクタ:.guideLogin img:hover
+ * 概要   :ログインボタンにマウスカーソルを重ねたときの動作。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.22
+ */
+.guideLogin img:hover{
+	opacity: 0.5;	/* 透過率を下げる。 */
+	cursor:pointer;	/* カーソルを指差しにする。 */
+}
+
+/* 
+ * セレクタ:.guides > *
+ * 概要   :ガイド領域直下の要素。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ * 変更者 :T.Masuda
+ * 変更日 :2015.03.04
+ * 内容　 :vertical-alignをtopに変更しました。
+ */
+.guides > *{
+    display         :   inline-block;   /* インラインブロック表示にし、横に並べる。 */
+    font-size       :   10px;           /* フォントサイズを指定し直す。 */
+    vertical-align  :   top;         	/* 高さを行の上端に揃える。 */
+    margin-left     :   3px;            /* 統一して左に3pxのmarginを挿入する。 */
+}
+
+/* 
+ * セレクタ:.guideFASchool
+ * 概要   :フラワーアレンジメントスクールのガイド。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+.guideFASchool{
+    height: inherit;    /* guidesの高さを継承する。 */
+    width: 165px;       /* 正方形の画像2個分＋αの幅を取る。 */
+}
+
+/* 
+ * セレクタ:.toppageLink
+ * 概要   :guideFASchoolのリンクのタグ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.21
+ */
+.toppageLink{
+	width: 100%;			/* 幅を親と同じだけ広げる。 */
+	display:inline-block;	/* インラインブロックにする。 */
+}
+
+/* 
+ * セレクタ:.guideFASchool img
+ * 概要   :guideFASchoolのアイコン画像。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+.guideFASchool img{
+    float: left;        /* この要素を左によせ、段組みレイアウトにする。 */
+}
+
+/* 
+ * セレクタ:.guideFASchool p
+ * 概要   :guideFASchoolのテキスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+.guideFASchool p{
+    font-size   	: 12px;     /* フォントサイズを指定する。 */
+    margin-top  	: 2px;      /* 上に少々の間隔を取る。 */
+    text-indent 	: 5px;      /* 先頭にインデントを入れる。 */
+	color			: #000;		/* フォントの色を黒にする。 */
+}
+
+/* 
+ * セレクタ:.guideTel
+ * 概要   :電話窓口のガイド。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+.guideTel{
+    height: inherit;    /* 高さを継承する。 */
+    width: 250px;       /* 電話番号をしっかり表示するため、幅を確保する。 */
+}
+
+/* 
+ * セレクタ:.guideTel img
+ * 概要   :.telのアイコン画像。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+.guideTel img{
+    height: inherit;    /* 外枠の高さを継承する。 */
+    float: left;        /* 左に寄せる。 */
+}
+
+/* 
+ * セレクタ:.guideTel .p1
+ * 概要   :.guide_telのテキスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.09
+ * 内容   :colorを統一化のため、消去
+ */
+.guideTel .p1{
+    font-size: 11px;    /* フォントサイズを指定する。3行で50pxを超えないようにする。 */
+    margin-top: 4px;    /* 上に軽い空白を与える。 */
+}
+
+/* 
+ * セレクタ:.guideTel .p2
+ * 概要   :.guide_telのテキスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ * 変更者 :T.Masuda
+ * 変更日 :2015.03.04
+ * 内容　 :インラインブロックに変更しました。
+ */
+.guideTel .p2 .telLink{
+    font-size: 15px;    /* フォントサイズを指定する。3行で50pxを超えないようにする。 */
+    color:  limegreen;  /* 淡い緑のフォントにする。 */
+    display: inline-block;	/* インラインブロックとして扱い、必要以上の幅を取らないようにする。 */
+}
+
+/* 
+ * セレクタ:.guideTel .p3
+ * 概要   :.guide_telのテキスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+.guideTel .p3{
+    font-size: 10px;    /* フォントサイズを指定する。3行で50pxを超えないようにする。 */
+}
+/* 
+ * セレクタ:.guideSns
+ * 概要   :.SNSサイトのガイド。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+.guideSns{
+	height: inherit;	/* 高さをガイド領域から継承する。 */
+}
+
+/* 
+ * セレクタ:.guideSns > *
+ * 概要   :.guideSnsの子要素。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+.guideSns > *{
+	display: block;			/* ブロック要素として扱い、縦に並べる。 */
+	vertical-align: top;	/* 上に寄せる。 */
+}
+
+/* 
+ * セレクタ:.guideSns .facebook
+ * 概要   :Facebookの画像。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+.guideSns .facebook{
+    margin-bottom: 2px; /* 下部に2pxのmarginを挿入して、次の画像を底辺に貼付ける。 */
+}
+
+/* 
+ * セレクタ:.guideLogin
+ * 概要   :ログインのガイド。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.19
+ * 内容   :ログイン名表示のため幅を調整しました。50px → 100px
+ */
+.guideLogin{
+    height: inherit;    /* 高さをガイド領域から継承する。 */
+    vertical-align: top;	/* 水平位置を上に合わせる。 */
+}
+
+/* 
+ * セレクタ:.guideLogin .login
+ * 概要   :ログインのボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ * 変更者 :T.Masuda
+ * 変更日 :2015.02.19
+ * 内容   :親要素に合わせて画像サイズが引き延ばされないように変更しました。
+ */
+.guideLogin .login{
+    width: auto;	 /* 画像自身の幅を指定する。 */
+}
+
+/* 
+ * セレクタ:.guideLogin .welcome
+ * 概要   :ログイン名前の「ようこそ」の文字。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.19
+ */
+.guideLogin .welcome{
+    display: block; /* ブロック要素となる。 */
+}
+
+/* 
+ * セレクタ:.guideLogin .userName
+ * 概要   :ログイン名。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.19
+ */
+.guideLogin .userName{
+    display: block; /* ブロック要素となる。 */
+	/*width: 130px;*/	/* 幅に余裕を持たせる。 */
+}
+
+/* ここまでガイド領域。 */
+
+/* トップメニュー領域 */
+/* 
+ * セレクタ:.topMenu
+ * 概要   :ヘッダー領域内のトップメニュー。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+.topMenu{
+    width       :   800px;      /* 幅をメインコンテンツと合わせる。 */
+    height      :   45px;       /* この領域の高さを設定する。 */
+    margin      : 0 auto;       /* 中央に揃える。 */
+    font-size   :   0px;        /* 子要素のインラインブロック指定による自動挿入の空白を消す。 */
+}
+
+/* 
+ * セレクタ:.topMenu li
+ * 概要   :トップメニューのボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+.topMenu li{
+    width:          12.5%;          /* 1/8の幅に設定する。 */
+    height:         100%;           /* 外枠に高さを合わせる。 */
+    display:        inline-block;   /* インラインブロック表示にする。 */
+    font-size:      14px;           /*  インラインブロックで並べるため、フォントサイズを指定する。 */
+    box-sizing:     border-box;     /* 自身の幅をpadding、border込みで計算する。 */
+    text-align:     center;         /* 文字を中心に寄せる。 */
+    vertical-align: middle;         /* 文字の高さを中心に揃える。 */
+}
+
+/* 
+ * セレクタ:.topMenu li.active,.topMenu li.current
+ * 概要   :選択中のトップメニューのボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+.topMenu li.active,.topMenu li.current{
+	border-bottom: 3px solid rgb(0, 174, 40);	/* メニューの下に緑の線を引く */
+}
+
+/* 
+ * セレクタ:.topMenu .button a
+ * 概要   :トップメニューのボタンのリンク。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+.topMenu li a{
+    width:      100%;   /* 幅をボタン全体に合わせる。 */
+    height:     100%;   /* 高さをボタン全体に合わせる。 */
+    display:    block;  /* ブロック表示を行う。 */
+    color:      #000;   /* フォントカラーを黒にする。 */
+}
+
+/* 
+ * セレクタ:.topMenu p
+ * 概要   :トップメニューのボタンのリンクの文字。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+.topMenu p{
+    margin-top	: 18px;   		/* 中心に寄せるのに必要なだけの上marginを挿入する。 */
+    font-size	: 16px;   		/* 妥当なフォントサイズを指定する。 */
+    display		: inline-block; /* インラインブロック表示を行う。 */
+}
+/* 
+ * セレクタ:.topMenu .active p, .topMenu .current p
+ * 概要   :選択中のトップメニューのボタンのリンクの文字。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.25
+ */
+.topMenu .active p, .topMenu .current p{
+	color:rgb(0, 174, 40);		/* 文字の色を黄緑にする */
+	opacity: 1!important;		/* 透過度を1にして、透明にさせなくする */
+}
+
+/* 
+ * セレクタ:.main
+ * 概要   :コンテンツ領域。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.02
+ * 変更者 :T.Masuda
+ * 変更日 :2015.09.22
+ * 内容 :上marginを通常トップページ以外用の値にしました
+ */
+.main{
+    width		: 800px;      		/* コンテンツ幅を800pxにする。 */
+    margin		: 0 auto 0 auto;  /* 横位置を中心に寄せる。 */
+    background	: inherit;    		/* containerの背景色を継承する。 */
+    position	: relative; 		/* 相対位置の要素にする。 */
+    z-index		: 0;				/* 重なり順の優先順位を低くする。 */
+}
+
+/* 
+ * セレクタ:.window[name="usuall"] .main
+ * 概要   :通常トップページコンテンツ領域。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.09.22
+ * 変更者 :T.Masuda
+ * 変更日 :2015.10.31
+ * 内容　 :セレクタを変更しました。.window:first-child .main→.window[name="usuall"] .main
+ */
+.window[name="usuall"] .main{
+    margin-top		: 115px;   /* 固定位置となっているヘッダーに被さる分上marginを取る */
+}
+
+/* 
+ * セレクタ:footer
+ * 概要   :フッター領域のタグ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+footer{
+    width: 800px;               /* 他のcontainer直下要素と同じ幅にする。 */
+    margin: -30px auto 0;       /* 横位置を中心に寄せる。また、ネガティブマージンを設定して上にずらす。 */
+    text-align: right;          /* 横位置を右に寄せる。 */
+    background: transparent;    /* 背景を透過色に設定する。 */
+    position:   relative;       /* 相対位置の要素にする。 */
+    z-index:    1;              /* 重なり順を指定する。 */
+}
+/* 
+ * セレクタ:copyright
+ * 概要   :フッター領域のコピーライト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.05
+ */
+.copyright{
+    display: inline-block;      /* インラインブロック表示にする。 */
+    font-size: 12px;            /* フォントサイズを指定する。 */
+    background: inherit;        /* 背景を継承する。 */  
+}
+
+/* 
+ * セレクタ:.textRed
+ * 概要   :字を赤くするためのクラス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.18
+ */
+.textRed{
+	color: #F00;	/* 文字の色を赤にする。 */
+}
+
+/* 
+ * セレクタ:.createImage img
+ * 概要   : 上下の花の飾りの画像。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.19
+ */
+.createImage img{
+	width: 100%;	/* 上下の花の飾りの画像をコンテンツサイズに合わせる。 */
+}
+
+/* 
+ * セレクタ:.loginDialog
+ * 概要   :ログインのダイアログ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.19
+ */
+.dialog .inputArea {
+	font-size: 14px;					/* フォントサイズを指定する。 */
+}
+
+/* 
+ * セレクタ:.loginDialog > *
+ * 概要   :ログインダイアログの子要素。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.19
+ */
+.dialog .inputArea > * {
+	margin-bottom: 3px;	/* 行間を取る。 */
+	line-height: 16px;	/* 1行の高さを指定する。 */
+}
+
+
+/* 
+ * セレクタ:.loginDialog label
+ * 概要   :ログインダイアログのラベル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.19
+ */
+.dialog .inputArea label {
+	display: inline-block;	/* インラインブロック要素に指定してテキストボックスと並べる。 */
+	width: 90px;			/* 幅を100pxに指定し、文字数が違うラベル同士の幅を合わせる。 */
+}
+
+/* 
+ * セレクタ:.userName,.password
+ * 概要   :ログインダイアログのテキストボックス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.07
+ */
+.dialog .inputArea .userName, .dialog .inputArea .password {
+	width: 150px;			/* どの環境でも幅を一定にするため、幅を指定する。 */
+}
+
+/* 
+ * セレクタ :.loading
+ * 概要    :ローディング画面。
+ * 作成者  :T.Masuda
+ * 作成日  :2015.03.02
+ */
+.loading{
+	position:absolute;	/* 絶対位置を指定する。 */
+	left:50%;			/* 画面中央 */
+	top:20%;			/* 上から20%の位置に置く */
+	margin-left:-128px;	/* 自分の大きさの半分左にずらして中心に置く。 */
+	z-index: 2000;		/* 必ず最前面に出す。 */
+	display:none;		/* 初期状態では見えなくする。 */
+}
+
+/* 
+ * セレクタ :.loading p
+ * 概要    :ローディング画面のテキスト。
+ * 作成者  :T.Masuda
+ * 作成日  :2015.03.03
+ */
+.loading p{
+	text-align	: center;	/* テキストを中央に寄せる。 */
+	font-size	: 22px;		/* しっかりと見せるサイズにする。 */
+}
+
+/* 
+ * セレクタ:.tabContainer
+ * 概要   :queryプラグイン「easytabs」によるタブ全体の領域
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.13
+ */
+.tabContainer {
+	width		:100%;	/*親要素(.main)と同じだけの幅を取る。*/
+}
+
+ /* 
+ * セレクタ:.tabContainer > ul
+ * 概要   :jqueryプラグイン「easytabs」に指定された、タブのボタンをまとめる領域。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.13
+ * 変更者 :T.Masuda
+ * 変更日 :2015.03.23
+ * 内容　 :余計な間隔を消すため、フォントサイズを0にしました。
+ * 変更者 :T.Masuda
+ * 変更日 :2015.04.08
+ * 内容　 :marginの指定をなくしました。
+ */
+.tabContainer > ul {
+	padding		: 0;	/*ulタグにデフォルトで付いてくるpaddingをなくす。*/
+	font-size	: 0px;	/*フォントサイズを0に指定してインラインブロックの余白を消す。*/
+}
+
+ /* 
+ * セレクタ:.tabContainer > ul li
+ * 概要   :jqueryプラグイン「easytabs」のタブのボタン。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.13
+ * 変更者 :T.Masuda
+ * 変更日 :2015.03.23
+ * 内容　 :下borderをなくす設定を消去、フォントサイズを指定しました。
+ */
+.tabContainer > ul li {
+	display			:inline-block;		/*インラインブロックにしてボタンを横に並べる。*/
+	background		:#CCC;				/*背景色をグレーにする。*/
+	border			:solid 1px;			/*細い実線で囲む。*/
+	border-top-left-radius	:5px 5px;	/*左上の角を丸くする。*/
+	border-top-right-radius	:5px 5px;	/*右上の角を丸くする。*/
+	font-size		:	16px;			/* デフォルトのフォントサイズを再指定。 */
+}
+
+ /* 
+ * セレクタ: .tabContainer > ul li.active
+ * 概要   :jqueryプラグイン「easytabs」の現在選択されているタブのボタン
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.13
+ */
+ .tabContainer > ul li.active {
+ 	background	:#FFF;	/*背景を白くし、このボタンだけ違うとわかりやすくする。*/
+	padding-top	:6px;	/*ボタンの文字を下にずらす。*/
+	position:relative;	/*相対位置指定を有効にする。座標指定が有効になる。*/
+	top		:1px;		/*上から1pxずらし、タブの内容表示部分の枠をボタンにかかる所だけ消す。*/
+	font-weight	:bold;	/*テキストを太字にして強調する。*/
+	border-bottom: none;	/* 選択中のタブは下線をなくす。 */
+ }
+
+/* 
+ * セレクタ:.tabContainer > ul li a
+ * 概要   :jqueryプラグイン「easytabs」のタブのボタンの文字。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.13
+ */
+.tabContainer > ul li a {
+	display		:block;		/*ロック要素として表示する。*/
+	padding		:5px;		/*ボタンの外枠と文字の間に少々の余白を持たせる。*/
+	outline		:none;		/*クリックしたときに出る枠線をなくす。*/
+	color		:#000;		/*文字を黒字にする。*/
+	text-decoration	:none;	/*aタグのテキストにある下線をなくす。*/
+}
+
+/* 
+ * セレクタ:.tabContainer > ul li a:hover
+ * 概要   :トップページで最新の記事見出しを表示する小ウィンドウ。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.13
+ */
+.tabContainer ul > li a:hover {
+	text-decoration	:underline;		/*ボタンにカーソルを合わせたら下線を出して強調する。*/
+}
+
+/* 
+ * セレクタ:.textEditPopup
+ * 概要   :テキスト編集用のポップアップ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.18
+ */
+.textEditPopup{
+	display: none;	/* 内包する要素のみをポップアップそのものに渡すため、この要素は隠す。 */
+}
+/* 
+ * セレクタ:.textEditPopup
+ * 概要   :テキスト編集用のポップアップの本体のタグ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.18
+ */
+.textEditPopupBody{
+	width:	auto;
+}
+
+/* 
+ * セレクタ:.textEditPopup
+ * 概要   :テキスト編集用のポップアップ内のテキストエリア。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.18
+ */
+.textEditPopupBody textarea{
+	width	: 600px;	/* 幅を固定値で取る。 */
+	height	: 150px;	/* 文章がたくさん見えるように高さを取る。 */
+}
+
+/* 
+ * セレクタ:.smallipop-instance
+ * 概要   :smallipopによるポップアップの外枠。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.18
+ */
+.smallipop-instance{
+	max-width:none!important;	/* プラグインのCSSで定義されている最大幅を上書きして無効にする。 */
+}
+
+ /* 
+ * セレクタ:.numbering
+ * 概要   :ナンバリング
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.12
+ */
+ .numbering {
+ 	width:auto;				/*フォントサイズに合わせた幅を指定する。*/
+ 	display: block;			/* ブロック要素にする。 */
+ 	margin: 10px auto;		/* 中心に揃える。 */
+ 	text-align:	center;		/* ボタンを中心に寄せる。 */
+ 	clear: both;			/* 回り込みをなくす。 */
+ }
+
+ /* 
+ * セレクタ:.numbering li
+ * 概要   :ナンバリングのボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.12
+ */
+ .numbering li{
+ 	width:auto;					/* フォントサイズに合わせた幅を指定する。*/
+ 	display: inline-block;		/* ブロック要素にする。 */
+ 	margin: 0 0.1%;				/* ボタン同士を離す。 */
+ 	padding: 0.3em 1em;			/* ボタンを広げる。 */
+ 	color: BLACK;				/* 黒文字にする。 */
+ 	cursor: pointer;			/* カーソルを指差しにする。 */
+ }
+
+ /* 
+ * セレクタ:.numbering li
+ * 概要   :選択中のナンバリングのボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.13
+ */
+ .numbering li.select{
+ 	font-weight: bold;	/* 太字にする。 */
+ 	color		: RED;	/* グレー文字にする。 */
+ }
+
+ /* 
+ * セレクタ:.numbering li:empty
+ * 概要   :空のナンバリングのボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.12
+ */
+ .numbering li:empty{
+ 	/* 非表示3セット */
+ 	width:0px;
+ 	height:0px;
+ 	display: none;
+ }
+
+ /* 
+ * セレクタ:label.error
+ * 概要   :validate.jsのエラーメッセージ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.15
+ */
+label.error{
+	display:none!important;	/* 非表示にする。 */
+}
+ 
+/* 
+ * セレクタ:.managementList
+ * 概要   :管理対象の一覧。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+ .managementList{
+ 	width		:auto;				/* スマホ相当の幅に指定する。 */
+ 	margin		:10px 1%;			/* 左1%のmarginをとる。 */
+ 	overflow-x	:scroll;/*横にはみ出たセルをスクロールで表示できるようにする。 */
+	max-width	: 90%;				/* 最大幅を設定し、それからはみ出たらスクロールするようにする。 */
+	display		:inline-block;		/* インラインブロックにして、中の要素の幅で自身の幅を変える。 */
+ 	border	:1px solid #666;		/* 左の線を引く。 */
+ 	font-size: 15px;				/* フォントサイズを明確に指定する。 */
+ 	border-right-width: 2px;		/* 左の枠線をふとめにする。 */
+}
+ 
+/* 
+ * セレクタ:.managementList .table
+ * 概要   :管理対象の一覧テーブル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+ .managementList .table{
+ 	table-layout: fixed;			/* セルの幅を指定できる様にする。 */
+ 	border-spacing: 0;				/* テーブルに余計な空白を作らない。 */
+}
+ 
+/* 
+ * セレクタ:.tableHead th
+ * 概要   :テーブルの見出し行のセル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+ .tableHead th{
+ 	font-size: 16px;	/* 見出し用のフォントサイズにする。 */
+ 	background:#D0D0AC;	/* 背景色を黄緑色にする。 */
+ }
+
+/* 
+ * セレクタ:.managementList td
+ * 概要   :データのセル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.26
+ */
+.managementList td {
+	background: #FFF;	/* 背景色を明示的に白にする。 */
+}	
+
+/* 
+ * セレクタ:.managementList td, .managementList th
+ * 概要   :一覧のセル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.managementList td, .managementList th{
+	padding: 2px;					/* paddingをつけて余裕を出す。 */
+	/* 右、下に灰色の罫線を引く。 */
+	border-right	: 1px solid #666;
+	border-bottom	: 1px solid #666;
+	overflow		: hidden;		/* はみ出たテキストを見えなくする。 */
+	white-space		: nowrap;		/* テキストの改行文字を機能させない。 */
+	max-width		: 250px;		/* 1列ごとの最大幅を設定する。 */
+}
+.managementList tr *:last-child{
+	border-right:none;
+}
+
+/* 
+ * セレクタ: .managementList tr:last-child *
+ * 概要   :最後の行のセル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.26
+ */
+ .managementList tr:last-child *{
+ 	border-bottom-color: #CCC;	/* 下線を薄くする。 */
+}
+ 
+/* 
+ * セレクタ: .managementList .numberHead, .managementList .number
+ * 概要   :番号の列。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.16
+ */
+ .managementList .numberHead, .managementList .number{
+ 	display: none;	/* 非表示にする */
+}
+
+/* 
+ * セレクタ:form[target^="jquery_upload"]
+ * 概要   :jQuery.Uploadで一時的に自動生成されるフォームのタグ
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.23
+ */
+form[target^="jquery_upload"]{
+ 	display:none;	/* 見えない方が都合がいいので隠す。 */
+ 	float:left;		/* 流す。 */
+}
+/* 
+ * セレクタ:.annotation
+ * 概要   :1行だけの注釈のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.31
+ */
+.annotation, .notice {
+    clear: left;      /* 左側の回り込みを解除する */
+    padding-left: 1em;/* 左から1文字分余白を空ける */
+    text-indent: -1em;/* 文字のインデントを1文字はみ出る形にする */
+}
+ 
+/* 
+ * セレクタ:.toEntryPage
+ * 概要   :ログインダイアログの、会員登録ページへのリンク
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.23
+ */
+.toEntryPage{
+	color: darkseagreen!important;	/* 暗めの翠の文字にする。 */
+    display: inline;                /* インライン要素にする */
+}
+ 
+/* 
+ * セレクタ:.toEntryPage
+ * 概要   :.toEntryPageのマウスオーバーイベント
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.23
+ */
+.toEntryPage:hover{
+	opacity: 0.5;	/* マウスオーバー時に半透明にする。 */
+}
+
+/* 
+ * セレクタ:.uploader
+ * 概要   :アップローダーのタグ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.24
+ */
+.uploader{
+	/* 見えなくする。displayをnoneにするとclick()で反応しないブラウザがあるため、visibilityと絶対座標で再現する。 */
+	visibility: hidden;		/* 要素を見えなくする。 */
+	position: absolute;		/* 絶対位置を指定し、場所を取らない様にする。 */
+	z-index: 0;				/* 重なりを最低にする。 */
+	width:0px;				/* 幅を0にする */
+	height:0px;				/* 高さを0にする */
+	/* 隅にどける。 */
+	left:0;
+	top:0;
+}
+
+
+/* 
+ * セレクタ:.calendar
+ * 概要   :カレンダーについてそれぞれの項目のスタイル
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.02.09
+ */
+.calendar {
+    width: 48%;         /* 幅を47%にする */
+    float: right;       /* 右側に回り込む */
+}
+
+/* 
+ * セレクタ:.calendar > div 
+ * 概要   :datepicker本体。
+ * 作成者 :T.Masuda 
+ * 作成日 :2015.02.27
+ */
+.calendar > div {
+    width:      100%;           /* 幅を領域一杯に広げる。 */
+    font-size:  16px;       /* フォントサイズを上げて全体を大きくする。 */
+    box-sizing: border-box; /* サイズの計算に線、paddingを含む。 */
+}
+
+/* 
+ * セレクタ:.calendar > div > div
+ * 概要   :datepickerの各内容。
+ * 作成者 :T.Masuda 
+ * 作成日 :2015.03.02
+ */
+.calendar > div  > div {
+    font-size:  0.95em;     /* タイトルより少しだけ小さいフォントを指定する。 */
+}
+
+/* 
+ * セレクタ:.calendar td *
+ * 概要   :datepickerの日付。
+ * 作成者 :T.Masuda 
+ * 作成日 :2015.03.02
+ * 変更者 :T.Masuda 
+ * 変更日 :2015.06.04
+ * 内容　 :セレクタの対象のタグをaから*に変更しました
+ */
+.calendar .ui-datepicker td *{
+    padding-top     : 6px;      /* 上paddingを設定する。 */
+    padding-bottom  : 6px;      /* 下paddingを設定する。 */
+}
+
+/* 
+ * セレクタ:.blogLeftContent .calendar
+ * 概要   :ブログページのカレンダー
+ * 作成者 :T.Masuda
+ * 作成日 :2015.06.08
+ */
+.blogLeftContent .calendar{
+	width: 95%;		/* ブログページ用の幅を設定する */
+	float: none;
+}
+
+/* 
+ * セレクタ:.importantButton
+ * 概要   :重要なボタン。承認ボタン等
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.02
+ */
+.importantButton {
+	/* 赤字白抜きレイアウトにする */
+	background : RED!important;
+	color : WHITE!important;
+}
+
+/* スマホ・タブレットレイアウト */
+@media(max-width:680px) {
+    
+	/* 
+	 * セレクタ:.main
+	 * 概要   :コンテンツ領域。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.21
+	 */
+	.main{
+	    width:      100%;      		/* 幅をcontainerに合わせる。 */
+		margin-top: 0px!important;	/* スマホレイアウト時は上marginをなくす。 */
+	}
+	
+
+    /* 
+     * セレクタ:#container
+     * 概要   :スマホ用container
+     * 作成者 :T.Yamamoto
+     * 作成日 :2015.02.16
+     * 変更者 :T.Masuda
+     * 変更日 :2015.02.21
+     * 追加者 :T.Yamamoto
+	 * 追加日 :2015.03.10
+	 * 内容   :文字サイズを削除
+     */
+    #container {
+        width: 100%;        /* コンテンツの幅を100%にする */
+        margin: 0 auto;     /* 中央揃えにする */
+    }
+    /* 
+     * セレクタ:#container, .pageTitle .summary
+     * 概要   :スマホ用デフォルト文字サイズの設定
+     * 作成者 :T.Yamamoto
+     * 作成日 :2015.03.10
+     */
+	#container,
+	.pageTitle .summary {
+		font-size: 13px;    /* フォントサイズを13pxにする */
+	}
+
+	/* 
+	 * セレクタ:.header
+	 * 概要   :ヘッダー領域のタグ。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.21
+	 */
+	.header{
+	    position: static;	/* position fixedを解除する。 */
+	    min-width: 0px;		/* 最低幅を無効にする。 */
+	}
+
+	/* 
+	 * セレクタ:.copyright
+	 * 概要   :コピーライトのスタイル。スマホ用では中央に寄せる。
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.02.20
+	 * 作成者 :T.T.Masuda
+	 * 作成日 :2015.02.23
+	 * 内容　:中央寄せのデザインに変更しました。
+	 */
+	.copyright {
+		font-size: 8px;			/* フォントサイズをより小さくする。 */
+		text-align: center;		/* 中心に寄せる。 */
+		width: 100%;			/* 幅を一杯に取る。 */
+		display: block;			/* ブロック要素として扱う。 */
+		margin: 0 auto;			/* 中心に寄せる。 */
+		word-break: break-all;	/* 単語単位の改行をしない。 */
+	}
+	
+	/* ガイド領域 */
+	/* 
+	 * セレクタ:.guides
+	 * 概要   :様々な案内情報を掲載するヘッダー内の領域。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.21
+	 */
+	.guides{
+	    width       :   100%;      /* 幅を画面に合わせる。 */
+	    height      :   auto;       /* 高さを自動調整する。 */
+	}
+	
+	/* 
+	 * セレクタ:.guides > *
+	 * 概要   :ガイド領域直下の要素。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.24
+	 */
+	.guides > *{
+	    margin-bottom   :   5px;            /* 改行した要素との間に最低限の間を空ける。 */
+	}
+	/* 
+	 * セレクタ:.guideFASchool
+	 * 概要   :フラワーアレンジメントスクールのガイド。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.21
+	 */
+	.guideFASchool{
+	    width: 140px;       /* スマホ用に幅を切り詰める */
+	}
+	
+	/* 
+	 * セレクタ:.guideTel
+	 * 概要   :電話窓口のガイド。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.05
+	 * 変更者 :T.Masuda
+	 * 変更日 :2015.02.23
+	 * 内容　 :左のmarginを消し、幅を増やしました。
+	 */
+	.guideTel{
+	    width: 177px;       /* 電話番号をしっかり表示するため、幅を確保する。 */
+	    margin-left: 0;     /* 画像の空白部分で余白は十分なので、左marginを消す。 */
+	}
+	
+	/* 
+	 * セレクタ:.guideLogin .userName
+	 * 概要   :ログイン名。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.24
+	 */
+	.guideLogin .userName{
+		/*width: 75px;*/	/* 幅に余裕がないので狭める。 */
+	}
+	
+	/* トップメニュー領域 */
+	/* 
+	 * セレクタ:.topMenu
+	 * 概要   :ヘッダー領域内のトップメニュー。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.05
+	 * 作成日 :2015.02.23
+	 * 内容 　:フォントサイズ、padding、幅を変更しました。
+	 * 修正者 :T.Masuda
+	 * 修正日 :2015.03.04
+	 * 内容 　:text-alignを変更しました。
+	 */
+	.topMenu{
+	    width       : 100%;     /* 幅を画面にあわせる。 */
+	    height      : auto;     /* 内容により高さを変動させる。 */
+	    text-align	: left;     /* ボタンを左に寄せる。 */
+	}
+	
+	/* 
+	 * セレクタ:.topMenu li
+	 * 概要   :トップメニューのボタン。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.05
+	 * 修正者 :T.Masuda
+	 * 修正日 :2015.02.23
+	 * 内容 　:フォントサイズ、padding、幅を変更しました。
+	 * 修正者 :T.Masuda
+	 * 修正日 :2015.03.04
+	 * 内容 　:paddingを変更しました。
+	 * 修正者 :T.Masuda
+	 * 修正日 :2015.04.09
+	 * 内容 　:paddingを変更しました。
+	 */
+	.topMenu li{
+	    width:          auto;       /* 幅を文字のサイズに合わせる。 */
+	    font-size:      13px;       /*  PCレイアウトより小さめのフォントにする。 */
+	    padding: 0;		/* 上下にpaddingを設定する。左右にも1文字弱分のpaddingを入れる。 */
+	}
+	
+	/* 
+	 * セレクタ:.topMenu .button a
+	 * 概要   :トップメニューのボタンのリンク。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.05
+	 */
+	.topMenu li a{
+	    width:      auto;   	/* 幅をテキストによる自動調整にする。 */
+		padding: 5px 0.85em;	/* 余白を取る。 */
+	}
+
+	/* 
+	 * セレクタ:.topMenu p
+	 * 概要   :トップメニューのボタンのリンクの文字。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.24
+	 */
+	.topMenu p{
+	    font-size:  13px;   /* 妥当なフォントサイズを指定する。 */
+	    margin-top:  0;   	/* 上のmarginをなくす */
+	}
+	
+	/* 
+	 * セレクタ:footer
+	 * 概要   :フッター領域のタグ。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.24
+	 */
+	footer{
+	    width		: 100%;      /* 幅をmainに合わせる。 */
+	    margin-top	: 0;		/* 画像縮小に伴いコピーライトと画像が被るので上marginをなくす。 */
+	}
+	
+	/* 
+	 * セレクタ:.textEditPopup
+	 * 概要   :テキスト編集用のポップアップ内のテキストエリア。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.18
+	 */
+	.textEditPopupBody textarea{
+		width	: 100%;		/* 幅を固定値で取る。 */
+		min-width: 280px;	/*  */
+	}
+
+	 /* 
+	 * セレクタ:.tabContainer > ul li
+	 * 概要   :jqueryプラグイン「easytabs」のタブのボタン。
+	 * 設計者 :T.Masuda
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.03.13
+	 * 変更者 :T.Masuda
+	 * 変更日 :2015.03.23
+	 * 内容　 :下borderをなくす設定を消去、フォントサイズを指定しました。
+	 */
+	.tabContainer > ul li {
+		font-size		:	13px;	/* デフォルトのフォントサイズを再指定。 */
+	}
+	
+	/* 
+	 * セレクタ:.blogLeftContent .calendar
+	 * 概要   :ブログページのカレンダー
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.06.08
+	 */
+	.blogLeftContent .calendar{
+		width: 90%;		/* 他のコンテンツと幅を合わせる */
+		display: block;	/* ブロック要素にする */
+		margin: 0 auto;	/* 中心に寄せる */
+	}
+    /* 
+     * セレクタ:.calendar
+     * 概要   :スマホ用カレンダーのスタイル
+     * 作成者 :T.Masuda 
+     * 作成日 :2015.06.05
+     */
+     .calendar {
+        width: 100%;            /* 横幅を一杯広げる。 */
+        margin: 0 auto 10px;    /* 上のmarginをなくす。下には追加する。 */
+     }
+
+    /* 
+     * セレクタ:.calendar > div
+     * 概要   :スマホ用カレンダー本体のスタイル
+     * 作成者 :T.Masuda
+     * 作成日 :2015.06.05
+     */
+     .calendar > div{
+         display: block;    /* ブロック要素として表示する。 */
+         margin: 0 auto;    /* 中央に寄せる。 */
+     }
+
+	/* 
+	 * セレクタ:.blogLeftContent .calendar
+	 * 概要   :ブログページのカレンダー
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.06.08
+	 */
+	.blogLeftContent .calendar{
+		width: 90%;	/* 段組みを崩した事を考慮した幅にする */
+	}
+}
+	/* 画面がタブレットのみの幅であれば */
+	@media screen and (min-width: 430px) and (max-width: 679px){
+		/* 
+		 * セレクタ:.main
+		 * 概要   :コンテンツ領域。
+		 * 作成者 :T.Masuda
+		 * 作成日 :2015.03.04
+		 */
+		.main{
+		    min-width: 610px;  /* 画面を一定サイズ以上縮小しない。 */
+		}
+		/* 
+		 * セレクタ:.header
+		 * 概要   :ヘッダー領域。
+		 * 作成者 :T.Masuda
+		 * 作成日 :2015.03.23
+		 */
+		.header{
+		    min-width: 610px;  /* 画面を一定サイズ以上縮小しない。 */
+		}
+		#container{
+			overflow: visible;
+		}
+		.flowerBackground{
+			overflow: hidden;
+		}
+}	
+	
+/* コンテンツの伸縮が行われる幅になったら */
+@media screen and (max-width: 799px){
+
+	/* 
+	 * セレクタ:#container
+	 * 概要   :画面の幅に合わせて伸縮する、最上階層のdivタグ
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.04.08
+	 */
+	#container{
+		overflow:visible;
+	}
+}
+
+@media screen and (max-width: 400px){
+	
+	/* 
+	 * セレクタ:.managementList
+	 * 概要   :記事、生徒さん情報のリスト
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.04.18
+	 */
+	.managementList {
+		max-width: 90%;			/* 最大幅を調整する。 */
+		box-sizing: border-box;	/* borderを大きさの計算に入れる */
+		margin: 10px 0px;		/* 左右marginをなくす */
+	}
+	
+	/* 
+	 * セレクタ:.tabPanel .managementList
+	 * 概要   :タブ内での記事、生徒さん情報のリスト
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.04.19
+	 */
+	.tabPanel .managementList {
+		max-width: 100%;		/* 親要素の幅いっぱいに幅を広げられるようにする。 */
+	}
+
+    /* 
+     * セレクタ:.annotation, .notice
+     * 概要   :スマホ用注釈
+     * 作成者 :T.Yamamoto
+     * 作成日 :2015.04.17
+     * 変更者 :T.Yamamoto
+     */
+    .annotation, .notice {
+        text-indent: -11px;      /* 字下げのためにインデントをとる */
+    }
+    
+}
+
+/* 画面がタブレットのみの幅であれば */
+@media screen and (max-width: 429px){
+	/* 
+	 * セレクタ:.main
+	 * 概要   :コンテンツ領域。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.12.26
+	 */
+	.main {
+	    min-width: 320px;  /* 画面を一定サイズ以上縮小しない。 */
+	}
+}
+
+/* 
+ * セレクタ:.commonTable
+ * 概要   :テーブルの共通レイアウトクラス
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.02
+ */
+.commonTable {
+	
+}
+
+/* 
+ * セレクタ:.commonTable tr
+ * 概要   :テーブルの共通レイアウトクラス 行
+ * 作成者 :T.Masuda
+ * 作成日 :2016.04.02
+ */
+.commonTable tr{
+	height : 25px;	/* 高さを共通して設定する */
+}

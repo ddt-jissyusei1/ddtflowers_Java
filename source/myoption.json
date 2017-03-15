@@ -1,0 +1,175 @@
+{
+    "pageTitle": {
+        "class": "pageTitle cf",
+        "image": {
+            "src": "image/icon(waterdrop100).png"
+        },
+        "title": {
+            "text": "個人設定"
+        },
+        "summary": {
+            "text": ""
+        }
+    },
+    "optionForm": {
+        "class": "myOption optionForm",
+        "method":"post"
+    },
+    "myOptionButtons": {
+        "myOptionBackButton": {
+            "class": "myOptionBackButton back",
+            "text": "戻る",
+            "type": "button"
+        },
+        "myOptionConfirmChangeButton": {
+            "class": "myOptionConfirmChangeButton optionSave",
+            "text": "更新",
+            "type": "submit"
+        }
+    },
+    "myOptionNickname": {
+        "class": "myOptionText",
+        "myOptionLabel": {
+            "text": "あなたのニックネーム"
+        },
+        "myOptionTextbox": {
+            "type": "text",
+            "name": "nickname"
+        }
+    },
+    "myOptionTel": {
+        "class": "myOptionText",
+        "myOptionLabel": {
+            "text": "あなたの電話番号"
+        },
+        "myOptionTextbox": {
+            "type": "tel",
+            "name": "tel",
+            "style": "ime-mode:disabled",
+            "onkeyDown": "return controllInputChar(event);"
+        }
+    },
+    "myOptionAddress": {
+        "class": "myOptionText myOptionAddress",
+        "myOptionLabel": {
+            "text": "あなたの住所"
+        },
+        "myOptionTextbox": {
+            "type": "text",
+            "name": "address"
+        }
+    },
+    "myOptionMail": {
+        "class": "myOptionText myOptionTextConfirm myOptionMail",
+        "myOptionLabelOld": {
+            "text": "メールアドレス(旧)"
+        },
+        "myOptionTextboxOld": {
+            "type": "email",
+            "name": "emailOld",
+            "onkeyDown": "return controllInputChar(event);",
+            "style": "ime-mode:disabled"
+        },
+        "myOptionLabelNew": {
+            "text": "メールアドレス(新)"
+        },
+        "myOptionTextboxNew": {
+            "type": "email",
+            "name": "emailNew",
+            "onkeyDown": "return controllInputChar(event);",
+            "style": "ime-mode:disabled",
+            "placeholder": "新しいメールアドレスを入力してください。"
+        },
+        "myOptionLabelConfirm": {
+            "text": "メールアドレス(確認)"
+        },
+        "myOptionTextboxConfirm": {
+            "type": "email",
+            "name": "emailConfirm",
+            "style": "ime-mode:disabled",
+            "autocomplete": "off",
+            "oncopy": "return false",
+            "onpaste": "return false",
+            "ononcontextmenu": "return false",
+            "onkeyDown": "return controllInputChar(event);",
+            "placeholder": "手動で入力してください。"
+        }
+    },
+    "myOptionPassword": {
+        "class": "myOptionText myOptionTextConfirm myOptionPassword",
+        "myOptionLabelOld": {
+            "text": "パスワード(旧)"
+        },
+        "myOptionTextboxOld": {
+            "type": "password",
+            "name": "passwordOld",
+            "style": "ime-mode:disabled",
+            "placeholder": "新旧のパスワードを入力してください。"
+        },
+        "myOptionLabelNew": {
+            "text": "パスワード(新)"
+        },
+        "myOptionTextboxNew": {
+            "type": "password",
+            "name": "passwordNew",
+            "style": "ime-mode:disabled"
+        },
+        "myOptionLabelConfirm": {
+            "text": "パスワード(確認)"
+        },
+        "myOptionTextboxConfirm": {
+            "type": "password",
+            "name": "passwordConfirm",
+            "oncopy": "return false",
+            "onpaste": "return false",
+            "ononcontextmenu": "return false",
+            "placeholder": "手動で入力してください。"
+        }
+    },
+    "myOptionBlogTitle": {
+        "class": "myOptionText",
+        "myOptionLabel": {
+            "text": "ブログタイトル"
+        },
+        "myOptionTextbox": {
+            "type": "text",
+            "name": "blogTitle"
+        }
+    },
+    "myOptionBlogPublication": {
+        "class": "myOptionRadio",
+        "myOptionLabel": {
+            "text": "ブログ公開範囲"
+        },
+        "myOptionRadio1": {
+            "class": "myOptionRadio",
+            "type": "radio",
+            "name": "blogPublication",
+            "value": "0"
+        },
+        "myOptionLabelInline1": {
+            "class": "myOptionLabelInline",
+            "text": "全体"
+        },
+        "myOptionRadio2": {
+            "class": "myOptionRadio",
+            "type": "radio",
+            "name": "blogPublication",
+            "value": "1"
+        },
+        "myOptionLabelInline2": {
+            "class": "myOptionLabelInline",
+            "text": "友達"
+        },
+        "myOptionRadio3": {
+            "class": "myOptionRadio",
+            "type": "radio",
+            "name": "blogPublication",
+            "value": "2"
+        },
+        "myOptionLabelInline3": {
+            "class": "myOptionLabelInline",
+            "text": "非公開"
+        }
+    }
+}

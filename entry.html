@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/ご入会手続き</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- 管理者画面のCSSファイルを読み込む。 -->
+			<link href="css/admin.css" rel="stylesheet" type="text/css" />
+			<script>
+				//createTagクラスのインスタンスを生成する
+				var entryentryCreator = new createTag();
+			
+				entryCreator.getJsonFile('source/studentmanagement.json');
+				entryCreator.getJsonFile('source/admin.json');				// 管理者画面のJSONを取得する。
+				entryCreator.getJsonFile('source/commonJson.json');			// 共通のパーツのJSONを取得する。
+				// パーツのテンプレートのDOMを取得する。
+				entryCreator.getDomFile('template/common.html');				
+				entryCreator.getDomFile('template/student.html');
+				
+				entryCreator.outputTag('headImage', 'createImage');			// 天の画像を作る
+				entryCreator.outputTag('entryTitle','pageTitle');							// タイトル領域を作る
+				// 生徒さんの登録コンテンツを作る。
+				entryCreator.outputTag('entryStudent', 'editStudent');
+		 		entryCreator.outputTag('footImage', 'createImage');			// 地の画像を作る
+				entryCreator.outputTag('footer');							// フッターを作る
+			
+				//フォームに入力チェックをかける。
+				$('form').validate(showAlert);
+			</script>
+		</div>
+	</div>
+</body>
+</html>

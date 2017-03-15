@@ -1,0 +1,940 @@
+{
+	"adminTab": {
+		"class": "tabContainer adminTab",
+		"id": "adminTab",
+		"tabs": {
+			"class": "tabs textCenter outsideArea",
+			"tab": [{
+				"href": "#dayReserver",
+				"html": "日ごと<br>予約者一覧"
+			}, {
+				"href": "#lecturePermit",
+				"html": "受講<br>承認"
+			}, {
+				"href": "#userList",
+				"html": "ユーザ<br>一覧"
+			}, {
+				"href": "#lessonDetail",
+				"html": "授業<br>詳細"
+			}, {
+				"href": "#mailMagaAndAnnounce",
+				"html": "メルマガ"
+			}]
+		},
+		"tabContentArea": {
+			"class": "tabContentArea panelContainer outsideArea"
+		}
+	},
+	"dayReserver": {
+		"class": "dayReserver tabPanel",
+		"id": "dayReserver"
+	},
+	"lecturePermit": {
+		"class": "lecturePermit tabPanel",
+		"id": "lecturePermit"
+	},
+	"userList": {
+		"class": "userList tabPanel",
+		"id": "userList"
+	},
+	"dateBelt": {
+		"theDay": {
+			"text": ""
+		}
+	},
+	"dateSelect": {
+		"class": "dateSelect cf",
+		"dateHeadLabel": {
+			"class": "dateHeadLabel notApplySmartphoneFontsize",
+			"text": "日付指定:"
+		},
+		"dateInput": {
+			"type": "date",
+			"name": "lesson_date",
+			"value": ""
+		}
+	},
+	"eachDayReservedInfoTableOutsideArea": {
+		"class": "eachDayReservedInfoTableOutsideArea"
+	},
+	"eachDayReservedInfoTable": {
+		"class": "eachDayReservedInfoTable commonTable",
+		"db_getQuery": "CALL getEachDayLessonList(@result, 'lesson_date'); SELECT @result AS 'result';",
+		"replace_query": "CALL getEachDayLessonList(@result, 'lesson_date'); SELECT @result AS 'result';",
+		"lesson_date": {
+			"value": ""
+		},
+		"config": {
+			"columns": {
+				"time_table_key": {
+					"columnName": "No."
+				},
+				"lesson_date": {
+					"style": "display:none;"
+				},
+				"start_time": {
+					"columnName": "開始"
+				},
+				"end_time": {
+					"columnName": "終了"
+				},
+				"lesson_name": {
+					"columnName": "テーマ"
+				},
+				"user_name": {
+					"columnName": "名前"
+				},
+				"user_work_status": {
+					"columnName": "ステータス"
+				},
+				"stage_no": {
+					"columnName": "Stg-Lv",
+					"style": "display:none;"
+				},
+				"user_key": {
+					"className": "user_key",
+					"style": "display:none;"
+				},
+				"level_no": {
+					"columnName": "レベル",
+					"style": "display:none;"
+				}
+			}
+		},
+		"noRecordMessage" : "この日の予約者はいません。"
+	},
+	"permitLessonContainCommodity": {
+		"db_setQuery": "CALL p_update_approval_purchase('commodity_sell_key', 'sell_number' ,'pay_cash' ,'use_point' ,'commodity_key', '1', 'user_key', 'get_point', 'point_rate', @result); SELECT @result AS result;"
+	},
+	"getCommoditySellId": {
+		"db_getQuery": "SELECT id FROM commodity_sell AS commodity_sell_key ORDER BY create_datetime DESC LIMIT 1;"
+	},
+	"permitLessonUpdate": {
+		"db_setQuery": "CALL p_update_approval_lesson('user_classwork_cost', 'classwork_use_point', 'get_point', 'pay_price', 'user_key', 'user_classwork_key', 'lesson_plus_point_rate', @result); SELECT @result as row_count;"
+	},
+	"getPoinRate": {
+		"db_getQuery": "CALL getPointRate(@result,'lesson_key'); SELECT @result AS 'result';",
+		"pointRate": {
+			"text": ""
+		},
+		"lesson_key": {
+			"value": ""
+		},
+		"students": {
+			"value": ""
+		}
+	},
+	"doLecturePermitTableInfoTableOutSideArea" : {
+	    "class" : "doLecturePermitTableInfoTableOutSideArea tableScrollXParent"
+	},
+	"doLecturePermitInfoTable": {
+		"class": "doLecturePermitInfoTable commonTable scrollXAuto",
+		"db_getQuery": "CALL getLecturePermit(@result); SELECT @result AS 'result';",
+		"date": {
+			"value": ""
+		},
+		"config": {
+			"columns": {
+				"columnCheckbox": {
+					"columnName": "",
+					"className": "permitCheckboxArea"
+				},
+				"time_table_key": {
+					"columnName": "No.",
+					"className": "No"
+				},
+				"lesson_date": {
+					"columnName": "日時"
+				},
+				"user_name": {
+					"columnName": "名前",
+					"className": "user_name"
+				},
+				"get_point": {
+					"columnName": "所持pt"
+				},
+				"lesson_name": {
+					"columnName": "内容"
+				},
+				"cost": {
+					"columnName": "受講料",
+					"className": "user_classwork_cost replaceTextboxCostCell"
+				},
+				"user_key": {
+					"style": "display:none;",
+					"className": "user_key"
+				},
+				"school_key": {
+					"style": "display:none;"
+				},
+				"stage_no": {
+					"style": "display:none;"
+				},
+				"level_no": {
+					"style": "display:none;"
+				},
+				"start_time": {
+					"style": "display:none;"
+				},
+				"end_time": {
+					"style": "display:none;"
+				},
+				"user_classwork_key": {
+					"style": "display:none;",
+					"className": "id"
+				},
+				"order_students": {
+					"style": "display:none;"
+				},
+				"lesson_key": {
+					"style": "display:none;"
+				},
+				"use_point": {
+					"columnName": "使用ポイント",
+					"className": "use_point replaceTextboxUsePointCell"
+				}
+			}
+		},
+        "noRecordMessage" : "受講承認待ちの情報がありません。"
+	},
+	"deleteLecturePermitRecordQuery": {
+		"db_setQuery": "CALL set_reserved_return_status('id')"
+	},
+	"sellCommodityPermitInfoTableOutSideArea" : {
+	    "class" : "sellCommodityPermitInfoTableOutSideArea tableScrollXParent"
+	},
+	"sellCommodityPermitInfoTable": {
+		"class": "sellCommodityPermitInfoTable commonTable scrollXAuto",
+		"date": {
+			"value": "CALL p_delete_approval_purchase('id', @result); SELECT @result AS result;"
+		},
+		"db_getQuery": "CALL p_select_approval_purchase();",
+		"config": {
+			"columns": {
+				"no": {
+					"columnName": "No",
+					"className": "No"
+				},
+				"user_name": {
+					"columnName": "名前",
+					"className": "user_name"
+				},
+				"get_point": {
+					"columnName": "所持ポイント"
+				},
+				"commodity_key": {
+					"style": "display : none",
+					"className": "commodity_key"
+				},
+				"user_key": {
+					"columnName": "会員番号"
+				},
+				"content": {
+					"columnName": "商品名",
+					"className": "content"
+				},
+				"pay_price": {
+					"columnName": "合計",
+					"className": "pay_price"
+				},
+				"use_point": {
+					"columnName": "使用ポイント",
+					"className": "use_point"
+				},
+				"sell_number": {
+					"columnName": "個数",
+					"className": "sell_number"
+				},
+				"selling_price": {
+					"columnName": "単価",
+					"className": "price"
+				},
+				"commodity_sell_key": {
+					"style": "display : none;",
+					"className": "id"
+				}
+			}
+		},
+        "noRecordMessage" : "商品購入承認待ちの情報がありません。"
+	},
+	"deleteSellCommodityPermitRecordQuery": {
+		"db_setQuery": "CALL p_delete_approval_purchase('id', @result); SELECT @result AS result;"
+	},
+	"insertSellCommodityRecord": {
+		"db_setQuery": "CALL p_insert_approval_purchase('sell_number', 'pay_cash', 'use_point', 'user_key', 'rec_status', 'purchase_id', @result); SELECT @result AS message;",
+		"sell_number": {
+			"value": "1"
+		},
+		"pay_cash": {
+			"value": "0"
+		},
+		"use_point": {
+			"value": "0"
+		},
+		"user_key": {
+			"value": ""
+		},
+		"rec_status": {
+			"value": "0"
+		},
+		"purchase_id": {
+			"value": ""
+		}
+	},
+	"commodityPlusPoint": {
+		"db_getQuery": "CALL getCommodityPointRate(@result,'commodity_key'); SELECT @result AS 'result';",
+		"commodity_key": {
+			"value": ""
+		},
+		"point_rate": {
+			"text": ""
+		}
+	},
+	"selectCommodityInf": {
+		"db_getQuery": "CALL getCommodityNameList(@result); SELECT @result AS 'result';",
+		"config": {
+			"columns": {
+				"commodity_name": {
+					"style": "display:none;"
+				},
+				"selling_price": {
+					"style": "display:none;"
+				},
+				"commodity_key": {
+					"style": "display:none;"
+				}
+			}
+		}
+	},
+	"lecturePermitPlusPointRate": {
+		"db_getQuery": "CALL getPointRate(@result,'lesson_key'); SELECT @result AS 'result';",
+		"lesson_key": {
+			"value": ""
+		},
+		"config": {
+			"columns": {
+				"point_rate": {},
+				"students": {}
+			}
+		}
+	},
+	"accordionSummary": {
+		"lateTimeSummary": {
+			"text": "遅刻"
+		},
+		"usePointSummary": {
+			"text": "使用pt"
+		},
+		"contentSummary": {
+			"colspan": "2",
+			"text": "備品名"
+		},
+		"sellNumberSummary": {
+			"text": "個数"
+		},
+		"sellingPriceSummary": {
+			"text": "備品代"
+		},
+		"payCashSummary": {
+			"text": "会計"
+		}
+	},
+	"accordionContent": {
+		"lateTime": {
+			"lateTimeTextbox": {
+				"type": "number",
+				"name": "late_time",
+				"value": "0",
+				"min": "0",
+				"onkeydown": "return controllInputChar(event);"
+			}
+		},
+		"usePoint": {
+			"usePointTextbox": {
+				"type": "number",
+				"name": "use_point",
+				"value": "0",
+				"min": "0",
+				"onkeydown": "return controllInputChar(event);"
+			}
+		},
+		"contentCell": {
+			"colspan": "2",
+			"contentSelect": {
+				"name": "content",
+				"contentOption": []
+			}
+		},
+		"sellNumber": {
+			"sellNumberTextbox": {
+				"type": "number",
+				"name": "sell_number",
+				"value": "0",
+				"min": "0",
+				"onkeydown": "return controllInputChar(event);"
+			}
+		},
+		"sellingPrice": {
+			"sellingPriceTextbox": {
+				"type": "number",
+				"name": "selling_price",
+				"value": "",
+				"min": "0",
+				"onkeydown": "return controllInputChar(event);"
+			}
+		},
+		"payCash": {
+			"payCashTextbox": {
+				"type": "number",
+				"name": "pay_cash",
+				"value": "",
+				"min": "0",
+				"onkeydown": "return controllInputChar(event);"
+			}
+		}
+	},
+	"commodityKeyBox": {
+		"type": "hidden",
+		"name": "commodity_key",
+		"value": ""
+	},
+	"commoditySellId": {
+		"type": "hidden",
+		"name": "id",
+		"value": ""
+	},
+	"updateLecturePermit": {
+		"user_classwork_cost": {
+			"value": ""
+		},
+		"use_point": {
+			"value": ""
+		},
+		"late_time": {
+			"value": ""
+		},
+		"user_key": {
+			"value": ""
+		}
+	},
+	"addUserRecordButton": {
+		"class": "addUserRecordButton normalButton",
+		"type": "button",
+		"value": "追加"
+	},
+	"doLecturePermitButton": {
+		"class": "doLecturePermit normalButton importantButton",
+		"type": "button",
+		"value": "承認"
+	},
+	"sellCommodityPermitButton": {
+		"class": "sellCommodityPermitButton normalButton importantButton",
+		"type": "button",
+		"value": "承認"
+	},
+	"deletePermitRecordButton": {
+		"class": "deletePermitRecordButton normalButton",
+		"type": "button",
+		"value": "削除"
+	},
+	"lecturePermitListInfoTableOutsideArea": {
+		"class": "lecturePermitListInfoTableOutsideArea"
+	},
+	"sellCommodityListInfoTableOutsideArea": {
+		"class": "sellCommodityPermitListInfoTableOutsideArea"
+	},
+	"lecturePermitListInfoTable": {
+		"class": "lecturePermitListInfoTable commonTable",
+		"db_getQuery": "CALL getLecturePermitInfoList(@result, 'fromDate', 'toDate'); SELECT @result AS 'result';",
+		"fromDate": {
+			"value": ""
+		},
+		"toDate": {
+			"value": ""
+		},
+		"config": {
+			"columns": {
+				"id": {
+					"columnName": "No."
+				},
+				"user_name": {
+					"columnName": "名前",
+					"className": "user_name"
+				},
+				"lesson_date": {
+					"columnName": "授業日付",
+					"className": "lesson_date"
+				},
+				"start_time": {
+					"columnName": "授業開始時間",
+					"className": "start_time"
+				},
+				"end_time": {
+					"columnName": "授業終了時間",
+					"className": "end_time"
+				},
+				"lesson_name": {
+					"columnName": "内容",
+					"className": "lesson_name"
+				},
+				"get_point": {
+					"columnName": "所持ポイント",
+					"className": "get_point"
+				},
+				"cost": {
+					"columnName": "入金(円)",
+					"className": "replaceTextboxCostCell replaceTextboxTypeNumber cost"
+				},
+				"use_point": {
+					"columnName": "使用pt",
+					"className": "replaceTextboxUsePointCell replaceTextboxTypeNumber use_point"
+				},
+				"stage_no": {
+					"style": "display:none;"
+				},
+				"level_no": {
+					"style": "display:none;"
+				},
+				"sell_number": {
+					"style": "display:none;"
+				},
+				"content": {
+					"style": "display:none;"
+				},
+				"user_key": {
+					"style": "display:none;"
+				},
+				"school_key": {
+					"style": "display:none;"
+				},
+				"commodity_key": {
+					"style": "display:none;"
+				}
+			}
+		},
+		"noRecordMessage":"指定した期間内に受講データがありません。"
+	},
+	"sellCommodityPermitListInfoTable": {
+		"class": "sellCommodityPermitListInfoTable commonTable",
+		"db_getQuery": "CALL getSellCommodityPermitInfoList(@result, 'fromDate', 'toDate'); SELECT @result AS 'result';",
+		"fromDate": {
+			"value": ""
+		},
+		"toDate": {
+			"value": ""
+		},
+		"config": {
+			"columns": {
+				"id": {
+					"columnName": "No."
+				},
+				"user_name": {
+					"columnName": "名前",
+					"className": "user_name"
+				},
+				"sell_datetime": {
+					"columnName": "購入日"
+				},
+				"lesson_name": {
+					"columnName": "内容"
+				},
+				"sell_number": {
+					"columnName": "個数",
+					"className": "replaceTextboxSellNumberCell replaceTextboxTypeNumber sell_number"
+				},
+				"cost": {
+					"columnName": "入金(円)",
+					"className": "replaceTextboxCostCell replaceTextboxTypeNumber cost"
+				},
+				"use_point": {
+					"columnName": "使用pt",
+					"className": "replaceTextboxUsePointCell replaceTextboxTypeNumber use_point"
+				},
+				"get_point": {
+					"columnName": "所持ポイント"
+				},
+				"stage_no": {
+					"style": "display:none;"
+				},
+				"level_no": {
+					"style": "display:none;"
+				},
+				"content": {
+					"style": "display:none;"
+				},
+				"user_key": {
+					"style": "display:none;"
+				},
+				"school_key": {
+					"style": "display:none;"
+				},
+				"commodity_key": {
+					"style": "display:none;"
+				}
+			}
+		},
+		"noRecordMessage":"指定した期間内に商品データがありません。"
+	},
+	"contentSelect": {
+		"name": "commodity_key",
+		"contentOption": []
+	},
+	"permitListSearch": {
+		"class": "permitListSearch cf",
+		"searchInputArea": {
+			"class" : "searchInputArea cf",
+			"fromArea": {
+				"fromTextbox": {
+					"type": "date",
+					"name": "fromSearach"
+				},
+				"fromToLabel": {
+					"class": "fromToLabel inlineBlock",
+					"text": "〜"
+				},
+				"toTextbox": {
+					"type": "date",
+					"name": "toSearach"
+				}
+			}
+		}
+	},
+	"updateSellCommodityPermitList": {
+		"db_setQuery": "CALL p_update_approval_list_purchase('sell_number', 'user_classwork_cost', 'use_point', 'id', 'user_key', 'diff_point', 'commodity_key', @result);"
+	},
+	"updatePermitListLesson": {
+		"db_setQuery": "CALL p_update_approval_list_lesson('user_classwork_cost', 'use_point', 'diff_point', 'user_key', 'id', 'pay_price', @result); SELECT @result AS result;"
+	},
+	"searchUserList": {},
+	"lecturePermitListUpdateButton": {
+		"class": "normalButton permitListUpdateButton",
+		"type": "button",
+		"value": "更新"
+	},
+	"sellCommodityPermitListUpdateButton": {
+		"class": "normalButton permitListUpdateButton",
+		"type": "button",
+		"value": "更新"
+	},
+	"userListPagingArea": {
+		"class": "userListPagingArea"
+	},
+	"userListTableOutside": {
+		"class": "userListTableOutside"
+	},
+	"userListInfoTable": {
+		"class": "userListInfoTable commonTable",
+        "db_getQuery": "CALL p_user_inf_conditional('user_key', 'user_name', 'name_kana', 'telephone', 'mail_address', 'lesson_date_from', 'lesson_date_to', 'lesson_key')",
+		"queryForDoLecturePermit": "CALL getLecturePermitReseveList('user_key', 'user_name', 'name_kana', 'telephone', 'mail_address', 'lesson_date_from', 'lesson_date_to', 'lesson_key')",
+		"user_key": {
+			"value": ""
+		},
+		"user_name": {
+			"value": ""
+		},
+		"name_kana": {
+			"value": ""
+		},
+		"telephone": {
+			"value": ""
+		},
+		"mail_address": {
+			"value": ""
+		},
+		"lesson_date_from": {
+			"value": ""
+		},
+		"lesson_date_to": {
+			"value": ""
+		},
+		"lesson_key": {
+			"value": ""
+		},
+		"config": {
+			"columns": {
+				"user_name": {
+					"className": "user_name",
+					"columnName": "名前"
+				},
+				"pre_paid": {
+					"columnName": "残高"
+				},
+				"get_point": {
+					"columnName": "ポイント",
+					"className": "get_point"
+				},
+				"update_date": {
+					"columnName": "最終予約日"
+				},
+				"id": {
+					"style": "display:none",
+					"className": "id"
+				},
+				"mail_address": {
+					"className": "mail_address",
+					"style": "display:none"
+				},
+				"user_status": {
+					"className": "user_status",
+					"columnName": "入会状況"
+				},
+				"lesson_date": {
+					"columnName": "授業日付"
+				},
+				"lesson_name": {
+					"columnName": "内容"
+				},
+				"user_classwork_cost": {
+					"columnName": "受講料",
+					"className": "user_classwork_cost"
+				},
+				"start_time": {
+					"columnName": "開始時間"
+				},
+				"end_time": {
+					"columnName": "終了時間"
+				},
+				"user_classwork_key": {
+					"className": "user_classwork_key",
+					"style": "display:none"
+				}
+			}
+		},
+		"noRecordMessage" : "該当するユーザー情報がありません。"
+	},
+	"userListButtons": {
+		"createMail": {
+			"type": "button",
+			"value": "通常メール"
+		},
+		"announceButton": {
+			"type": "button",
+			"value": "お知らせ"
+		},
+		"cancelUser": {
+			"style": "display : none;",
+			"onclick": "returnFromUserList(this);",
+			"data-buttontype": "0",
+			"class": "cancelUser fRight",
+			"type": "button",
+			"value": "キャンセル"
+		},
+		"selectUser": {
+			"style": "display : none;",
+			"onclick": "returnFromUserList(this);",
+			"data-buttontype": "1",
+			"class": "selectUser fRight",
+			"type": "button",
+			"value": "選択"
+		}
+	},
+	"adminCalendar": {
+		"class": "adminCalendar calendar"
+	},
+	"lessonDetail": {
+		"class": "lessonDetail tabPanel",
+		"id": "lessonDetail"
+	},
+	"insertClasswork": {
+		"db_setQuery": "INSERT INTO classwork( max_students ,min_students ,classwork_status ,classroom ,classwork_note ,teacher_key ,school_key ,create_datetime ,update_datetime ) VALUES( 'max_students' ,'min_students' ,'classwork_status' ,'classroom' ,'classwork_note' ,(select id from user_inf where authority = 10 limit 1) ,'school_key' ,NOW() ,NOW())",
+		"max_students": {
+			"value": ""
+		},
+		"min_students": {
+			"value": ""
+		},
+		"classwork_status": {
+			"value": ""
+		},
+		"classroom": {
+			"value": ""
+		},
+		"classwork_note": {
+			"value": ""
+		},
+		"school_key": {
+			"value": ""
+		}
+	},
+	"insertTimeTableDay": {
+		"db_setQuery": "INSERT INTO time_table_day( timetable_key ,lesson_date ,create_datetime ,update_datetime ) VALUES( 'timetable_key' ,'lessonDate' ,NOW() ,NOW() );"
+	},
+	"newClassWork": {
+		"db_setQuery": "INSERT INTO classwork( max_students ,min_students ,classwork_status ,classroom ,classwork_note ,teacher_key ,school_key ,lesson_key ,time_table_day_key ,create_datetime ,update_datetime, order_students ) VALUES( 'max_students' ,'min_students' ,'classwork_status' ,'classroom' ,'classwork_note' ,(select id from user_inf where authority = 10 limit 1) ,(SELECT school_key FROM timetable_inf WHERE id = 'timetable_key') ,'lesson_key' ,'time_table_day_key' ,NOW() ,NOW(), 0 );"
+	},
+	"normalInsertClasswork": {
+		"db_setQuery": "INSERT INTO classwork( max_students ,min_students ,classwork_status ,classroom ,classwork_note ,teacher_key ,school_key ,lesson_key ,time_table_day_key ,create_datetime ,update_datetime, order_students) VALUES('max_students' ,'min_students','classwork_status','classroom','classwork_note',(select id from user_inf where authority = 10 limit 1),(SELECT school_key FROM timetable_inf WHERE id = 'timetable_key'),'lesson_key','time_table_day_key',NOW(),NOW(), 0)"
+	},
+	"lessonDetailUpdate": {
+		"db_setQuery": "UPDATE classwork SET max_students = 'max_students' ,min_students = 'min_students' ,classwork_status = 'classwork_status' ,classroom = 'classroom' ,classwork_note = 'classwork_note' ,update_datetime = NOW() WHERE id = 'classwork_key';",
+		"max_students": {
+			"style": "display:none"
+		},
+		"min_students": {
+			"style": "display:none"
+		},
+		"classwork_status": {
+			"style": "display:none"
+		},
+		"classroom": {
+			"style": "display:none"
+		},
+		"classwork_note": {
+			"style": "display:none"
+		},
+		"classwork_key": {
+			"style": "display:none"
+		}
+	},
+	"replaceTextboxCost": {
+		"type": "number",
+		"name": "user_classwork_cost"
+	},
+	"replaceTextboxUsePoint": {
+		"type": "number",
+		"name": "use_point",
+		"data-diff_point": "0",
+		"data-base_point": "0"
+	},
+	"replaceTextboxSellNumber": {
+		"type": "number",
+		"name": "sell_number"
+	},
+	"mailMagaAndAnnounce": {
+		"class": "mailMagaAndAnnounce tabPanel",
+		"id": "mailMagaAndAnnounce"
+	},
+	"mailMagaSearchArea": {
+		"schoolNameLabel": {
+			"text": "店舗"
+		},
+		"schoolNameSelectBox": {
+			"name": "school_key",
+			"schoolNameSelect": {
+				"text": "全て",
+				"value": "99"
+			},
+			"shinjukuSchool": {
+				"text": "新宿店",
+				"value": "1"
+			},
+			"yokohamaSchool": {
+				"text": "横浜店",
+				"value": "3"
+			}
+		},
+		"typeLabel": {
+			"text": "種別"
+		},
+		"typeSelectBox": {
+			"name": "magazine_type",
+			"typeSelect": {
+				"text": "全て",
+				"value": "99"
+			},
+			"selectInfo": {
+				"text": "情報",
+				"value": "0"
+			}
+		},
+		"mailMagaContentSearchLabel": {
+			"mailMagaContentSearchText": {
+				"text": "内容"
+			},
+			"mailMagaContentSearchTextbox": {
+				"type": "text",
+				"name": "magazine_content"
+			}
+		}
+	},
+	"buttonArea": {},
+	"mailMagaPagingArea": {
+		"class": "mailMagaPagingArea"
+	},
+	"mailMagaTableOutside": {
+		"class": "mailMagaTableOutside tableScrollXParent"
+	},
+	"mailMagaTable": {
+		"class": "mailMagaTable commonTable scrollXAuto",
+		"db_getQuery": "SELECT id,school_key,send_datetime,magazine_type,magazine_title,magazine_content FROM mail_magazine ORDER BY send_datetime DESC , id DESC",
+		"config": {
+			"columns": {
+				"id": {
+					"columnName": "No.",
+					"className": "id"
+				},
+				"school_key": {
+					"columnName": "店舗名",
+					"style": "display:none"
+				},
+				"send_datetime": {
+					"columnName": "送信日時"
+				},
+				"magazine_type": {
+					"columnName": "種別",
+					"style": "display:none"
+				},
+				"magazine_title": {
+					"columnName": "タイトル"
+				},
+				"magazine_content": {
+					"className": "mailMagaContent",
+					"columnName": "内容"
+				}
+			}
+		},
+		"noRecordMessage" : "メルマガの情報がありません。"
+	},
+	"getMailMagaMemberList": {
+		"db_getQuery": "SELECT id, user_name AS name, mail_address AS email FROM user_inf WHERE mail_deny = 0;",
+		"config": {
+			"columns": {
+				"id": {
+					"style": "display:none"
+				},
+				"name": {
+					"style": "display:none"
+				},
+				"email": {
+					"style": "display:none"
+				}
+			}
+		}
+	},
+	"deleteMailMagazine": {
+		"db_setQuery": "CALL p_delete_mail_magazine('id', @result); SELECT @result AS result;"
+	},
+	"setReservedStatusToReception": {
+		"db_setQuery": "CALL set_reserved_status_to_reception('user_classwork_key');"
+	},
+	"searchClassworkExist": {
+		"db_getQuery": "SELECT distinct lesson_date FROM `time_table_day` WHERE lesson_date >= 'fromDate' and lesson_date <= 'toDate';",
+		"fromDate": {
+			"value": ""
+		},
+		"toDate": {
+			"value": ""
+		}
+	},
+	"checkClassworkStatus": {
+		"db_getQuery": "CALL check_userworkstatus('user_key', 'fromDate', 'toDate', @result); SELECT @result AS result;",
+		"fromDate": {
+			"value": ""
+		},
+		"toDate": {
+			"value": ""
+		},
+		"user_key": {
+			"value": ""
+		}
+	},
+	"selectAllRow": {
+		"selectAllRowCheckBox": {
+			"type":"checkbox"
+		},
+		"selectAllRowLabel": {
+			"text": "全選択"
+		}
+	}
+
+}

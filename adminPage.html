@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<!--
+	ファイル名:adminPage.html
+	概要　　　:管理者ページ
+	作成日　　:2015.0612
+	作成者　　:T.Masuda
+	パス　　　:/adminPage.html
+-->
+<head>
+<!-- 画面の幅を使用している端末に依存する。加えてズームを許可しない。 -->
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+<meta charset="UTF-8">
+<title>DDTFlowers/管理者</title>
+<!-- 共通のcssを読み込む-->
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+<!-- 会員ページのcssを読み込む -->
+<link rel="stylesheet" type="text/css" href="css/memberPage.css" media="screen" />
+<!-- jqueryUIのcssを読み込む -->
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.min.css" media="screen" />
+<!-- jQueryの本体を読み込む。 -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- jQueryUIを読み込む。 -->
+<script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<!-- タグを作成するJSの関数群を読み込む -->
+<script type="text/javascript" src="js/createTag.js"></script>
+<!-- easytabsの本体を読み込む。 -->
+<script type="text/javascript" src="js/jquery.easytabs.js"></script>
+<!-- 入力チェック機能のjQueryプラグイン -->
+<script src="js/jquery.validate.min.js"></script>
+<!-- validate.jsの日本語対応プラグイン -->
+<script type="text/javascript" src="js/messages_ja.js"></script>
+<!-- 画面操作の処理を記述したJSファイルを読み込む。 -->
+<script type="text/javascript" src="js/controlPage.js"></script>
+<!-- ダイアログ作成の処理を記述したJSファイルを読み込む。 -->
+<script type="text/javascript" src="js/createDialog.js"></script>
+<!-- 小規模のの処理を記述したJSファイルを読み込む。 -->
+<script type="text/javascript" src="js/createLittleContent.js"></script>
+<!-- ユーザのアクションに対応するイベントを定義したJSファイルを読み込む。 -->
+<script type="text/javascript" src="js/controlAction.js"></script>
+<!-- ユーザのアクションに対応するイベントを定義したJSファイルを読み込む。 -->
+<script type="text/javascript" src="js/dailyClasses.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<script>
+				//ログインチェック用try-catch
+				try{
+					var create_tag = new createLittleContents();	//管理者ページ用のcreateTagクラスインスタンスを生成する
+					create_tag.hideNormalHeader();	//通常ページのヘッダーを隠す
+
+					// ユーザーページのパーツのテンプレートのJSONを取得する。
+					create_tag.getJsonFile('source/commonUser.json');
+					// 管理者ページ共通のパーツのJSONを取得する。
+					create_tag.getJsonFile('source/adminCommon.json');
+					//共通のjsonを取得する
+					create_tag.getJsonFile('source/commonJson.json');
+	
+					// ユーザーページのパーツのテンプレートのDOMを取得する。
+					create_tag.getDomFile('template/commonUser.html');
+					// 管理者ページ共通のパーツのJSONを取得する。
+					create_tag.getDomFile('template/adminCommon.html');
+					// 共通パーツのDOMを取得する
+					create_tag.getDomFile('template/common.html');
+					
+					//パーツのHTMLを順次作成し、画面に追加していく
+					//ユーザ情報のテキストをDBから取得する
+					create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['accountHeader'], 'accountHeader');
+					//ヘッダー
+					create_tag.outputTag('accountHeader', 'adminHeader');
+					
+					//タブ領域
+					create_tag.outputTag('adminTab', 'tabContainer');
+					//タブコンテンツ5個
+					create_tag.outputTag('dayReserver','tabInContent', '.tabContentArea');
+					create_tag.outputTag('lecturePermit','tabInContent', '.tabContentArea');
+					create_tag.outputTag('userList','tabInContent', '.tabContentArea');
+					create_tag.outputTag('lessonDetail','tabInContent', '.tabContentArea');
+					create_tag.outputTag('mailMagaAndAnnounce','tabInContent', '.tabContentArea');
+					
+					//日ごと予約者一覧タブのコンテンツ
+					//選択された日付を表示する領域
+					create_tag.outputTag('dateBelt', 'dateBelt', '#dayReserver');
+					//日付選択パーツのセット
+					create_tag.outputTag('dateSelect', 'dateSelect', '#dayReserver');
+					//日付ページングを実装する
+					nowDatePaging('dateBelt', create_tag);
+					//日ごと授業テーブルの外枠領域を作る
+					create_tag.outputTag('eachDayReservedInfoTableOutsideArea', 'divArea', '#dayReserver');
+					// 日ごと予約者一覧テーブル用のJSON配列を取得する
+					create_tag.getJsonFile('php/GetJSONArray.php', create_tag.json['eachDayReservedInfoTable'], 'eachDayReservedInfoTable');
+					//日ごと予約者の情報がないときにテーブルを作らない
+					if(create_tag.json.eachDayReservedInfoTable[TABLE_DATA_KEY][0]) {
+						//日ごと予約者一覧テーブルを作る
+						create_tag.outputTagTable('eachDayReservedInfoTable','eachDayReservedInfoTable','#dayReserver');
+						//管理者日ごと予約者一覧テーブルを置換する
+						commonFuncs.dbDataTableValueReplace(EACH_DAY_RESERVED_INFO_TABLE, EACH_DAY_RESERVED_INFO_TABLE_REPLACE_FUNC, true, create_tag, 10);
+
+					}
+					//画面の先頭にスクロールを戻すボタン
+					create_tag.outputTag('returnTopPosition');
+					
+					//タブを作る
+					create_tag.createTab('.adminTab');
+					//クリックでテキストボックスにカレンダーを表示する
+					// clickCalendar('lesson_date');
+	
+					//受講承認タブをクリックしたときに受講承認の内容を表示する
+					create_tag.createContentTriggerClick('.tabLink[href="#lecturePermit"]', createAdminPermitLessonContent);
+					//ユーザ一覧タブをクリックしたときにユーザ一覧の内容を表示する
+					create_tag.createContentTriggerClick('.tabLink[href="#userList"]', createAdminUserListContent);
+					//授業詳細タブをクリックしたときに授業詳細の内容を表示する
+					create_tag.createContentTriggerClick('.tabLink[href="#lessonDetail"]', createAdminLessonDetailContent, create_tag);
+					//メルマガタブをクリックしたときにメルマガの内容を表示する
+					create_tag.createContentTriggerClick('.tabLink[href="#mailMagaAndAnnounce"]', createAdminMailMagaAnnounceContent);
+					// ボタンの見た目をjqueryuiのものにしてデザインを整える
+					$('button, .searchButton, input[type="button"]').button();
+					addlogoutEvent('.logoutLink');	//ログアウトボタンのイベントを登録する。
+				}catch(e){
+					console.log(e);
+				}
+			</script>
+		</div>
+	</div>
+</body>
+</html>

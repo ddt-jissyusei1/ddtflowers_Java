@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/プリザーブドフラワー</title>
+
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<pageAuth style="display: none">0xFF</pageAuth>
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- ギャラリーページのCSSファイルを読み込む。 -->
+			<link href="css/gallery.css" rel="stylesheet" type="text/css">
+			<!-- fancyboxのCSSを読み込む。 -->
+			<link rel="stylesheet" type="text/css" href="js/source/jquery.fancybox.css" media="screen" />
+			<script>
+				//例外が発生したら処理する
+				try{
+					//ページの権限をクッキーへ設定する 2016.10.13 r.shibata 追加
+					commonFuncs.setPageAuthToCookie();
+					//カレントのウィンドウのDOMを取得する
+					var $currentWindow = $(CURRENT_WINDOW);
+					//カレントのウィンドウのコンテンツ領域を取得する
+					var $currentContent = $(CURRENT_WINDOW_MAIN);
+				
+					// dom要素を作るクラスをインスタンス化する
+					var create_tag = new createLittleContents();
+					create_tag.getJsonFile('source/mygallery.json');			// Myギャラリーページ用のJSONデータを取得する。
+					create_tag.getJsonFile('source/commonJson.json');		// 各ページ共通のパーツのJSONデータを取得する。
+					// ギャラリー用のjsonを読み込む
+					create_tag.getJsonFile('source/gallery.json');
+					
+					// HTMLのテンプレートデータをを取得する。
+					create_tag.getDomFile('template/common.html');			
+					create_tag.getDomFile('template/gallery.html');			
+
+					create_tag.outputTag('pageTitle', 'pageTitle', $currentContent);						// タイトル領域を作る
+					//ギャラリー全体の領域のDOMを配置する
+					create_tag.outputTag('memberMyGallery', 'memberMyGallery', $currentContent);
+					//ギャラリーの左右のエリアのDOMを作る
+					create_tag.outputTag('galleryRightSide', 'gallerySideArea', '.memberMyGallery');
+					create_tag.outputTag('galleryLeftSide', 'gallerySideArea', '.memberMyGallery');
+					create_tag.outputTag('galleryArea', 'memberMyGallery', '.galleryRightSide');
+					
+					// ギャラリーページ用のギャラリーを作る。
+					// ナンバリング領域を作る
+					create_tag.outputTag('numberingOuter', 'numberingOuter', '.galleryRightSide');
+					create_tag.outputTag('calendar','calendar','.galleryLeftSide');	//カレンダーを作る
+					
+					//ギャラリーの写真を作成して表示する
+					create_tag.loadTableData(GALLERY_TABLE, 1, 4, 1, MYGALLERY_SHOW_NUMBER, '.galleryArea', 'create_tag.createMyGalleryImages');
+	
+					//ギャラリーの画像を拡大できるようにする。
+					create_tag.useZoomImage('myPhotoImage');
+					
+					var gCalendar = new galleryCalendar(CURRENT_WINDOW_CALENDAR, create_tag, create_tag.json.galleryTable[TABLE_DATA_KEY]);// セレクタの指定をカレントウィンドウのカレンダー指すように指定 2016.10.14 r.shibata
+					gCalendar.create();	//カレンダーを実際に作成する
+					
+				//例外処理
+				} catch(e){
+					console.log(e);	//スタックトレースを出す
+				}
+				</script>
+		</div>
+	</div>
+</body>
+</html>

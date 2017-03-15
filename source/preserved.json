@@ -1,0 +1,137 @@
+{
+    "pageTitle": {
+        "class": "pageTitle cf",
+        "image": {
+            "src": "image/icon(tulip).png"
+        },
+        "title": {
+            "text": "プリザーブドフラワーアレンジメントコース"
+        },
+        "summary": {
+            "text": "プリザーブドフラワーはお手入れ不要、数年間綺麗な状態で楽しむこと出来ます。この事からウェディングブーケを前もって準備出来たり、使用後作りかえることも簡単で、高価なプリザも結果的には経済的だったりします。また生花には不可能な形や、写真立てやバックに付けることも出来てアイデアは無限に広がります。お店で買えば高価なプリザも自分で作ればリーズナブル。お友達へのギフトにも最適です！"
+        }
+    },
+    "courseGuide": {
+        "class": "courseGuide guideTable",
+        "summary": {
+            "text": "コース案内"
+        },
+        "courseGuideHead": {
+            "class": "guideHead",
+            "stageHead": {
+                "text": "レベル"
+            },
+            "timesHead": {
+                "text": "回数"
+            },
+            "priceHead": {
+                "text": "金額"
+            }
+        },
+        "firstStage": {
+            "stage": {
+                "text": "1stステージ"
+            },
+            "times": {
+                "text": "全12回"
+            },
+            "price": {
+                "text": "6,000 円／回"
+            }
+        },
+        "secondStage": {
+            "stage": {
+                "text": "2ndステージ"
+            },
+            "times": {
+                "text": "全12回"
+            },
+            "price": {
+                "text": "6,000 円／回"
+            }
+        },
+        "thirdStage": {
+            "stage": {
+                "text": "3rdステージ"
+            },
+            "times": {
+                "text": "全12回"
+            },
+            "price": {
+                "text": "6,000 円／回"
+            }
+        }
+    },
+    "footGallery": {
+        "1stArt": {
+            "href": "photo/general/web/DSC_0682.jpg",
+            "rel": "gallery",
+            "1stImage": {
+                "src": "photo/general/web120/DSC_0682.jpg"
+            }
+        },
+        "2ndArt": {
+            "href": "photo/general/web/DSC_0652.jpg",
+            "rel": "gallery",
+            "2ndImage": {
+                "src": "photo/general/web120/DSC_0652.jpg"
+            }
+        },
+        "3rdArt": {
+            "href": "photo/general/web/DSC_0736.jpg",
+            "rel": "gallery",
+            "3rdImage": {
+                "src": "photo/general/web120/DSC_0736.jpg"
+            }
+        },
+        "4thArt": {
+            "href": "photo/general/web/DSC_0767.jpg",
+            "rel": "gallery",
+            "4thImage": {
+                "src": "photo/general/web120/DSC_0767.jpg"
+            }
+        },
+        "5thArt": {
+            "href": "photo/general/web/DSC_0834.jpg",
+            "rel": "gallery",
+            "5thImage": {
+                "src": "photo/general/web120/DSC_0834.jpg"
+            }
+        },
+        "6thArt": {
+            "href": "photo/general/web/DSC_0898.jpg",
+            "rel": "gallery",
+            "6thImage": {
+                "src": "photo/general/web120/DSC_0898.jpg"
+            }
+        },
+        "7thArt": {
+            "href": "photo/general/web/DSC_1061.jpg",
+            "rel": "gallery",
+            "7thImage": {
+                "src": "photo/general/web/DSC_1061.jpg"
+            }
+        },
+        "8thArt": {
+            "href": "photo/general/web/DSC_0985.jpg",
+            "rel": "gallery",
+            "8thImage": {
+                "src": "photo/general/web120/DSC_0985.jpg"
+            }
+        },
+        "9thArt": {
+            "href": "photo/general/web/ex_puriza2.jpg",
+            "rel": "gallery",
+            "9thImage": {
+                "src": "photo/general/web120/ex_puriza2.jpg"
+            }
+        },
+        "10thArt": {
+            "href": "photo/general/web/DSC_0834.jpg",
+            "rel": "gallery",
+            "10thImage": {
+                "src": "photo/general/web120/DSC_0834.jpg"
+            }
+        }
+    }
+}

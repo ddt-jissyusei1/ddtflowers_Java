@@ -1,0 +1,182 @@
+{
+	"blogArticle":{
+		"tableData":{
+		    "0": {
+		        "class": "blogArticle cf",
+		        "blogArticleTitle": {
+		            "blogArticleTitleText": {
+		                "text": ""
+		            },
+		            "blogArticleDate": {
+		                "text": ""
+		            },
+		            "blogArticleUserName": {
+		                "text": "S.T"
+		            }
+		        },
+		        "blogArticleImages": {
+                    "blogArticleImage1": {
+                        "href": "photo/general/web/DSC_0894.jpg",
+                        "rel": "gallery",
+                        "photoImageThumb": {
+                            "src": "photo/general/web120/DSC_0894.jpg"
+                        }
+                    },
+		            "blogArticleImage2": {
+		                "src": ""
+		            },
+		            "blogArticleImage3": {
+		                "src": ""
+		            }
+		        },
+		        "blogArticleText": {
+		            "text": "フラワーアレンジメントは以前から大変興味がありましたが、仕事が忙しくレッスン時間に間に合わないのでいつも諦めていましたが、今回こちらのスクールでお仕事帰りに体験レッスンを受ける事が出来また実際のレッスン時間も仕事帰りでも楽々通う事が出きるので本当に嬉しいです。自分の部屋に可愛いアレンジメントを教えて頂けるので毎回レッスンが本当に楽しみです！"
+		        }
+		    },
+		    "1": {
+		        "class": "blogArticle cf",
+		        "blogArticleTitle": {
+		            "blogArticleTitleText": {
+		                "text": ""
+		            },
+		            "blogArticleDate": {
+		                "text": ""
+		            },
+		            "blogArticleUserName": {
+		                "text": "H.Y"
+		            }
+		        },
+		        "blogArticleImages": {
+                    "blogArticleImage1": {
+                        "href": "photo/general/web/DSC_0894.jpg",
+                        "rel": "gallery",
+                        "photoImageThumb": {
+                            "src": "photo/general/web120/DSC_0894.jpg"
+                        }
+                    },
+		            "blogArticleImage2": {
+		                "src": ""
+		            },
+		            "blogArticleImage3": {
+		                "src": ""
+		            }
+		        },
+		        "blogArticleText": {
+		            "text": "以前に一度フラワーアレンジメントを習っていました。今日は久しぶりにお花に触れる事が出来とても楽しかったです。DDTFlowersさんはお仕事帰りでもレッスンに通えるのでこれからは頑張ってレッスンに通うつもりです。講師の先生方もとても明るく楽しい方ばかりで無理なく楽しく続けられそうです！"
+		        }
+		    },
+		    "2": {
+		        "class": "blogArticle cf",
+		        "blogArticleTitle": {
+		            "blogArticleTitleText": {
+		                "text": ""
+		            },
+		            "blogArticleDate": {
+		                "text": ""
+		            },
+		            "blogArticleUserName": {
+		                "text": "T.O"
+		            }
+		        },
+		        "blogArticleImages": {
+		            "blogArticleImage1": {
+		                "src": "photo/general/web120/DSC_0947.jpg"
+		            },
+		            "blogArticleImage2": {
+		                "src": ""
+		            },
+		            "blogArticleImage3": {
+		                "src": ""
+		            }
+		        },
+		        "blogArticleText": {
+		            "text": "小さいころから花の仕事に就きたいと思っていましたので、いつかスクールに通いたいと思っていました。あれこれフラワーアレンジメントスクール関係のサイトを見て探していました。そんな時DDTFlowersさんサイトをみつけ場所、料金設定、時間帯とようやく希望にあったスクールがあった！と思いました。行ってみると講師の方も明るく接しやすく、しかも花材費も他スクールと比べるとかなりリーズナブルです。私としてはとても良心的なスクールで大満足です♪"
+		        }
+		    },
+		    "3": {
+		        "class": "blogArticle cf",
+		        "blogArticleTitle": {
+		            "blogArticleTitleText": {
+		                "text": ""
+		            },
+		            "blogArticleDate": {
+		                "text": ""
+		            },
+		            "blogArticleUserName": {
+		                "text": "T.I"
+		            }
+		        },
+		        "blogArticleImages": {
+		            "blogArticleImage1": {
+		                "src": "photo/general/web120/DSC_0682.jpg"
+		            },
+		            "blogArticleImage2": {
+		                "src": ""
+		            },
+		            "blogArticleImage3": {
+		                "src": ""
+		            }
+		        },
+		        "blogArticleText": {
+		            "text": "フラワーアレンジメントに以前から挑戦したいと思っていましたが花や葉の扱い方が解らず購入しても花瓶にただ挿すだけでしたが、講師の方の的確なアドバイスでお花屋さんに売っている様なアレンジが作成出来てとても楽しいレッスンでした。"
+		        }
+		    },
+		    "4": {
+		        "class": "blogArticle cf",
+		        "blogArticleTitle": {
+		            "blogArticleTitleText": {
+		                "text": ""
+		            },
+		            "blogArticleDate": {
+		                "text": ""
+		            },
+		            "blogArticleUserName": {
+		                "text": "A.W"
+		            }
+		        },
+		        "blogArticleImages": {
+		            "blogArticleImage1": {
+		                "src": "photo/general/web120/DSC_0736.jpg"
+		            },
+		            "blogArticleImage2": {
+		                "src": ""
+		            },
+		            "blogArticleImage3": {
+		                "src": ""
+		            }
+		        },
+		        "blogArticleText": {
+		            "text": "フラワーアレンジメント２回目のレッスンです。前回は体験レッスンで小さなアレンジを作りましたが、今回は初めて大きめのアレンジに挑戦でした。少し不安でしたが大好きなブルー系のお花を使ったアレンジがとても可愛く出来て感激でした。"
+		        }
+		    },
+		    "5": {
+		        "class": "blogArticle cf",
+		        "blogArticleTitle": {
+		            "blogArticleTitleText": {
+		                "text": ""
+		            },
+		            "blogArticleDate": {
+		                "text": ""
+		            },
+		            "blogArticleUserName": {
+		                "text": "N.K"
+		            }
+		        },
+		        "blogArticleImages": {
+		            "blogArticleImage1": {
+		                "src": "photo/general/web120/DSC_0168.jpg"
+		            },
+		            "blogArticleImage2": {
+		                "src": ""
+		            },
+		            "blogArticleImage3": {
+		                "src": ""
+		            }
+		        },
+		        "blogArticleText": {
+		            "text": "今日はお友達と初めてレッスンに来ました。同じお花を使っても講師の方がそれぞれの個性を尊重して下さるのでまったく雰囲気の違った素敵なアレンジが出来ました。"
+		        }
+		    }
+		}
+	}
+}

@@ -1,0 +1,409 @@
+@CHARSET "UTF-8";
+
+/* ギャラリーページのCSSファイル。 */
+
+/* 
+ * セレクタ:.gallery
+ * 概要   :ギャラリー。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.20
+ */
+.gallery{
+		width		: 90%;		/* スマホコンテンツに対応できる幅にする。 */
+		margin		: 0 auto;	/* 中央に寄せる。 */
+		font-size	: 0px;		/* .photoをインラインブロックにするので、余計な余白消しの設定をする。 */
+}
+
+/* 
+ * セレクタ:.photo
+ * 概要   :写真1枚に対するボックス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.20
+ */
+.photo{
+	width: 170px;				/* 1行で6枚の写真を並べる。 */
+	height: 210px;			/* 内容に関わらず高さを揃える。 */
+	margin			: 5px;				/* 全方向にmarginを配置する。 */
+	padding			: 5px 10px;			/* 内側の余白を指定する。 */
+	box-sizing		: border-box;		/* paddingとborderを幅計算に入れる。 */
+	border			: 1px solid #CCC;	/* 灰色の線で囲む。 */
+	font-size: 14px;				/* 写真がメインなので、字は添える程度の小さいものにする。 */
+	border-radius	: 5px;				/* 角に丸みをつける。 */
+	display			:inline-block;
+	vertical-align: top;
+}
+
+/* 
+ * セレクタ:.photoImageThumb
+ * 概要   :ギャラリーのサムネイル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.20
+ */
+.photoImage{
+    width	: 100%;		/* 幅を親に合わせる。 */
+    height	: auto;		/* 高さは子に合わせる。 */
+    display	: block;	/* ブロック要素にする。 */
+}
+
+/* 
+ * セレクタ:.photoImageThumb
+ * 概要   :ギャラリーのサムネイル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.20
+ */
+.photoImageThumb{
+    display: inline-block;				/* インラインブロック */
+    background-color: white;			/* 背景の色を白にする。 */
+    background-position: center center;	/* 背景の位置を中心にする。 */
+    background-repeat: no-repeat;		/* 背景の繰り返しをなくす。 */
+    margin: 0px;						/* marginを使わない。 */
+    width: 100%;						/* 固定値で幅を指定する。 */
+    height: 136px;						/* 高さも固定値 */
+    background-size: contain;			/* サムネイルを縦横比に関わらず全体表示する。 */
+    border-radius: 10px;				/* 角に丸みをつける。 */
+}
+
+/* 
+ * セレクタ:.photoDate, .photoUserName, .photoTitle
+ * 概要   :写真の情報テキスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.20
+ */
+.photoDate, .photoUserName, .photoTitle{
+	float:left;	/* 左に寄せる。 */
+}
+
+/* 
+ * セレクタ:.photoDate, .photoUserName
+ * 概要   :写真の情報テキストの最後尾以外の要素のクラス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.20
+ * 変更者 :T.Masuda
+ * 変更日 :2015.04.07
+ * 内容　 :幅を指定しました。
+ */
+.photoDate, .photoUserName, .photoTitle{
+	margin-right: 1em;	/* 右に1文字分の間隔を取る。 */
+	width		: 100%;	/* 幅を親にあわせる。 */
+	/* 文字幅がオーバーしたら...を表示する設定。 */
+	overflow		: hidden; 	/* はみ出した文字を隠す。 */
+	white-space		: nowrap; 	/* 改行・連続するスペースを無視する。 */
+	text-overflow	: ellipsis;	/* テキストがはみ出したら点を表示する。 */
+	/* ここまで一連の設定。 */
+}
+
+/* ここからMyギャラリー */
+/* 
+ * セレクタ:.myGallery
+ * 概要   :ギャラリー。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myGallery{
+	width: 90%;	/* 幅を.mainに合わせる。 */
+	margin: 0 auto;
+	font-size: 0px;
+}
+
+/* 
+ * セレクタ:.myPhoto
+ * 概要   :写真1枚に対するボックス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myPhoto{
+	width: 170px;				/* 1行で6枚の写真を並べる。 */
+	height: 270px;			/* 内容に関わらず高さを揃える。 */
+	margin			: 5px;				/* 全方向にmarginを配置する。 */
+	padding			: 5px 10px;			/* 内側の余白を指定する。 */
+	box-sizing		: border-box;		/* paddingとborderを幅計算に入れる。 */
+	border			: 1px solid #CCC;	/* 灰色の線で囲む。 */
+	font-size: 14px;				/* 写真がメインなので、字は添える程度の小さいものにする。 */
+	border-radius	: 5px;				/* 角に丸みをつける。 */
+	display			:inline-block;
+	vertical-align: top;
+}
+
+/* 
+ * セレクタ:.blankPhoto
+ * 概要   :作ったばかりの真っ白な写真。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.23
+ */
+.blankPhoto{
+	display: none;				/* 一時非表示にする。 */
+}
+
+/* 
+ * セレクタ:.myPhoto > *
+ * 概要   :写真の情報テキスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myPhoto > *{
+	width	:100%;		/* 幅をいっぱい広げる。。 */
+	display	:block;		/* ブロック要素として扱う。 */
+	/* margin-bottom: 5px; */	/* 要素同士間隔を取る。 */
+	/* 文字幅がオーバーしたら...を表示する設定。 */
+	overflow		: hidden; 	/* はみ出した文字を隠す。 */
+	white-space		: nowrap; 	/* 改行・連続するスペースを無視する。 */
+	text-overflow	: ellipsis;	/* テキストがはみ出したら点を表示する。 */
+	/* ここまで一連の設定。 */
+	min-height: 18px;			/* 行が空白でも高さを確保する。 */
+}
+
+/* 
+ * セレクタ:.myPhotoLink
+ * 概要   :ギャラリーのサムネイル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myPhotomyPhotoLink{
+    width	: 100%;		/* 幅を親に合わせる。 */
+    height	: auto;		/* 高さは子に合わせる。 */
+    display	: block;	/* ブロック要素にする。 */
+}
+
+/* 
+ * セレクタ:.myPhotoImage
+ * 概要   :ギャラリーのサムネイル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myPhotoImage{
+    display: inline-block;				/* インラインブロック */
+    background-color: white;			/* 背景の色を白にする。 */
+    background-position: center center;	/* 背景の位置を中心にする。 */
+    background-repeat: no-repeat;		/* 背景の繰り返しをなくす。 */
+    margin: 0px;						/* marginを使わない。 */
+    width: 100%;						/* 固定値で幅を指定する。 */
+    height: 136px;						/* 高さも固定値 */
+    background-size: contain;			/* サムネイルを縦横比に関わらず全体表示する。 */
+    border-radius: 10px;				/* 角に丸みをつける。 */
+}
+
+/* 
+ * セレクタ:.myPhoto .myPhotoCheck
+ * 概要   :写真のチェックボックス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myPhoto .myPhotoCheck{
+    width: auto;		/* 一括で指定された幅をキャンセルする。 */
+}
+
+/* 
+ * セレクタ:.myGalleryEditButtons
+ * 概要   :Myギャラリーの編集を行うボタン群。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myGalleryEditButtons{
+    display		: block;		/* 表示に1行丸々使う。 */
+    text-align	: right;		/* ボタンを右に寄せる。 */
+}
+
+/* 
+ * セレクタ:.myGalleryEditButtons button
+ * 概要   :Myギャラリーの編集を行うボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myGalleryEditButtons button{
+    margin: 0 0.2em 0.5em 0.2em;		/* 各方向に余白を取る。 */
+}
+
+/* 
+ * セレクタ:.myGalleryEditButtons button.back
+ * 概要   :Myギャラリーのバックボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.27
+ */
+.myGalleryEditButtons button.back{
+    margin-left: 0.5em;		/* 各方向に余白を取る。 */
+}
+
+/* 
+ * セレクタ:.myGalleryNotice span
+ * 概要   :Myギャラリーのちょっとした説明書き。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.18
+ */
+.myGalleryNotice span{
+   font-size:		11px;		/* 小さな文字にする。 */
+   margin-right:	1em;		/* 右に1文字分余白をとる。 */
+}
+
+/* スマホ */
+@media screen and (max-width:415px){
+
+	/* 
+	 * セレクタ:.gallery,.myGallery
+	 * 概要   :ギャラリー。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.04.08
+	 */
+	.gallery,.myGallery {
+		text-align: center;	/* 内容を左に寄せる。 */
+	}	
+}
+
+/* @add 2015.0603 T.Masuda MSLのリスト対応*/
+/* 
+ * セレクタ:.gallery #mslongtail_1985 li
+ * 概要   :MSLの記事一覧の各項目。スタイルについては.photoを転用しました
+ * 作成者 :T.Masuda
+ * 作成日 :2015.06.03
+ */
+.gallery #mslongtail_1985 li{
+	width: 170px;				/* 1行で6枚の写真を並べる。 */
+	height: 210px;			/* 内容に関わらず高さを揃える。 */
+	margin			: 5px;				/* 全方向にmarginを配置する。 */
+	padding			: 5px 10px;			/* 内側の余白を指定する。 */
+	box-sizing		: border-box;		/* paddingとborderを幅計算に入れる。 */
+	border			: 1px solid #CCC;	/* 灰色の線で囲む。 */
+	font-size: 14px;				/* 写真がメインなので、字は添える程度の小さいものにする。 */
+	border-radius	: 5px;				/* 角に丸みをつける。 */
+	display			:inline-block;
+	vertical-align: top;
+	/* 文字幅がオーバーしたら...を表示する設定。 */
+	overflow		: hidden; 	/* はみ出した文字を隠す。 */
+	white-space		: nowrap; 	/* 改行・連続するスペースを無視する。 */
+	text-overflow	: ellipsis;	/* テキストがはみ出したら点を表示する。 */
+	/* ここまで一連の設定。 */
+}
+
+/* 
+ * セレクタ:.gallery #mslongtail_1985 img
+ * 概要   :MSLの記事一覧の各項目の画像。スタイルについてはphotoImageを転用しました
+ * 作成者 :T.Masuda
+ * 作成日 :2015.06.03
+ */
+.gallery #mslongtail_1985 img{
+    width	: 100%;		/* 幅を親に合わせる。 */
+    height	: auto;		/* 高さは子に合わせる。 */
+    display	: block;	/* ブロック要素にする。 */
+}
+
+/* 
+ * セレクタ:.gallery #mslongtail_1985 p
+ * 概要   :MSLの記事一覧の「もっと見る」の字の外枠
+ * 作成者 :T.Masuda
+ * 作成日 :2015.06.03
+ */
+.gallery #mslongtail_1985 p{
+	margin-top: 10px;	/* 上にmarginを取る */		
+}
+
+/* 
+ * セレクタ:.gallery #mslongtail_1985 p a
+ * 概要   :MSLの記事一覧の「もっと見る」の字
+ * 作成者 :T.Masuda
+ * 作成日 :2015.06.03
+ */
+.gallery #mslongtail_1985 p a{
+	font-size: 14px;	/* 小さめの文字にする */
+	text-indent: 0.5em;	/* インデントを取る */
+}
+
+/* 
+ * セレクタ:.gallery #mslongtail_1985 h2
+ * 概要   :MSLの記事一覧のタイトル。不要なので隠す
+ * 作成者 :T.Masuda
+ * 作成日 :2015.06.03
+ */
+.gallery #mslongtail_1985 h2{
+	display: none;	/* 不要なので隠す */
+}
+
+/* 
+ * セレクタ:.gallery #mslongtail_1985
+ * 概要   :MSLの記事一覧
+ * 作成者 :T.Masuda
+ * 作成日 :2015.06.04
+ */
+.gallery #mslongtail_1985{
+	display: block;	/* 最初から表示しておく */
+}
+
+ /* 
+ * セレクタ:.galleryRightSide
+ * 概要   :ギャラリーの右側(写真)
+ * 作成者 :T.Masuda
+ * 作成日 :2015.12.26
+ */
+.galleryRightSide{
+	width:	70%;	/* 幅を70%にしてコンテンツと並べる。 */
+	float:	right;	/* 右に寄せる。 */
+}
+
+ /* 
+ * セレクタ:.galleryLeftSide
+ * 概要   :ギャラリーの左側(カレンダー)
+ * 作成者 :T.Masuda
+ * 作成日 :2015.12.26
+ */
+.galleryLeftSide{
+	width:	29%;	/* 幅を29%にしてコンテンツと並べる。 */
+	float:	right;	/* 右に寄せる。 */
+}
+
+ /* 
+ * セレクタ:.galleryLeftSide .calendar
+ * 概要   :カレンダー
+ * 作成者 :T.Masuda
+ * 作成日 :2015.12.26
+ */
+.galleryLeftSide .calendar {
+	width:	100%;	/* カレンダーをなるべく大きく表示する。 */
+	float:	left;	/* 左に寄せる。 */
+}
+
+ /* 
+ * セレクタ:.galleryTable thead
+ * 概要   :ギャラリーの見出し行
+ * 作成者 :T.Masuda
+ * 作成日 :2015.12.27
+ */
+.galleryTable thead{
+	display: none;	/* 見出しは存在しない(DOMはある) */
+}
+/* 画面伸縮時の設定 */
+@media screen and (max-width: 679px) {
+	 /* 
+	 * セレクタ:.galleryRightSide, .galleryLeftSide
+	 * 概要   :ギャラリーの両サイド
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.12.26
+	 */
+	.galleryRightSide, .galleryLeftSide{
+		width:	100%;	/* 幅を100%にしてコンテンツと並べる。 */
+		float:	none;	/* floatを解除する */
+	}
+}
+
+/* スマホレイアウト設定 */
+@media screen and (max-width: 355px) {
+	
+	/* 
+	 * セレクタ:.galleryTable, .myGalleryTable
+	 * 概要   :ギャラリーの写真一覧
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.12.27
+	 */
+	.galleryTable, .myGalleryTable {
+		width : 100%;	/* サイズを画面に合わせる */
+	}
+
+	 /* 
+	 * セレクタ:.galleryTable tr , .myGalleryTable tr 
+	 * 概要   :ギャラリーの写真
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.12.27
+	 */
+	.galleryTable tr , .myGalleryTable tr {
+		display : block;	/* margin autoを利かせるための設定 */
+		margin : 20px auto 0;	/* 中央に寄せる */
+	}
+	
+}

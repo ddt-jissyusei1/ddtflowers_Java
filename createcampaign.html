@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/管理者画面</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<script>
+				//createTagクラスのインスタンスを生成する
+				var campaignCreator = new createTag();
+			
+				campaignCreator.getJsonFile('source/admin.json');				// 管理者画面のJSONを取得する。
+				campaignCreator.getJsonFile('source/campaignmanagement.json');
+				// キャンペーン作成画面のコンテンツを作る。
+				campaignCreator.outputTag('editCampaign', 'editCampaign', '#campaignManagement');
+				campaignCreator.outputTag('campaignTitle', 'campaignTitle', '.editCampaign');
+				campaignCreator.outputTag('campaignType', 'campaignType', '.editCampaign');
+				campaignCreator.outputTag('campaignContent', 'campaignContent', '.editCampaign');
+				campaignCreator.outputTag('campaignPrice', 'campaignPrice', '.editCampaign');
+				campaignCreator.outputTag('campaignCopy', 'campaignCopy', '.editCampaign');
+				campaignCreator.outputTag('campaignDates', 'campaignDates', '.editCampaign');
+				campaignCreator.outputTag('campaignMaxEntry', 'campaignMaxEntry', '.editCampaign');
+				campaignCreator.outputTag('confirmEditCampaign', 'confirmEditCampaign', '.editCampaign');
+				$('#campaignManagement button,#campaignManagement input:submit').button();	//ボタンをリッチなものにする。	
+				//フォームに入力チェックをかける。
+				$('form.editCampaign').validate(showAlert);
+				campaignCreator.json = '';
+			</script>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+	"email":{
+		"value":"xxx@yyy.zzz"
+	},
+    "blogTitle": {
+        "value": "マイブログ"
+    },
+    "blogPublication": {
+        "value": "1"
+    }
+}

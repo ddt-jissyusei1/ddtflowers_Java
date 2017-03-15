@@ -1,0 +1,204 @@
+<!-- ブログのパーツ -->
+<html>
+  <body>
+    <!-- テンプレート領域 -->
+    <div>
+      <!-- 管理者のタブコンテント -->
+      <div class="tabContainer" id="">
+        <!-- タブを囲む領域 -->
+        <ul class="tabs">
+          <!-- 個々のタブ領域 -->
+          <li class="tab">
+            <!-- タブのクリックする領域 -->
+            <a class="tabLink" href=""></a>
+          </li>
+        </ul>
+        <!-- タブのコンテンツを囲む領域 -->
+        <div class="tabContentArea"></div>
+      </div>
+      <!-- タブ内のコンテンツのタグ。必要なだけタブパネル領域に追加する -->
+      <div class="tabInContent" id=""></div>
+      <!-- 情報を格納するための共通のテーブルを作る -->
+      <table class="infoTable">
+        <tr>
+          <td></td>
+        </tr>
+      </table>
+      <!-- 日ごと予約者一覧のテーブルを作る -->
+      <table class="eachDayReservedInfoTable">
+        <tr>
+          <td></td>
+        </tr>
+      </table>
+      <!-- 受講承認テーブル -->
+      <table class="doLecturePermitInfoTable">
+        <tr>
+          <td></td>
+        </tr>
+      </table>
+      <!-- 商品購入承認テーブル -->
+      <table class="sellCommodityPermitInfoTable">
+        <tr>
+          <td></td>
+        </tr>
+      </table>
+      <!-- 受講承認一覧テーブル -->
+      <table class="lecturePermitListInfoTable">
+        <tr>
+          <td></td>
+        </tr>
+      </table>
+      <!-- 商品購入承認一覧テーブル -->
+      <table class="sellCommodityPermitListInfoTable">
+        <tr>
+          <td></td>
+        </tr>
+      </table>
+      <!-- ユーザリストテーブル -->
+      <table class="userListInfoTable">
+        <tr>
+          <td></td>
+        </tr>
+      </table>
+      <!-- 日毎予約者一覧の日付領域 -->
+      <div class="dateBelt">
+        <!-- 当日 -->
+        <p class="theDay"></p>
+      </div>
+      <div class="dateSelect">
+        <label class="dateHeadLabel"></label>
+        <input class="dateInput" type="" name="">
+      </div>
+      <!-- 会員一覧、ユーザ検索テキストボックス群れ -->
+      <div class="searchUserList">
+      </div>
+      <!-- ユーザ一覧を操作するボタンの領域 -->
+      <div class="userListButtons">
+      </div>
+      <!-- 受講承認一覧 検索フォーム -->
+      <div class="permitListSearch">
+        <span class ="searchInputArea">
+          <!-- 検索の機関のfromの領域 -->
+          <label class="fromArea">
+            <!-- テキストボックス領域 -->
+            <input class="fromTextbox" type="" name="">
+            <!-- ラベル領域 -->
+            <span class="fromToLabel"></span>
+            <!-- テキストボックス領域 -->
+            <input class="toTextbox" type="" name="">
+          </label>
+        </span>
+      </div>
+      <!-- 受講承認、アコーディオン概要領域 -->
+      <div class="accordionSummary">
+        <!-- 遅刻領域 -->
+        <div class="lateTimeSummary"></div>
+        <!-- 使用pt領域 -->
+        <div class="usePointSummary"></div>
+        <!-- 備品名領域 -->
+        <div class="contentSummary" colspan=""></div>
+        <!-- 個数領域 -->
+        <div class="sellNumberSummary"></div>
+        <!-- 備品代領域 -->
+        <div class="sellingPriceSummary"></div>
+        <!-- 会計領域 -->
+        <div class="payCashSummary"></div>
+      </div>
+      <!-- 受講承認　アコーディオン内容領域 -->
+      <div class="accordionContent">
+        <!-- 遅刻 -->
+        <div class="lateTime">
+          <!-- 遅刻ポイントテキストボックス -->
+          <input class="lateTimeTextbox" type="" name="" value="" min="" onkeydown="">
+        </div>
+        <!-- 使用ポイント -->
+        <div class="usePoint">
+          <!-- 使用ポイントテキストボックス -->
+          <input class="usePointTextbox" type="" name="" value="" min="" onkeydown="">
+        </div>
+        <!-- 備品名 -->
+        <div class="contentCell" colspan="">
+          <!-- 備品名セレクトボックス -->
+          <select class="contentSelect" name="">
+            <!-- 備品名、セレクトボックスの中身 -->
+            <option class="contentOption" value=""></option>
+          </select>
+        </div>
+        <!-- 備品個数 -->
+        <div class="sellNumber">
+          <!-- 備品個数テキストボックス -->
+          <input class="sellNumberTextbox" type="" name="" value="" min="" onkeydown="">
+        </div>
+        <!-- 備品代 -->
+        <div class="sellingPrice">
+          <!-- 備品代テキストボックス -->
+          <input class="sellingPriceTextbox" type="" name="" value="" min="" onkeydown="">
+        </div>
+        <!-- 会計 -->
+        <div class="payCash" colspan="">
+          <!-- 使用ポイントテキストボックス -->
+          <input class="payCashTextbox" type="" name="" value="" min="" onkeydown="">
+        </div>
+      </div>
+      <!-- 備品id格納用フォーム -->
+      <input class="commodityKeyBox" type="" name="" value="">
+      <!-- 備品販売id格納用フォーム -->
+      <input class="commoditySellId" type="" name="" value="">
+      <!-- 備品名セレクトボックス -->
+      <select class="contentSelect" name="">
+        <!-- 備品名、セレクトボックスの中身 -->
+        <option class="contentOption" value=""></option>
+      </select>
+      <!-- 管理者のカレンダー領域 -->
+      <div class="adminCalendar"></div>
+      <!-- テーブル置換テキストボックス -->
+      <input class="replaceTextbox" type="" name="" value="" data-diff_point="" data-base_point="">
+      <!-- メルマガ検索領域 -->
+      <div class="mailMagaSearchArea">
+        <!-- 「店舗」ラベル -->
+        <label class="schoolNameLabel"></label>
+        <!-- 店舗セレクトボックス -->
+        <select class="schoolNameSelectBox" name="">
+          <!-- セレクトボックスボックスの値 -->
+          <option class="schoolNameSelect" value=""></option>
+          <!-- 新宿店セレクト -->
+          <option class="shinjukuSchool" value=""></option>
+          <!-- 横浜店セレクト -->
+          <option class="yokohamaSchool" value=""></option>
+        </select>
+        <!-- 「種別」ラベル -->
+        <label class="typeLabel"></label>
+        <!-- 種別セレクトボックス -->
+        <select class="typeSelectBox" name="">
+          <!-- セレクトボックスボックスの値 -->
+          <option class="typeSelect" value=""></option>
+          <!-- 情報セレクト -->
+          <option class="selectInfo" value=""></option>
+        </select>
+        <!-- 「内容」テキストボックスラベル領域 -->
+        <label class="mailMagaContentSearchLabel">
+          <!-- 「内容」テキスト -->
+          <span class="mailMagaContentSearchText"></span>
+          <!-- 「内容」テキストボックス領域 -->
+          <input class="mailMagaContentSearchTextbox" type="" name="">
+        </label>
+      </div>
+      <!-- テーブル外枠 -->
+      <div class="tableOutsideArea"></div>
+      <!-- メルマガテーブル -->
+      <table class="mailMagaTable">
+        <tr>
+          <td></td>
+        </tr>
+      </table>
+      <span class="buttonArea"></span>
+      <!-- 全選択ボタン領域 -->
+      <span class="selectAllRow">
+        <!-- 全選択チェックボックス -->
+        <input class="selectAllRowCheckBox" type="">
+        <!-- 全選択チェックボックスラベル領域 -->
+        <label class="selectAllRowLabel"></label>
+      </span>
+    </div>
+  </body>
+</html>

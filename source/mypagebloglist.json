@@ -1,0 +1,134 @@
+{
+    "1": {
+        "class": "recordWrapper",
+        "blogListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "number":{
+            	"text":"1"
+            },
+            "date": {
+                "text": "2015/03/20"
+            },
+            "author": {
+                "text": "FlowerMaster"
+            },
+            "title": {
+                "text": "今日は寒いですね"
+            }
+        }
+    },
+    "2": {
+        "class": "recordWrapper",
+        "blogListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "number":{
+            	"text":"2"
+            },
+            "date": {
+                "text": "2015/03/19"
+            },
+            "author": {
+                "text": "FlowerMaster"
+            },
+            "title": {
+                "text": "春眠暁を覚えず"
+            }
+        }
+    },
+    "3": {
+        "class": "recordWrapper",
+        "blogListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "number":{
+            	"text":"3"
+            },
+            "date": {
+                "text": "2015/03/18"
+            },
+            "author": {
+                "text": "FlowerMaster"
+            },
+            "title": {
+                "text": "次回の試験について"
+            }
+        }
+    },
+    "4": {
+        "class": "recordWrapper",
+        "blogListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "number":{
+            	"text":"4"
+            },
+            "date": {
+                "text": "2015/03/17"
+            },
+            "author": {
+                "text": "FlowerMaster"
+            },
+            "title": {
+                "text": "メルマガ配信しました"
+            }
+        }
+    },
+    "5": {
+        "class": "recordWrapper",
+        "blogListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "number":{
+            	"text":"5"
+            },
+            "date": {
+                "text": "2015/03/16"
+            },
+            "author": {
+                "text": "FlowerMaster"
+            },
+            "title": {
+                "text": "春のキャンペーン"
+            }
+        }
+    },
+    "6": {
+        "class": "recordWrapper",
+        "blogListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "number":{
+            	"text":"6"
+            },
+            "date": {
+                "text": "2015/03/15"
+            },
+            "author": {
+                "text": "FlowerMaster"
+            },
+            "title": {
+                "text": "限定アレンジを用意しました"
+            }
+        }
+    }
+}

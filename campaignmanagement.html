@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/管理者画面</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<script>
+				//管理者ブログ管理のJSONを読み込む。
+				creator.getJsonFile('source/admin.json');				// 管理者画面のJSONを取得する。
+				creator.getJsonFile('source/campaignmanagement.json');
+				creator.getJsonFile('source/campaignlist.json');
+			
+				// キャンペーン一覧を作る。
+				//検索ボックス領域を作る
+				creator.outputTag('contentSearch', 'contentSearch', '#campaignManagement');
+				//キャンペーン名検索
+				creator.outputTag('titleSearch', 'articleSearch', '#campaignManagement .contentSearch');
+				//種別検索
+				creator.outputTag('typeSearch', 'articleSearch', '#campaignManagement .contentSearch');
+				//開始日検索
+				creator.outputTag('startDateSearch', 'articleSearch', '#campaignManagement .contentSearch');
+				//終了日検索
+				creator.outputTag('endDateSearch', 'articleSearch', '#campaignManagement .contentSearch');
+				//ボタン領域を作る。
+				creator.outputTag('searchButtonSet', 'searchButtonSet', '#campaignManagement .contentSearch');
+				creator.outputTag('managementForm', 'managementForm', '#campaignManagement');
+				//表形式のキャンペーンリストの外枠を作る。
+				creator.outputTag('managementList', 'managementList', '#campaignManagement .managementForm');
+				//表の見出しを作る。
+				creator.outputTag('campaignListHeadWrap', 'campaignListHeadWrap', '#campaignManagement .table > thead');
+				unwrapTable('.campaignListHead');
+				
+				//ナンバリングの領域を作る。
+				creator.outputTag('numberingOuter','numberingOuter','#campaignManagement .managementForm');				//ナンバリング領域を作る
+				//ナンバリングとともにレコードを書き出す。
+				creator.outputNumberingTag('campaignListContentWrap', init.listSetting.startPage, 
+						init.listSetting.displayPageMax, init.listSetting.displayPage, init.listSetting.pageNum,
+						'#campaignManagement .table > tbody');
+				
+				//編集ボタン群を作る。
+				creator.outputTag('listEditButtons', 'listEditButtons', '#campaignManagement .managementForm');
+				$('#campaignManagement button, #campaignManagement input:submit').button();	//ボタンをリッチなものにする。	
+				//日付入力テキストボックスをクリックするとカレンダーが出る様にする。
+				setCallCalendar('.tabPanel.active input.calendar');
+				sendButtonRole($('#campaignManagement .managementForm'));	//押されたsubmitボタンを検出する関数。
+				//submitイベントを登録する。
+				$('#campaignManagement .managementForm').validate(articleSubmitHandler);
+				$('#campaignManagement .contentSearch').validate(listSearchSubmitHandler);
+				deleteRowData('#campaignManagement .managementForm');	//行の削除イベントを登録する。
+			</script>
+		</div>
+	</div>
+</body>
+</html>

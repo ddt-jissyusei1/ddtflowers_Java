@@ -1,0 +1,47 @@
+{
+    "accountHeader": {
+        "db_getQuery": "SELECT id AS numberArea, user_name, get_point , authority FROM user_inf WHERE id = 'user_key';",
+        "user_key": {
+            "value": ""
+        },
+        "authority":{
+            	"text":""
+        },
+        "memberStatus": {
+            "topLogoArea": {
+                "topLink": {
+                	"href":"#top.php",
+                    "topLogoImage": {
+                        "src": "image/top(logo).png"
+                    }
+                }
+            },
+            "memberName": {
+                "user_name": {
+                    "text": ""
+                },
+                "nameTitleArea": {
+                    "text": "様"
+                }
+            },
+            "memberPoint": {
+                "get_point": {
+                    "text": ""
+                },
+                "ptArea": {
+                    "class": "ptArea unitSpace",
+                    "text": "pt"
+                }
+            },
+            "logoutArea": {
+                "class": "logoutArea inlineBlock",
+                "logoutLink": {
+                    "href": "",
+                    "logoutImage": {
+                        "src": "image/icon(logout22-50).png"
+                    }
+                }
+            }
+        }
+    }
+}

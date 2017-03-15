@@ -1,0 +1,139 @@
+{
+    "reservedLessonTableOutsideArea": {
+        "class": "reservedLessonTableOutsideArea"
+    },
+    "tableArea": {},
+    "lessonTable": {
+    	"class" : "lessonTable commonTable",
+        "db_getQuery": "SELECT '' AS start_and_end_time, start_time, school_name ,lesson_name , '' AS cost, user_classwork_cost, '' AS rest, time_table_day.max_num AS max_num, '' AS lessonStatus, user_classwork.stage_no AS stage_no, user_classwork.flower_cost AS flower_cost ,user_classwork_cost_aj ,flower_cost_aj ,user_classwork.extension_cost AS extension_cost ,uc_lesson_sub.level_no AS level_no ,classwork.lesson_key AS lesson_key ,pre_order_days ,stop_order_date ,end_time ,time_table_day.lesson_date AS lesson_date ,order_students ,classwork.max_students AS max_students ,classwork.min_students AS min_students ,lesson_inf.min_students AS default_min_students ,time_table_day.min_num AS min_num ,ul_lesson_sub.flower_cost AS default_flower_cost ,ul_lesson_sub.level_price AS default_user_classwork_cost ,ul_lesson_sub.level_no AS level_no_present ,classwork_status ,user_work_status ,ul_stage_inf.stage_no AS stage_no_present ,SUBSTRING(NOW(), 1,10) AS today ,user_classwork.id AS id ,classwork.id AS classwork_key ,ul_lesson_sub.id AS level_key ,ul_stage_inf.id AS stage_key  FROM  time_table_day INNER JOIN classwork ON time_table_day.id = classwork.time_table_day_key AND time_table_day.lesson_date = 'lessonDate' LEFT JOIN user_classwork ON classwork.id = user_classwork.classwork_key AND user_classwork.user_key = 'user_key' INNER JOIN  lesson_inf ON lesson_inf.id = classwork.lesson_key INNER JOIN school_inf ON school_inf.id = lesson_inf.school_key INNER JOIN timetable_inf ON timetable_inf.id = time_table_day.timetable_key LEFT JOIN user_lesson ON user_lesson.user_key = 'user_key' AND user_lesson.lesson_key = lesson_inf.id LEFT JOIN lesson_sub AS ul_lesson_sub ON ul_lesson_sub.id = user_lesson.level_key LEFT JOIN stage_inf AS ul_stage_inf ON ul_stage_inf.id = user_lesson.stage_key LEFT JOIN lesson_sub AS uc_lesson_sub ON uc_lesson_sub.id = user_classwork.level_key LEFT JOIN stage_inf AS uc_stage_inf ON uc_stage_inf.id = user_classwork.stage_key;",
+        "user_key": {
+            "value": ""
+        },
+        "lessonDate": {
+            "value": ""
+        },
+        "config": {
+            "columns": {
+                "start_and_end_time": {
+                    "columnName": "時間割"
+                },
+                "start_time": {
+                    "style": "display:none;"
+                },
+                "max_num": {
+                    "style": "display:none;"
+                },
+                "user_classwork_cost": {
+                    "style": "display:none;"
+                },
+                "stage_no": {
+                    "style": "display:none;"
+                },
+                "school_name": {
+                    "columnName": "店舗"
+                },
+                "lesson_name": {
+                    "columnName": "テーマ"
+                },
+                "cost": {
+                    "columnName": "料金(円)",
+                    "className" : "cost"
+                },
+                "rest": {
+                    "columnName": "残席",
+                    "className": "rest"
+                },
+                "lessonStatus": {
+                    "columnName": "状況"
+                },
+                "flower_cost": {
+                    "style": "display:none;"
+                },
+                "user_classwork_cost_aj": {
+                    "style": "display:none;"
+                },
+                "flower_cost_aj": {
+                    "style": "display:none;"
+                },
+                "extension_cost": {
+                    "style": "display:none;"
+                },
+                "level_no": {
+                    "style": "display:none;"
+                },
+                "lesson_key": {
+                    "style": "display:none;"
+                },
+                "pre_order_days": {
+                    "style": "display:none;"
+                },
+                "stop_order_date": {
+                    "style": "display:none;"
+                },
+                "end_time": {
+                    "style": "display:none;"
+                },
+                "lesson_date": {
+                    "style": "display:none;"
+                },
+                "order_students": {
+                    "style": "display:none;"
+                },
+                "max_students": {
+                    "style": "display:none;"
+                },
+                "min_students": {
+                    "style": "display:none;"
+                },
+                "default_min_students": {
+                    "style": "display:none;"
+                },
+                "min_num": {
+                    "style": "display:none;"
+                },
+                "default_flower_cost": {
+                    "style": "display:none;"
+                },
+                "default_user_classwork_cost": {
+                    "style": "display:none;"
+                },
+                "level_no_present": {
+                    "style": "display:none;"
+                },
+                "classwork_status": {
+                    "style": "display:none;"
+                },
+                "user_work_status": {
+                    "style": "display:none;"
+                },
+                "stage_no_present": {
+                    "style": "display:none;"
+                },
+                "today": {
+                    "style": "display:none;"
+                },
+                "id": {
+                    "style": "display:none;"
+                },
+                "classwork_key": {
+                    "style": "display:none;"
+                },
+                "level_key": {
+                    "style": "display:none;"
+                },
+                "stage_key": {
+                    "style": "display:none;"
+                }
+            }
+        }
+    },
+    "cancelReservedData":{
+        "db_setQuery":"CALL cancel_classwork('id', 'classwork_key', 'cancel_charge', 'cancel_user');"
+    },
+    "sendReservedData":{
+        "db_setQuery":"CALL book_classwork('default_user_classwork_cost', 'default_flower_cost', 'userId', 'classwork_key', 'stage_key', 'stage_no_present', 'level_key', 'level_no_present', -1);"
+    },
+    "updateReservedData":{
+        "db_setQuery":"CALL book_classwork('default_user_classwork_cost', 'default_flower_cost', 'userId', 'classwork_key', 'stage_key', 'stage_no_present', 'level_key', 'level_no_present', 'id');"
+    }
+}

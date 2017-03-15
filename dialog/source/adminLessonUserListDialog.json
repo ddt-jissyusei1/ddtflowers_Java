@@ -1,0 +1,30 @@
+{
+    "tableArea":{
+        "class":"tableArea"
+    },
+    "lessonTable":{
+    	"class" : "lessonTable commonTable",
+        "db_getQuery":"SELECT user_inf.id, user_inf.user_name, user_classwork.user_work_status FROM user_inf INNER JOIN user_classwork ON user_inf.id = user_classwork.user_key INNER JOIN classwork ON user_classwork.classwork_key = classwork.id  WHERE classwork.id='id' ORDER BY user_name ASC;",
+        "id":{
+            "value":""
+        },
+         "config": {
+            "columns": {
+                "id": {
+                    "style": "display:none;",
+                    "className" : "id"
+                },
+                "user_name": {
+                    "columnName": "氏名"
+                },
+                "user_work_status": {
+                    "class" : "user_work_status",
+                    "columnName": "予約状況"
+                }
+            }
+        }
+    },
+    "noReserver" : {
+        "text" : "現在、当該授業に予約者はいません。"
+    }
+}

@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+	<div id="container">
+		<div class="main">
+		<pageAuth style="display: none">0x52</pageAuth>
+			<script>
+				try{
+					//ページの権限をクッキーへ設定する 2016.10.09 r.shibata 追加
+					commonFuncs.setPageAuthToCookie();
+					//カレントのウィンドウのDOMを取得する
+					var $currentWindow = $(CURRENT_WINDOW);
+					//カレントのウィンドウのコンテンツ領域を取得する
+					var $currentContent = $(CURRENT_WINDOW_MAIN)
+					
+					//createTag継承クラスのインスタンスを生成する
+					var create_tag = new createLittleContents();
+					
+					create_tag.getJsonFile('source/memberPage.json');
+					// 会員共通のパーツのJSONを取得する。
+					create_tag.getJsonFile('source/memberCommon.json');
+					// 全共通のパーツのJSONを取得する。
+					create_tag.getJsonFile('source/commonJson.json');
+					//パーツのテンプレートのDOMを取得する。
+					create_tag.getDomFile('template/common.html');
+					// 会員共通のパーツのJSONを取得する。
+					create_tag.getDomFile('template/memberCommon.html');
+					// 会員ページのjsonを読み込む
+					create_tag.getDomFile('template/memberPage.html');
+
+					//accountHeaderから会員IDを取得する。別ユーザログインしていた場合はcookieからIDを取得する
+					var memberInfo = commonFuncs.checkEmpty(commonFuncs.GetCookies().otherUserId) ?  commonFuncs.GetCookies().otherUserId: create_tag.json.accountHeader.user_key.value;
+					create_tag.json.accountHeader.user_key.value = memberInfo;	//取得したIDをaccountHeaderに反映する
+					
+					//ユーザ情報のテキストをDBから取得する
+					create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['accountHeader'], 'accountHeader');
+					
+					// 会員ページヘッダーを作る
+					create_tag.outputTag('accountHeader','memberHeader', $currentContent);
+					// バナー領域を作る
+					create_tag.outputTag('userBanner', 'userBanner', $currentContent);
+					//告知領域のデータをDBから取得するためにクエリで送信する値の置換値をセットする
+					create_tag.json.advertise.user_key.value = memberInfo;
+					//告知領域のテキストをDBから取得する
+					create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['advertise'], 'advertise');
+					// 告知領域を作る
+					create_tag.outputTag('advertise', 'advertise', $currentContent);
+					//通知領域の内容があれば
+					if(create_tag.json.advertise.message_title.text){
+						$('.advertise').css('display', 'block');		//通知領域を表示する
+					}
+					// 会員ページのカレンダーを作る
+					create_tag.outputTag('lessonCalendar', 'calendar', $currentContent);
+
+					//予約一覧テーブルのインプット用データオブジェクトを作る
+					var argumentObj = {
+						config:{
+							animate : false,	//アニメーションを切って読み込みを速くする
+							cache: true,		//一度読み込んだコンテンツは二度読み込まない
+							updateHash:false	//ハッシュによるタブ開閉履歴を無効にする
+						},
+						//インプット用データオブジェクト
+						data:{
+						}
+					};
+					
+					//予約一覧テーブルのタブを作る
+					var reservedLessonListTab = new tabEx('tab/memberReserveListTab.html', argumentObj);
+					//シーケンシャルを保証してコードを実行する。タブを配置する。
+					$.when(reservedLessonListTab.run($currentContent))
+						.done(function(){	//whenのコード終了後
+						//	setTimeout(function(){	//遅延してコールバックを走らせる
+								// 日ごと授業のjsonを読み込む
+								// create_tag.getJsonFile('source/eachDayLesson.json'); // 2016.09.21 r.shibata 未使用のため削除
+								// 日ごと授業のテンプレートを読み込む
+								// create_tag.getDomFile('template/eachDayLesson.html');// 2016.09.21 r.shibata 未使用のため削除
+								// カレンダーを作り、クリックでダイアログ作成を作る
+								// 2016.09.08 mod k.urabe カレンダーの選択可能な最大日付を定数で渡すように変更
+			 					var memCalendar = new memberCalendar('.lessonCalendar', CALENDAR_MAX_DATE, memberInfo, create_tag);
+								memCalendar.create();	//カレンダーを実際に作成する
+								//授業のある日付をハイライトする
+								memCalendar.changeExistLessonDate();
+								//キャンセル料率,加算ポイントのレートをアコーディオン形式で表示する
+								create_tag.accordionSetting(DOT+CLASS_INFO_ACCORDION, DOT+CLASS_LESSON_ACCORDION);
+								addlogoutEvent('.logoutLink');	//ログアウトボタンのイベントを登録する。
+						//	}, 100);	//遅延時間を設定する
+						});
+ 					
+				}catch(e){
+					console.log(e);
+				}
+			</script>
+		</div>
+	</div>
+</body>
+</html>

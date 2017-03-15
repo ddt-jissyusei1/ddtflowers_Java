@@ -1,0 +1,307 @@
+{
+    "specialReservedDialog": {
+        "action": "postmail/postmail.cgi"
+    },
+    "reservedDate": {
+        "type": "hidden",
+        "name": "reservedDate"
+    },
+    "reservedSummary": {
+        "text": "予約可能の可否につきましては追ってメールにより返信させていただきます。"
+    },
+    "radioButtonUsuallyCourse": {
+        "constructFirstRow": {
+            "width": "100",
+            "dialogContentHead": {
+                "text": "コース"
+            },
+            "preserved": {
+                "buttonTopLabel": {
+                    "buttonTop": {
+                        "name": "course",
+                        "type": "radio",
+                        "value": "プリザ"
+                    },
+                    "buttonTopText": {
+                        "text": "プリザ"
+                    }
+                }
+            },
+            "fresh": {
+                "buttonTopLabel": {
+                    "buttonTop": {
+                        "name": "course",
+                        "type": "radio",
+                        "value": "生花"
+                    },
+                    "buttonTopText": {
+                        "text":"生花"
+                    }
+                }
+            }
+        },
+        "constructSecondRow": {
+            "blank": {
+                "visibility": "invisible"
+            },
+            "nfd": {
+                "buttonTopLabel": {
+                    "buttonTop": {
+                        "name": "course",
+                        "type": "radio",
+                        "value": "NFD"
+                    },
+                    "buttonTopText": {
+                        "text": "NFD"
+                    }
+                }
+            }
+        }
+    },
+    "radioButtonSpecialSchedule": {
+        "scheduleFirstRow": {
+            "dialogContentHead": {
+                "text": "時限"
+            },
+            "scheduleWrap": {
+                "buttonTopLabel": {
+                    "buttonTop": {
+                        "name": "schedule",
+                        "type": "checkbox",
+                        "value": "11:00 〜 13:00"
+                    },
+                    "buttonTopText": {
+                        "text": "11:00 〜 13:00"
+                    }
+                }
+            }
+        },
+        "scheduleSecondRow": {
+            "blank": {},
+            "scheduleWrap": {
+                "buttonTopLabel": {
+                    "buttonTop": {
+                        "name": "schedule",
+                        "type": "checkbox",
+                        "value": "14:00 〜 16:00"
+                    },
+                    "buttonTopText": {
+                        "text": "14:00 〜 16:00"
+                    }
+                }
+            }
+        },
+        "scheduleThirdRow": {
+            "blank": {},
+            "buttonTopLabel": {
+                "buttonTop": {
+                    "name": "schedule",
+                    "type": "checkbox",
+                    "value": "16:30 〜 18:30"
+                },
+                "buttonTopText": {
+                    "text": "16:30 〜 18:30"
+                }
+            }
+        },
+        "scheduleFourthRow": {
+            "blank": {},
+            "buttonTopLabel": {
+                "buttonTop": {
+                    "name": "schedule",
+                    "type": "checkbox",
+                    "value": "19:00 〜 21:00"
+                },
+                "buttonTopText": {
+                    "text": "19:00 〜 21:00"
+                }
+            }
+        },
+        "scheduleFourthHalfRow": {
+            "blank": {},
+            "buttonTopLabel": {
+                "buttonTop": {
+                    "name": "schedule",
+                    "type": "checkbox",
+                    "value": "19:30 〜 21:30"
+                },
+                "buttonTopText": {
+                    "text": "19:30 〜 21:30"
+                }
+            }
+        }
+    },
+    "subInfo": {
+        "dialogContentHead": {
+            "text": "予備情報"
+        },
+        "canDayAll": {
+            "subHeadText": {
+                "text": "可能曜日"
+            },
+            "allDayButton": {
+                "allDayCheckbox": {
+                    "type": "checkbox"
+                },
+                "allCheckboxLabel": {
+                    "text": "全て可"
+                }
+            }
+        },
+        "weekOfDay": {
+            "MondayCheck": {
+                "buttonBottom": {
+                    "name": "dayOfWeek",
+                    "type": "checkbox",
+                    "value": "月"
+                },
+                "buttonBottomText": {
+                    "text": "月"
+                }
+            },
+            "TuesdayCheck": {
+                "buttonBottom": {
+                    "name": "dayOfWeek",
+                    "type": "checkbox",
+                    "value": "火"
+                },
+                "buttonBottomText": {
+                    "text": "火"
+                }
+            },
+            "WednesdayCheck": {
+                "buttonBottom": {
+                    "name": "dayOfWeek",
+                    "type": "checkbox",
+                    "value": "水"
+                },
+                "buttonBottomText": {
+                    "text": "水"
+                }
+            },
+            "ThirsdayCheck": {
+                "buttonBottom": {
+                    "name": "dayOfWeek",
+                    "type": "checkbox",
+                    "value": "木"
+                },
+                "buttonBottomText": {
+                    "text": "木"
+                }
+            },
+            "FridayCheck": {
+                "buttonBottom": {
+                    "name": "dayOfWeek",
+                    "type": "checkbox",
+                    "value": "金"
+                },
+                "buttonBottomText": {
+                    "text": "金"
+                }
+            },
+            "SaturdayCheck": {
+                "buttonBottom": {
+                    "name": "dayOfWeek",
+                    "type": "checkbox",
+                    "value": "土"
+                },
+                "buttonBottomText": {
+                    "text": "土"
+                }
+            },
+            "SundayCheck": {
+                "buttonBottom": {
+                    "name": "dayOfWeek",
+                    "type": "checkbox",
+                    "value": "日"
+                },
+                "buttonBottomText": {
+                    "text": "日"
+                }
+            }
+        },
+        "canWeekAll": {
+            "subHeadText": {
+                "text": "可能週"
+            },
+            "allWeekButton": {
+                "allWeekCheckbox": {
+                    "type": "checkbox"
+                },
+                "allCheckboxLabel": {
+                    "text": "全て可"
+                }
+            }
+        },
+        "monthOfWeek": {
+            "firstWeekCheck": {
+                "buttonBottom": {
+                    "name": "week",
+                    "value": "1週",
+                    "type": "checkbox"
+                },
+                "buttonBottomText": {
+                    "text": "1週"
+                }
+            },
+            "secondWeekCheck": {
+                "buttonBottom": {
+                    "name": "week",
+                    "value": "2週",
+                    "type": "checkbox"
+                },
+                "buttonBottomText": {
+                    "text": "2週"
+                }
+            },
+            "thirdWeekCheck": {
+                "buttonBottom": {
+                    "name": "week",
+                    "value": "3週",
+                    "type": "checkbox"
+                },
+                "buttonBottomText": {
+                    "text": "3週"
+                }
+            },
+            "fourthWeekCheck": {
+                "buttonBottom": {
+                    "name": "week",
+                    "value": "4週",
+                    "type": "checkbox"
+                },
+                "buttonBottomText": {
+                    "text": "4週"
+                }
+            }
+        }
+    },
+    "mailSubject": {
+        "type": "hidden",
+        "value": "3",
+        "name": "subject"
+    },
+    "memberInformation":{
+    	"personName":{
+    		"value":"",
+    		"name":"name",
+    		"type":"hidden"
+    	},
+    	"personNameKana":{
+    		"value":"",
+    		"name":"personNameKana",
+    		"type":"hidden"
+    	},
+    	"personEmail":{
+    		"value":"",
+    		"name":"email",
+    		"type":"hidden"
+    	},
+    	"personTel":{
+    		"value":"",
+    		"name":"personTel",
+    		"type":"hidden"
+    	}
+    },
+    "specialReservedConfirmDialog": {}
+}

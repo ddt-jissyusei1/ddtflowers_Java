@@ -1,0 +1,45 @@
+{
+    "pageTitle": {
+        "class": "pageTitle cf",
+        "image": {
+            "src": "image/icon(fish100).jpg"
+        },
+        "title": {
+            "text": "ギャラリー"
+        },
+        "summary": {
+            "text": ""
+        }
+    },
+    "gallery":{},
+    "galleryTable":{
+        "db_getQuery":"CALL getGalleryContents(@result); SELECT @result AS 'result';",
+        "config": {
+            "columns": {
+                "id":{
+                    "style":"display:none",
+                    "className":"id"
+                },
+                "myPhotoImage":{
+                    "className":"myPhotoImage"
+                },
+                "date":{
+                    "className":"myPhotoDate"
+                },
+                "myPhotoTitle":{
+                    "className":"myPhotoTitle"
+                },
+                "myPhotoUser": {
+                    "className":"myPhotoUser"
+                },
+                "myPhotoComment": {
+                    "className":"myPhotoComment"
+                },
+                "myPhotoPublication": {
+                      "style":"display:none",
+                    "className":"myPhotoPublication"
+                }
+            }
+        }
+    }
+}

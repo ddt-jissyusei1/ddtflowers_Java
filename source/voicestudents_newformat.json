@@ -1,0 +1,32 @@
+{
+    "blogArticle": {
+        "tableData": {
+            "0": {
+                "class": "blogArticle cf",
+                "blogArticleTitle": {
+                    "blogArticleTitleText": {
+                        "text": ""
+                    },
+                    "blogArticleDate": {
+                        "text": ""
+                    },
+                    "blogArticleUserName": {
+                        "text": "S.T"
+                    }
+                },
+                "blogArticleImages": {
+                    "blogArticleImage1": {
+                        "href": "photo/general/web/DSC_0894.jpg",
+                        "rel": "gallery",
+                        "photoImageThumb": {
+                            "src": "photo/general/web120/DSC_0894.jpg"
+                        }
+                    }
+                },
+                "blogArticleText": {
+                    "text": "フラワーアレンジメントは以前から大変興味がありましたが、仕事が忙しくレッスン時間に間に合わないのでいつも諦めていましたが、今回こちらのスクールでお仕事帰りに体験レッスンを受ける事が出来また実際のレッスン時間も仕事帰りでも楽々通う事が出きるので本当に嬉しいです。自分の部屋に可愛いアレンジメントを教えて頂けるので毎回レッスンが本当に楽しみです！"
+                }
+            }
+        }
+    }
+}

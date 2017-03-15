@@ -1,0 +1,108 @@
+{
+    "pageTitle": {
+        "class": "pageTitle cf",
+        "image": {
+            "src": "image/icon(accessbird).png"
+        },
+        "title": {
+            "text": "記事作成"
+        },
+        "summary": {
+            "text": ""
+        }
+    },
+    "blogEditImageUploader":{
+    	"class":"uploader blogEditImageUploader",
+    	"type":"file"
+    },
+    "blogEdit":{
+    	"name":"blogEdit",
+    	"method":"post",
+    	"action":",adminblogmanagement.html",
+    	"title":"ブログ記事編集",
+    	"value":"ブログ記事の編集を確定します。"
+    },
+    "blogEditTitle":{
+    	"blogEditTitleText":{
+    		"type":"text",
+    		"name":"blogTitle"
+    	}
+    },
+    "blogEditImages": {},
+    "blogEditImagesSection": {
+    	"class":"blogEditImagesSection cf",
+        "blogEditImagesSectionImage": {
+        
+        },
+        "blogEditImagesSectionAddButton": {
+        	"text":"選択",
+        	"onclick":"",
+        	"type":"button"
+        },
+        "blogblogEditImagesSectionImagePath":{
+        	"name":"imagePath",
+        	"type":"hidden",
+        	"value":""
+        },
+        "blogEditImagesSectionDeleteButton": {
+        	"text":"削除",
+        	"type":"button",
+        	"onclick":"chooseOKBeforeCallFunc('画像を削除しますか?','画像削除',deleteSiblingSrc,this,'.blogblogEditImagesSectionImagePath,.blogEditImagesSectionImage')"
+        }
+    },
+    "blogEditText": {
+    	"class":"blogEditText cf",
+        "blogEditTextarea": {}
+    },
+    "blogPublication":{
+    	"blogPublicationRadio1":{
+    		"class":"blogPublicationRadio",
+    		"type":"radio",
+    		"value":"0",
+    		"name":"blogPublication",
+    		"checked":""
+    	},
+    	"blogPublicationLabel1":{
+    		"class":"blogPublicationLabel",
+    		"text":"全体に公開"
+    	},
+    	"blogPublicationRadio2":{
+    		"class":"blogPublicationRadio",
+    		"type":"radio",
+    		"value":"1",
+    		"name":"blogPublication"
+    	},
+    	"blogPublicationLabel2":{
+    		"class":"blogPublicationLabel",
+    		"text":"友達のみ"
+    	},
+    	"blogPublicationRadio3":{
+    		"class":"blogPublicationRadio",
+    		"type":"radio",
+    		"value":"2",
+    		"name":"blogPublication"
+    		
+    	},
+    	"blogPublicationLabel3":{
+    		"class":"blogPublicationLabel",
+    		"text":"非公開"
+    	}
+    },
+    "blogEditButtons": {
+     	"class":"blogEditButtons cf",
+        "blogEditButtonsOKButton": {
+        	"class":"blogEditButtonsOKButton",
+        	"type":"submit",
+        	"text":"　 OK 　",
+            "confirm":"true",
+            "value":"保存"
+        },
+        "blogEditButtonsCancelButton": {
+        	"class":"blogEditButtonsCancelButton back",
+        	"text":"キャンセル",
+        	"href":"adminblogmanagement.html",
+        	"onclick":"",
+        	"type":"button"
+        }
+    }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- jqueryUIのcssを読み込む -->
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.min.css" media="screen" />
+<!-- jQuery本体 -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- jQueryUIを読み込む。 -->
+<script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="js/dialogEx.js"></script>
+<script type="text/javascript" src="js/createTag.js"></script>
+<script type="text/javascript" src="js/createDialog.js"></script>
+<script type="text/javascript" src="js/createLittleContent.js"></script>
+<script>
+//イベントを登録する
+$(document).ready(function(){
+	//ダイアログを呼ぶボタンをクリックしたら
+	$('#callDialog').click(function(){
+		//dialogExクラスのダイアログを作る
+		var dialog = new dialogEx('outhtmlscript.html');
+		dialog.run();	//ダイアログを表示する
+	});
+});
+</script>
+
+</head>
+<body>
+<button type="button" id="callDialog">ダイアログ</button>
+</body>
+</html>

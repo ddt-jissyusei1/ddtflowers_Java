@@ -1,0 +1,66 @@
+[
+    {
+        "start_date":"15/07/01 12:00",
+        "finish_time":"14:00",
+        "theme":"NFD",
+        "store_place":"新宿",
+        "rate":"10000円",
+        "point":"20pt"
+    },
+    {
+        "start_date":"15/07/02 12:00",
+        "finish_time": "14:00",
+        "theme": "生花",
+        "store_place": "新宿",
+        "rate":"8000円",
+        "point":"0pt"
+    },
+    {
+        "start_date":"15/07/02 18:00",
+        "finish_time": "20:00",
+        "theme": "プリザ",
+        "store_place": "新宿",
+        "rate":"3000円",
+        "point":"5pt"
+    },
+    {
+        "start_date":"15/07/10 12:00",
+        "finish_time": "14:00",
+        "theme": "NFD",
+        "store_place": "新宿",
+        "rate":"10000円",
+        "point":"12pt"
+    },
+    {
+        "start_date":"15/07/17 14:00",
+        "finish_time": "16:00",
+        "theme": "生花",
+        "store_place": "新宿",
+        "rate":"8000円",
+        "point":"8pt"
+    },
+    {
+        "start_date":"15/07/24 12:00",
+        "finish_time": "14:00",
+        "theme": "プリザ",
+        "store_place": "新宿",
+        "rate":"3000円",
+        "point":"3pt"
+    },
+    {
+        "start_date":"15/07/24 16:00",
+        "finish_time": "18:00",
+        "theme": "プリザ",
+        "store_place": "新宿",
+        "rate":"3000円",
+        "point":"2pt"
+    },
+    {
+        "start_date":"15/08/01 12:00",
+        "finish_time": "14:00",
+        "theme": "NFD",
+        "store_place": "新宿",
+        "rate":"10000円",
+        "point":"16pt"
+    }
+]

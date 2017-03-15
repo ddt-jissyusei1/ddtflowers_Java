@@ -1,0 +1,14 @@
+{
+	"email":{
+            "value": "sample@ddt.com"
+    },
+    "adminBlogTitle": {
+            "value": "管理者ブログ"
+    },
+    "allowMidnightMail": {
+            "value": "allow"
+    },
+    "recieveMailType": {
+    	"value":["alert","claim"]
+    }
+}

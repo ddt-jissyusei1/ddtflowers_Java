@@ -1,0 +1,226 @@
+{
+    "managementList": {
+        "class": "managementList",
+        "action": "createcampaign.html",
+        "method": "get",
+        "table": {}
+    },
+    "searchButtonSet": {
+        "executeSearch": {
+            "type": "submit",
+            "value": "検索"
+        }
+    },
+    "titleSearch": {
+        "articleSearchLabel": {
+            "text": "キャンペーン名"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "titleSearch"
+        }
+    },
+    "typeSearch": {
+        "articleSearchLabel": {
+            "text": "種別"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "typeSearch"
+        }
+    },
+    "startDateSearch": {
+        "articleSearchLabel": {
+            "text": "開始日"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "startDateSearch",
+            "class": "articleSearchTextBox calendar"
+        }
+    },
+    "endDateSearch": {
+        "articleSearchLabel": {
+            "text": "終了日"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "endDateSearch",
+            "class": "articleSearchTextBox calendar"
+        }
+    },
+    "campaignListHeadWrap": {
+        "class": "recordWrapper",
+        "campaignListHead": {
+            "class": "campaignListHead tableHead",
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "numberHead": {},
+            "titleHead": {
+                "text": "キャンペーン名"
+            },
+            "typeHead": {
+                "text": "種別"
+            },
+            "priceHead": {
+                "text": "金額"
+            },
+            "maxEntryHead": {
+                "text": "人数"
+            },
+            "startDateHead": {
+                "text": "開始日"
+            },
+            "endDateHead": {
+                "text": "終了日"
+            }
+        }
+    },
+    "listEditButtons": {
+        "createNew": {
+            "type": "submit",
+            "data-role": "0",
+            "value": "作成"
+        },
+        "edit": {
+            "type": "submit",
+            "data-role": "1",
+            "value": "編集"
+        },
+        "delete": {
+            "class": " deleteRecord delete",
+            "text": "削除",
+            "type": "button"
+        },
+        "hidden": {
+            "class": "valueHolder hidden",
+            "type": "hidden",
+            "value": "",
+            "name": "command"
+        }
+    },
+    "managementForm": {
+        "data-role": "5",
+        "action": "createcampaign.html",
+        "method": "post"
+    },
+    "editCampaign": {
+        "name": "editCampaign",
+        "method": "post",
+        "action": ",campaignmanagement.html",
+        "value": "キャンペーンの編集を確定します。",
+        "title": "キャンペーン編集"
+    },
+    "campaignTitle": {
+        "campaignLabel": {
+            "text": "キャンペーン名"
+        },
+        "campaignTitleTextBox": {
+            "type": "text",
+            "name": "campaignTitle",
+            "value": ""
+        }
+    },
+    "campaignType": {
+        "campaignLabel": {
+            "text": "種別"
+        },
+        "campaignTypeTextBox": {
+            "type": "text",
+            "name": "campaignType",
+            "value": ""
+        }
+    },
+    "campaignCopy": {
+        "campaignLabel": {
+            "text": "コピー"
+        },
+        "campaignCopyTextBox": {
+            "type": "text",
+            "name": "campaignCopy",
+            "value": ""
+        }
+    },
+    "campaignContent": {
+        "campaignLabel": {
+            "text": "内容"
+        },
+        "campaignContentTextArea": {
+            "name": "campaignContent",
+            "value": "",
+            "rows": "5"
+        }
+    },
+    "campaignPrice": {
+        "campaignLabel": {
+            "text": "金額"
+        },
+        "campaignPriceTextBox": {
+            "type": "number",
+            "name": "campaignPrice",
+            "value": "",
+            "step": "100"
+        },
+        "campaignLabelInline": {
+            "text": "円"
+        }
+    },
+    "campaignDates": {
+        "campaignStartDate": {
+            "campaignLabelInline1": {
+                "class": "campaignLabelInline",
+                "text": "開始日"
+            },
+            "campaignStartDateTextBox": {
+                "type": "date",
+                "name": "startDate",
+                "value": ""
+            }
+        },
+        "campaignEndDate": {
+            "campaignLabelInline2": {
+                "class": "campaignLabelInline",
+                "text": "終了日"
+            },
+            "campaignEndDateTextBox": {
+                "type": "date",
+                "name": "endDate",
+                "value": ""
+            }
+        }
+    },
+    "campaignMaxEntry": {
+        "campaignLabel": {
+            "text": "上限人数"
+        },
+        "campaignMaxEntryTextBox": {
+            "type": "number",
+            "name": "maxEntry",
+            "value": "8"
+        },
+        "campaignLabelInline": {
+            "text": "人"
+        }
+    },
+    "confirmEditCampaign": {
+        "confirmEditCampaignButton": {
+            "text": "確定",
+            "onclick": "",
+            "type": "submit",
+            "confirm": "true",
+            "value": "保存"
+        },
+        "cancelEditCampaignButton": {
+            "text": "戻る",
+            "href": "campaignmanagement.html"
+        }
+    },
+    "contentSearch": {
+        "data-role": "5",
+        "method": "post",
+        "data-target": "campaignListContent"
+    }
+}

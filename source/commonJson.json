@@ -1,0 +1,359 @@
+{
+    "guides": {
+        "guideFASchool": {
+            "toppageLink": {
+                "href": "#top.php",
+                "flowerIcon": {
+                    "src": "image/icon(logo50).png"
+                },
+                "sideText": [
+                    "フラワー",
+                    "アレンジメント",
+                    "スクール"
+                ]
+            }
+        },
+        "guideTel": {
+            "telIcon": {
+                "src": "image/icon(tell).png"
+            },
+            "p1": {
+                "text": "お問い合せ"
+            },
+            "p2": {
+                "telLink":{
+                    "href":"tel:0364131225",
+                    "text": "03-6413-1225"
+                }
+            },
+            "p3": {
+                "text": "(対応時間 11:00 〜 20:00)"
+            }
+        },
+        "guideMail": {
+            "contactLink": {
+                "href": "#contact.html",
+                "mailIcon": {
+                    "src": "image/icon(mail).png"
+                }
+            }
+        },
+        "guideAccess": {
+            "accessLink": {
+                "href": "#access.html",
+                "accessIcon": {
+                    "src": "image/icon(accessl).png"
+                }
+            }
+        },
+        "guideTrial": {
+            "experienceLink": {
+                "href": "#experience.html",
+                "experienceIcon": {
+                    "src": "image/icon(experience).png"
+                }
+            }
+        },
+        "guideBlog": {
+            "guideBlogLink": {
+                "href": "#blog.html",
+                "guideBlogIcon": {
+                    "src": "image/icon(blog).png"
+                }
+            }
+        },
+        "guideSns": {
+            "facebookLink": {
+                "href": "https://www.facebook.com/pages/DDT-Flowers/420501208043272?sk=timeline&ref=page_internal",
+                "target":"_blank",
+                "facebook": {
+                    "src": "image/icon(facebook).png"
+                }
+            },
+            "twitterLink": {
+                "href": "https://twitter.com/ddtflowers",
+                "target":"_blank",
+                "twitter": {
+                    "src": "image/icon(titter22).png"
+                }
+            }
+        },
+        "guideLogin":{
+            "login":{
+                "src":"image/icon(login22-50).png"
+            }
+        }
+    },
+    "topMenu": {
+        "preservedButton": {
+            "preservedLink": {
+                "href": "#preserved.html",
+                "title": "プリザーブドフラワー",
+                "preservedText": {
+                    "text": "プリザ"
+                }
+            }
+        },
+        "freshButton": {
+            "freshLink": {
+                "href": "#fresh.html",
+                "title": "フレッシュフラワー",
+                "freshText": {
+                    "text": "生花"
+                }
+            }
+        },
+        "nfdButton": {
+            "nfdLink": {
+                "href": "#nfd.html",
+                "title": "NFD資格取得",
+                "nfdText": {
+                    "text": "NFD"
+                }
+            }
+        },
+        "nationalButton": {
+            "nationalLink": {
+                "href": "#national.html",
+                "title": "国家認定資格取得",
+                "nationalText": {
+                    "text": "国家資格"
+                }
+            }
+        },
+        "bridalButton": {
+            "bridalLink": {
+                "href": "#bridal.html",
+                "title": "",
+                "bridalText": {
+                    "text": "ブライダル"
+                }
+            }
+        },
+        "franchiseButton": {
+            "franchiseLink": {
+                "href": "#franchise.html",
+                "title": "フランチャイズ",
+                "franchiseText": {
+                    "text": "FC"
+                }
+            }
+        },
+        "galleryButton": {
+            "galleryLink": {
+                "href": "#gallery.html",
+                "title": "",
+                "galleryText": {
+                    "text": "ギャラリー"
+                }
+            }
+        },
+        "voiceButton": {
+            "voiceLink": {
+                "href": "#voice.html",
+                "title": "",
+                "voiceText": {
+                    "text": "生徒さんの声"
+                }
+            }
+        }
+    },
+    "headImage": {
+        "flowerImage": {
+            "src": "image/main(header800).png"
+        }
+    },
+    "footImage": {
+        "flowerImage": {
+            "src": "image/main(footer800).png"
+        }
+    },
+    "lessonSchedule": {
+        "class": "lessonSchedule guideTable",
+        "summary": {
+            "text": "レッスンスケジュール"
+        },
+        "week": {
+            "class": "guideHead",
+            "createLabelTextBox": {
+                "text": "月曜日～日曜日"
+            }
+        },
+        "firstPeriod": {
+            "period": {
+                "text": "1時限目"
+            },
+            "hour": {
+                "text": "11:00 ～ 13:00"
+            }
+        },
+        "secondPeriod": {
+            "period": {
+                "text": "2時限目"
+            },
+            "hour": {
+                "text": "14:00 ～ 16:00"
+            }
+        },
+        "thirdPeriod": {
+            "period": {
+                "text": "3時限目"
+            },
+            "hour": {
+                "text": "16:30 ～ 18:30"
+            }
+        },
+        "fourthPeriod": {
+            "period": {
+                "text": "4時限目"
+            },
+            "hour": {
+                "text": "19:00 ～ 21:00"
+            }
+        },
+        "fourthHalfPeriod": {
+            "period": {
+                "text": "4.5時限目"
+            },
+            "hour": {
+                "text": "19:30 ～ 21:30"
+            }
+        }
+    },
+    "commonText": {
+        "listTitle": {
+            "text": "共通"
+        },
+        "listContent": [
+            "月何回でも受講可能です。",
+            "１カ月に２回以上ご来校の場合、受講料を１０００円オフします。",
+            "１カ月に４回以上ご来校の場合、受講料を１０００円とします。",
+            "プリザ生花コース修了後、本校認定のディプロマを発行します。",
+            "NFD、国家資格取得コースの花材費は別途となります。",
+            "異なるコースから生花、プリザへのスポット受講が可能です。"
+        ]
+    },
+    "salesPoint": {
+        "listTitle": {
+            "text": "特徴"
+        },
+        "listContent": [
+            "インターネット対応のレッスン予約システムを無料にて提供します。",
+            "花材はマージンなし、配送料のみにて準備します。",
+            "受講料のロイヤリティーは５％。",
+            "年間ロイヤリティーは５万円。",
+            "他フランチャイズ店の生徒さんもレッスン可能です。登録店へのロイヤリティー３５％が発生します。",
+            "本校、他コース（プリザ、生花、NFD、国家）の受講が半額で受けられます。もちろん資格取得可能です。"
+        ]
+    },
+    "memberRule": {
+        "class": "itemList memberRule",
+        "listTitle": {
+            "text": "会員規約"
+        },
+        "listContent": [
+            "お支払い：都度払い前金制です。現金により次回分を事前にお支払い頂きます。",
+            "ご予約：予約指定日のプリザは２日前まで、生花は３日前までにインターネットもしくは電話によりご予約出来ます。",
+            "キャンセル：ご予約日のプリザは２日、生花は４日以上前までにキャンセル可能です。",
+            "振替え：上記、予約、キャンセル規定に沿い振替え自由です。",
+            "前金：最終受講日から３か月間受講がなかった場合、経過日から１カ月毎に５００円を前金から引かせて頂きます。",
+            "退会：随時、退会可能です。退会時、前金の残金は返金されます。",
+            "NFDおよび国家は生花に含みます。"
+        ]
+    },
+    "merit": {
+        "contentsTitleBack": {
+            "contentsTitle": {
+                "contentsImgLeft": {
+                    "src": "image/icon(smilebird).png"
+                },
+                "contentsTitleText": {
+                    "text": "ご入会メリット"
+                },
+                "contentsImgRight": {
+                    "src": "image/icon(clearfacebird).png"
+                }
+            }
+        },
+        "meritToExperience": {
+            "href": "#experience.html",
+            "meritImgToExperience": {
+                "src": "image/icon(merittoexperience).png"
+            }
+        },
+        "contentsBorder1": {
+            "text": "年会費&入会金無料!安心の受講料 都度払い"
+        },
+        "contentsBorderInText1": {
+            "text": "次のレッスン代を先に支払う都度払い前金制、退会時、前金は返金されます。いつでも退会可能、制約はございません。"
+        },
+        "contentsBorder2": {
+            "text": "レッスン代はリーズナブル。 でも使う花の量はめちゃめちゃ多い!"
+        },
+        "contentsBorderInText2": {
+            "text": "レッスン後の満足度が違います。本校の花材は利益ゼロ、卸値のまま提供しているから平均他店の2~3倍の花材が使えます。"
+        },
+        "contentsBorder3": {
+            "text": "インターネットでらくらく予約。 うっかり防止にメールによる前日予約通知機能もあり!"
+        },
+        "contentsBorderInText3": {
+            "text": "いつでも、どこからでも携帯電話、パソコンから予約・変更ができるから便利で安心です!"
+        },
+        "contentsBorder4": {
+            "text": "各コース修了後 , 有名花材店提携カードを発行。 定価の 50% ~ 61%off で購入可能!"
+        },
+        "contentsBorderInText4": {
+            "text": "なんと!業界のプロから一般の花好きの方まで御用達、有名花材店の商品を 50%~ 61%off で購入できる♪"
+        },
+        "contentsBorder5": {
+            "text": "会員カードでポイントをどんどん貯めよう"
+        },
+        "contentsBorderInText5": {
+            "text": "レッスン代に 1%~4%ポイント付加、スクール内で使えるから無駄なくお得!"
+        },
+        "contentsBorder6": {
+            "text": "コーヒー&お菓子&手作りパンを無料提供♪"
+        },
+        "contentsBorderInText6": {
+            "text": "受講後の寛ぎのひと時に&仕事帰りでも安心♪おいしいコーヒー&お菓子&“ほかほか”の手作りパンをお召上がりください。"
+        }
+    },
+    "footer": {
+        "copyright": {
+            "text": "CopyRight © 2015 Digital Design Think Corporation All Rights Reserved."
+        }
+    },
+    "calendar": {},
+    "photoGallery": {
+        "class": "description contentsTitleBack",
+        "contentsTitle": {
+            "contentsImgLeftL": {
+                "src": "image/icon(bluesmallbird).png"
+            },
+            "contentsTitleText": {
+                "text": "Photo Gallery"
+            },
+            "contentsImgRight": {
+                "src": "image/icon(redbird).png"
+            },
+            "contentsImgRightR": {
+                "src": "image/icon(redsunflower).png"
+            }
+        }
+    },
+    "textEditPopup": {
+        "textEditPopupBody": {
+            "id": "textEditPopupBody",
+            "textEditNotice": {
+                "text": "テキストを編集します。"
+            },
+            "textEdit": {}
+        }
+    },
+    "numberingOuter": {},
+    "funcConfirmDialog": {},
+    "managementList": {
+        "class": "managementList",
+        "table": {}
+    }
+}

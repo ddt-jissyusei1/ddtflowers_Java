@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/管理者画面</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<script>
+				creator.getJsonFile('source/admin.json');				// 管理者画面のJSONを取得する。
+				//管理者ブログ管理のJSONを読み込む。
+				creator.getJsonFile('source/studentmanagement.json');
+				creator.getJsonFile('source/studentlist.json');
+			
+				// 生徒さんの登録情報一覧を作る。
+				creator.outputTag('contentSearch', 'contentSearch', '#studentManagement');
+				//会員番号検索を作る。
+				creator.outputTag('memberIdSearch', 'articleSearch', '#studentManagement .contentSearch');
+				//氏名検索を作る。
+				creator.outputTag('nameSearch', 'articleSearch', '#studentManagement .contentSearch');
+				//氏名(カナ)検索を作る。
+				creator.outputTag('nameKanaSearch', 'articleSearch', '#studentManagement .contentSearch');
+				//メールアドレスでの検索ボックスを作る。
+				creator.outputTag('emailSearch', 'articleSearch', '#studentManagement .contentSearch');
+				//電話番号での検索ボックスを作る。
+				creator.outputTag('telSearch', 'articleSearch', '#studentManagement .contentSearch');
+				//電話番号での検索ボックスを作る。
+				creator.outputTag('addressSearch', 'articleSearch', '#studentManagement .contentSearch');
+				//ボタン領域を作る。
+				creator.outputTag('searchButtonSet', 'searchButtonSet', '#studentManagement .contentSearch');
+				//表形式のリストの外枠を作る。
+				creator.outputTag('managementForm', 'managementForm', '#studentManagement');
+				creator.outputTag('managementList', 'managementList', '#studentManagement .managementForm');
+				//一覧の見出しを作る。
+				creator.outputTag('studentListHeadWrap', 'studentListHeadWrap', '#studentManagement .table > thead');
+				unwrapTable('.studentListHead');
+				
+				creator.outputTag('numberingOuter','numberingOuter','#studentManagement .managementForm');				//ナンバリング領域を作る
+				//ナンバリングとともにレコードを書き出す。
+				creator.outputNumberingTag('studentListContentWrap', init.listSetting.startPage, 
+						init.listSetting.displayPageMax, init.listSetting.displayPage, init.listSetting.pageNum,
+						'#studentManagement .table > tbody');
+				
+				//編集ボタン群を作る。
+				creator.outputTag('listEditButtons', 'listEditButtons', '#studentManagement .managementForm');
+				$('#studentManagement input:submit, #studentManagement button').button();	//ボタンをリッチなものにする。	
+				//日付入力テキストボックスをクリックするとカレンダーが出る様にする。
+				setCallCalendar('.tabPanel.active input.calendar');
+				sendButtonRole($('#studentManagement .managementForm'));	//押されたsubmitボタンを検出する関数。
+				//submitイベントを登録する。
+				$('#studentManagement .managementForm').validate(articleSubmitHandler);
+				$('#studentManagement .contentSearch').validate(listSearchSubmitHandler);
+				deleteRowData('#studentManagement .managementForm');	//行の削除イベントを登録する。
+			</script>
+		</div>
+	</div>
+</body>
+</html>

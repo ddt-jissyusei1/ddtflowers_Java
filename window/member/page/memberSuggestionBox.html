@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<script>
+				//ログインチェックして、NGであれば例外処理でログインダイアログを出すためのtry-catch
+				try{
+					//カレントのウィンドウのDOMを取得する
+					var $currentWindow = $(CURRENT_WINDOW);
+					//カレントのウィンドウのコンテンツ領域を取得する
+					var $currentContent = $(CURRENT_WINDOW_MAIN)
+
+					// dom要素を作るクラスをインスタンス化する
+					var create_tag = new createLittleContents();
+					
+					//当ページ用JSファイルを読み込む
+					commonFuncs.getScriptFile('js/page/memberSuggestionBox.js');
+					// 共通のパーツのJSONを取得する。
+					create_tag.getJsonFile('source/memberCommon.json');
+					// パスワード変更画面のjsonを読み込む
+					create_tag.getJsonFile('source/memberSuggestionBox.json');
+					
+					//accountHeaderから会員IDを取得する。別ユーザログインしていた場合はcookieからIDを取得する
+					var memberInfo = commonFuncs.checkEmpty(commonFuncs.GetCookies().otherUserId) ?  commonFuncs.GetCookies().otherUserId: create_tag.json.accountHeader.user_key.value;
+					create_tag.json.accountHeader.user_key.value = memberInfo;	//取得したIDをaccountHeaderに反映する
+					
+					//ユーザ情報のテキストをDBから取得する
+					create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['accountHeader'], 'accountHeader');
+	
+					// パーツのテンプレートのDOMを取得する。
+					create_tag.getDomFile('template/common.html');
+					//目安箱のテンプレートはmemberCommon.htmlに記述
+					// パーツのテンプレートのDOMを取得する。
+					create_tag.getDomFile('template/memberCommon.html');
+					// 会員ページヘッダーを作る
+					create_tag.outputTag('accountHeader', 'memberHeader', $currentContent);
+					// バナー領域を作る
+					create_tag.outputTag('userBanner', 'userBanner', $currentContent);
+					// お問い合わせ内容領域外側領域を作る
+					create_tag.outputTag('suggestionArea', 'insertForm', $currentContent);
+	
+					//目安箱の店舗セレクトボックスを作る
+					create_tag.outputTag('schoolNameSelectArea', 'schoolNameSelectArea', '.suggestionArea');
+					//目安箱の種別セレクトボックスを作る
+					create_tag.outputTag('suggestionTypeSelectArea', 'suggestionTypeSelectArea', '.suggestionArea');
+					//目安箱のタイトル領域を作る
+					create_tag.outputTag('labelTextboxArea', 'labelTextboxArea', '.suggestionArea');
+	
+					// お問い合わせ内容を入力する領域を作る
+					create_tag.outputTag('textareaLabel', 'textareaLabel', '.suggestionArea');
+					//目安箱か通常のメールかを決めるラジオボタンを作る
+					create_tag.outputTag('radioArea', 'radioArea', '.suggestionArea');
+					// 入力した内容を送信するボタンの領域を作る
+					create_tag.outputTag('buttonArea', 'buttonArea', '.suggestionArea');
+					commonFuncs.putCommonButton('.mailButtonArea', 'button2 fRight', 'reset', true, true, true, {"type" : "reset"}, false);
+					commonFuncs.putCommonButton('.mailButtonArea', 'button1 fRight', 'send', true, true, true, {}, false);
+					
+					//目安箱の送信ボタンを押したときのイベントコールバックを作成する
+					setSuggestionBoxSendEvent('.button1', '.labelTextbox[name="suggest_title"]', '.suggestion[name="suggest_content"]');
+					
+					addlogoutEvent('.logoutLink');	//ログアウトボタンのイベントを登録する。
+				} catch(e) {
+					console.log(e);
+				}
+			</script>
+		</div>
+	</div>
+</body>
+</html>

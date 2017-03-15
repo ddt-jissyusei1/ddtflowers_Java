@@ -1,0 +1,190 @@
+{
+    "pageTitle": {
+        "class": "pageTitle cf",
+        "image": {
+            "src": "image/icon(waterdrop100).png"
+        },
+        "title": {
+            "text": "管理者画面"
+        },
+        "summary": {
+            "text": ""
+        }
+    },
+    "adminTabs": {
+        "class": "adminTabs tabs",
+        "optionButton": {
+            "class": "optionButton tab",
+            "optionLink": {
+                "text": "オプション",
+                "data-target": "#options",
+                "href": "option.html .main"
+            }
+        },
+        "customizeButton": {
+            "class": "customizeButton tab",
+            "customizeLink": {
+                "text": "カスタマイズ",
+                "data-target": "#customize",
+                "href": "customize.html .main"
+            }
+        },
+        "adminBlogButton": {
+            "class": "adminBlogButton tab",
+            "adminBlogLink": {
+                "text": "管理者ブログ",
+                "data-target": "#adminBlogManagement",
+                "href": "adminblogmanagement.html .main"
+            }
+        },
+        "campaignButton": {
+            "class": "campaignButton tab",
+            "campaignLink": {
+                "text": "キャンペーン管理",
+                "data-target": "#campaignManagement",
+                "href": "campaignmanagement.html .main"
+            }
+        },
+        "studentButton": {
+            "class": "studentButton tab",
+            "studentLink": {
+                "text": "生徒さん登録・編集",
+                "data-target": "#studentManagement",
+                "href": "studentmanagement.html .main"
+            }
+        },
+        "reservedLessonButton": {
+            "class": "reservedLessonButton tab",
+            "reservedLessonLink": {
+                "text": "レッスン予約",
+                "data-target": "#reservedLessonManagement",
+                "href": "reservedlessonmanagement.html .main"
+            }
+        }
+    },
+    "adminPanels": {
+        "class": "panelContainer",
+        "options": {
+            "class": "options tabPanel",
+            "id": "options"
+        },
+        "customize": {
+            "class": "customize tabPanel",
+            "id": "customize"
+        },
+        "adminBlogManagement": {
+            "class": "adminBlogManagement tabPanel",
+            "id": "adminBlogManagement"
+        },
+        "campaignManagement": {
+            "class": "campaignManagement tabPanel",
+            "id": "campaignManagement"
+        },
+        "studentManagement": {
+            "class": "studentManagement tabPanel",
+            "id": "studentManagement"
+        },
+        "reservedLessonManagement": {
+            "class": "reservedLessonManagement tabPanel",
+            "id": "reservedLessonManagement"
+        }
+    },
+    "optionsConfirmChange": {
+        "optionsConfirmChangeButton": {
+            "text": "更新",
+            "type": "submit"
+        }
+    },
+    "optionsMyMail": {
+        "optionsLabel": {
+            "text": "あなたのメールアドレス"
+        },
+        "optionsMyEmailForm": {
+            "type": "email",
+            "name": "myEmail",
+            "onkeyDown": "return controllInputChar(event);",
+            "style": "ime-mode:disabled"
+        }
+    },
+    "optionsAdminBlogTitle": {
+        "optionsLabel": {
+            "text": "管理者ブログタイトル"
+        },
+        "optionsAdminBlogTitleForm": {
+            "type": "text",
+            "name": "adminBlogTitle"
+        }
+    },
+    "optionsAllowMidnightMail": {
+        "optionsLabel": {
+            "text": "深夜のメール受信を許可する"
+        },
+        "optionsAllowMidnightMailRadioForbidden": {
+            "class": "optionsAllowMidnightMailRadioforbidden",
+            "type": "radio",
+            "name": "allowMidnightMail",
+            "value": "forbidden"
+        },
+        "optionsLabelInline1": {
+            "class": "optionsLabelInline",
+            "text": "許可しない"
+        },
+        "optionsAllowMidnightMailRadioAllow": {
+            "class": "optionsAllowMidnightMailRadioAllow",
+            "type": "radio",
+            "name": "allowMidnightMail",
+            "value": "allow"
+        },
+        "optionsLabelInline2": {
+            "class": "optionsLabelInline",
+            "text": "許可する"
+        }
+    },
+    "optionsRecieveMailType": {
+        "optionsLabel": {
+            "text": "受信するメールの種類"
+        },
+        "optionsRecieveMailTypeCheck1": {
+            "class": "optionsRecieveMailTypeCheck",
+            "type": "checkbox",
+            "name": "recieveMailType",
+            "value": "alert"
+        },
+        "optionsLabelInline1": {
+            "text": "緊急"
+        },
+        "optionsRecieveMailTypeCheck2": {
+            "class": "optionsRecieveMailTypeCheck",
+            "type": "checkbox",
+            "name": "recieveMailType",
+            "value": "rest"
+        },
+        "optionsLabelInline2": {
+            "text": "休講"
+        },
+        "optionsRecieveMailTypeCheck3": {
+            "class": "optionsRecieveMailTypeCheck",
+            "type": "checkbox",
+            "name": "recieveMailType",
+            "value": "claim"
+        },
+        "optionsLabelInline3": {
+            "text": "クレーム"
+        }
+    },
+    "contentSearch": {
+        "class": "contentSearch cf"
+    },
+    "contentManagement": {
+        "class": "tabContainer contentManagement"
+    },
+    "managementList": {
+        "class": "managementList",
+        "table": {}
+    },
+    "optionForm": {
+        "action": "",
+        "method":"post"
+    },
+    "numberingOuter": {}
+}

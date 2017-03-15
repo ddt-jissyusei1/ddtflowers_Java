@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/個人設定</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- MyページのCSSファイルを読み込む。 -->
+			<link href="css/mypage.css" rel="stylesheet" type="text/css">
+			<!-- jqueryUIのcssを読み込む -->
+			<link type="text/css" href="css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+			<script>
+				creator.getJsonFile('source/myoption.json');		// 個人設定ページのJSONを取得する。
+				creator.getJsonFile('source/myoptionsetting.json');	// 個人設定のJSONを取得する。
+				creator.getJsonFile('source/commonJson.json');		// 各ページ共通のパーツのJSONデータを取得する。
+				// HTMLのテンプレートデータをを取得する。
+				creator.getDomFile('template/common.html');
+				creator.getDomFile('template/mypage.html');
+				
+				creator.outputTag('headImage', 'createImage');		// 天の画像を作る
+				creator.outputTag('pageTitle');						// タイトル領域を作る
+		
+			// 設定変更のコンテンツを作る。
+				creator.outputTag('optionForm');
+				creator.outputTag('myOptionButtons', 'myOptionButtons', '.optionForm');
+				creator.outputTag('myOptionNickname', 'myOptionText', '.optionForm');
+				creator.outputTag('myOptionMail', 'myOptionTextConfirm', '.optionForm');
+				creator.outputTag('myOptionPassword', 'myOptionTextConfirm', '.optionForm');
+//				creator.outputTag('myOptionMail', 'myOptionText', '.optionForm');
+//				creator.outputTag('myOptionPassword', 'myOptionText', '.optionForm');
+				creator.outputTag('myOptionTel', 'myOptionText', '.optionForm');
+				creator.outputTag('myOptionAddress', 'myOptionText', '.optionForm');
+				creator.outputTag('myOptionBlogTitle', 'myOptionText', '.optionForm');
+				creator.outputTag('myOptionBlogPublication', 'myOptionRadio', '.optionForm');
+
+				creator.outputTag('footImage', 'createImage');		// 地の画像を作る
+				creator.outputTag('footer');						// フッターを作る
+				
+				loadValue(creator.json);	//セーブ済みの設定を反映する。
+				$('input[name="emailOld"]').attr('readonly','readonly');	//現在のメールアドレスはいじれないようにする。
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				// fixYCoordinate('header', '.main');
+				// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header')
+
+				$('.myOptionButtons button').button();	//ボタンをリッチなものにする。
+				
+				//フォームの入力値チェックを行う。
+				$('.optionForm').validate(optionSubmitHandler);
+			</script>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<title>DDTFlowers</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- お問い合わせページのCSSファイルを読み込む。 -->
+			<link href="css/contact.css" rel="stylesheet" type="text/css" />
+			
+			<blockquote class="confirmSendMail">
+				<strong class="ttl">お問い合わせフォーム &gt; エラー</strong>
+				<ul>
+					<li class="msg">前画面に戻って正しく入力してください。</li>
+				</ul>
+				<table class="form">
+				
+				<!-- cell_begin -->
+				<tr>
+				  <th>!key!</th>
+				  <td>!val!</td>
+				</tr>
+				<!-- cell_end -->
+				
+				</table>
+				<br />
+				<form action="postmail.cgi" method="post">
+					<!-- hidden -->
+					<input type="button" value="戻る" onclick="" class="button confBackButton" />
+				</form>
+			</blockquote>
+			<script>
+			
+			creator = new createTag();
+			
+			creator.getJsonFile('source/commonJson.json');	// ファイルのデータをjsonを用いて持ってくる
+			//ページ内呼び出しでなければ
+			if(creator.dom == ''){
+				creator.getDomFile('template/common.html');				// ファイルのhtmlデータをdomを用いて持ってくる
+			}
+			creator.outputTag('headImage', 'createImage');			// 天の画像を作る
+			creator.outputTag('footImage', 'createImage');			// 地の画像を作る
+			creator.outputTag('footer');							// フッターを作る
+			$('.createImage').eq(0).after($('.confirmSendMail'));	//headImageの後に入力確認テーブルを移動する。
+			// トップメニューにマウスオーバーのフィルターを配置する。
+				functionFilter('.topMenu li');
+			// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				fixYCoordinate('header', '.main');
+			// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header')
+			//ボタンをjQueryのボタンにする。
+			$('.button').button();
+			</script>
+		</div>
+	</div>
+</body>
+</html>

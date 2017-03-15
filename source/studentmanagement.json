@@ -1,0 +1,812 @@
+{
+    "searchButtonSet": {
+        "executeSearch": {
+            "text": "検索",
+            "type": "submit",
+            "value": "検索"
+        }
+    },
+    "memberIdSearch": {
+        "articleSearchLabel": {
+            "text": "会員番号"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "memberIdSearch"
+        }
+    },
+    "nameSearch": {
+        "articleSearchLabel": {
+            "text": "氏名"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "nameSearch"
+        }
+    },
+    "nameKanaSearch": {
+        "articleSearchLabel": {
+            "text": "氏名(カナ)"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "nameKanaSearch"
+        }
+    },
+    "emailSearch": {
+        "articleSearchLabel": {
+            "text": "メールアドレス"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "emailSearch"
+        }
+    },
+    "telSearch": {
+        "articleSearchLabel": {
+            "text": "電話番号"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "telSearch"
+        }
+    },
+    "addressSearch": {
+        "articleSearchLabel": {
+            "text": "住所"
+        },
+        "articleSearchTextBox": {
+            "type": "text",
+            "name": "addressSearch"
+        }
+    },
+    "studentListHeadWrap": {
+        "class": "recordWrapper",
+        "studentListHead": {
+            "class": "studentListHead tableHead",
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "memberIdHead": {
+                "text": "会員番号"
+            },
+            "nameHead": {
+                "text": "氏名"
+            },
+            "emailHead": {
+                "text": "メールアドレス"
+            },
+            "telHead": {
+                "text": "電話番号"
+            }
+        }
+    },
+    "listEditButtons": {
+        "createNew": {
+            "type": "submit",
+            "data-role": "0",
+            "value": "作成"
+        },
+        "edit": {
+            "type": "submit",
+            "data-role": "1",
+            "value": "編集"
+        },
+        "delete": {
+        	"class":" deleteRecord delete",
+            "text": "削除",
+            "type": "button"
+        },
+        "hidden": {
+            "class": "valueHolder hidden",
+            "type": "hidden",
+            "value": "",
+            "name": "command"
+        }
+    },
+    "managementForm": {
+        "data-role": "6",
+        "action": "studentregistration.html",
+        "method": "get"
+    },
+    "editStudent": {
+        "action": "confirmregist.html",
+        "value": "個人情報の送信確認画面に移動します。",
+        "title": "情報入力",
+        "formBody": {
+            "class": "formBody cf",
+            "name": {
+                "formContent": {
+                    "text": "氏名"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "Name"
+                }
+            },
+            "nameTextBox": {
+                "textBox": {
+                    "type": "text",
+                    "name": "name",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "nameKana": {
+                "formContent": {
+                    "text": "氏名(カナ)"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": ""
+                }
+            },
+            "nameKanaTextBox": {
+                "textBox": {
+                    "type": "text",
+                    "name": "nameKana",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "userId": {
+                "formContent": {
+                    "text": "ユーザID"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "UserID"
+                }
+            },
+            "userIdTextBox": {
+                "textBox": {
+                    "type": "text",
+                    "name": "userId",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "nickname": {
+                "formContent": {
+                    "text": "ニックネーム"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "Nickname"
+                }
+            },
+            "nicknameTextBox": {
+                "textBox": {
+                    "type": "text",
+                    "name": "nickname",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "password": {
+                "formContent": {
+                    "text": "パスワード"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "Password"
+                }
+            },
+            "passwordTextBox": {
+                "textBox": {
+                    "type": "password",
+                    "name": "password",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "passwordConfirm": {
+                "formContent": {
+                    "text": "パスワード(確認)"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": ""
+                }
+            },
+            "passwordConfirmTextBox": {
+                "textBox": {
+                    "type": "password",
+                    "name": "passwordConfirm",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "sex": {
+                "formContent": {
+                    "text": "性別"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "Sex"
+                }
+            },
+            "sexRadioButton": {
+                "sexRadioButtonFemale": {
+                    "type": "radio",
+                    "name": "sex",
+                    "value": "女"
+                },
+                "sexRadioButtonFemaleLabel": {
+                    "text": "女"
+                },
+                "sexRadioButtonMale": {
+                    "type": "radio",
+                    "name": "sex",
+                    "value": "男"
+                },
+                "sexRadioButtonMaleLabel": {
+                    "text": "男"
+                }
+            },
+            "email": {
+                "formContent": {
+                    "text": "メールアドレス"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "E-mail"
+                }
+            },
+            "emailTextBox": {
+                "textBox": {
+                    "type": "email",
+                    "name": "email",
+                    "size": "60",
+                    "required": "",
+                    "onkeyDown": "return controllInputChar(event);"
+                }
+            },
+            "emailConfirm": {
+                "formContent": {
+                    "text": "メールアドレス(確認)"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": ""
+                }
+            },
+            "emailConfirmTextBox": {
+                "textBox": {
+                    "type": "email",
+                    "name": "emailConfirm",
+                    "size": "60",
+                    "required": "",
+                    "oncopy": "return false",
+                    "onpaste": "return false",
+                    "ononcontextmenu": "return false",
+                    "onkeyDown": "return controllInputChar(event);",
+                    "placeholder":"手動で入力してください。"
+                    
+                }
+            },
+            "tel": {
+                "formContent": {
+                    "text": "電話番号"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "tel"
+                }
+            },
+            "telTextBox": {
+                "textBox": {
+                    "type": "tel",
+                    "name": "tel",
+                    "size": "60",
+                    "required": "",
+                    "onkeyDown": "return controllInputChar(event);"
+                }
+            },
+            "address": {
+                "formContent": {
+                    "text": "住所"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "address"
+                }
+            },
+            "addressTextBox": {
+                "textBox": {
+                    "type": "text",
+                    "name": "address",
+                    "size": "60",
+                    "required": ""
+                }
+            }
+        },
+        "submit": {
+            "type": "submit",
+            "value": "登録へ",
+            "onclick": "",
+            "confirm": "true"
+        },
+        "back": {
+            "href": "#studentmanagement.html",
+            "type": "button",
+            "text": "戻る",
+            "onclick": ""
+        }
+    },
+    "entryTitle":{
+    	"class":"pageTitle cf",
+        "image"     :{
+            "src"   :   "image/icon(butterfly).png"
+        },
+        "title"     : {
+            "text"  :   "新規会員登録"
+        },
+        "summary"   : {
+            "text"  :   ""
+        }
+    },
+    "entryStudent": {
+        "class": "entryStudent editStudent",
+        "action": "confirmregist.html",
+        "value": "個人情報の送信確認画面に移動します。",
+        "title": "情報入力",
+        "formBody": {
+            "class": "formBody cf",
+            "name": {
+                "formContent": {
+                    "text": "氏名"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "Name"
+                }
+            },
+            "nameTextBox": {
+                "textBox": {
+                    "type": "text",
+                    "name": "name",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "nameKana": {
+                "formContent": {
+                    "text": "氏名(カナ)"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": ""
+                }
+            },
+            "nameKanaTextBox": {
+                "textBox": {
+                    "type": "text",
+                    "name": "nameKana",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "userId": {
+                "formContent": {
+                    "text": "ユーザID"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "UserID"
+                }
+            },
+            "userIdTextBox": {
+                "textBox": {
+                    "type": "text",
+                    "name": "userId",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "nickname": {
+                "formContent": {
+                    "text": "ニックネーム"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "Nickname"
+                }
+            },
+            "nicknameTextBox": {
+                "textBox": {
+                    "type": "text",
+                    "name": "nickname",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "password": {
+                "formContent": {
+                    "text": "パスワード"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "Password"
+                }
+            },
+            "passwordTextBox": {
+                "textBox": {
+                    "type": "password",
+                    "name": "password",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "passwordConfirm": {
+                "formContent": {
+                    "text": "パスワード(確認)"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": ""
+                }
+            },
+            "passwordConfirmTextBox": {
+                "textBox": {
+                    "type": "password",
+                    "name": "passwordConfirm",
+                    "size": "60",
+                    "required": ""
+                }
+            },
+            "sex": {
+                "formContent": {
+                    "text": "性別"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "Sex"
+                }
+            },
+            "sexRadioButton": {
+                "sexRadioButtonFemale": {
+                    "type": "radio",
+                    "name": "sex",
+                    "value": "女",
+                    "checked": ""
+                },
+                "sexRadioButtonFemaleLabel": {
+                    "text": "女"
+                },
+                "sexRadioButtonMale": {
+                    "type": "radio",
+                    "name": "sex",
+                    "value": "男"
+                },
+                "sexRadioButtonMaleLabel": {
+                    "text": "男"
+                }
+            },
+            "email": {
+                "formContent": {
+                    "text": "メールアドレス"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "E-mail"
+                }
+            },
+            "emailTextBox": {
+                "textBox": {
+                    "type": "email",
+                    "name": "email",
+                    "size": "60",
+                    "required": "",
+                    "onkeyDown": "return controllInputChar(event);"
+                }
+            },
+            "emailConfirm": {
+                "formContent": {
+                    "text": "メールアドレス(確認)"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": ""
+                }
+            },
+            "emailConfirmTextBox": {
+                "textBox": {
+                    "type": "email",
+                    "name": "emailConfirm",
+                    "size": "60",
+                    "required": "",
+                    "onkeyDown": "return controllInputChar(event);",
+                    "oncopy": "return false",
+                    "onpaste": "return false",
+                    "ononcontextmenu": "return false",
+                    "placeholder":"手動で入力してください。"
+                }
+            },
+            "tel": {
+                "formContent": {
+                    "text": "電話番号"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "tel"
+                }
+            },
+            "telTextBox": {
+                "textBox": {
+                    "type": "tel",
+                    "name": "tel",
+                    "size": "60",
+                    "required": "",
+                    "onkeyDown": "return controllInputChar(event);"
+                }
+            },
+            "address": {
+                "formContent": {
+                    "text": "住所"
+                },
+                "textRed": {
+                    "text": "*"
+                },
+                "formRuby": {
+                    "text": "address"
+                }
+            },
+            "addressTextBox": {
+                "textBox": {
+                    "type": "text",
+                    "name": "address",
+                    "size": "60",
+                    "required": ""
+                }
+            }
+        },
+        "submit": {
+            "href": "",
+            "onclick": "",
+            "type": "submit",
+            "text": "登録へ",
+            "value": "登録へ",
+            "confirm": "true"
+        },
+        "back": {
+            "text": "戻る",
+            "type":"button",
+            "href": "",
+            "onclick": "history.back();"
+        }
+    },
+    "confirmRegistration": {
+        "message": {
+            "text": "会員登録 > 確認画面"
+        },
+        "noticeList": {
+            "LI": [
+                "以下の内容でよろしければ「送信する」ボタンを押して下さい。"
+            ]
+        },
+        "confirmRegistrationTable": {
+            "name": {
+                "head": {
+                    "text": "氏名"
+                },
+                "data": {
+                    "text": ""
+                }
+            },
+            "nameKana": {
+                "head": {
+                    "text": "氏名(カナ)"
+                },
+                "data": {
+                    "text": ""
+                }
+            },
+            "sex": {
+                "head": {
+                    "text": "性別"
+                },
+                "data": {
+                    "text": ""
+                }
+            },
+            "userId": {
+                "head": {
+                    "text": "ユーザID"
+                },
+                "data": {
+                    "text": ""
+                }
+            },
+            "nickname": {
+                "head": {
+                    "text": "ニックネーム"
+                },
+                "data": {
+                    "text": ""
+                }
+            },
+            "password": {
+                "head": {
+                    "text": "パスワード"
+                },
+                "data": {
+                    "text": ""
+                }
+            },
+            "email": {
+                "head": {
+                    "text": "メールアドレス"
+                },
+                "data": {
+                    "text": ""
+                }
+            },
+            "tel": {
+                "head": {
+                    "text": "電話番号"
+                },
+                "data": {
+                    "text": ""
+                }
+            },
+            "address": {
+                "head": {
+                    "text": "ご住所"
+                },
+                "data": {
+                    "text": ""
+                }
+            }
+        },
+        "br": {},
+        "sendForm": {
+            "class": "sendForm imitateForm",
+            "action": "sendconfirmmail.html",
+            "backButton": {
+                "class": "confBackButton",
+                "type": "button",
+                "value": "戻る",
+                "href": "studentregistration.html"
+            },
+            "sendButton": {
+                "class": "sendButtonbutton submit",
+                "type": "submit",
+                "value": "送信"
+            },
+            "sendValue1": {
+                "class": "sendValue",
+                "type": "hidden",
+                "name": "name",
+                "value": ""
+            },
+            "sendValue2": {
+                "class": "sendValue",
+                "type": "hidden",
+                "name": "nameKana",
+                "value": ""
+            },
+            "sendValue3": {
+                "class": "sendValue",
+                "type": "hidden",
+                "name": "sex",
+                "value": ""
+            },
+            "sendValue4": {
+                "class": "sendValue",
+                "type": "hidden",
+                "name": "userId",
+                "value": ""
+            },
+            "sendValue5": {
+                "class": "sendValue",
+                "type": "hidden",
+                "name": "nickname",
+                "value": ""
+            },
+            "sendValue6": {
+                "class": "sendValue",
+                "type": "hidden",
+                "name": "password",
+                "value": ""
+            },
+            "sendValue7": {
+                "class": "sendValue",
+                "type": "hidden",
+                "name": "email",
+                "value": ""
+            },
+            "sendValue8": {
+                "class": "sendValue",
+                "type": "hidden",
+                "name": "tel",
+                "value": ""
+            },
+            "sendValue9": {
+                "class": "sendValue",
+                "type": "hidden",
+                "name": "address",
+                "value": ""
+            }
+        }
+    },
+    "sendConfirmMail": {
+        "firstLine": {
+            "text": "会員登録メールを送信しました。"
+        },
+        "secondLine": {
+            "text": "入力したメールアドレスに本登録用のURLを記載したメールを送信しました。"
+        },
+        "thirdLine": {
+            "text": "24時間以内に本登録用のURLにアクセスして登録を完了してください。"
+        },
+        "returnToTop": {
+            "text": "トップへ戻る",
+            "href": "#top.php"
+        }
+    },
+    "errorConfirm": {
+        "firstLine": {
+            "text": ""
+        },
+        "secondLine": {
+            "text": "通信中にエラーが発生しました。"
+        },
+        "thirdLine": {
+            "text": "前のページに戻って操作をやり直してください。"
+        },
+        "returnToTop": {
+            "text": "トップへ戻る",
+            "href": "#top.php"
+        }
+    },
+    "contentSearch":{
+    	"data-role":"6",
+    	"method":"post",
+    	"data-target":"studentListContent"
+    }
+}

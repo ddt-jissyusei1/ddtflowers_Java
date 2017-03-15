@@ -1,0 +1,6 @@
+User-Agent:*
+Disallow:/
+Allow:/index.php
+Allow:/js/
+Allow:/css/
+Allow:/article/

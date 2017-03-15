@@ -1,0 +1,17 @@
+{
+    "pageTitle": {
+        "class": "pageTitle cf",
+        "image": {
+            "src": "image/icon(bird).png"
+        },
+        "title": {
+            "text": "生徒さんの声"
+        },
+        "summary": {
+            "text": ""
+        }
+    },
+    "voices":{
+    	"class":"voices"
+    }
+}

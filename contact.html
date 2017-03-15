@@ -1,0 +1,40 @@
+<!-- DDTFlowersトップページのメニューの検証です。 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers</title>
+</head>
+<body>
+	<div id="contaner">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- 問い合わせページのCSSファイルを読み込む。 -->
+			<link href="css/contact.css" rel="stylesheet" type="text/css">
+			<script>
+				//createTagクラスのインスタンスを生成する
+				var contactCreator = new createLittleContents();
+			
+				contactCreator.getJsonFile('source/contact.json');		// お問い合わせページのJSONを取得する。
+				contactCreator.getJsonFile('source/commonJson.json');	// 共通項目のJSONを取得する。
+				contactCreator.getDomFile('template/common.html');		// パーツテンプレートのdomをhtmlファイルから取得する。
+				contactCreator.getDomFile('template/contact.html');		// パーツテンプレートのdomをhtmlファイルから取得する。
+				
+				contactCreator.outputTag('headImage', 'createImage');	// 天の画像を作る
+				contactCreator.outputTag('pageTitle');					// タイトル領域を作る
+				contactCreator.outputTag('contactForm');				// 問い合わせフォームを作る
+				contactCreator.outputTag('footImage', 'createImage');	// 地の画像を作る
+				contactCreator.outputTag('footer');					// フッターを作る
+				
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				// fixYCoordinate('header', '.main');
+				// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header')
+				//フォームに入力チェックをかける。
+				$('form').validate(showAlert);
+			</script>
+		</div>
+	</div>
+</body>
+</html>

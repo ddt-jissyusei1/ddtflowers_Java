@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/記事作成</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<!-- マイページのCSSファイルを読み込む。 -->
+			<link href="css/mypage.css" rel="stylesheet" type="text/css">
+			<script>
+				//createTagクラスのインスタンスを生成する
+				var articleInTabCreator = new createTag();
+				
+				articleInTabCreator.getJsonFile('source/createarticleintab.json');	// ブログ記事作成ページのJSONを取得する。
+				articleInTabCreator.outputTag('blogEditImageUploader','blogEditImageUploader', '#adminBlogManagement');			//画像アップロードのボタンを配置する。
+				articleInTabCreator.outputTag('blogEdit','blogEdit', '#adminBlogManagement');						//ブログ記事タイトル編集領域を作る。
+				articleInTabCreator.outputTag('blogEditTitle', 'blogEditTitle', '#adminBlogManagement .blogEdit');				//ブログ記事タイトル編集領域を作る。
+
+				articleInTabCreator.outputTag('blogEditImages', 'blogEditImages', '#adminBlogManagement .blogEdit');		//ブログ記事画像編集領域を作る。
+
+				//ブログ記事画像編集パーツを3つ作る。
+				articleInTabCreator.outputTag('blogEditImagesSection','blogEditImagesSection','#adminBlogManagement .blogEditImages');
+				articleInTabCreator.outputTag('blogEditImagesSection','blogEditImagesSection','#adminBlogManagement .blogEditImages');
+				articleInTabCreator.outputTag('blogEditImagesSection','blogEditImagesSection','#adminBlogManagement .blogEditImages');
+				
+				articleInTabCreator.outputTag('blogEditText', 'blogEditText', '#adminBlogManagement .blogEdit');			//ブログの本文作成領域を作る。
+				articleInTabCreator.outputTag('blogPublication', 'blogPublication', '#adminBlogManagement .blogEdit');	//ブログの公開設定のパーツを作る。
+				articleInTabCreator.outputTag('blogEditButtons', 'blogEditButtons', '#adminBlogManagement .blogEdit');	//編集確定か否かを選択するボタン群を作る。
+				
+				//ボタンをjQueryUIのリッチなボタンにする。
+				$('.main button, .main input:submit').button();
+				//ボタンをクリックしてファイルを選択するイベントを設定する。
+				clickButtonToFile('.blogEditImagesSection', '.blogEditImagesSectionAddButton', '.blogEditImageUploader', uploadImage, '.blogEditImagesSectionImage,.blogEditImagesSectionImage');
+				//フォームに入力チェックをかける。
+				$('form').validate(showAlert);
+			</script>
+		</div>
+	</div>
+</body>
+</html>

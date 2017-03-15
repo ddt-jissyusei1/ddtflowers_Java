@@ -1,0 +1,39 @@
+<html>
+	<body>
+		<!-- 当タブの内容を作成するためのスクリプトを記述する -->
+		<script>
+			//カレントのウィンドウのDOMを取得する
+			var $currentWindow = $(CURRENT_WINDOW);
+			//カレントのウィンドウのコンテンツ領域を取得する
+			var $currentContent = $(CURRENT_WINDOW_MAIN)
+			
+			var create_tag = new createLittleContents();	//コンテンツ作成のためcreateTagを用意する
+
+			// ユーザーページのパーツのテンプレートのJSONを取得する。
+			create_tag.getJsonFile('source/commonUser.json');
+			// 管理者ページ共通のパーツのJSONを取得する。
+			create_tag.getJsonFile('source/adminCommon.json');
+			//共通のjsonを取得する
+			create_tag.getJsonFile('source/commonJson.json');
+
+			// ユーザーページのパーツのテンプレートのDOMを取得する。
+			create_tag.getDomFile('template/commonUser.html');
+			// 管理者ページ共通のパーツのJSONを取得する。
+			create_tag.getDomFile('template/adminCommon.html');
+			// 共通パーツのDOMを取得する
+			create_tag.getDomFile('template/common.html');
+
+			//授業詳細タブ内にカレンダ-作る
+			create_tag.outputTag('adminCalendar', 'adminCalendar', '#lessonDetail');
+			// 講座のカレンダーを作り、クリックでダイアログ作成を作る
+			var lessonCalendar = new adminCalendar('.adminCalendar', null, create_tag);
+			lessonCalendar.create();	//カレンダーを実際に作成する
+			//授業のある日付をハイライトする
+			lessonCalendar.changeExistLessonDate();
+
+			var $activePanel = $('.tabPanel.active', $currentContent);	//現タブパネルを取得する
+			</script>
+	</body>
+</html>
+
+					

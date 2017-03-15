@@ -1,0 +1,118 @@
+{
+    "1": {
+        "class": "recordWrapper",
+        "campaignListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "number":{"text":"1"},
+            "title": {
+                "text": "新年度キャンペーン"
+            },
+            "type": {
+                "text": "プリザ"
+            },
+            "price": {
+                "text": "3000"
+            },
+            "maxEntry": {
+                "text": "16"
+            },
+            "startDate": {
+                "text": "2015/03/28"
+            },
+            "endDate": {
+                "text": "2015/04/03"
+            }
+        }
+    },
+    "2": {
+        "class": "recordWrapper",
+        "campaignListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "number":{"text":"2"},
+            "title": {
+                "text": "パン作り講座"
+            },
+            "type": {
+                "text": "プリザ、生花"
+            },
+            "price": {
+                "text": "4000"
+            },
+            "maxEntry": {
+                "text": "16"
+            },
+            "startDate": {
+                "text": "2015/03/18"
+            },
+            "endDate": {
+                "text": "2015/03/18"
+            }
+        }
+    },
+    "3": {
+        "class": "recordWrapper",
+        "campaignListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "number":{"text":"3"},
+            "title": {
+                "text": "お値引きキャンペーン"
+            },
+            "type": {
+                "text": "プリザ"
+            },
+            "price": {
+                "text": "1800"
+            },
+            "maxEntry": {
+                "text": "8"
+            },
+            "startDate": {
+                "text": "2015/03/01"
+            },
+            "endDate": {
+                "text": "2015/03/07"
+            }
+        }
+    },
+    "4": {
+        "class": "recordWrapper",
+        "campaignListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "number":{"text":"4"},
+            "title": {
+                "text": "バレンタイン前キャンペーン"
+            },
+            "type": {
+                "text": "プリザ"
+            },
+            "price": {
+                "text": "2500"
+            },
+            "maxEntry": {
+                "text": "32"
+            },
+            "startDate": {
+                "text": "2015/02/01"
+            },
+            "endDate": {
+                "text": "2015/02/13"
+            }
+        }
+    }
+}

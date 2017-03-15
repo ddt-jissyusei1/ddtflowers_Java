@@ -1,0 +1,24 @@
+{
+    "lessonDate" : {
+       "text" : ""
+    },
+    "themeArea":{
+        "themeLabelText":{
+            "text":"テーマ"
+        },
+        "themeDetailText":{
+            "text":""
+        }
+    },
+    "timeTableArea":{
+        "timeTableLabelText":{
+            "text":"時間割"
+        },
+        "timeTableText":{
+            "text":""
+        }
+    },
+    "updateLessonQuery":{
+    	"db_setQuery":"CALL p_update_lesson_detail('max_students', 'min_students', 'classwork_status', 'classroom', 'classwork_note', 'classwork_key', @result); SELECT @result AS result;"
+    }
+}

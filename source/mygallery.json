@@ -1,0 +1,106 @@
+{
+	"pageTitle": {
+		"class": "pageTitle cf",
+		"image": {
+			"src": "image/icon(fish100).jpg"
+		},
+		"title": {
+			"text": "Myギャラリー"
+		},
+		"summary": {
+			"text": ""
+		}
+	},
+	"memberMyGallery": {},
+	"galleryLeftSide": {
+		"class": "galleryLeftSide"
+	},
+	"galleryRightSide": {
+		"class": "galleryRightSide"
+	},
+	"galleryArea": {
+		"class": "galleryArea"
+	},
+	"myGalleryEditButtons": {
+		"uploader": {
+			"type": "file",
+			"id": "uploader",
+			"name": "uploader"
+		}
+	},
+	"myGalleryNotice": {
+		"notice1": {
+			"text": "写真のタイトル部分、コメント部分は"
+		},
+		"notice2": {
+			"text": "ダブルクリックすることで編集できます。"
+		}
+	},
+	"blankPhoto": {
+		"class": "myPhoto blankPhoto",
+		"myPhotoLink": {
+			"href": "",
+			"rel": "gallery",
+			"myPhotoImage": {
+				"style": ""
+			}
+		},
+		"date": {
+			"text": ""
+		},
+		"myPhotoTitle": {
+			"text": "入力してください。"
+		},
+		"myPhotoUser": {
+			"text": ""
+		},
+		"myPhotoComment": {
+			"text": "入力してください。"
+		},
+		"myPhotoCheck": {
+			"type": "checkbox"
+		}
+	},
+	"myGalleryTable": {
+		"db_getQuery": "CALL getMyGalleryContents2(@result, 'user_key'); SELECT @result AS 'result';",
+		"user_key": {
+			"value": ""
+		},
+		"config": {
+			"columns": {
+				"id": {
+					"style": "display:none",
+					"className": "id"
+				},
+				"myPhotoImage": {
+					"className": "myPhotoImage"
+				},
+				"date": {
+					"className": "myPhotoDate"
+				},
+				"myPhotoTitle": {
+					"className": "myPhotoTitle"
+				},
+				"myPhotoUser": {
+					"className": "myPhotoUser"
+				},
+				"myPhotoComment": {
+					"className": "myPhotoComment"
+				},
+				"myPhotoPublication": {
+					"style": "display:none",
+					"className": "myPhotoPublication"
+				}
+			}
+		}
+	},
+	"insertMyGalleryPhoto": {
+		"db_setQuery": "CALL insertGalleryContent('user_key', 'photo_title');"
+	},
+	"updateMyGalleryPhoto": {
+		"db_setQuery": "CALL updateGalleryContent('photo_summary', 'article_title' ,'id');"
+	},
+	"deleteMyGalleryPhoto": {
+		"db_setQuery": "CALL deleteGalleryContent('id');"
+	}
+}

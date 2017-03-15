@@ -1,0 +1,127 @@
+クラス名:dialogEx
+概要　　:URLからダイアログのHTMLファイルを取得して表示する。
+引数　　:String url:ダイアログのHTMLファイルのURL文字列
+　　　　:Object argumentObj:イアログ内のコンテンツ作成のためのパラメータをまとめたオブジェクト
+ 　 　　:Object returnObject:jQuery UI Dialogの設定用オブジェクト
+　　　　メンバ
+	url:ダイアログのHTMLファイルのURL(パス)
+	formDom:ダイアログのDOMを格納するメンバ。
+	argumentObjダイアログ内のコンテンツ作成のためのパラメータをまとめたオブジェクト。
+	returnObj:ダイアログの設定用オブジェクトを格納するメンバ。該当する引数の入力がなければ空オブジェクトで初期化される。
+	defaultObj:ダイアログのデフォルト設定用オブジェクト。
+　　　　　　　　　　　returnObjの内容が空であれば、ダイアログ表示時(run関数コール時)にreturnObjの内容を上書きする。
+　　　　　　　　　　　以下の内容で定義される。
+ 　　　　　　　　　　　{
+			width: 'auto',		//幅を自動調整する
+			autoOpen : true,	//作成時の自動オープンを無効にする
+			modal : true,		//モーダル表示
+			resizable : false,	//ドラッグでのリサイズ可否
+			//表示位置の指定。
+			position :{my:'center top',at:'center top', of:window},
+			closeOnEscape : false	//escキーを押して閉じるか
+	};
+	
+関数名:load
+概要　:URLからダイアログのHTMLファイルを取得してメンバに保存する。
+　　　 run関数コール時に最初にコールされる。
+　　　　通信に失敗した場合は例外を投げる。
+引数　:なし
+返却値:なし
+
+関数名:run
+概要　:ダイアログを生成して表示する。returnObjの内容がダイアログの設定値となる。
+　　　:this.instanceに当該クラスのインスタンスが格納され、DOMからのクラスインスタンス
+　　　:への参照を可能にする。
+引数　:なし
+返却値:なし
+
+関数名:setCallbackClose、setCallbackOpen、setCallbackCreate
+概要　:それぞれダイアログのclose、open、createイベントのコールバック関数をセットする。
+　　　:※run関数コール前にコールする。
+引数　:function func:コールバック関数で実行される関数のポインタ
+返却値:なし
+
+関数名:destroy
+概要　:ダイアログのHTML、クラスインスタンスを消去する。
+　　　:基本的にcloseイベントのコールバック関数として使う。
+　　　:run関数がコールされるごとにダイアログのDOMが生成されるため、
+　　　:close時には何らかの形でダイアログのDOMを消してください。
+引数　:なし
+返却値:なし
+
+サンプルコード
+
+コールする側のHTML
+testdialogex.html
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- jqueryUIのcssを読み込む -->
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.min.css" media="screen" />
+
+<!-- jQueryの本体を読み込む。 -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- jQueryUIを読み込む。 -->
+<script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<!-- ユーティリティクラスのjsファイル。 -->
+<script src="js/utils.js"></script>
+<!-- タグを作成するJSの関数群を読み込む -->
+<script type="text/javascript" src="js/createTag.js"></script>
+<!-- ダイアログ作成の処理を記述したJSファイルを読み込む。 -->
+<script type="text/javascript" src="js/createDialog.js"></script>
+
+<!-- JavaScriptのコードの記述を開始する -->
+<script>
+
+	function disappear(){
+		this.instance.destroy();
+	}
+	//ドキュメントの配置が終了した後の処理
+	$(document).ready(function(){
+		//ダイアログ表示ボタンのクリック時コールバック関数を定義する
+		$('#testDialogButton').on('click', function(){
+			//dialogExクラスのインスタンスを生成する
+			var testDialog = new dialogEx('dialog/testdialog.html');
+			testDialog.setCallbackClose(disappear);	//閉じるときのイベントを登録
+			testDialog.run();	//主処理を走らせる。
+		});
+	});
+</script>
+</head>
+
+<body>
+	<button id="testDialogButton">hit me</button>
+</body>
+</html>
+
+
+ダイアログのDOMとして読み込まれるされる側のHTML
+dialog/testdialog.html
+
+<div class="testDialog">
+	<p>テスト用</p>
+	<p>ダイアログ</p>
+	<p>です。</p>
+	<!-- OKボタン -->
+	<button class="OK" type="button" onclick="">OK</button>
+	<!-- キャンセルボタン -->
+	<button class="cancel" type="button" onclick="">キャンセル</button>
+	<!-- JSコードを記述する -->
+	<script>
+			console.log(this);	//thisの対象をログに出す
+			//コード実行タイミング測定用のアラーと
+			alert('I\'m ready! (testdialog.html is called.)')
+		$('.OK').click(function(){	//OKボタンのクリックイベント
+			alert('OK!');			//アラートを出す
+		});							//キャンセルボタンのクリックイベント
+		$('.cancel').click(function(){
+			alert('bye.');			//アラートを出す
+			//ダイアログのクラスのインスタンスにアクセスし、ダイアログ破棄関数をコールして閉じる。
+			//※jQueryオブジェクトとしてダイアログを取得してクラスインスタンスにアクセスする場合、
+			// [0]を指定して.instanceでクラスインスタンスを指定する。
+			$('.testDialog')[0].instance.destroy();
+		});
+	</script>
+</div>

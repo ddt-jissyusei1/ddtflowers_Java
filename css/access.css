@@ -1,0 +1,116 @@
+@CHARSET "UTF-8";
+
+/* アクセスページ */
+
+
+
+/* 
+ * セレクタ:.pageTitle
+ * 概要   :タイトル領域
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.24
+ */
+.pageTitle{
+    margin-bottom: 5px;	/* 下のmarginを小さくする。 */
+}
+
+/* 
+ * セレクタ:.pageTitle .summary
+ * 概要   :タイトル領域の概要部分
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.24
+ */
+.pageTitle .summary{
+    margin-bottom: 0;     /* 下marginをなくす。 */
+}
+
+
+/* 
+ * セレクタ:.accessInfo 
+ * 概要   :アクセス情報一覧の外枠。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.18
+ */
+.accessInfo {
+	width: 600px;			/* 取る幅。 */
+	margin: 0px auto 10px;	/* 中心に寄せ、下の要素と間隔も取る */
+}
+
+/* 
+ * セレクタ:.accessInfo > span
+ * 概要   :アクセス情報の項目。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.18
+ */
+.accessInfo > span {
+	display: block;		/* 各項目ごとに改行するように、ブロック要素にする。 */
+	font-size: 14px;	/* 小さめのフォントサイズを設定する。 */
+	line-height: 18px;	/* font-sizeより大きい行サイズを指定して行間を空ける。 */
+}
+
+/* 
+ * セレクタ:.accessMap
+ * 概要   :スクールのグーグルマップのラッパー。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.18
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.24
+ * 内容　 :下marginを減らしました。
+ */
+.accessMap {
+	margin: 0 auto 20px;	/* 中心に寄せて、フッター部分とも間隔を取る。 */
+	width: 600px;			/* 取る幅。 */
+}
+
+/* 
+ * セレクタ:.baseMap
+ * 概要   :スクールのグーグルマップのラッパー。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.18
+ */
+.baseMap {
+	width: 100%;		/* 幅を外枠に合わせる。 */
+	height: 400px;		/* 高さを指定する。 */
+}
+/* スマホ・タブレットレイアウト */
+@media(max-width:680px){
+	/* アクセスページ */
+
+	/* 
+	 * セレクタ:.accessInfo 
+	 * 概要   :アクセス情報一覧の外枠。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.18
+	 * 追加者 :T.Yamamoto
+	 * 追加日 :2015.03.09
+ 	 * 内容   :widthを95%から90%に変更、padding-leftからpaddingに変更
+	 */
+	.accessInfo {
+		width: 90%;				/* paddingを考慮した幅を取る。 */
+		padding: 5%;		/* 左に間隔を取る */
+	}	
+	
+	/* 
+	 * セレクタ:.accessMap
+	 * 概要   :スクールのグーグルマップのラッパー。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.18
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.24
+	 * 内容　 :幅を調整しました。
+	 */
+	.accessMap {
+		width: 100%;			/* 幅をmainに合わせる。 */
+	}
+	/* 
+	 * セレクタ:.baseMap
+	 * 概要   :スクール所在地のGoogleMap。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.21
+	 */
+	.baseMap {
+		width: 90%;		/* 余白分を考慮した幅を取る */
+		margin: 0 auto;	/* 中心に寄せる */
+		display: block;	/* ブロック要素にしてmarginによる中央寄せを有効にする。 */
+	}
+}

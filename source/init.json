@@ -1,0 +1,19 @@
+{
+    "sendReservedPhp": "php/sendreserved.php",
+    "jsonDirectory": "source/",
+    "jsonIdentifier": "json",
+    "cookieLimitTime":"3600000",
+    "photoDirectory":"flowerImage/",
+    "saveJSON":"",
+    "postJSON":"",
+    "getSelectedBlog":"",
+    "photoPost":"./uploadImage/imageUpload.php",
+    "experienceLesson":"source/experiencelesson.json",
+    "usuallyLesson":"source/usuallylesson.json",
+    "listSetting":{
+    	"startPage":"1",
+    	"displayPageMax":"4",
+    	"displayPage":"1",
+    	"pageNum":"5"
+    }
+}

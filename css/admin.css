@@ -1,0 +1,1079 @@
+@CHARSET "UTF-8";
+
+
+
+/* 
+ * セレクタ:.main > .pageTitle
+ * 概要   :タイトル領域
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.03
+ */
+.main > .pageTitle{
+    width: 800px;           /* 幅を800pxにする。100%に設定しても無効なので、固定値を使う。 */
+    vertical-align: middle; /* 内包する要素の高さを中心に揃える。 */
+    box-sizing: border-box; /* サイズの計算にpaddingと枠線を加える。 */
+    margin: 20px 0;         /* 下に20pxの余白を空ける */
+}
+
+/* 
+ * セレクタ: .titleArea
+ * 概要   :タイトルテキストとアイコン部分のdivのスタイル
+ * 作成者 :T.Masua
+ * 作成日 :2015.03.18
+ */
+.titleArea {
+    margin-bottom: 5px;     /* タイトルのサマリーから5px余白をとる */
+}
+
+/* 
+ * セレクタ:.main > .pageTitle img
+ * 概要   :タイトルの画像
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.18
+ */
+.main > .pageTitle img{
+    width: 100px;           /* 画像サイズに関係なく幅を100pxにする。 */
+    height: auto;           /* 画像の縦横比に応じた高さを取る。 */
+    padding: 0 5px;         /* 左右に5pxのpaddingを配置する。 */
+    box-sizing: border-box; /* サイズの計算にpaddingと枠線を加える。 */
+    background: #FFF;       /* 仮の背景色を指定する。 */
+    display: inline-block;  /* 横並びにするためにブロック要素にする */
+    vertical-align: middle; /* 中央揃えにする */
+}
+
+/* 
+ * セレクタ:.main > .pageTitle .title
+ * 概要   :タイトルの文字
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.18
+ */
+.main > .pageTitle .title{
+    width:          82%;        /* 余った幅いっぱいに横幅を取る。 */
+    height:         auto;       /* 高さを自動調整する。 */
+    font-size:      28px;       /* フォントサイズを28pxに指定する。 */
+    box-sizing:     border-box; /* サイズの計算にpaddingと枠線を加える。 */
+    text-align:     center;     /* 文字を中央に寄せる。 */
+    display: inline-block;      /* ブロック要素にして中心寄せを有効にする。 */
+    vertical-align: middle;     /* 中央揃えにする */
+}
+
+/* 
+ * セレクタ:.main > .pageTitle .summary
+ * 概要   :タイトル部分概要。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.18
+ */
+.main > .pageTitle .summary{
+    clear: both;            /* 回り込みをなくす */
+    width:      700px;      /* 幅を660pxに設定する。 */
+    text-indent: 1em;       /* インデントを1文字分入れる */
+    padding: 5px 0;         /* 要素の幅を5px広げる */
+    margin: 0 auto;         /* 中央に寄せる。 */
+}
+
+
+/* 
+ * セレクタ:.contentManagement
+ * 概要   :トップページで最新の記事見出しを表示する小ウィンドウ。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.13
+ */
+.contentManagement {
+	width		:100%;	/*親要素(.main)と同じだけの幅を取る。*/
+}
+
+/* 
+ * セレクタ:.saveButton
+ * 概要   :編集したJSONを保存するボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.02
+ */
+.saveButton{
+	float:right;	/* 右に寄せる。 */
+	margin-bottom: 5px;
+}
+
+/* 
+ * セレクタ:.keyAndValue
+ * 概要   :JSONのキー名のタグと値のテキストエリア1つずつを1組にしてまとめるタグのクラス。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.13
+ */
+.keyAndValue {
+	width		:95%;		/*多少余白が出る幅に設定する。*/
+	margin: 0 auto 10px;	/*中央に寄せる。*/
+	clear: both	;			/* 保存ボタンの回り込みを防ぐ。 */
+}
+
+/* 
+ * セレクタ:.key
+ * 概要   :JSONのキー名のタグのクラス。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.13
+ */
+.key {
+	text-align: center;
+	width		:auto;			/*テキストの幅を基準に要素の幅を決める。*/
+	background	:#666;			/*背景を灰色にする。*/
+	color		:#FFF;			/*白抜き文字にする。*/
+	display		:inline-block;	/*インラインブロックとして扱い、横に並べる。*/
+	line-height: 150%;
+	padding-left: 5px;
+	margin-bottom: 2px;
+}
+
+/* 
+ * セレクタ:.currentKey
+ * 概要   :.keysの中の最後尾の要素のクラス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.17
+ */
+.currentKey {
+	background: goldenrod;		/* 背景を金色にして、これがカレントのキーであると主張する。*/
+}
+
+/* 
+ * セレクタ:.values label
+ * 概要   :プロパティ名のラベル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.17
+ */
+.values label {
+	width: 20%;			/* 80px程度の幅を取る。 */
+	display		:inline-block;	/* 3行程度の高さにする。*/
+	font-size	:16px;			/* 親要素のフォントサイズを0にするため、要素のフォントサイズを指定し直す。*/
+}
+/* 
+ * セレクタ:.values textarea
+ * 概要   :プロパティの値を編集するテキストボックス。ラベルがない版
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.17
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.02
+ * 内容　 :ラベルがないのを前提にしたレイアウトに変更しました。
+ */
+.values textarea {
+	width: 70%;				/*幅をラベルの幅を考慮した上で十分に広げる*/
+	margin-left: 20%;		/* ラベルがない分のインデントをする。 */
+	height		:50px;		/*3行程度の高さにする。*/
+	font-size	:16px;		/*50pxで3行入るフォントサイズにする。*/
+	vertical-align: top;	/* 隣り合うラベルを上端で揃える。 */
+	margin-bottom: 5px;		/* 最低限の間隔を取る。 */
+}
+
+/* 
+ * セレクタ:.values label+textarea
+ * 概要   :プロパティの値を編集するテキストボックス。ラベルがある版
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.17
+ */
+.values label+textarea {
+	margin-left: 0;	/* 左marginをなくす。 */
+}
+
+/* 
+ * セレクタ:.key:after
+ * 概要   :keyの後に配置する矢印。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.13
+ */
+.key:after {
+	content		:"\002192";		/*右向きの矢印を配置する。*/
+	background: white;
+	color: #555;
+	display: inline-block;
+	margin-left: 5px;
+	padding-left: 5px;
+}
+
+/* 
+ * セレクタ:.key.currentKey:after
+ * 概要   :トップページで最新の記事見出しを表示する小ウィンドウ。
+ * 設計者 :T.Masuda
+ * 作成者 :T.Yamamoto
+ * 作成日 :2015.03.13
+ */
+.key.currentKey:after {
+	content		:"";		/*矢印をつけない。*/
+}
+
+/* 
+ * セレクタ:.tabPanel
+ * 概要   :タブのパネル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.18
+ */
+.tabPanel{
+	margin-top: 20px;	/* 上に20pxのmarginを配置し、タブのインデックスと間隔を取る。 */
+}
+
+/* 
+ * セレクタ:.values
+ * 概要   :プロパティに対する値を設定する要素をまとめたタグのクラス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.18
+ */
+.values{
+	font-size: 0px;	/* 中の要素をインラインブロックで横に並べるため、自動で出る余白を消す。 */
+	margin-bottom: 5px;
+	display: block;
+}
+
+/* 
+ * セレクタ:.values input[type="file"]
+ * 概要   :画像アップロードのボタン本体。見えない。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.18
+ */
+.values input[type="file"]{
+	display: none;	/* ボタンの押下の処理を別のボタンに任せるため、このボタンは非表示にする。 */
+}
+
+/* 
+ * セレクタ:.values button
+ * 概要   :画像アップロードのイベント開始ボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.18
+ */
+.values button{
+	display: inline-block;	/* インラインブロックにして並べる。 */
+}
+
+/* 
+ * セレクタ:.keys
+ * 概要   :キー名のまとまり。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.18
+ */
+.keys {
+	display: block;		/* ブロック要素にして行を丸まるつかう。 */
+	margin-bottom: 5px;	/* 下のvaluesとの間に間隔を取る。 */
+}
+
+
+/* 管理者画面タブの内容 */
+
+/* オプションタブ */
+/* 
+ * セレクタ:.optionsConfirmChangeButton
+ * 概要   :オプションタブでの編集内容を確定するボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.optionsConfirmChangeButton{
+	float:right;			/* 右端に寄せる。 */
+	margin:10px 2em 0 0;	/* 右上からずらす。 */
+}
+
+/* 
+ * セレクタ:.optionsLable
+ * 概要   :オプションタブ内のラベル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.optionsLabel{
+	display : block ;	/* ブロック要素にする。 */
+}
+
+/* 
+ * セレクタ:.options input[type="email"],.options input[type="text"]
+ * 概要   :オプションタブ内のメールアドレス入力欄と通常のテキストボックス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.options input[type="email"],.options input[type="text"]{
+	width		: 80%	;	/* 十分な幅を取る。 */
+}
+
+/* 
+ * セレクタ:.optionsLableInline
+ * 概要   :オプションタブ内の横並びにするラベル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.optionsLableInline{
+	display: inline-block;	/* インラインブロックにして横に並べる。 */
+	margin-right: 1em;		/* 右に最低限の余白を入れる。 */
+}
+
+/* オプションタブはここまで */
+
+/* 管理コンテンツ一覧 */
+
+/* 
+ * セレクタ:.articleSearch
+ * 概要   :絞り込みパーツ一組。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ * 修正者 :T.Masuda
+ * 修正日 :2015.04.19
+ * 内容　 :修正レイアウトをコメントアウトで用意
+ */
+.articleSearch{
+	margin-left: 0.5em;		/* 次に来る検索ボックスとの間に間隔を取る。 */
+	display: inline-block;	/* インラインブロックにして横に並べる。 */
+	margin-bottom: 2px;
+	/* width: 20%; 幅を1/5にする */
+	/* box-sizing:border-box; */
+}
+
+
+/* 
+ * セレクタ:.articleSearchLabel
+ * 概要   :絞り込みテキストボックスのラベル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ * 修正者 :T.Masuda
+ * 修正日 :2015.04.19
+ * 内容　 :修正レイアウトをコメントアウトで用意
+ */
+.articleSearchLabel{
+	display			: inline-block;	/* インラインブロックにして横に並べる。 */
+	/* width: 100%; */
+}
+
+
+/* 
+ * セレクタ:.articleSearchTextBox
+ * 概要   :絞り込みのテキストボックス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ * 修正者 :T.Masuda
+ * 修正日 :2015.04.19
+ * 内容　 :修正レイアウトをコメントアウトで用意
+ */
+.articleSearchTextBox{
+	height			: 1.2em;	/* 文字サイズよりやや高さを増やす。 */
+	/* width: 100%; */
+}
+
+/* 
+ * セレクタ:.listEditButtons
+ * 概要   :一覧の項目を編集するためのボタン群。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+ .listEditButtons{
+ 	width: 90%;				/* PCレイアウトのうちにスマホサイズを指定しておく。 */
+ 	margin: 0 auto 10px;	/* 中央寄せにする。 */
+ 	display: block;			/* ブロック要素として扱い、中央寄せを有効にする。 */
+	text-align:	right;		/* ボタンを右に寄せる。 */
+ } 
+ 
+/* 
+ * セレクタ: .listEditButtons button,.listEditButtons input[type="submit"]
+ * 概要   :一覧の項目を編集するボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+ .listEditButtons button,.listEditButtons input[type="submit"]{
+ 	margin: 0.1em;	/* 上下にフォントサイズを基準とした余白を挿入する。 */
+ }
+ 
+/* 
+ * セレクタ:.listEditButtons button:first-child
+ * 概要   :一覧の項目を編集するボタンの最初のひとつ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.listEditButtons button:first-child{
+	margin-left:0px;	/* 余計なmarginでレイアウトが崩れない様に、消しておく。 */
+}
+/* 管理コンテンツ一覧はここまで */
+
+/* キャンペーン作成画面 */
+
+/* 
+ * セレクタ:.campaignLabel
+ * 概要   :キャンペーン作成タブの改行付きラベル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.campaignLabel{
+	display: block;	/* ブロック要素にする。 */
+}
+
+/* 
+ * セレクタ: .campaignTitleTextBox,.campaignCopyTextBox,.campaignContentTextArea
+ * 概要   :キャンペーン名のテキストボックス、テキストエリア。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+ .campaignTitleTextBox,.campaignCopyTextBox,.campaignContentTextArea{
+ 	width: 80%;		/* 十分に幅を取る。 */
+ }
+ 
+/* 
+ * セレクタ:.campaignLabelInline
+ * 概要   :キャンペーン編集タブの横並びにするラベル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+ .campaignLabelInline{
+ 	display: inline-block;	/* インラインブロックにして横に並べる。 */
+ }
+ 
+/* 
+ * セレクタ:.campaignDates input[type="text"]
+ * 概要   :キャンペーンの日付を入力するテキストボックス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+ .campaignDates input[type="text"]{
+ 	width: 60px;	/* 日付を入力するための最低限の幅を設定する。 */
+ }
+ 
+/* 
+ * セレクタ:.campaignDates > div
+ * 概要   :キャンペーンの日付入力領域。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.campaignDates > div{
+ 	display:inline-block;
+ }
+/* 
+ * セレクタ:.campaignMaxEntryTextBox
+ * 概要   :：キャンペーンの受講上限人数を入力するテキストボックス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+ .campaignMaxEntryTextBox{
+ 	width: 30px;	/* 2桁入力できれば十分であるので、狭めの幅を指定する。 */
+ }
+ 
+ /* ここまでキャンペーン作成 */
+ 
+ /* 生徒さん登録・編集画面。contact.cssを流用 */
+ 
+/* 
+ * セレクタ:.editStudent dl
+ * 概要   :入力項目のリスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.editStudent dl{
+	width: 90%;				/* 可変幅にする。 */
+	clear: both;			/* 回り込みさせない */
+	margin: 0 0 10px 100px;	/* 左から100px寄せる */
+	text-align:left;		/* .editStudentで中央寄せになっているので戻す。 */
+}
+
+/* 
+ * セレクタ:.editStudent dt
+ * 概要   :入力項目の見出し。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.editStudent dt{
+	float: left;		/* 内容と共に左寄せで横に並べる */
+	clear: both;		/* 回り込みをさせない */
+	line-height: 20px;	/* 文字の高さを20pxに設定する。 */
+	width: 20%;			/* 文字の幅を設定。最長の文字に合わせる */
+	font-weight: bold;	/* 太字にする */
+}
+
+/* 
+ * セレクタ:.editStudent dd
+ * 概要   :入力項目のinput要素。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.editStudent dd{
+	float: left;					/* 左に寄せる */
+	width: 70%;						/* 70%にする */
+	padding: 0 0 20px 40px;	/* 線と内容との間に間隔を取る */
+	border-left: dotted 1px #999;	/* 左に破線を引き、項目と内容を隔てる */
+	display: block;					/* blockとして扱う */
+	font-size: 12px;				/* 入力を誘導する文字を添えるため小さな文字を設定する。 */
+	margin-left: 15px;				/* 左にmarginを挿入する。 */
+}
+
+/* 
+ * セレクタ:.editStudent .formRuby
+ * 概要   :項目名のルビ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.editStudent .formRuby{
+	/* ブロックとし扱い、隣り合うspanの要素となる項目名に対し改行する */
+	display: block;		/* ブロック要素にする */
+	font-size: 10px;	/* ルビサイズのフォントにする */
+	line-height: 10px;	/* 最低限の文字の高さを取る */
+}
+
+/* 
+ * セレクタ:.editStudent textarea
+ * 概要   :入力項目のテキストエリア。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.editStudent textarea{
+	border: 1px solid #d8d8d8;	/* テキストエリアを灰色の線で囲む。 */
+	max-width: 500px;			/* 引き延ばせる最大の幅を設定する。 */
+}
+
+/* 
+ * セレクタ:.editStudent .submit, .editStudent .back
+ * 概要   :生徒さん登録画面のボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.editStudent .submit, .editStudent .back{
+	-webkit-appearance: none;	/* iosの初期設定のスタイルシートを無効にする。 */
+	margin: 20px auto 50px;		/* 中央に寄せる */
+	display: inline-block;		/* インラインブロック要素として扱う。 */
+	clear: both;				/* 要素の回り込みを阻止する。 */
+	background-color: #000;		/* 背景色を黒にする */
+	color: #FFF;				/* 白抜き文字に指定する。 */
+	font-weight: bold;			/* 通常のfont-weightでは大分細くなってしまうので、太字にする */
+	width: 100px;				/* 幅を100pxに指定する。 */
+	height: 35px;				/* 高さを35pxに指定する。 */
+	letter-spacing: 2px;		/* 文字の間に2pxの空白を挿入する。 */
+	font-size: 14px;			/* フォントの大きさを14pxに指定する。 */
+	border-style: none;			/* 初期設定されている枠線を消す */	
+	vertical-align: middle;		/* 高さを行の中心に合わせる。 */
+	text-align: center;			/* ボタンのテキストを中央に寄せる。 */
+ 	border-radius: 0;			/* ios safariでの角丸を消す */
+}
+
+/* 
+ * セレクタ:.editStudent .submitButton:hover
+ * 概要   :生徒さん登録画面のSubmitボタンのマウスオーバーイベント。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.18
+ */
+.editStudent .submitButton:hover{
+	opacity: 0.7;	/* ボタンを透過する */
+}
+
+/* 
+ * セレクタ:.editStudent input[type="text"],.editStudent input[type="email"],.editStudent input[type="number"],.editStudent input[type="tel"],input[type="password"]
+ * 概要   :生徒さん登録画面のテキストボックス。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.14
+ */
+.editStudent input[type="text"],.editStudent input[type="email"],.editStudent input[type="number"],.editStudent input[type="tel"],input[type="password"]{
+	border: 1px solid #d8d8d8;	/* 枠線を灰色に設定する。 */
+}
+ 
+/* 
+ * セレクタ:.editStudent
+ * 概要   :生徒さん登録画面の主領域。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.26
+ */
+ .editStudent{
+ 	text-align:center;	/* 文字を中心に集める。ここではボタンが目的。 */
+ }
+ 
+/* ここまで生徒さん登録画面。 */ 
+
+/* 生徒さん登録画面後の内容確認画面 */ 
+/* 
+ * セレクタ:.confirmRegistration
+ * 概要   :送信内容確認のブロック。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.05
+ */
+.confirmRegistration {
+	width	: 90%;			/* 可変幅にする。 */
+	margin	: 0 auto 10px;	/* 中央に寄せる。 */
+}
+/* 
+ * セレクタ:.confirmRegistration .message
+ * 概要   :送信内容確認のブロックのタイトル部分。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.confirmRegistration .message{
+	font-size	: 18px;							/* 文字をタイトルサイズにする。 */
+	padding-left: 0.5em;						/* 文字が大きめな分、左の余白は小さくする */
+	margin		: 10px 0 3px 0;					/* 上下に適切なmarginを挿入する。 */
+	border-left	: solid 5px rgb(206,220,58);	/* 左に傍線を引く。 */
+	background	: #EEE;							/* 背景をグレーにし、帯化する */
+	display		: block;						/* ブロック要素として扱い、1行分の幅を取る。 */
+}
+
+
+/* 
+ * セレクタ:ul li.notice
+ * 概要   :送信内容確認のブロックの箇条書きメッセージ部分。.tabContainer ul liとの重複の対策。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.13
+ */
+ul li.notice{
+	background: transparent;			/* 背景色を透過色にする。 */
+	border: none;						/* 枠線を消す。 */
+	border-top-left-radius: 0px 0px;	/* 左上の角丸をなくす。 */
+	border-top-right-radius: 0px 0px;	/* 右上の角丸をなくす */
+	font-size: 14px;					/* フォントサイズを小さくする */
+}
+
+/* 
+ * セレクタ:.confirmRegistrationTable
+ * 概要   :生徒さん登録画面の確認テーブル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.confirmRegistrationTable {
+	width: 100%;	/* 幅を枠一杯に広げる。 */
+	table-layout: fixed;
+}
+
+/* 
+ * セレクタ:.confirmRegistrationTable th, .confirmRegistrationTable td
+ * 概要   :生徒さん登録画面の確認テーブルのセル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.confirmRegistrationTable th, .confirmRegistrationTable td {
+    padding		: 10px; 				/* 要素の幅を10px広げる */
+    font-size	: 13px;				    /* 文字サイズを13pxにするする */
+    text-align	: left;					/* 文字を左寄りにする */
+    border		: 1px solid #D0D0AC;	/* 黄緑の罫線で区切る。 */
+}
+
+/* 
+ * セレクタ:.confirmRegistrationTable th
+ * 概要   :生徒さん登録画面の確認テーブルの見出しセル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.confirmRegistrationTable th {
+	background: #F0F3F5;	/* 背景色を薄い青にする。 */
+	width: 150px;			/* 幅を指定する。 */
+	box-sizing: border-box;	/* 幅をわかりやすくするためにこの設定をする。 */
+}
+
+/* 
+ * セレクタ:.confirmRegistration ul
+ * 概要   :生徒さん登録画面の確認テーブルの注意書きリスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.confirmRegistration ul {
+	list-style	: none;		/* リストの先頭の索引をつけない。 */
+	margin		: 5px auto;	/* 上下に適切なmarginを挿入する。 */
+}
+
+/* 
+ * セレクタ:.confirmRegistration li:before
+ * 概要   :生徒さん登録画面の確認テーブルの注意書きの前に来る疑似要素。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.confirmRegistration li:before {
+	content:"\ff0a";	/* 注意書きの先頭に※印を入れる。 */
+}
+
+/* ここまで生徒さん登録画面の確認 */
+
+/* ここからメール送信後画面、エラー画面 */
+
+/* 
+ * セレクタ:.showMessage
+ * 概要   :単なるメッセージの画面の領域。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.showMessage{
+	text-align:left;		/* 文字を左に寄せる。 */
+	margin-bottom: 10px;	/* 下に最低限のmarginを入れる。 */
+}
+
+/* 
+ * セレクタ:.firstLine
+ * 概要   :showMessageの1行目。タイトルとしての役割を持つ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.firstLine{
+	font-weight		: bold;	/* 太字にする。 */
+	font-size		: 18px;	/* 大きめの文字にする。 */
+	margin-bottom	: 5px;	/* 次の行と少々間隔を取る。 */
+}
+
+/* 
+ * セレクタ:.options > div
+ * 概要   :オプションの各項目。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.26
+ */
+.options > div {
+	margin-bottom: 10px;	/* 項目ごとに間隔を取る。 */
+}
+
+
+/* 
+ * セレクタ:.returnToTop
+ * 概要   :トップへ戻るリンクのテキスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.25
+ */
+.returnToTop{
+	display		: inline-block;	/* インラインブロックにして横幅の調整を効かせる。 */
+	margin-top	: 10px;			/* メッセージ各行と離す。 */
+}
+
+
+/* 
+ * セレクタ:.editCampaign > *,.campaignDates > *
+ * 概要   :キャンペーン作成画面の各コンテンツ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.26
+ */
+.editCampaign > *,.campaignDates > *{
+	margin-bottom: 5px;	/* 下にmarginを挿入する。 */
+}
+
+/* スマホ・タブレットレイアウト */
+@media(max-width:680px){
+	
+	/* 様々な影響を避けるため、極力CSSファイルを読み込まないので必要なスタイルを書く。 */
+    /* 
+     * セレクタ:.main > .pageTitle
+     * 概要   :タイトル領域
+     * 作成者 :T.Masuda
+     * 作成日 :2015.02.24
+     */
+    .main > .pageTitle{
+        width: 100%;        /* 可変幅に設定する。 */
+        margin-top: 0;      /* 上のmarginをなくす。 */
+    }
+
+    /* 
+     * セレクタ:.main > .pageTitle img
+     * 概要   :スマホ用コンテンツのスタイル
+     * 作成者  :T.Masuda
+     * 作成日  :2015.03.18
+     * 内容　  :marginを消す
+     */
+    .main > .pageTitle img {
+        width: 15%;                 /* 幅を可変にする */
+        height: auto;               /* 高さを自動調整する */
+        margin: 0 2% 0 4%;          /* 余白をとる */
+    }
+
+    /* 
+     * セレクタ   :.main > .pageTitle .title
+     * 概要    :スマホ用タイトル部分h1のスタイル
+     * 作成者  :T.Masuda
+     * 作成日  :2015.03.18
+     */
+    .main > .pageTitle .title {
+        font-weight: bold;  /* 文字を太くする */
+        font-size: 19px;    /* フォントサイズ17pxにする */
+        width: 65%;         /* 幅を可変にする。 */
+    }
+
+    /* 
+     * セレクタ:.main > .pageTitle .summary
+     * 概要  :タイトルの説明部分
+     * 作成者:T.Masuda
+     * 作成日:2015.03.18
+     */
+     .main > .pageTitle .summary
+     {
+        width: 90%;     /* 幅を90%にする */
+     }
+	
+	/* 
+	 * セレクタ:.contentManagement
+	 * 概要   :トップページで最新の記事見出しを表示する小ウィンドウ。
+	 * 設計者 :T.Masuda
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.03.13
+	 */
+	 .contentManagement {
+	 	width		:90%;		/*余白を取るため、幅を減らす。*/
+		margin		:0 auto;	/*中央に寄せる。*/
+	 }
+
+	/* 
+	 * セレクタ:.keyAndValue
+	 * 概要   :JSONのキー名のタグと値のテキストエリア1つずつを1組にしてまとめるタグのクラス。
+	 * 設計者 :T.Masuda
+	 * 作成者 :T.Yamamoto
+	 * 作成日 :2015.03.13
+	 */
+	.keyAndValue {
+		width	:100%;		/*枠一杯に幅を広げる。*/
+	}
+	/* 
+	 * セレクタ:.values input[type="file"]
+	 * 概要   :画像アップロードのボタン。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.18
+	 */
+	.values input[type="file"]{
+		width		: 100%;	/* 段組みが解除されたので、十分に幅を取る。 */
+	}
+
+	/* 
+	 * セレクタ:.values label
+	 * 概要   :プロパティ名のラベル。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.17
+	 */
+	.values label {
+		width		:100%	;			/* 幅を広げて段組みを崩す。 */
+	}
+	/* 
+	 * セレクタ:.values textarea
+	 * 概要   :プロパティの値を編集するテキストボックス。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.17
+	 */
+	.values textarea {
+		width		:100%;		/* 広げられるだけ幅を広げる。*/
+	}
+	
+	/* 
+	 * セレクタ:.values button
+	 * 概要   :画像アップロードのイベント開始ボタン。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.18
+	 */
+	.values button{
+		margin-top: 3px;	/* 上にあるテキストリアとの間に間隔を取る。 */
+	}
+	/* 
+	 * セレクタ:.confirmRegistration dl
+	 * 概要   :入力項目のリスト。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.18
+	 */
+	.confirmRegistration dl{
+		width: 90%;		/* 幅を可変にする。 */
+		margin: 0 auto;	/* 中央寄せにする */
+		font-size: 12px;/* デフォルトより1px小さくする */
+	}
+	
+	/* 
+	 * セレクタ:.confirmRegistration dt
+	 * 概要   :入力項目の見出し。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.18
+	 */
+	.confirmRegistration dt{
+		width: 36%;		/* 幅を40%にする */
+	}
+	
+	/* 
+	 * セレクタ:.confirmRegistration dd
+	 * 概要   :入力項目のinput要素。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.18
+	 * 修正者 :T.Masuda
+	 * 修正日 :2015.03.10
+	 * 内容　 :幅を調整しました。
+	 */
+	.confirmRegistration dd{
+		width: 60%;					/* 幅を画面の60%に指定する。 */
+		padding-left: 10px;			/* 左にpaddingを入れる。 */
+		margin-left: 0px;			/* 右のmarginをなくす。 */
+	}
+	
+	/* 
+	 * セレクタ:.confirmRegistration textarea, .confirmRegistration input[type="text"], .confirmRegistration input[type="email"], .confirmSendMail {
+	 * 概要   :入力項目
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.11
+	 */
+	 .confirmRegistration .contentTextArea textarea,
+	 .confirmRegistration input[type="text"],
+	 .confirmRegistration input[type="email"],
+	 .confirmSendMail 
+	 {
+	 	 width: 95%; 		/* 幅を95%にする */
+	 }
+	
+	/* 入力確認ページ */
+	/* 
+	 * セレクタ:.confirmSendMail
+	 * 概要   :送信内容確認のブロック。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.05
+	 */
+	.confirmSendMail {
+		margin: 0 auto;	/* 位置を中央に寄せる。 */
+	}
+	
+	
+	/* 問い合わせページ */
+
+	/* 
+	 * セレクタ:.editStudent dl
+	 * 概要   :入力項目のリスト。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.18
+	 */
+	.editStudent dl{
+		width: 90%;		/* 幅を可変にする。 */
+		margin: 0 auto;	/* 中央寄せにする */
+		font-size: 12px;/* デフォルトより1px小さくする */
+	}
+	
+	/* 
+	 * セレクタ:.editStudent dt
+	 * 概要   :入力項目の見出し。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.18
+	 * 修正者 :T.Yamamoto
+	 * 修正日 :2015.04.22
+	 * 修正内容：幅を58%から48%にしました
+	 */
+	.editStudent dt{
+		width: 48%;		/* 幅を48%にする */
+	}
+	
+	/* 
+	 * セレクタ:.editStudent dd
+	 * 概要   :入力項目のinput要素。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.18
+	 * 修正者 :T.Masuda
+	 * 修正日 :2015.03.10
+	 * 内容　 :幅を調整しました。
+	 * 修正者 :T.Yamamoto
+	 * 修正日 :2015.04.22
+	 * 修正内容：幅を35%から46%にしました
+	 */
+	.editStudent dd{
+		width: 46%;				/* 幅を画面の46%に指定する。 */
+		padding-left: 10px;		/* 10px左から要素の幅を広げる */
+		margin-left: 0px;		/* 左の要素の余白を0にする */
+	}
+	/* 
+	 * セレクタ:.editStudent textarea, .editStudent input[type="text"], .editStudent input[type="email"], .editStudent input[type="tel"], .editStudent input[type="number"],.editStudent input[type="password"]
+	 * 概要   :入力項目
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.26
+	 */
+	 .editStudent .contentTextArea textarea,
+	 .editStudent input[type="text"],
+	 .editStudent input[type="email"],
+	 .editStudent input[type="tel"],
+	 .editStudent input[type="number"],
+	 .editStudent input[type="password"]
+	 {
+	 	 width: 95%; 		/* 幅を95%にする */
+	 }
+	 
+	/* 
+	 * セレクタ:.optionsConfirmChangeButton
+	 * 概要   :オプションタブの更新ボタン。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.26
+	 */
+	 .optionsConfirmChangeButton {
+		margin: 0;	/* marginをなくして1個目のコンテンツと上手く並べる。 */
+	}
+
+	/* 
+	 * セレクタ:.optionsMyMail
+	 * 概要   :オプションタブの管理者メールアドレス欄。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.26
+	 */
+	.optionsMyMail {
+		width: 80%;		/* 更新ボタンと並べるため、他の要素より幅を狭くする。 */
+	}
+	/* 
+	 * セレクタ:.values textarea
+	 * 概要   :プロパティの値を編集するテキストボックス。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.04.02
+	 */
+	.values textarea {
+		margin-left: 0;	/* 左marginをなくす。 */
+	}
+
+	/* 
+	 * セレクタ:.keys
+	 * 概要   :キー名のまとまり。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.04.02
+	 */
+	.keys {
+		margin-bottom: 2px;	/* スマホ版では並びが変わるので、間隔を調整する。 */
+	}
+	
+}
+
+/* スマホ用微調整 */
+@media(max-width:400px){
+	/* 
+	 * セレクタ:.articleSearchLabel
+	 * 概要   :管理者画面の検索領域のラベルについてのスタイル
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.04.08
+	 */
+	.articleSearchLabel{
+		width: 35%;	/* 画面幅が狭くなってきたら検索ボックスを1行1列にする。その際にラベルの幅も統一する */
+	}
+	/* 
+	 * セレクタ:.articleSearchTextBox
+	 * 概要   :管理者画面検索ボックスのテキストボックス猟奇。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.04.08
+	 */
+	input.articleSearchTextBox {
+		width: 55%;
+	}
+	/* 
+	 * セレクタ:.articleSearch
+	 * 概要   :検索ボタンの領域。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.04.08
+	 */
+	.articleSearch {
+		width: 100%;
+	}	
+}
+/*
+ * セレクタ:.contentManagement > *
+ * 概要   :管理者画面のタブ外枠の直下要素。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.08
+ */
+.contentManagement > * {
+	width: 95%;		/* 幅を95%に指定し、少々の余白ができるようにする。 */
+	margin: 0 auto;	/* 中央に寄せる。 */
+}
+/* 
+ * セレクタ:.searchButtonSet
+ * 概要   :検索ボックスのボタン群の領域。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.08
+ */
+.searchButtonSet{
+	margin-bottom:5px;	/* 下にmarginを指定し、余白を作る。 */
+	margin-left: 1%;	/* 左に1%の余白を作る。 */
+	margin: 5px 1% 0px;	/* 余白を上に5px左右に1%下に0pxとる */
+}
+
+/* 
+ * セレクタ:.searchButtonSet button
+ * 概要   :検索ボックスのボタン群のボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.08
+ */
+.searchButtonSet button{
+	margin-bottom:3px;	/* 下にmarginを指定し、余白を作る。 */
+}
+
+/* 
+ * セレクタ:.searchButtonSet .ui-button-text-only span.ui-button-text 
+ * 概要   :検索ボックスのボタン群の領域のボタンのテキスト。jQueryUIで指定されたスタイルを上書きする。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.04.08
+ */
+.searchButtonSet .ui-button-text-only span.ui-button-text {
+	padding: .2em 1.6em;	/* 縦方向のpaddingを減らし、高さを落とす。 */
+}

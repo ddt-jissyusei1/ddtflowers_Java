@@ -1,0 +1,134 @@
+{
+    "1": {
+        "class": "recordWrapper",
+        "studentListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "memberId": {
+                "text": "000001"
+            },
+            "name": {
+                "text": "西島尚子"
+            },
+            "email": {
+                "text": "xxx@yyy.zzz"
+            },
+            "tel": {
+                "text": "000-0000-0000"
+            }
+        }
+    },
+    "2": {
+        "class": "recordWrapper",
+        "studentListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "memberId": {
+                "text": "000002"
+            },
+            "name": {
+                "text": "三崎亮子"
+            },
+            "email": {
+                "text": "xxx@yyy.zzz"
+            },
+            "tel": {
+                "text": "000-0000-0000"
+            }
+        }
+    },
+    "3": {
+        "class": "recordWrapper",
+        "studentListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "memberId": {
+                "text": "000003"
+            },
+            "name": {
+                "text": "佐伯玲子"
+            },
+            "email": {
+                "text": "xxx@yyy.zzz"
+            },
+            "tel": {
+                "text": "000-0000-0000"
+            }
+        }
+    },
+    "4": {
+        "class": "recordWrapper",
+        "studentListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "memberId": {
+                "text": "000004"
+            },
+            "name": {
+                "text": "速水晶良"
+            },
+            "email": {
+                "text": "xxx@yyy.zzz"
+            },
+            "tel": {
+                "text": "000-0000-0000"
+            }
+        }
+    },
+    "5": {
+        "class": "recordWrapper",
+        "studentListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "memberId": {
+                "text": "000005"
+            },
+            "name": {
+                "text": "黒川美玲"
+            },
+            "email": {
+                "text": "xxx@yyy.zzz"
+            },
+            "tel": {
+                "text": "000-0000-0000"
+            }
+        }
+    },
+    "6": {
+        "class": "recordWrapper",
+        "studentListContent": {
+            "checkWrap": {
+                "check": {
+                    "type": "checkbox"
+                }
+            },
+            "memberId": {
+                "text": "000006"
+            },
+            "name": {
+                "text": "天城亜衣"
+            },
+            "email": {
+                "text": "xxx@yyy.zzz"
+            },
+            "tel": {
+                "text": "000-0000-0000"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/管理者画面</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<script>
+				//管理者ブログ管理のJSONを読み込む。
+				creator.getJsonFile('source/admin.json');				// 管理者画面のJSONを取得する。
+				creator.getJsonFile('source/reservedlessonmanagement.json');
+				creator.outputTag('calendar', 'calendar', '#reservedLessonManagement');	// カレンダーを作る
+				//datepickerによるカレンダーを作成する。
+				createReservedCalendar('.reservedlesson', 90);
+			</script>
+		</div>
+	</div>
+</body>
+</html>

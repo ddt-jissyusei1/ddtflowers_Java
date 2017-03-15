@@ -1,0 +1,142 @@
+{
+    "tableArea":{
+        "class":"tableArea"
+    },
+    "lessonTable":{
+    	"class" : "lessonTable commonTable",
+        "db_getQuery":"CALL getAdminLessonList(@result, 'lessonDate'); SELECT @result AS 'result';",
+        "lessonDate":{
+            "value":""
+        },
+         "config": {
+            "columns": {
+                "start_and_end_time": {
+                    "columnName": "時間割"
+                },
+                "start_time": {
+                    "style": "display:none;"
+                },
+                "rest": {
+                    "columnName": "残席"
+                },
+                "lessonStatus": {
+                    "columnName": "状況"
+                },
+                "school_name": {
+                    "columnName": "店舗",
+                    "className": "school_name"
+                },
+                "lesson_name": {
+                    "columnName": "テーマ",
+                    "className": "lesson_name"
+                },
+                "classwork_note": {
+                    "columnName": "残席",
+                    "style":"display:none;"
+                },
+                "end_time": {
+                    "columnName":"状況",
+                    "style":"display:none;"
+                },
+                "lesson_key": {
+                    "style":"display:none;"
+                },
+                "lesson_date": {
+                    "style":"display:none;"
+                },
+                "order_students":{
+                    "style":"display:none;"
+                },
+                "max_students":{
+                    "style":"display:none;"
+                },
+                "min_students":{
+                    "style":"display:none;"
+                },
+                "default_min_students": {
+                    "style":"display:none;"
+                },
+                "max_num": {
+                    "style":"display:none;"
+                },
+                "min_num": {
+                    "style":"display:none;"
+                },
+                "classwork_status": {
+                    "style":"display:none;"
+                },
+                "today":{
+                    "style":"display:none;"
+                },
+                "classwork_key":{
+                    "style":"display:none;",
+                    "className" : "id"
+                },
+                "classroom":{
+                    "style":"display:none;"
+                },
+                "school_key":{
+                    "style":"display:none;"
+                },
+                "time_table_day_key":{
+                    "style":"display:none;"
+                },
+                "timetable_key":{
+                    "style":"display:none;"
+                }
+            }
+        },
+        "noRecordMessage" : "作成済みの授業がありません。"
+    },
+    "lessonDeleteQuery" : {
+    	"db_setQuery" : "CALL `p_delete_classwork`('id', @result); SELECT @result AS `result`;"
+    },
+    "timeTableListOuter" : {
+    },
+    "timeTableListInner" : {
+    },
+    "timetableListTable":{
+    	"class" : "timetableListTable commonTable",
+        "db_getQuery":" CALL `p_select_timetable_day`('lessonDate', @result); SELECT @result AS `result`;",
+        "lessonDate":{
+            "value":""
+        },
+         "config": {
+            "columns": {
+                "start_time": {
+                    "style": "display:none;"
+                    ,"className" : "start_time"
+                },
+                "end_time": {
+                    "style": "display:none;"
+                    ,"className" : "end_time"
+                },
+                "max_num":{
+                    "columnName" : "最大人数"
+                    ,"className" : "max_num"
+                },
+                "min_num":{
+                    "columnName" : "最小人数"
+                    ,"className" : "min_num"
+                },
+                "id":{
+                    "style":"display:none;"
+                    ,"className" : "id"
+                }
+            }
+        },
+        "noRecordMessage": "作成済みの時間帯がありません。"
+    },
+    "updateTimeTable" : {
+        "db_setQuery" : "CALL p_update_capacity_time_table_day('id', 'min_num', 'max_num', @result); SELECT @result AS result;",
+        "id" : {
+            "value" : ""
+        },
+        "min_students" : {
+            "value" : ""
+        },
+        "max_students" : {
+            "value" : ""
+        }
+    }
+}

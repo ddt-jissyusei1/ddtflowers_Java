@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers/管理者画面</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<script>
+				//createTagクラスのインスタンスを生成する
+				var customizeCreator = new createTag();
+				
+				//編集するコンテンツのリストを作る。
+				var contentList = ['commonJson','preserved','fresh','nfd','national','franchise',
+				                   'bridal','gallery','contact','access','experience','blog'];
+				var listLength = contentList.length;			//コンテンツのリストの数を取得する。
+				customizeCreator.getJsonFile('source/admin.json');		// 管理者画面のJSONを取得する。
+				customizeCreator.getJsonFile('source/commonJson.json');	// 共通のパーツのJSONを取得する。
+				customizeCreator.getJsonFile('source/customize.json');	// カスタマイズタブのJSONを読み込む。
+
+				//編集用にJSONのファイルを読み込むループ
+				for(var i = 0; i < listLength; i++){
+					//各コンテンツのJSONファイルを編集用に読み込む。
+					customizeCreator.getJsonForCustomize(contentList[i], 'source/' + contentList[i] + '.json');
+				}
+				
+				// 管理者画面のコンテンツを作る。
+				customizeCreator.outputTag('contentManagement', 'tabContainer', '#customize');
+				customizeCreator.outputTag('customizeTabs', 'customizeTabs', '#customize .contentManagement');
+				customizeCreator.outputTag('customizePanels', 'customizePanels', '#customize .contentManagement');
+
+				//編集用にJSONのファイルを読み込み、編集用のタグを作るループ
+				for(var i = 0; i < listLength; i++){
+					$.when(
+							//各コンテンツのJSONファイルを編集用に読み込む。
+							customizeCreator.getJsonForCustomize(contentList[i], 'source/' + contentList[i] + '.json')
+							).done(function(){
+								//JSON編集用のテキストエリアを作る。
+								customizeCreator.createElementTag(new Array(), customizeCreator.json[contentList[i]], $('#'+ contentList[i]));
+							});
+				}
+				
+				//タブのコンテンツを作成する。
+				createTab('#customize .contentManagement');
+				//保存ボタンをjQuery UIのリッチなボタンにする。
+				$('.saveButton').button();
+			</script>
+		</div>
+	</div>
+</body>
+</html>

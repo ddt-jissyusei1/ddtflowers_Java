@@ -1,0 +1,26 @@
+{
+    "insertMyBlog":{
+        "db_setQuery":"INSERT INTO user_blog(user_key, title, content, post_timestamp) VALUES ('user_key', 'blogTitle', 'blogContent', NOW())",
+        "user_key":{
+            "value":""
+        }, 
+        "blogTitle":{
+            "value":""
+        },
+        "blogContent":{
+            "value":""
+        }
+    },
+    "updateMyBlog":{
+        "db_setQuery":"UPDATE user_blog SET title='blogTitle', content='blogContent' WHERE id='id';",
+        "blogTitle":{
+            "value":""
+        },
+        "blogContent":{
+            "value":""
+        },
+        "id":{
+            "value":""
+        }
+    }
+}

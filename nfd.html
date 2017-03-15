@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DDTFlowers</title>
+</head>
+<body>
+	<div id="container">
+		<div class="main">
+			<!-- コース案内のCSSファイルを読み込む。 -->
+			<link href="css/courseguide.css" rel="stylesheet" type="text/css">
+			<script>
+				//createTagクラスのインスタンスを生成する
+				var nfdPageCreator = new createLittleContents();
+
+				nfdPageCreator.getJsonFile('source/nfd.json');			// ファイルのデータをjsonを用いて持ってくる
+				nfdPageCreator.getJsonFile('source/commonJson.json');	// ファイルのデータをjsonを用いて持ってくる
+				
+				nfdPageCreator.getDomFile('template/common.html');			// 共通パーツのDOMを取得する。
+				nfdPageCreator.getDomFile('template/courseguide.html');	// コース紹介ページのパーツのDOMを取得する。
+				
+				nfdPageCreator.outputTag('headImage', 'createImage');	// 天の画像を作る
+				nfdPageCreator.outputTag('pageTitle');					// タイトル領域を作る
+				nfdPageCreator.outputTag('merit', 'description');		// ご入会メリットを作る
+				nfdPageCreator.outputTag('photoGallery');				// ギャラリー画像を作る
+				nfdPageCreator.outputTag('footGallery');				// ギャラリー画像を作る
+				nfdPageCreator.outputTag('courseGuide');				// コース案内テーブルを作る
+				nfdPageCreator.outputTag('lessonSchedule');			//レッスンスケジュールテーブル
+				nfdPageCreator.outputTag('commonText', 'itemList');	//共通リストテーブルを作る
+				nfdPageCreator.outputTag('memberRule', 'itemList');	// 会員規約のリストテーブルを作る
+				nfdPageCreator.outputTag('footImage', 'createImage');	// 地の画像を作る
+				nfdPageCreator.outputTag('footer');					// フッターを作る
+			
+				// メイン領域にヘッダーの高さ分のmarginを設定し、固定スクロール時に埋もれるのを阻止する。
+				// fixYCoordinate('header', '.main');
+				// position:fixed;を設定したヘッダーが横スクロールしない問題を解決する関数をコールする。
+				fixXCoordinateOnScroll('header');
+				//slickによるカルーセルのギャラリーを作成する。
+				nfdPageCreator.createGallery('footGallery');
+			</script>
+		</div>
+	</div>
+</body>
+</html>

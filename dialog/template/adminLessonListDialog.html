@@ -1,0 +1,41 @@
+<html>
+	<!-- 
+	creteTag用HTMLテンプレート 
+	管理者ページ 日ごとの授業一覧ダイアログ用HTMLテンプレート
+	2015.0822時点で独自パーツなし
+	-->
+	<body>
+		<div>
+			<!-- 予約可能授業一覧テーブルの外側 -->
+			<div class="tableArea"></div>
+
+			<!-- 予約授業一覧テーブル -->
+			<table class="lessonTable">
+				<tr>
+					<td></td>
+				</tr>
+			</table>
+			
+			<!-- ステータスの概要を表す領域 -->
+			<div class="explain1">
+				<span class="explainContent"></span>
+			</div>
+			
+			<!-- 授業時間帯一覧テーブルの外側 -->
+			<!-- 2016.09.15 mod k.urabe 全体を囲むタグをformに変更 -->
+			<form class="timeTableListOuter" action=""></form>
+
+			<!-- 授業時間帯一覧テーブルの内側 -->
+			<!-- 2016.09.18 add k.urabe フォーム内のテーブルを囲む領域を追加 -->
+			<div class="timeTableListInner"></div>
+
+			<!-- 授業時間帯一覧テーブル -->
+			<table class="timeTableListTable">
+				<tr>
+					<td></td>
+				</tr>
+			</table>
+			
+		</div>
+	</body>
+</html>

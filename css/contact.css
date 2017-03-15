@@ -1,0 +1,266 @@
+@CHARSET "UTF-8";
+
+/* 問い合わせページ */
+
+
+/* 
+ * セレクタ:.contactForm dl
+ * 概要   :入力項目のリスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.18
+ */
+.contactForm dl, .memberInfo dl {
+	width: 700px;		/* 幅を700pxにする */
+	clear: both;		/* 回り込みさせない */
+	margin-left: 100px;	/* 左から100px寄せる */
+}
+
+/* 
+ * セレクタ:.contactForm dt
+ * 概要   :入力項目の見出し。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.18
+ * 追加者 :T.Yamamoto
+ * 追加日 :2015.03.09
+ * 内容   :font-sizeがbodyのスタイルと重複するため削除
+ * 変更者 :T.Yamamoto
+ * 変更日 :2015.03.10
+ * 内容   :text-indent,marginを削除
+
+ */
+.contactForm dt, .memberInfo dt{
+	float: left;		/* 内容と共に左寄せで横に並べる */
+	clear: both;		/* 回り込みをさせない */
+	display: block;		/* ブロックとして扱う */
+	line-height: 20px;	/* 文字の高さを20pxに設定する。 */
+	width: 20%;			/* 文字の幅を設定。最長の文字に合わせる */
+	font-weight: bold;	/* 太字にする */
+}
+
+/* 
+ * セレクタ:.contactForm dd
+ * 概要   :入力項目のinput要素。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.18
+ */
+.contactForm dd, .memberInfo dd{
+	float: left;					/* 左に寄せる */
+	width: 70%;						/* 70%にする */
+	padding-left: 40px;				/* 線と内容との間に間隔を取る */
+	padding-bottom: 20px;			/* 下に15pxの間隔を空け、次の項目との間に隙間を空ける */
+	border-left: dotted 1px #999;	/* 左に破線を引き、項目と内容を隔てる */
+	display: block;					/* blockとして扱う */
+	font-size: 12px;				/* 入力を誘導する文字を添えるため小さな文字を設定する。 */
+	margin-left: 15px;				/* 左にmarginを挿入する。 */
+}
+
+/* 
+ * セレクタ:.formRuby
+ * 概要   :項目名のルビ。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.18
+ */
+.formRuby{
+	/* ブロックとし扱い、隣り合うspanの要素となる項目名に対し改行する */
+	display: block;		/* ブロック要素にする */
+	font-size: 10px;	/* ルビサイズのフォントにする */
+	line-height: 10px;	/* 最低限の文字の高さを取る */
+}
+
+/* 
+ * セレクタ:.contactForm .contentTextArea textarea
+ * 概要   :入力項目のテキストエリア。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.18
+ */
+.contactForm .contentTextArea textarea, .memberInfo textarea{
+	border: 1px solid #d8d8d8;	/* テキストエリアを灰色の線で囲む。 */
+	max-width: 500px;			/* 引き延ばせる最大の幅を設定する。 */
+}
+
+/* 
+ * セレクタ:.contactForm .submitButton
+ * 概要   :問い合わせフォームのSubmitボタン。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.18
+ */
+.contactForm .submitButton{
+	margin: 20px auto 50px;	/* 中央に寄せる */
+	display: block;			/* ブロック要素として扱う。 */
+	clear: both;			/* 要素の回り込みを阻止する。 */
+	background-color: #000;	/* 背景色を黒にする */
+	color: #FFF;			/* 白抜き文字に指定する。 */
+	font-weight: bold;		/* 通常のfont-weightでは大分細くなってしまうので、太字にする */
+	width: 150px;			/* 幅を150pxに指定する。 */
+	height: 35px;			/* 高さを35pxに指定する。 */
+	letter-spacing: 2px;	/* 文字の間に2pxの空白を挿入する。 */
+	font-size: 14px;		/* フォントの大きさを14pxに指定する。 */
+	border-style: none;		/* 初期設定されている枠線を消す */	
+ 	border-radius: 0;		/* ios safariでの角丸を消す */
+}
+
+/* 
+ * セレクタ:.contactForm .submitButton:hover
+ * 概要   :問い合わせフォームのSubmitボタンのマウスオーバーイベント。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.18
+ */
+.contactForm .submitButton:hover{
+	opacity: 0.7;	/* ボタンを透過する */
+}
+
+/* 
+ * セレクタ:.contactForm input[type="text"], .contactForm input[type="email"], .contactForm input[type="number"], .contactForm input[type="tel"]
+ * 概要   :問い合わせフォームのinput要素。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.02.18
+ */
+.contactForm input[type="text"], .contactForm input[type="email"], .contactForm input[type="number"], .contactForm input[type="tel"]{
+	border: 1px solid #d8d8d8;	/* 枠線を灰色に設定する。 */
+}
+
+/* 入力確認ページ */
+/* 
+ * セレクタ:.confirmSendMail
+ * 概要   :送信内容確認のブロック。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.05
+ */
+.confirmSendMail {
+	width: 800px;	/* 幅をmainに合わせる。 */
+}
+/* 
+ * セレクタ:.confirmSendMail .ttl
+ * 概要   :送信内容確認のブロックのタイトル部分。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.05
+ */
+.confirmSendMail .ttl{
+	font-size	: 18px;							/* 文字をタイトルサイズにする。 */
+	padding-left: 0.5em;						/* 文字が大きめな分、左の余白は小さくする */
+	font-weight	: normal;						/* 文字の太さを通常にする。 */
+	margin		: 10px 0 3px 0;					/* 上下に適切なmarginを挿入する。 */
+	border-left	: solid 5px rgb(206,220,58);	/* 左に傍線を引く。 */
+	background	: #EEE;							/* 背景をグレーにし、帯化する */
+	display		: block;						/* ブロック要素として扱い、1行分の幅を取る。 */
+}
+
+/* 
+ * セレクタ:.confirmSendMail th, .confirmSendMail td
+ * 概要   :お問い合わせフォームの確認テーブルのセル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.05
+ */
+.confirmSendMail th, .confirmSendMail td {
+    padding		: 10px; 				/* 要素の幅を10px広げる */
+    font-size	: 13px;				    /* 文字サイズを13pxにするする */
+    text-align	: left;					/* 文字を左寄りにする */
+    border		: 1px solid #D0D0AC;	/* 黄緑の罫線で区切る。 */
+}
+
+/* 
+ * セレクタ:.confirmSendMail th
+ * 概要   :お問い合わせフォームの確認テーブルの見出しセル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.05
+ */
+.confirmSendMail th {
+	background: #F0F3F5;	/* 背景色を薄い青にする。 */
+}
+
+/* 
+ * セレクタ:.confirmSendMail ul
+ * 概要   :お問い合わせフォームの確認テーブルの注意書きリスト。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.05
+ */
+.confirmSendMail ul {
+	list-style	: none;		/* リストの先頭の索引をつけない。 */
+	margin		: 5px auto;	/* 上下に適切なmarginを挿入する。 */
+}
+
+/* 
+ * セレクタ:.confirmSendMail li:before
+ * 概要   :お問い合わせフォームの確認テーブルの注意書きリスト項目。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.05
+ */
+.confirmSendMail li:before {
+	content: "\203b";	/* メッセージの先頭に※をつける。 */
+}
+/* 
+ * セレクタ:.confirmSendMail .form
+ * 概要   :お問い合わせフォームの確認テーブル。
+ * 作成者 :T.Masuda
+ * 作成日 :2015.03.05
+ */
+.confirmSendMail .form {
+	width: 100%;	/* 幅を100%にする。 */
+}
+/* 入力確認ページはここまで */
+
+/* スマホ・タブレットレイアウト */
+@media(max-width:680px){
+	/* 問い合わせページ */
+
+	/* 
+	 * セレクタ:.contactForm dl
+	 * 概要   :入力項目のリスト。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.18
+	 */
+	.contactForm dl, .memberInfo dl{
+		width: 90%;		/* 幅を可変にする。 */
+		margin: 0 auto;	/* 中央寄せにする */
+		font-size: 12px;/* デフォルトより1px小さくする */
+	}
+	
+	/* 
+	 * セレクタ:.contactForm dt
+	 * 概要   :入力項目の見出し。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.18
+	 */
+	.contactForm dt, .memberInfo dt{
+		width: 36%;		/* 幅を40%にする */
+	}
+	
+	/* 
+	 * セレクタ:.contactForm dd
+	 * 概要   :入力項目のinput要素。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.02.18
+	 * 修正者 :T.Masuda
+	 * 修正日 :2015.03.10
+	 * 内容　 :幅を調整しました。
+	 */
+	.contactForm dd, .memberInfo dd{
+		width: 60%;					/* 幅を画面の60%に指定する。 */
+		padding-left: 10px;
+		margin-left: 0px;
+	}
+	/* 
+	 * セレクタ:.contactForm textarea, .contactForm input[type="text"], .contactForm input[type="email"], .confirmSendMail
+	 * 概要   :入力項目
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.11
+	 */
+	 .contactForm .contentTextArea textarea,
+	 .contactForm input[type="text"],
+	 .contactForm input[type="email"],
+	 .confirmSendMail 
+	 {
+	 	 width: 95%; 		/* 幅を95%にする */
+	 }
+	
+	/* 入力確認ページ */
+	/* 
+	 * セレクタ:.confirmSendMail
+	 * 概要   :送信内容確認のブロック。
+	 * 作成者 :T.Masuda
+	 * 作成日 :2015.03.05
+	 */
+	.confirmSendMail {
+		margin: 0 auto;	/* 位置を中央に寄せる。 */
+	}
+}

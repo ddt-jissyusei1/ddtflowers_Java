@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>画像をアップロードする前にプレビュー、縮小する</title>
+<!-- スマホでページを縮小表示させないためのまじない -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<!-- jQuery 1.9を使ってるのに意味はなく、1.7でも（Zeptoでも多分）動きます。 -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!-- ローカルからアップロードしたファイルを縮小するプラグインと、必要ファイル2つ -->
+<script src="js/binaryajax.js"></script>
+<script src="js/exif.js"></script>
+<script src="js/canvasResize.js"></script>
+<script>
+//http://www.egashira.jp/2013/03/image-resize-before-upload参考
+
+$(document).ready(function() {
+    $('#photo').change(function(e) {	//アップローダー要素の値が変わったときのイベント
+    	//正規表現で拡張子をチェックする。該当しなければ処理を終える
+        if (!this.files[0].type.match(/^image\/(png|jpeg|gif)$/)) return;
+		var $uploader = $(this);		//画像アップローダーの要素を取得する
+		canvasResize(this.files[0], {	//画像の縮小を行う
+			//オプション設定。サイズとクオリティはテキストボックスの値をつかう　
+			//横サイズを設定
+			width:!isNaN($('#yoko').val())? parseInt($('#yoko').val()): 300,
+			//縦サイズを設定
+			height:!isNaN($('#tate').val())? parseInt($('#tate').val()): 300,
+			crop: false,	//画像を切り取るかを選択する
+			quality: !isNaN($('#quality').val())? parseInt($('#quality').val()): 80,	//画像の品質
+			//コールバック関数。画像パスを引数として受け取る。
+			callback: function(data) {
+				
+				//PHPへはフォームデータを作って送信する
+				var fd = new FormData();						//フォームデータを作る
+				fd.append('photo', toBlob(data), 'userPhoto');	//フォームデータにBLOB化した写真を登録する
+				fd.append('postedName', 'photo');				//フォームデータに投稿名を登録する
+				fd.append('userId', '1');						//フォームデータにユーザIDを登録する
+				
+		        $.ajax({	//Ajax通信でサーバにデータを送る
+		            url: 'uploadImage/imageUpload.php',	//画像アップローダーのURLを指定する	
+		            type: 'post',				//HTTP通信のPOSTメソッドを使う
+		            async:false,				//同期通信
+		            data: fd,					//フォームデータを送信する
+		            dataType: 'xml',			//XMLデータを返してもらう
+		            //以下2点、よくわかっていません
+		            contentType: false,
+		            processData: false,
+		            //通信成功時の処理
+		            success: function(xml){
+		            	alert($(xml).find('message').text());		//サーバからのメッセージを表示する
+		            	var imgpath = $(xml).find('src').text();	//画像パスを取得する
+		            	$('img').attr('src', imgpath);				//画像タグにパスをセットする
+		            },
+		            //通信失敗時の処理
+		            error: function(xhr, status, error){
+		            	//サーバからのメッセージを表示する
+		            	alert($(xhr.responseText).find('message').text())
+		            }
+		        });
+
+			}
+		});
+
+		//base64画像パスからBLOBデータを作る。画像はPHPへはBLOBデータで送信する
+	    function toBlob(base64) {
+	        var bin = atob(base64.replace(/^.*,/, ''));
+	        var buffer = new Uint8Array(bin.length);
+	        for (var i = 0; i < bin.length; i++) {
+	            buffer[i] = bin.charCodeAt(i);
+	        }
+	        // Blobを作成
+	        try{
+	            var blob = new Blob([buffer.buffer], {
+	                type: 'image/png'
+	            });
+	        }catch (e){
+	            return false;
+	        }
+	        return blob;
+	    }
+    });
+});
+
+</script>
+</head>
+<body>
+    <h1>Image縮小サンプル</h1>
+        <input type="file" id="photo" accept="image/*">
+        <br>
+        縦サイズ<input type="text" id="tate"><br>
+        横サイズ<input type="text" id="yoko"><br>
+        クオリティ<input type="text" id="quality"><br>
+        <img id="photo" src="" style="width:auto;height:auto">
+</body>
+</html>
