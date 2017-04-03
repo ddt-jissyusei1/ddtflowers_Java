@@ -33,7 +33,7 @@
 					create_tag.json.accountHeader.user_key.value = memberInfo;	//取得したIDをaccountHeaderに反映する
 					
 					//ユーザ情報のテキストをDBから取得する
-					create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['accountHeader'], 'accountHeader');
+					create_tag.getJsonFile('jsp/GetJSONString.jsp', create_tag.json['accountHeader'], 'accountHeader');
 					
 					// 会員ページヘッダーを作る
 					create_tag.outputTag('accountHeader','memberHeader', $currentContent);
@@ -42,7 +42,7 @@
 					//告知領域のデータをDBから取得するためにクエリで送信する値の置換値をセットする
 					create_tag.json.advertise.user_key.value = memberInfo;
 					//告知領域のテキストをDBから取得する
-					create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['advertise'], 'advertise');
+					create_tag.getJsonFile('jsp/GetJSONString.jsp', create_tag.json['advertise'], 'advertise');
 					// 告知領域を作る
 					create_tag.outputTag('advertise', 'advertise', $currentContent);
 					//通知領域の内容があれば

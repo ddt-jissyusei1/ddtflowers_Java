@@ -36,7 +36,7 @@
 				creator.outputTag('numberingOuter','numberingOuter','.blogRightContent');
 				
 				creator.getJsonFile('source/adminCommon.json');		// ファイルのデータをjsonを用いて持ってくる
-				creator.getJsonFile('php/GetJSONArray.php', creator.json['userListInfoTable'], 'userListInfoTable');
+				creator.getJsonFile('jsp/GetJSONArray.jsp', creator.json['userListInfoTable'], 'userListInfoTable');
 				creator.getDomFile('template/adminCommon.html');			// ブログページ用のDOMを取得する
 				creator.outputNumberingTag('userListInfoTable', 1, 4, 1, 5, '.blog');	// ブログの記事を作る。				
 			</script>

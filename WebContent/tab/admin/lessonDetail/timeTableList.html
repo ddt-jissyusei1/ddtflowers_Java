@@ -26,7 +26,7 @@
 			//授業日時をJSONにセットする
 			this[VAR_CREATE_TAG].json[KEY_TIME_TABLE_LIST_TABLE].lessonDate.value = $(CURRENT_DIALOG)[0].instance.getArgumentDataObject().lessonDate.replace(/\//g, '-');
 			//授業時間帯のデータ一覧をDBから取得してテーブルを作る準備をする
-			this[VAR_CREATE_TAG].getJsonFile(URL_GET_JSON_ARRAY_PHP, this[VAR_CREATE_TAG].json[KEY_TIME_TABLE_LIST_TABLE], KEY_TIME_TABLE_LIST_TABLE);
+			this[VAR_CREATE_TAG].getJsonFile(URL_GET_JSON_ARRAY_JSP, this[VAR_CREATE_TAG].json[KEY_TIME_TABLE_LIST_TABLE], KEY_TIME_TABLE_LIST_TABLE);
 
 			//授業データ一覧ダイアログのテンプレートを取得する
 			this[VAR_CREATE_TAG].getDomFile(ADMIN_LESSON_LIST_DIALOG_HTML);

@@ -1262,7 +1262,7 @@ function createLittleContents(){
 		var sendJsonString = JSON.stringify(checkedObj);
 		//Ajax通信を行う
 		$.ajax({
-			url: URL_SAVE_JSON_DATA_PHP,		//レコード保存のためのPHPを呼び出す
+			url: URL_SAVE_JSON_DATA_JSP,		//レコード保存のためのPHPを呼び出す
 			//予約情報のJSONを送信する
 			//変更者:T.Yamamoto 日付:2015.06.26 内容:dataを変数sendから変数sendJsonStringに変更し、送信する値を配列から文字列を送信するように修正しました
 			data:{json:sendJsonString},			//送信するデータを設定する
@@ -1659,7 +1659,7 @@ function createLittleContents(){
 		//テーブルを初期化する
 		this.tableReset(reloadTableClassName);
 		//テーブルを作るためのjsonをDBから持ってきた値で作る
-		this.getJsonFile(URL_GET_JSON_ARRAY_PHP, this.json[reloadTableClassName], reloadTableClassName);
+		this.getJsonFile(URL_GET_JSON_ARRAY_JSP, this.json[reloadTableClassName], reloadTableClassName);
 		//テーブルを作り直す
 		this.outputTagTable(reloadTableClassName,reloadTableClassName, replaceTableOption[reloadTableClassName].addDomPlace);
 		//テーブルのリロード後にテーブルに対して必要な処理が必要であるならばその処理を行う(レコード0件では処理を行わない)
@@ -1980,7 +1980,7 @@ function createLittleContents(){
 			// バナー領域のJSONを取得する。
 			this.getJsonFile('source/memberCommon.json');
 			//ユーザ情報のテキストをDBから取得する
-			this.getJsonFile('php/GetJSONString.php', this.json['accountHeader'], 'accountHeader');
+			this.getJsonFile('jsp/GetJSONString.jsp', this.json['accountHeader'], 'accountHeader');
 			// 会員ページヘッダーを作る
 			this.outputTag('accountHeader', 'memberHeader');
 			// バナー領域を作る
@@ -2144,7 +2144,7 @@ function createLittleContents(){
 			//DBから編集する対象となるブログ記事のデータを取得するため記事番号をセットする
 			this.json[getContentKey].id.value = number;
 			//DBからブログ記事を読み込む
-			this.getJsonFile('php/GetJSONString.php', this.json[getContentKey], getContentKey);
+			this.getJsonFile('jsp/GetJSONString.jsp', this.json[getContentKey], getContentKey);
 			//クエリを更新するのか新規登録をするのかを決めるために更新クエリのjsonに値を入れて更新クエリを使うようにする
 			this.json[updateQueryKey].id.value = number;
 		}
@@ -2201,7 +2201,7 @@ function createLittleContents(){
 		//レッスンの加算ポイントを取得するために加算ポイント取得クエリの置換する値となるlesson_keyの値を入れる
 		this.json[plusPointQueryKey].lesson_key.value = lessonKey;
 		//受講ポイントの一覧を取得しどのポイントがユーザに加算されるポイント化を取得する
-		this.getJsonFile(URL_GET_JSON_ARRAY_PHP, this.json[plusPointQueryKey], plusPointQueryKey);
+		this.getJsonFile(URL_GET_JSON_ARRAY_JSP, this.json[plusPointQueryKey], plusPointQueryKey);
 		//ポイントレートの配列を取得する
 		var rates = this.json[plusPointQueryKey][TABLE_DATA_KEY];
 		// 取得したポイントレートの配列を生徒数が少ない順に並び替える 2016.10.13 add k.urabe 念のため取得した配列を使用するプロパティで昇順ソートする処理を追加
@@ -2239,7 +2239,7 @@ function createLittleContents(){
 		// DBからポイントレポートを取得するために商品IDをリクエスト用のJSONにセットする
 		this.json[plusPointQueryKey].commodity_key.value = commodityKey;
 		// DBから商品IDに対応するポイントレートを取得する
-		this.getJsonFile(URL_GET_JSON_STRING_PHP, this.json[plusPointQueryKey], plusPointQueryKey);
+		this.getJsonFile(URL_GET_JSON_STRING_JSP, this.json[plusPointQueryKey], plusPointQueryKey);
 		// 商品のポイントレートを返却用変数に入れる
 		retRate = this.json[plusPointQueryKey].point_rate.text;
 
@@ -2277,7 +2277,7 @@ function createLittleContents(){
 		//DBからデータを取得するために備品のidを連想配列に入れてデータ取得のための準備をする
 		this.json[plusPointQueryKey].commodity_key.value = sendReplaceArray['commodity_key'];
 		//備品の加算ポイントレートを取得するためにDBからデータを取得する
-		this.getJsonFile(URL_GET_JSON_STRING_PHP, this.json[plusPointQueryKey], plusPointQueryKey);
+		this.getJsonFile(URL_GET_JSON_STRING_JSP, this.json[plusPointQueryKey], plusPointQueryKey);
 		//備品の加算ポイントレートを変数に入れる
 		var commodityPlusPointRate = this.json[plusPointQueryKey].get_point.text;
 		//加算ポイントを求める
@@ -2777,7 +2777,7 @@ function createLittleContents(){
 		 */
 		this.updateUserName = function() {
 			//ユーザ情報のテキストをDBから取得する
-			this.getJsonFile('php/GetJSONString.php', create_tag.json['accountHeader'], 'accountHeader');
+			this.getJsonFile('jsp/GetJSONString.jsp', create_tag.json['accountHeader'], 'accountHeader');
 			//ユーザ名を取り出す
 			var updatedUserName = this.json.accountHeader.memberStatus.memberName.user_name.text;
 			//ヘッダー内のユーザ名を更新する
@@ -2803,7 +2803,7 @@ function createLittleContents(){
 			   	this.json[KEY_LOGIN][KEY_LOGIN_PASSWORD][VALUE] = GUEST_PASS;
 			   	
 				//サーバにアクセスし、ログイン処理を行う
-		 		this.getJsonFile(URL_GET_JSON_STRING_PHP, this.json[KEY_LOGIN], KEY_LOGIN);
+		 		this.getJsonFile(URL_GET_JSON_STRING_JSP, this.json[KEY_LOGIN], KEY_LOGIN);
 		 		//DBから取得したログイン処理の結果をオブジェクトにまとめる
 		 		var resultObj = {userId: this.json.login[ID][STR_TEXT], authority: this.json.login.authority[STR_TEXT]};
 		 		
@@ -2933,7 +2933,7 @@ function createLittleContents(){
 			}
 			
 			//テーブルデータを取得する
-			this.getJsonFile(URL_GET_JSON_ARRAY_PHP, this.json[tableKey], tableKey);
+			this.getJsonFile(URL_GET_JSON_ARRAY_JSP, this.json[tableKey], tableKey);
 			//テーブルを作る
 			this.outputNumberingTag(tableKey, startPage, displayPageMax, displayPage, pageNum, target, callback, getCreateTag);
 		}
@@ -3584,7 +3584,7 @@ function calendar(selector) {
 		}
 
 		// 授業日を配列で取得
-		this.create_tag.getJsonFile(URL_GET_JSON_ARRAY_PHP, this.create_tag.json[appendTo], appendTo);
+		this.create_tag.getJsonFile(URL_GET_JSON_ARRAY_JSP, this.create_tag.json[appendTo], appendTo);
 
 		// 取得した授業日配列を念のためソート
 		this.sortLessonDateArray(this.create_tag.json[appendTo].tableData);
@@ -4203,7 +4203,7 @@ var articleSubmitHandler = {
 			//ajax通信でPHPに記事番号を渡す
 			$.ajax({
 				//記事編集制御用PHPにアクセスする
-				url : 'php/articleEditController.php',
+				url : 'jsp/articleEditController.jsp',
 				async : false,					//同期通信を行う
 				cache : false,					//通信結果をキャッシュしない
 				data  : {'number' : number},	//記事番号を送る

@@ -17,7 +17,7 @@
 	//予約キャンセルダイアログに必要な値を受け取った値で入れる
 	insertConfirmReserveJsonDialogValueEx('cancelLessonContent', 'cancelLessonDialogContent', creator);
 	//アコーディオンの中身をDBから取り出す
-	creator.getJsonFile(URL_GET_JSON_STRING_PHP, creator.json.cancelLessonContent, 'cancelLessonContent');
+	creator.getJsonFile(URL_GET_JSON_STRING_JSP, creator.json.cancelLessonContent, 'cancelLessonContent');
 	//ダイアログの中身のコンテンツを作る
 	creator.outputTag('cancelLessonContent', 'cancelLessonContent', '.cancelLessonDialogContent');
 	// ボタンタグをjqueryuiの見た目にする

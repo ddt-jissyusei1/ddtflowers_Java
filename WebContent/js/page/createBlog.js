@@ -33,7 +33,7 @@ function sendArticleData(articleNumber, create_tag){
 	}
 	
 	//データを送信する
-	var result = new baseDialog().sendQuery(URL_SAVE_JSON_DATA_PHP, sendObject);
+	var result = new baseDialog().sendQuery(URL_SAVE_JSON_DATA_JSP, sendObject);
 	//データの保存に成功していれば
 	if(parseInt(result.message)){
 		//マイブログページに戻る

@@ -24,7 +24,7 @@
 				var memberInfo = commonFuncs.checkEmpty(commonFuncs.GetCookies().otherUserId) ?  commonFuncs.GetCookies().otherUserId: create_tag.json.accountHeader.user_key.value;
 				create_tag.json.accountHeader.user_key.value = memberInfo;	
 				
-				create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['accountHeader'], 'accountHeader');
+				create_tag.getJsonFile('jsp/GetJSONString.jsp', create_tag.json['accountHeader'], 'accountHeader');
 
 				create_tag.setBlogUpdateQueryReplace('myBlogContent', 'accountHeader', 'updateMyBlog', articleNumber);
 				

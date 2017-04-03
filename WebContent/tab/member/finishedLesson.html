@@ -24,13 +24,13 @@
 	create_tag.json.reservedLessonTable.user_key.value = memberInfo;
 	
 	//予約中授業テーブル用のJSON配列を取得する
-	create_tag.getJsonFile('php/GetJSONArray.php', create_tag.json['reservedLessonTable'], 'reservedLessonTable');
+	create_tag.getJsonFile('jsp/GetJSONArray.jsp', create_tag.json['reservedLessonTable'], 'reservedLessonTable');
 	
 	//会員が予約できる授業を取得するために会員番号をクエリの置換する場所に入れる
 	create_tag.json.memberCanReserveLesson.user_key.value = memberInfo;
 	
 	//予約できる授業のテーマにをDBから取り出す
-	create_tag.getJsonFile('php/GetJSONArray.php', create_tag.json['memberCanReserveLesson'], 'memberCanReserveLesson');
+	create_tag.getJsonFile('jsp/GetJSONArray.jsp', create_tag.json['memberCanReserveLesson'], 'memberCanReserveLesson');
 	
 	//予約中授業のテーマをセレクトボックスにDBから取り出した値を入れるために連想配列にDBから取り出したテーマの値を入れる
 	create_tag.setSelectboxText(create_tag.json.memberCanReserveLesson[TABLE_DATA_KEY], create_tag.json.selectTheme.selectThemebox.themeValue, 'lesson_name');

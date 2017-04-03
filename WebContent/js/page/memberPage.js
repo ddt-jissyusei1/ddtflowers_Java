@@ -113,7 +113,7 @@ function finshedLessonTableThemeSelect() {
 		//ページングに使うものを初期化し、ページングを作り直すために備える
 		create_tag.pagingReset('finishedLessonTable');
 		//クエリを発行してDBから対象のデータの受講済み授業一覧のデータを取り出す
-		create_tag.getJsonFile(URL_GET_JSON_ARRAY_PHP, create_tag.json.finishedLessonTable, 'finishedLessonTable');
+		create_tag.getJsonFile(URL_GET_JSON_ARRAY_JSP, create_tag.json.finishedLessonTable, 'finishedLessonTable');
 		//ページング機能付きで受講済みテーブルを作り直す
 		create_tag.outputNumberingTag('finishedLessonTable', NUMBERING_START, NUMBERING_PAGE, NUMBERING_DEFAULT, NUMBERING_DISPLAY_FINISHEDLESSON_TABLE, '.finishedLessonTableOutside', 'finshedLessonTableAfterPaging', "$('#finishedLesson')[0]."); //  表示件数を示す定数を共通の物でなく、受講済み一覧用の定数を使用するよう変更 2016.10.06 r.shibata
 	});

@@ -652,7 +652,7 @@ function addlogoutEvent(selector){
 			//Ajax通信を行い、ログアウト処理を行う。
 			$.ajax({
 				//ログアウト用PHPをコールする
-				url:'php/LogoutSession.php',
+				url:'jsp/LogoutSession.jsp',
 				async:false,	//同期通信を行う
 				success:function(){	//通信成功時の処理
 					//cookieを消去する

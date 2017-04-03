@@ -27,7 +27,7 @@ function adminLessonUserListDialog(dialog){
 		//授業データ検索のキーとして授業IDをインプットデータから取得し、JSONにセットする
 		this.create_tag.json.lessonTable.id.value = this.dialogClass.getArgumentDataObject().classwork_key;
 		//予約できる授業のデータ一覧をDBから取得してテーブルを作る準備をする
-		this[VAR_CREATE_TAG].getJsonFile(URL_GET_JSON_ARRAY_PHP, this[VAR_CREATE_TAG].json[LESSON_TABLE], LESSON_TABLE);
+		this[VAR_CREATE_TAG].getJsonFile(URL_GET_JSON_ARRAY_JSP, this[VAR_CREATE_TAG].json[LESSON_TABLE], LESSON_TABLE);
 	}
 
 	/* 関数名:getDom

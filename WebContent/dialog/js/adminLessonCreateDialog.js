@@ -260,11 +260,11 @@ function adminLessonCreateDialog(dialog){
 				
 				//時限データテーブルに対してinsert処理を行い、次の授業データを新しく作るための準備をする
 				//失敗件数が0でないなら授業データを新しく作るクエリを発行する
-				if (parseInt(this.sendQuery(URL_SAVE_JSON_DATA_PHP, sendData).message)) {
+				if (parseInt(this.sendQuery(URL_SAVE_JSON_DATA_JSP, sendData).message)) {
 					//授業新規作成用のクエリをJSONにセットする
 					sendData.db_setQuery = this.create_tag.json.newClassWork.db_setQuery;
 					//授業作成に失敗したら
-					if(!(this.sendQuery(URL_SAVE_JSON_DATA_PHP, sendData).message)){
+					if(!(this.sendQuery(URL_SAVE_JSON_DATA_JSP, sendData).message)){
 						//例外を投げて失敗処理に入る
 						throw '授業の新規作成に失敗しました。時間を置いて試してください。';	
 					}
@@ -279,7 +279,7 @@ function adminLessonCreateDialog(dialog){
 				sendData.db_setQuery = this.create_tag.json.normalInsertClasswork.db_setQuery;
 				//すでにある時限データを使って授業データを作る。
 				//授業作成に失敗したら
-				if(!parseInt(this.sendQuery(URL_SAVE_JSON_DATA_PHP, sendData).message)){
+				if(!parseInt(this.sendQuery(URL_SAVE_JSON_DATA_JSP, sendData).message)){
 					//例外を投げて失敗処理に入る
 					throw '授業の新規作成に失敗しました。時間を置いて試してください。';	
 				}

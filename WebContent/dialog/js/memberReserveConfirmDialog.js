@@ -28,7 +28,7 @@ function memberReserveConfirmDialog(dialog){
 		//DBから値を読み込むためにデータをセットする
 		commonFuncs.setJsonDataFromArgumentObj(this[VAR_CREATE_TAG], this.dialogClass);
 		//DBからデータを読み込む
-		this[VAR_CREATE_TAG].getJsonFile(URL_GET_JSON_STRING_PHP, this[VAR_CREATE_TAG].json[CLASS_LESSON_CONFIRM_CONTENT], CLASS_LESSON_CONFIRM_CONTENT);
+		this[VAR_CREATE_TAG].getJsonFile(URL_GET_JSON_STRING_JSP, this[VAR_CREATE_TAG].json[CLASS_LESSON_CONFIRM_CONTENT], CLASS_LESSON_CONFIRM_CONTENT);
 	}
 
 	/* 関数名:getDom

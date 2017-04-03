@@ -183,9 +183,9 @@ TAG_DIV = '<div></div>';
 TAG_SPAN = '<span></span>';
 TAG_LABEL = '<label></label>';
 TAG_TEXTAREA = '<textarea></textarea>';
-URL_GET_JSON_STRING_PHP = 'php/GetJSONString.php';
-URL_GET_JSON_ARRAY_PHP = 'php/GetJSONArray.php';
-URL_SAVE_JSON_DATA_PHP = 'php/SaveJSONRecord.php';
+URL_GET_JSON_STRING_JSP = 'jsp/GetJSONString.jsp';
+URL_GET_JSON_ARRAY_JSP = 'jsp/GetJSONArray.jsp';
+URL_SAVE_JSON_DATA_JSP = 'jsp/SaveJSONRecord.jsp';
 STR_LESSON_TABLE = 'lessonTable';
 STR_RESERVE_LESSON_LIST_DIALOG = 'memberReserveListDialog';
 STR_CENTER_CENTER = 'center center';
@@ -929,7 +929,7 @@ GET_SELLCOMMODITYPERMITLIST_CREATE_TAG = "$('#sellCommodityPermitList')[0].";
 // サーバとの通信失敗時のエラーメッセージ
 FAIL_TO_CONNECT_MESSAGE = 'サーバとの通信に失敗しました。時間を置いてアクセスしてください。'
 // ログアウト処理ファイルのURL
-LOGOUT_URL = 'php/LogoutSession.php';
+LOGOUT_URL = 'jsp/LogoutSession.jsp';
 // ゲストID、パス
 GUEST_ID = '9999';
 GUEST_PASS = 'xxxxxx';

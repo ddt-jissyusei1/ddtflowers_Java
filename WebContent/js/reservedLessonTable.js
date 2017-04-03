@@ -125,7 +125,7 @@ function reservedLessonTable() {
 				//DB更新用JSONをまとめる
 				var sendObject = this.cancelUpdateJson(dialogClass, create_tag);
 				//クエリを発行してキャンセル処理を行う
-				dialogBuilder.sendQuery(URL_SAVE_JSON_DATA_PHP, sendObject);
+				dialogBuilder.sendQuery(URL_SAVE_JSON_DATA_JSP, sendObject);
 				//予約中授業一覧テーブルを更新する
 				create_tag.tableReload(RESERVED_LESSON_TABLE);
 				//キャンセルに応じた通知のアラートを出す

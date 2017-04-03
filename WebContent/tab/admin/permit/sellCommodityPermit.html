@@ -40,13 +40,13 @@
 			//今日の日付を取得し、データ検索の対象の日時としてJSONにセットする
 			create_tag.json.sellCommodityPermitInfoTable.date.value = commonFuncs.getTodayDate();
 			// 商品購入承認テーブル用のJSON配列を取得する
-			create_tag.getJsonFile('php/GetJSONArray.php', create_tag.json['sellCommodityPermitInfoTable'], 'sellCommodityPermitInfoTable');
+			create_tag.getJsonFile('jsp/GetJSONArray.jsp', create_tag.json['sellCommodityPermitInfoTable'], 'sellCommodityPermitInfoTable');
 
 			//商品販売テーブルを出力する。
 			create_tag.outputTagTable('sellCommodityPermitInfoTable', 'sellCommodityPermitInfoTable', '.sellCommodityPermitInfoTableOutSideArea');
 			
 			//商品選択のセレクトボックスを作るためのデータを取得しておく
-			create_tag.getJsonFile('php/GetJSONArray.php', create_tag.json['selectCommodityInf'], 'selectCommodityInf');
+			create_tag.getJsonFile('jsp/GetJSONArray.jsp', create_tag.json['selectCommodityInf'], 'selectCommodityInf');
 			
 			//フォーム要素配置
 			//数量、価格、使用ポイント、合計金額列をテキストボックスに置き換える

@@ -40,7 +40,7 @@
 			//今日の日付を取得し、データ検索の対象の日時としてJSONにセットする
 			create_tag.json.doLecturePermitInfoTable.date.value = commonFuncs.getTodayDate();
 			// 受講承認テーブル用のJSON配列を取得する
-			create_tag.getJsonFile('php/GetJSONArray.php', create_tag.json['doLecturePermitInfoTable'], 'doLecturePermitInfoTable');
+			create_tag.getJsonFile('jsp/GetJSONArray.jsp', create_tag.json['doLecturePermitInfoTable'], 'doLecturePermitInfoTable');
 			//受講承認タブのリストテーブル
 			create_tag.outputTagTable('doLecturePermitInfoTable', 'doLecturePermitInfoTable', '.doLecturePermitTableInfoTableOutSideArea');
 			//受講承認のテーブルを置換する

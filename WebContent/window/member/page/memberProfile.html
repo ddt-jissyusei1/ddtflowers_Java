@@ -34,7 +34,7 @@
 					create_tag.json.accountHeader.user_key.value = memberInfo;	//取得したIDをaccountHeaderに反映する
 					
 					//ユーザ情報のテキストをDBから取得する
-					create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['accountHeader'], 'accountHeader');
+					create_tag.getJsonFile('jsp/GetJSONString.jsp', create_tag.json['accountHeader'], 'accountHeader');
 					// 会員ページヘッダーを作る
 					create_tag.outputTag('accountHeader', 'memberHeader', $currentContent);
 					// バナー領域を作る
@@ -44,7 +44,7 @@
 					//会員番号をjsonに入れる
 					create_tag.json.getUserInf.userId.value = create_tag.json.accountHeader.user_key.value;
 					//会員の情報をDBから読み込む
-					create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['getUserInf'], 'getUserInf');
+					create_tag.getJsonFile('jsp/GetJSONString.jsp', create_tag.json['getUserInf'], 'getUserInf');
 					// 会員情報を表示する領域を作る
 					create_tag.outputTag('memberInfo', 'memberInfo', $currentContent);
 					// 「氏名」概要領域を作る

@@ -237,9 +237,9 @@ function adminMailDialog(dialog){
 			//データ追加用JSONを作成する
 			var sendObject = this.updateJson();
 			//DBにお知らせのデータを追加する
-			isSend = parseInt(this.__proto__.sendQuery(URL_SAVE_JSON_DATA_PHP, sendObject.inf)[KEY_MESSAGE]) ?
+			isSend = parseInt(this.__proto__.sendQuery(URL_SAVE_JSON_DATA_JSP, sendObject.inf)[KEY_MESSAGE]) ?
 					//1つ目のクエリが成功したら、2つ目のクエリを実行する
-					this.sendQuery(URL_SAVE_JSON_DATA_PHP, sendObject.to) : false;
+					this.sendQuery(URL_SAVE_JSON_DATA_JSP, sendObject.to) : false;
 		}
 
 		return isSend;	//送信の成否判定を返す

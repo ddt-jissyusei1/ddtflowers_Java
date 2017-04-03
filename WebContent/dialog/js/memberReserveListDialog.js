@@ -103,7 +103,7 @@ function memberReserveListDialog(dialog){
 	 */
 	this.getTableData = function(tableName){
 		//予約できる授業のデータ一覧をDBから取得してテーブルを作る準備をする
-		this[VAR_CREATE_TAG].getJsonFile(URL_GET_JSON_ARRAY_PHP, this[VAR_CREATE_TAG].json[tableName], tableName);
+		this[VAR_CREATE_TAG].getJsonFile(URL_GET_JSON_ARRAY_JSP, this[VAR_CREATE_TAG].json[tableName], tableName);
 		//予約データが取得できていたらtrue、そうでなければfalseを返す
 		return this[VAR_CREATE_TAG].json[tableName][TABLE_DATA_KEY].length != NO_TABLE_DATA ? true: false;
 	}
@@ -386,7 +386,7 @@ function memberReserveListDialog(dialog){
 				var sendObject = parentDialogBuilder.updateJson(this.dialogBuilder);
 				console.log(sendObject);
 				//クエリを発行してキャンセル処理を行う
-				var sendResult = parentDialogBuilder.sendQuery(URL_SAVE_JSON_DATA_PHP, sendObject);
+				var sendResult = parentDialogBuilder.sendQuery(URL_SAVE_JSON_DATA_JSP, sendObject);
 				$(parentDialogBuilder.dialog).empty();	//ダイアログの中を一旦空にする
 				parentDialogBuilder.dispContents();		//予約一覧ダイアログの中身を更新する
 

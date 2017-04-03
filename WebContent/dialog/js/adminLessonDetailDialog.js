@@ -213,7 +213,7 @@ function adminLessonDetailDialog(dialog){
 		//送信するJSONを作成する
 		var sendObject = this.updateJson();
 		//授業詳細テーブルを更新する
-		var result = this.sendQuery(URL_SAVE_JSON_DATA_PHP, sendObject);
+		var result = this.sendQuery(URL_SAVE_JSON_DATA_JSP, sendObject);
 		//DBレコードの更新に成功したかを判定する
 		switch(parseInt(result.message)){
 			//失敗時

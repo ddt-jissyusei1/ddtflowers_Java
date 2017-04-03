@@ -198,7 +198,7 @@ function loginDialog(dialog){
 	 */
 	this.getLoginProcedureResult = function(){
 		//サーバにアクセスし、ログイン処理を行う
- 		this[VAR_CREATE_TAG].getJsonFile(URL_GET_JSON_STRING_PHP, this[VAR_CREATE_TAG].json[KEY_LOGIN], KEY_LOGIN);
+ 		this[VAR_CREATE_TAG].getJsonFile(URL_GET_JSON_STRING_JSP, this[VAR_CREATE_TAG].json[KEY_LOGIN], KEY_LOGIN);
  		//DBから取得したログイン処理の結果をオブジェクトにまとめて返す
  		return {userId: this[VAR_CREATE_TAG].json.login[ID][STR_TEXT], authority: this[VAR_CREATE_TAG].json.login.authority[STR_TEXT]};
 	}

@@ -27,7 +27,7 @@
 			//授業データをJSONにセットする
 			commonFuncs.setLessonDataToJSON(dialog[DIALOG_CLASS], create_tag);
 			//予約できる授業のデータ一覧をDBから取得してテーブルを作る準備をする
-			create_tag.getJsonFile(URL_GET_JSON_ARRAY_PHP, create_tag.json[LESSON_TABLE], LESSON_TABLE);
+			create_tag.getJsonFile(URL_GET_JSON_ARRAY_JSP, create_tag.json[LESSON_TABLE], LESSON_TABLE);
 
 			//授業データ一覧ダイアログのテンプレートを取得する
 			create_tag.getDomFile(ADMIN_LESSON_LIST_DIALOG_HTML);

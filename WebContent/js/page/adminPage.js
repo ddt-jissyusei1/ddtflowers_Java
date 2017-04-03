@@ -304,7 +304,7 @@ function searchPermitListInfoTable(
 		//テーブルデータをリセットしておく
 		searchCreateTag.json[targetTable].tableData = [];
 		//DBからデータを取得する
-		searchCreateTag.getJsonFile('php/GetJSONArray.php', searchCreateTag.json[targetTable], targetTable);
+		searchCreateTag.getJsonFile('jsp/GetJSONArray.jsp', searchCreateTag.json[targetTable], targetTable);
 		//受講承認一覧テーブルを作る
 		searchCreateTag.outputNumberingTag(targetTable, startPage, displayPageMax, displayPage, pageNum, targetArea, callback, "$('" + createTagTarget + "')[0].");
 
@@ -712,7 +712,7 @@ function userListSearch(targetPage) {
 		});
 		userListCreateTag.json.userListInfoTable.tableData = [];	//データを消しておく
 		//会員一覧のデータを取り出す
-		userListCreateTag.getJsonFile(URL_GET_JSON_ARRAY_PHP, sendQueryObject, KEY_USER_INFO_LIST_TABLE); //クエリでなくオブジェクトなので名称変更 2016.10.07 r.shibata 
+		userListCreateTag.getJsonFile(URL_GET_JSON_ARRAY_JSP, sendQueryObject, KEY_USER_INFO_LIST_TABLE); //クエリでなくオブジェクトなので名称変更 2016.10.07 r.shibata 
 		//ページング機能付きでユーザ情報一覧テーブルを作る
 		userListCreateTag.outputNumberingTag(KEY_USER_INFO_LIST_TABLE, 1, 4, 1, 15, SELECTOR_USER_LIST_TABLE_OUTSIDE, FUNC_AFTER_RELOAD_USER_LIST_INFO_TABLE, JQUERY_OBJECT_FRONT + targetPage + JQUERY_OBJECT_REAR_0INDEX);
 
@@ -1064,7 +1064,7 @@ function sendMailMaga() {
 	}
 
 	//DBにメルマガの内容を保存する。成功していれば送信処理に移る
-	if (new baseDialog().sendQuery(URL_SAVE_JSON_DATA_PHP, sendObject)) {
+	if (new baseDialog().sendQuery(URL_SAVE_JSON_DATA_JSP, sendObject)) {
 		$.ajax({					//PHPにメール用データを渡すAjax通信
 			url:SEND_MAILMAGA_PHP			//PHPのURLを設定する
 			,data:sendObject	//送信データのオブジェクト
@@ -1431,7 +1431,7 @@ var backCallbacks = {
 						//デフォルトの商品コードを設定する
 						scpc.json.insertSellCommodityRecord.purchase_id.value = COMMODITY_NOT_SELECTED_KEY_2;
 						//レコードの保存を行う
-						var result = scpc.getJsonFile(URL_SAVE_JSON_DATA_PHP, scpc.json.insertSellCommodityRecord, 'insertSellCommodityRecord');
+						var result = scpc.getJsonFile(URL_SAVE_JSON_DATA_JSP, scpc.json.insertSellCommodityRecord, 'insertSellCommodityRecord');
 						//レコードの保存ができなかった
 						if (!parseInt(result.message)) {
 							//レコードの保存が出来なかった旨を伝達する
@@ -1492,7 +1492,7 @@ function reloadPagingTable(reservedObject, tableName, outsideSelector, targetSel
 	// テーブルを表示（再表示）するためにテーブルの描画エリアをリセットする
 	reservedObject.tableReset(tableName);
 	// 対象のデータ一覧を取得する
-	reservedObject.getJsonFile(URL_GET_JSON_ARRAY_PHP, reservedObject.json[tableName], tableName);
+	reservedObject.getJsonFile(URL_GET_JSON_ARRAY_JSP, reservedObject.json[tableName], tableName);
 	// ページング機能付きで対象のデータ一覧テーブルを作る
 	reservedObject.outputNumberingTag(tableName, NUMBERING_START, NUMBERING_PAGE, NUMBERING_DEFAULT, NUMBERING_DISPLAY, outsideSelector, FUNC_AFTER_RELOAD_USER_LIST_INFO_TABLE, "$('" + targetSelector + "')[0].");
 }
@@ -1770,7 +1770,7 @@ function deleteRecords (targetTable, targetClass, queryObj, callback, createTagD
 					};
 					
 					//レコード削除のクエリを発行する
-					isSuccess = commonFuncs.sendSimpleQuery(sendObj, EMPTY_STRING, URL_SAVE_JSON_DATA_PHP);
+					isSuccess = commonFuncs.sendSimpleQuery(sendObj, EMPTY_STRING, URL_SAVE_JSON_DATA_JSP);
 				}
 				
 				//成功したら

@@ -32,7 +32,7 @@
 				create_tag.json.accountHeader.user_key.value = memberInfo;	//取得したIDをaccountHeaderに反映する
 				
 				//ユーザ情報のテキストをDBから取得する
-				create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['accountHeader'], 'accountHeader');
+				create_tag.getJsonFile('jsp/GetJSONString.jsp', create_tag.json['accountHeader'], 'accountHeader');
 				// パーツのテンプレートのDOMを取得する。
 				create_tag.getDomFile('template/memberCommon.html');
 				// 共通のパーツのJSONを取得する。

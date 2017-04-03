@@ -43,7 +43,7 @@
 			//今日の日時の予約者をまず表示するため、今日の日付を取得してJSONにセットする
 			create_tag.json['eachDayReservedInfoTable'].lesson_date.value = commonFuncs.getTodayDate();
 			// 日ごと予約者一覧テーブル用のJSON配列を取得する
-			create_tag.getJsonFile('php/GetJSONArray.php', create_tag.json['eachDayReservedInfoTable'], 'eachDayReservedInfoTable');
+			create_tag.getJsonFile('jsp/GetJSONArray.jsp', create_tag.json['eachDayReservedInfoTable'], 'eachDayReservedInfoTable');
 			//日ごと予約者一覧テーブルを作成する
 			create_tag.tableReload(EACH_DAY_RESERVED_INFO_TABLE);
 			if(create_tag.json.eachDayReservedInfoTable[TABLE_DATA_KEY].length > 0) {

@@ -24,9 +24,9 @@
 				create_tag.outputTag('flowerBackground', 'createImage', CURRENT_WINDOW_MAIN);	// トップページ背景を作る 2016.12.28 r.shibata 出力セレクターをカレントウィンドウのmainに出力するよう変更
 
 				//ギャラリーの新着情報を取得する
-				create_tag.getJsonFile(URL_GET_JSON_ARRAY_PHP, create_tag.json.getTopicGallery, 'getTopicGallery');
+				create_tag.getJsonFile(URL_GET_JSON_ARRAY_JSP, create_tag.json.getTopicGallery, 'getTopicGallery');
 				//ブログの新着情報を取得する
-				create_tag.getJsonFile(URL_GET_JSON_ARRAY_PHP, create_tag.json.getTopicBlog, 'getTopicBlog');
+				create_tag.getJsonFile(URL_GET_JSON_ARRAY_JSP, create_tag.json.getTopicBlog, 'getTopicBlog');
 
 				//ギャラリー、ブログの新着記事情報をセットする
 				commonFuncs.setDataToNoticeContents(create_tag.json.topicGallery, create_tag.json.getTopicGallery.tableData, commonFuncs.sampleNoticeDataOrganizeKeyArray, commonFuncs.sampleNoticeDataOrganizeSettingObj);

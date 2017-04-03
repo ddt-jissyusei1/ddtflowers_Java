@@ -58,7 +58,7 @@ function timetableList() {
 			//テーブルデータをリセットする
 			create_tag.json[KEY_TIME_TABLE_LIST_TABLE].tableData = [];
 			//テーブルリロードのためデータを再取得する
-			create_tag.getJsonFile(URL_GET_JSON_ARRAY_PHP, create_tag.json[KEY_TIME_TABLE_LIST_TABLE], KEY_TIME_TABLE_LIST_TABLE);
+			create_tag.getJsonFile(URL_GET_JSON_ARRAY_JSP, create_tag.json[KEY_TIME_TABLE_LIST_TABLE], KEY_TIME_TABLE_LIST_TABLE);
 			$(SELECTOR_TIME_TABLE_LIST_TABLE).remove();	//既存のテーブルを消す
 			//テーブルをリロードする
 			create_tag.outputTagTable(KEY_TIME_TABLE_LIST_TABLE, LESSON_TABLE, $(SELECTOR_SET_TIME_TABLE_LIST));		// 2016.09.18 mod k.urabe テーブル再配置指定場所を変更
@@ -102,7 +102,7 @@ function timetableList() {
 				thisElem.setSendData(sendData, this);
 				
 				//UPDATEを行い成功したか
-				if(!parseInt(thisElem.sendQuery(URL_SAVE_JSON_DATA_PHP, sendData).message)) {
+				if(!parseInt(thisElem.sendQuery(URL_SAVE_JSON_DATA_JSP, sendData).message)) {
 					throw new Error(thisElem.makeErrorMessage(records, i));
 				}
 				

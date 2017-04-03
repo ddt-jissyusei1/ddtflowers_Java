@@ -27,7 +27,7 @@
 					var create_tag = new createLittleContents();	//管理者ページ用のcreateTagクラスインスタンスを生成する
 					
 					//ユーザ情報をDBから取得する
-					create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['accountHeader'], 'accountHeader');
+					create_tag.getJsonFile('jsp/GetJSONString.jsp', create_tag.json['accountHeader'], 'accountHeader');
 					
 					//権限をチェックする。管理者でなければトップページに戻る
 					if (commonFuncs.checkBeforeEnterAdminPage(create_tag.json.accountHeader.authority.text, $currentWindow[0])) {

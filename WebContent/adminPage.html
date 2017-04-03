@@ -66,7 +66,7 @@
 					
 					//パーツのHTMLを順次作成し、画面に追加していく
 					//ユーザ情報のテキストをDBから取得する
-					create_tag.getJsonFile('php/GetJSONString.php', create_tag.json['accountHeader'], 'accountHeader');
+					create_tag.getJsonFile('jsp/GetJSONString.jsp', create_tag.json['accountHeader'], 'accountHeader');
 					//ヘッダー
 					create_tag.outputTag('accountHeader', 'adminHeader');
 					
@@ -89,7 +89,7 @@
 					//日ごと授業テーブルの外枠領域を作る
 					create_tag.outputTag('eachDayReservedInfoTableOutsideArea', 'divArea', '#dayReserver');
 					// 日ごと予約者一覧テーブル用のJSON配列を取得する
-					create_tag.getJsonFile('php/GetJSONArray.php', create_tag.json['eachDayReservedInfoTable'], 'eachDayReservedInfoTable');
+					create_tag.getJsonFile('jsp/GetJSONArray.jsp', create_tag.json['eachDayReservedInfoTable'], 'eachDayReservedInfoTable');
 					//日ごと予約者の情報がないときにテーブルを作らない
 					if(create_tag.json.eachDayReservedInfoTable[TABLE_DATA_KEY][0]) {
 						//日ごと予約者一覧テーブルを作る
